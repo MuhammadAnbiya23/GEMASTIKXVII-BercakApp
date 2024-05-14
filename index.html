@@ -9,3 +9,50 @@
     <h1>ANBIYA</h1>
 </body>
 </html>
+
+<!--Pop up Login/daftar-->
+<body>
+    <nav>
+        <button onclick="openLoginModal()">Login</button>
+
+        <!-- The Login Modal -->
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeLoginModal()">&times;</span>
+                <h2>Login</h2>
+                <form>
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                    <button type="submit">Login</button>
+                </form>
+                <p>Belum punya akun?<a href="#" onclick="openSignUpModal()">Sign Up</a></p>
+            </div>
+        </div>
+
+        <!-- The Sign Up Modal -->
+        <div id="signUpModal" class="modal">
+            <div class="modal-content ">
+                <span class="close" onclick="closeSignUpModal()">&times;</span>
+                <h2>Sign Up</h2>
+                <form>
+                    <label for="namaLengkap">Nama lengkap</label>
+                    <input type="text" id="namaLengkap" required>
+                    <label for="newUsername">Username</label>
+                    <input type="text" id="newUsername" required>
+                    <label for="newNomor hp">Nomor hp</label>
+                    <input type="text" id="newNomor hp" required>
+                    <label for="newEmail">Email</label>
+                    <input type="text" id="newEmail" required>
+                    <label for="newPassword">Buat kata sandi</label>
+                    <input type="password" id="newPassword" required>
+                    <label for="verifikasi">Saya menyetujui syarat dan ketentuan</label>
+                    <input type="checkbox" id="verifikasi" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p>Sudah punya akun?<a href="#" onclick="openLoginModal()">Login</a></p>
+            </div>
+        </div>
+    </nav>
+</body>
