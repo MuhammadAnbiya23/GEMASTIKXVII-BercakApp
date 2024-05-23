@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Raleway', sans-serif;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    border: 1px solid #333;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.bounding-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    border: 2px solid red;
+    transform: translate(-50%, -50%);
+}
+
+.card {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+.btn-light {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+.alert {
+    display: none;
+}
+
+#translation-result {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#quiz-command {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+button {
+    margin: 10px 0;
+}

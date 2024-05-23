@@ -1,0 +1,85 @@
+body {
+    font-family: 'Raleway', sans-serif;
+  }
+  
+  .navbar {
+    background-color: #007bff;
+  }
+  
+  .navbar-brand img {
+    height: 40px;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #fff;
+    margin-right: 15px;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #ddd;
+  }
+  
+  #home .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 0;
+    background-color: #f8f9fa;
+  }
+  
+  #home .content-description h1 {
+    font-family: 'Kanit', sans-serif;
+  }
+  
+  #features {
+    margin: 60px 0;
+  }
+  
+  .card-group .card {
+    margin: 0 10px;
+  }
+  
+  .article-preview {
+    display: flex;
+    justify-content: space-between;
+    margin: 60px 0;
+  }
+  
+  .article-card {
+    width: 30%;
+  }
+  
+  .article-img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .article-content {
+    padding: 10px;
+  }
+  
+  .read-more-button {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+  }
+  
+  footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  footer h5 {
+    font-family: 'Kanit', sans-serif;
+  }
+  
+  footer ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  footer ul li {
+    margin: 5px 0;
+  }
+  

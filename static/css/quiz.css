@@ -1,0 +1,41 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Raleway', sans-serif;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+header {
+    background-color: #1e1e1e;
+}
+
+.card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: none;
+}
+
+.card-header, .card-footer {
+    background-color: #282828;
+}
+
+.progress-bar {
+    background-color: #6200ea;
+}
+
+.btn-primary {
+    background-color: #6200ea;
+    border: none;
+}
+
+.btn-light {
+    background-color: #bb86fc;
+    border: none;
+}
+
+#game1-container, #game2-container, #reward-section {
+    display: none;
+}

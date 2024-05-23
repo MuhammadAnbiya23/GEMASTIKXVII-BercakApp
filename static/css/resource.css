@@ -1,0 +1,23 @@
+body.light-theme {
+    background-color: rgb(71, 71, 71);
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+}
+
+body.light-theme .navbar, body.light-theme footer {
+    background-color: #ffffff;
+    color: #000;
+}
+
+body.light-theme .navbar .nav-link, body.light-theme footer {
+    color: #000;
+}
+
+body.light-theme .content {
+    background-color: #ffffff;
+    color: #000;
+}
+
+.d-none {
+    display: none !important;
+}

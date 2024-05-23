@@ -1,0 +1,45 @@
+body {
+    background-color: rgb(71, 71, 71);
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: 'Raleway', sans-serif;
+}
+
+h1, p {
+    color: #ffffff;
+}
+
+.social-link {
+    text-decoration: none;
+    color: #ffffff;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+    color: #007bff;
+}
+
+.social-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    border: 2px solid rgb(61, 61, 61);
+    transition: border-color 0.3s ease;
+}
+
+.social-link:hover .social-icon {
+    border-color: #007bff;
+}
+
+/* Responsiveness */
+@media (max-width: 767.98px) {
+    .social-icon {
+        width: 80px;
+        height: 80px;
+    }
+    .social-link p {
+        font-size: 0.9rem;
+    }
+}
