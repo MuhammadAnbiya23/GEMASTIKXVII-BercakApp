@@ -6,17 +6,17 @@ from utils import is_valid_email, is_valid_password
 
 @app.route("/dashboard/")
 def dashboard():
-    # if 'logged_in' in session:
-    #     user_id = session.get('user_id')
-    #     user = DataUser.query.get(user_id)
-    #     if user:
+    if 'logged_in' in session:
+        user_id = session.get('user_id')
+        user = DataUser.query.get(user_id)
+        if user:
             return render_template("index.html")#, name=user.name)
-    #     else:
-    #         flash('User not found.', 'danger')
-    #         return redirect(url_for('masuk'))
-    # else:
-    #     flash('You are not logged in.', 'danger')
-    #     return redirect(url_for('masuk'))
+        else:
+            flash('User not found.', 'danger')
+            return redirect(url_for('masuk'))
+    else:
+        flash('You are not logged in.', 'danger')
+        return redirect(url_for('masuk'))
 
 
 @app.route('/toggle-color-mode', methods=['GET', 'POST'])
