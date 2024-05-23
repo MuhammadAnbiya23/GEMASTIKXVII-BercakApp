@@ -67,7 +67,7 @@
                 </li>
               </div>
               {% else %}
-              <a href="{{ url_for('login') }}" class="btn btn-light ms-2">Masuk</a>
+              <a href="{{ url_for('masuk') }}" class="btn btn-light ms-2">Masuk</a>
               {% endif %}
           </div>          
       </div>
@@ -95,7 +95,7 @@
             <div class="article-content">
                 <h3>Apa itu Tunarungu?</h3>
                 <p>Istilah tunarungu berasal dari kata tuna dan rungu, dimana tuna memiliki arti kurang sedangkan rungu artinya pendengaran..</p>
-                <a href="{{ url_for('deaf') }}" class="read-more-button d-flex justify-content-center text-white">Selengkapnya</a>
+                <a href="{{ url_for('deafEducation') }}" class="read-more-button d-flex justify-content-center text-white">Selengkapnya</a>
             </div>
         </div>
     </div>
@@ -115,7 +115,7 @@
                 <h5 class="card-title">Deaf Education</h5>
                 <p class="card-text"></p>
                 <div class="card-footer">
-                  <a href="{{ url_for('deaf') }}"><button>Mulai</button></a>
+                  <a href="{{ url_for('deafEducation') }}"><button>Mulai</button></a>
                 </div>
               </div>
             </div>
@@ -125,7 +125,7 @@
                 <h5 class="card-title">Voice Recognition</h5>
                 <p class="card-text"></p>
                 <div class="card-footer">
-                  <a href="{{ url_for('voice') }}"><button>Mulai</button></a>
+                  <a href="{{ url_for('speechRecognition') }}"><button>Mulai</button></a>
                 </div>
               </div>
             </div>
@@ -135,7 +135,7 @@
                 <h5 class="card-title">Sign Recognition</h5>
                 <p class="card-text"></p>
                 <div class="card-footer">
-                  <a href="{{ url_for('sign') }}"><button>Mulai</button></a>
+                  <a href="{{ url_for('signRecognition') }}"><button>Mulai</button></a>
                 </div>
               </div>
             </div>
@@ -218,7 +218,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="{{ url_for('login') }}" method="POST">
+          <form action="{{ url_for('masuk') }}" method="POST">
             <div class="mb-3">
               <label for="username" class="form-label">Username</label>
               <input type="text" class="form-control" id="username" name="username" required>

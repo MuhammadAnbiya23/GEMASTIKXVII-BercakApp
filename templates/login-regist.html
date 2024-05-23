@@ -16,19 +16,20 @@
         <div class="form-container sign-up">
             <form>
                 <h1>Register</h1>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
+                <input name="name-registrasi" type="text" placeholder="Name">
+                <input name="email-registrasi" type="email" placeholder="Email">
+                <input name="password-registrasi" type="password" placeholder="Password">
+                <input name="confirm-password-registrasi" type="password" placeholder="Confirm Password">
                 <button>Sign Up</button>
             </form>
         </div>
         <div class="form-container sign-in">
             <form>
                 <h1>Sign In</h1>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
+                <input name="email-login" type="email" placeholder="Email">
+                <input name="password-login" type="password" placeholder="Password">
                 <a href="#">Lupa password?</a>
-                <a href="{{ url_for('home') }}"><button>Masuk</button></a>
+                <a href="{{ url_for('masuk') }}"><button>Masuk</button></a>
             </form>
         </div>
         <div class="toggle-container">
