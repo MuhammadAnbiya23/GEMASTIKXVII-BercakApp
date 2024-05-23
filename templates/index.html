@@ -14,7 +14,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-
   <title>Frontend-Gemastik17</title>
 </head>
 
@@ -49,26 +48,29 @@
             </ul>
             <div class="d-flex justify-content-center ms-auto align-items-center">
               <div class="form-check form-switch me-3">
-                <input class="form-check-input" type="checkbox" id="colorModeSwitch" onclick="handleSwitchChange()" {{ 'checked' if session.get('color_mode') == 'on' else '' }}>
+                <input class="form-check-input" type="checkbox" id="colorModeSwitch" onclick="handleSwitchChange()" {{ 'checked' if color_mode == 'on' else '' }}>
                 <label class="form-check-label" for="colorModeSwitch">Colorful theme</label>
-              </div>          
+              </div>    
+           {% extends "base.html" %}
+           {% block content %}t
               {% if logged_in %}
-              <div class="dropdown ms-2" id="profileDropdown">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    NabielFauzan <img src="{{ url_for('static', filename='assets/profile.png') }}" style="width: 30px;" alt="">
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#" id="profileStatsOption">Profile Statistics</a></li>
-                    <li><a class="dropdown-item" href="#">Change Password</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="{{ url_for('logout') }}">Sign out <img src="{{ url_for('static', filename='assets/logout.png') }}" alt=""></a></li>
-                  </ul>
-                </li>
-              </div>
+                  <div class="dropdown ms-2" id="profileDropdown">
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              NabielFauzan <img src="{{ url_for('static', filename='assets/profile.png') }}" style="width: 30px;" alt="">
+                          </a>
+                          <div class="dropdown-content dropdown-menu dropdown-menu-end bg-dark text-white">
+                              <li><a class="dropdown-item" href="#" id="profileStatsOption">History</a></li>
+                              <li><a class="dropdown-item" href="#" id="changePasswordBtn">Change Password</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="#" id="logoutBtn">Sign out <img src="{{ url_for('static', filename='img/logout.png') }}" alt="Logout Icon"></a></li>
+                          </div>
+                      </li>
+                  </div>
               {% else %}
-              <a href="{{ url_for('masuk') }}" class="btn btn-light ms-2">Masuk</a>
+                  <a href="{{ url_for('loginRegist') }}" class="btn btn-light ms-2">Masuk</a>
               {% endif %}
+            {% endblock %}
           </div>          
       </div>
  </nav>
@@ -209,54 +211,6 @@
       </div>
     </div>
   </div>
-
-  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="loginModalLabel">Login</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form action="{{ url_for('masuk') }}" method="POST">
-            <div class="mb-3">
-              <label for="username" class="form-label">Username</label>
-              <input type="text" class="form-control" id="username" name="username" required>
-            </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="password" name="password" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Login</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="registerModalLabel">Daftar</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form action="/register" method="POST">
-          <div class="mb-3">
-            <label for="reg-username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="reg-username" name="username" required>
-          </div>
-          <div class="mb-3">
-            <label for="reg-password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="reg-password" name="password" required>
-          </div>
-          <button type="submit" class="btn btn-primary">Daftar</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
 <!-- Pop Up Modal for Profile Statistics -->
 <div class="modal fade" id="profileStatsModal" tabindex="-1" aria-labelledby="profileStatsModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -281,6 +235,31 @@
     </div>
   </div>
 </div>
+{% block hide %}
+    <!-- The Logout Modal -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Apakah Anda yakin ingin logout?</p>
+            <button id="yesBtn">Iya</button>
+            <button id="noBtn">Tidak</button>
+        </div>
+    </div>
+
+    <!-- The Change Password Modal -->
+    <div id="changePasswordModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Change Password</h2>
+            <form action="{{ url_for('change_password') }}" method="POST">
+                <input type="password" name="current_password" placeholder="Current Password" required>
+                <input type="password" name="new_password" placeholder="New Password" required>
+                <input type="password" name="confirm_password" placeholder="Confirm New Password" required>
+                <button type="submit">Change Password</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
   <script src="script.js"></script>
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
