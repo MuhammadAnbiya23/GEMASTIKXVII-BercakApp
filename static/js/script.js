@@ -412,5 +412,61 @@ function handleSwitchChange() {
   var switchElement = document.getElementById('colorModeSwitch');
   if (!switchElement.checked) {
       window.location.href = '/toggle-color-mode';
+  } else {
+      window.location.href = '/other-page';
   }
+}
+
+// Get the modals
+var logoutModal = document.getElementById("logoutModal");
+var changePasswordModal = document.getElementById("changePasswordModal");
+
+// Get the buttons that open the modals
+var logoutBtn = document.getElementById("logoutBtn");
+var changePasswordBtn = document.getElementById("changePasswordBtn");
+
+// Get the <span> elements that close the modals
+var spans = document.getElementsByClassName("close");
+
+// Get the "Yes" and "No" buttons for logout modal
+var yesBtn = document.getElementById("yesBtn");
+var noBtn = document.getElementById("noBtn");
+
+// When the user clicks the logout button, open the logout modal 
+logoutBtn.onclick = function(event) {
+    event.preventDefault();
+    logoutModal.style.display = "block";
+}
+
+// When the user clicks the change password button, open the change password modal 
+changePasswordBtn.onclick = function(event) {
+    event.preventDefault();
+    changePasswordModal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+for (var i = 0; i < spans.length; i++) {
+    spans[i].onclick = function() {
+        this.parentElement.parentElement.style.display = "none";
+    }
+}
+
+// When the user clicks "No", close the logout modal
+noBtn.onclick = function() {
+    logoutModal.style.display = "none";
+}
+
+// When the user clicks "Yes", redirect to logout route
+yesBtn.onclick = function() {
+    window.location.href = "/logout";
+}
+
+// When the user clicks anywhere outside of the modals, close them
+window.onclick = function(event) {
+    if (event.target == logoutModal) {
+        logoutModal.style.display = "none";
+    }
+    if (event.target == changePasswordModal) {
+        changePasswordModal.style.display = "none";
+    }
 }
