@@ -3,8 +3,6 @@ from app import app, db, bcrypt
 from models import DataUser
 from utils import is_valid_email, is_valid_password
 
-
-
 @app.route("/dashboard/")
 def dashboard():
     if 'logged_in' in session:
