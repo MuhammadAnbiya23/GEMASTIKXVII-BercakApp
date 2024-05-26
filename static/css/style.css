@@ -20,21 +20,6 @@ body {
 }
 
 
-/* Dark mode styles */
-.dark-mode {
-  background-color: #343a40;
-  color: white;
-}
-.dark-mode .navbar, .dark-mode .dropdown-menu, .dark-mode .modal-content {
-  background-color: #343a40;
-  color: white;
-}
-.dark-mode .footer {
-  background-color: #343a40;
-  color: white;
-}
-
-
 header {
   background-color: rgb(24, 24, 24);
   position: fixed;
