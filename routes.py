@@ -12,30 +12,30 @@ def dashboard():
             return render_template("index.html")#, name=user.name)
         else:
             flash('User not found.', 'danger')
-            return redirect(url_for('masuk'))
+            return redirect(url_for('dashboard'))
     else:
         flash('You are not logged in.', 'danger')
-        return redirect(url_for('masuk'))
+        return redirect(url_for('dashboard'))
 
 
 #Switch button color
+# @app.route('/')
+# def dashboard():
+#     return render_template('index.html', color_mode=session.get('color_mode', 'off'))
+
+# @app.route('/other-page')
+# def other_page():
+#     return render_template('indexv2.html', color_mode=session.get('color_mode', 'on'))
+
+# @app.route('/toggle-color-mode')
+# def toggle_color_mode():
+#     session['home'] = 'off' if session.get('indexv2') == 'on' else 'on'
+#     return redirect(url_for('home') if session['color_mode'] == 'off' else url_for('home'))
+
+
 @app.route('/')
-def dashboard():
-    return render_template('index.html', color_mode=session.get('color_mode', 'off'))
-
-@app.route('/other-page')
-def other_page():
-    return render_template('indexv2.html', color_mode=session.get('color_mode', 'on'))
-
-@app.route('/toggle-color-mode')
-def toggle_color_mode():
-    session['home'] = 'off' if session.get('indexv2') == 'on' else 'on'
-    return redirect(url_for('home') if session['color_mode'] == 'off' else url_for('home'))
-
-
-@app.route('/indexv2')
-def indexv2():
-    return render_template('indexv2.html')
+def index():
+    return render_template('index.html')
 
 @app.route('/deafEducation')
 def deafEducation():
@@ -49,7 +49,7 @@ def quiz():
 def signRecognition():
     return render_template('signRecognition.html')
 
-@app.route('/speechRecognition')
+@app.route('/speechRecognition', methods=['GET'])
 def speechRecognition():
     return render_template('speechRecognition.html')
 
@@ -73,9 +73,9 @@ def sosmed():
 def faq():
     return render_template('faq.html')
 
-@app.route('/loginRegist')
+@app.route('/loginRegist',methods=['GET', 'POST'])
 def loginRegist():
-    return render_template('loginRegist')
+    return render_template('loginRegist.html')
 
 
 @app.route("/loginRegist/", methods=['GET', 'POST'])
@@ -110,7 +110,7 @@ def registrasi():
         new_registration = DataUser(name=name, email=email, password=password)
         new_registration.save()
         
-        return render_template("loginRegist.html")
+        return render_template("index.html")
 
         
 def login():
@@ -127,7 +127,7 @@ def login():
             return redirect(url_for('index'))
         else:
             flash('Invalid email or password.', 'danger')
-            return redirect(url_for('login'))
+            return redirect(url_for('loginRegist'))
     
     return render_template("loginRegist.html")
 
@@ -137,4 +137,4 @@ def logout():
     session.pop('logged_in', None)
     session.pop('user_id', None)
     flash('You have been logged out.', 'info')
-    return redirect(url_for('login'))
+    return redirect(url_for('loginRegist'))

@@ -51,26 +51,7 @@
                 <input class="form-check-input" type="checkbox" id="colorModeSwitch" onclick="handleSwitchChange()" {{ 'checked' if color_mode == 'on' else '' }}>
                 <label class="form-check-label" for="colorModeSwitch">Colorful theme</label>
               </div>    
-           {% extends "base.html" %}
-           {% block content %}t
-              {% if logged_in %}
-                  <div class="dropdown ms-2" id="profileDropdown">
-                      <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              NabielFauzan <img src="{{ url_for('static', filename='assets/profile.png') }}" style="width: 30px;" alt="">
-                          </a>
-                          <div class="dropdown-content dropdown-menu dropdown-menu-end bg-dark text-white">
-                              <li><a class="dropdown-item" href="#" id="profileStatsOption">History</a></li>
-                              <li><a class="dropdown-item" href="#" id="changePasswordBtn">Change Password</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="#" id="logoutBtn">Sign out <img src="{{ url_for('static', filename='img/logout.png') }}" alt="Logout Icon"></a></li>
-                          </div>
-                      </li>
-                  </div>
-              {% else %}
                   <a href="{{ url_for('loginRegist') }}" class="btn btn-light ms-2">Masuk</a>
-              {% endif %}
-            {% endblock %}
           </div>          
       </div>
  </nav>
@@ -211,55 +192,7 @@
       </div>
     </div>
   </div>
-<!-- Pop Up Modal for Profile Statistics -->
-<div class="modal fade" id="profileStatsModal" tabindex="-1" aria-labelledby="profileStatsModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="profileStatsModalLabel">Profile Statistics</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <h5>Informasi Pengguna</h5>
-        <p>Best Score: <span id="bestScore"></span></p>
-        <p>Win Streak: <span id="winStreak"></span></p>
-        <p>Total Quizzes: <span id="quizCount"></span></p>
-        <p>Achievements: <span id="achievements"></span></p>
-        <h5>Bercakap Since</h5>
-        <p>Total Days: <span id="totalDays"></span></p>
-        <p>Screen Time: <span id="screenTime"></span></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-{% block hide %}
-    <!-- The Logout Modal -->
-    <div id="logoutModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Apakah Anda yakin ingin logout?</p>
-            <button id="yesBtn">Iya</button>
-            <button id="noBtn">Tidak</button>
-        </div>
-    </div>
 
-    <!-- The Change Password Modal -->
-    <div id="changePasswordModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Change Password</h2>
-            <form action="{{ url_for('change_password') }}" method="POST">
-                <input type="password" name="current_password" placeholder="Current Password" required>
-                <input type="password" name="new_password" placeholder="New Password" required>
-                <input type="password" name="confirm_password" placeholder="Confirm New Password" required>
-                <button type="submit">Change Password</button>
-            </form>
-        </div>
-    </div>
-{% endblock %}
   <script src="script.js"></script>
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

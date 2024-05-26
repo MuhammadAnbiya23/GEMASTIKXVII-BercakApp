@@ -470,3 +470,36 @@ window.onclick = function(event) {
         changePasswordModal.style.display = "none";
     }
 }
+
+const containers = document.getElementById('containers');
+const registerBtn = document.getElementById('register');
+const loginBtn = document.getElementById('login');
+
+registerBtn.addEventListener('click', () => {
+    containers.classList.add("active");
+});
+
+loginBtn.addEventListener('click', () => {
+    containers.classList.remove("active");
+});
+
+const openPopupBtn = document.getElementById('openPopup');
+const closePopupBtn = document.getElementById('closePopup');
+const popupOverlay = document.getElementById('popupOverlay');
+
+openPopupBtn.addEventListener('click', () => {
+    popupOverlay.style.display = 'flex';
+});
+
+closePopupBtn.addEventListener('click', () => {
+    popupOverlay.style.display = 'none';
+});
+
+// Event listener existing untuk register dan login
+registerBtn.addEventListener('click', () => {
+    containers.classList.add("active");
+});
+
+loginBtn.addEventListener('click', () => {
+    containers.classList.remove("active");
+});
