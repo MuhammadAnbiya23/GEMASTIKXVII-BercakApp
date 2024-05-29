@@ -1,4 +1,4 @@
-from .. import db, bcrypt
+from app import db, bcrypt
 
 class DataUser(db.Model):
     id = db.Column(db.Integer, primary_key=True)

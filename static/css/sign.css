@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #121212;
+    background-color: #5A49A5;
     color: #e0e0e0;
     font-family: 'Raleway', sans-serif;
 }
@@ -57,4 +57,8 @@ video {
 
 button {
     margin: 10px 0;
+}
+
+footer {
+    background-color: #100035;
 }
