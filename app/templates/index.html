@@ -14,16 +14,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <title>Frontend-Gemastik17</title>
 </head>
 
 <body>
 <!-- Navbar Header -->
 <header>
-  <nav class="navbar navbar-expand-lg fixed-top bg-dark" >
+  <nav class="navbar navbar-expand-lg fixed-top" >
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="{{ url_for('static', filename='assets/LogoTeks.svg') }}" alt="Logo" style="width: 200px;">
+            <img src="{{ url_for('static', filename='assets/LogoTeks.png') }}" alt="Logo" style="width: 200px;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,8 +35,8 @@
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Other
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+                        Lainnya
                     </a>
                     <ul class="dropdown-menu bg-dark text-white">
                         <li><a class="dropdown-item" href="{{ url_for('sosmed') }}">Media Sosial</a></li>
@@ -43,7 +47,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                  <a class="nav-link" href="{{ url_for('about') }}">Tentang kami</a>
                 </li>
             </ul>
             <div class="d-flex justify-content-center ms-auto align-items-center">
@@ -51,26 +55,7 @@
                 <input class="form-check-input" type="checkbox" id="colorModeSwitch" onclick="handleSwitchChange()" {{ 'checked' if color_mode == 'on' else '' }}>
                 <label class="form-check-label" for="colorModeSwitch">Colorful theme</label>
               </div>    
-           {% extends "base.html" %}
-           {% block content %}t
-              {% if logged_in %}
-                  <div class="dropdown ms-2" id="profileDropdown">
-                      <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              NabielFauzan <img src="{{ url_for('static', filename='assets/profile.png') }}" style="width: 30px;" alt="">
-                          </a>
-                          <div class="dropdown-content dropdown-menu dropdown-menu-end bg-dark text-white">
-                              <li><a class="dropdown-item" href="#" id="profileStatsOption">History</a></li>
-                              <li><a class="dropdown-item" href="#" id="changePasswordBtn">Change Password</a></li>
-                              <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="#" id="logoutBtn">Sign out <img src="{{ url_for('static', filename='img/logout.png') }}" alt="Logout Icon"></a></li>
-                          </div>
-                      </li>
-                  </div>
-              {% else %}
                   <a href="{{ url_for('loginRegist') }}" class="btn btn-light ms-2">Masuk</a>
-              {% endif %}
-            {% endblock %}
           </div>          
       </div>
  </nav>
@@ -90,19 +75,21 @@
   </div>  
 
     <!-- Container -->
-    <h2 class="d-flex justify-content-center">Baca Artikel</h2>
+    <h2 class="d-flex justify-content-center" style="padding-top: 80px;">Baca Artikel</h2>
     <div class="article-preview d-flex justify-content-center">
         <div class="article-card">
-            <img src="{{ url_for('static', filename='assets/hear.png') }}" alt="Article 1" class="article-img">
+
             <div class="article-content">
-                <h3>Apa itu Tunarungu?</h3>
-                <p>Istilah tunarungu berasal dari kata tuna dan rungu, dimana tuna memiliki arti kurang sedangkan rungu artinya pendengaran..</p>
-                <a href="{{ url_for('deafEducation') }}" class="read-more-button d-flex justify-content-center text-white">Selengkapnya</a>
+                <h3>Apa itu Tuli ?</h3>
+                <img src="{{ url_for('static', filename='assets/artikelflat.svg') }}" alt="Article 1" class="article-img">
+                <p>
+                  Tuli adalah kondisi yang memengaruhi kemampuan seseorang untuk mendengar suara dengan jelas atau bahkan sama sekali tidak dapat mendengar. Penyebab tunarungu dapat bervariasi dan dapat terjadi pada berbagai tahap kehidupan,</p>
+                <a href="{{ url_for('deafEducation') }}" class="read-more-button d-flex justify-content-center " style="color: #394669;">Selengkapnya</a>
             </div>
         </div>
     </div>
-        <div class="container">
-          <!-- Deskripsi Produk -->
+
+        <!-- <div class="container">
           <div class="row">
             <div class="col-md-6">
               <h2>BercakApp Fitur</h2>
@@ -154,112 +141,78 @@
           </div>
         </section> 
         <div class="container">
-          <!-- Deskripsi Produk -->
+          Deskripsi Produk 
           <div class="row">
             <div class="col-md-6">
               <h2></h2>
             </div>
           </div>
-        </div>       
-  
-        <!--first layout end-->
-        <!-- Footer -->
-        <footer class="bg-dark text-white mt-4">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4">
-                <img src="{{ url_for('static', filename='assets/logoTeks.svg') }}" alt="Logo" class="mb-3" style="width: 150px;">
-                <h5>About Us</h5>
-                <p>"Bercak.App" is dedicated to providing a comprehensive platform for learning sign language.</p>
-              </div>
-              <div class="col-md-4">
-                <h5>Contact Us</h5>
-                <p>Email: info@bercakapp.com</p>
-                <p>Phone: +62 123 456 789</p>
-              </div>
-              <div class="col-md-4">
-                <h5>Follow Us</h5>
-                <a href="#" class="text-white me-2"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-              </div>
-            </div>
-          </div>
-        </footer>
-        <footer class="footer text-center py-1 bg-grey">
-          <div class="footer-content">
-            <div class="footer-section ">
-              <p>&copy; 2024 BercakApp. All rights reserved.</p>
-            </div>
-        </div>
-      </footer>      
-        
-  <div class="modal fade" id="featureModal" tabindex="-1" aria-labelledby="featureModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="featureModalLabel">Feature</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" id="featureModalContent">
-          Details about the feature.
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Go to Feature</button>
-        </div>
-      </div>
-    </div>
-  </div>
-<!-- Pop Up Modal for Profile Statistics -->
-<div class="modal fade" id="profileStatsModal" tabindex="-1" aria-labelledby="profileStatsModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="profileStatsModalLabel">Profile Statistics</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <h5>Informasi Pengguna</h5>
-        <p>Best Score: <span id="bestScore"></span></p>
-        <p>Win Streak: <span id="winStreak"></span></p>
-        <p>Total Quizzes: <span id="quizCount"></span></p>
-        <p>Achievements: <span id="achievements"></span></p>
-        <h5>Bercakap Since</h5>
-        <p>Total Days: <span id="totalDays"></span></p>
-        <p>Screen Time: <span id="screenTime"></span></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-{% block hide %}
-    <!-- The Logout Modal -->
-    <div id="logoutModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Apakah Anda yakin ingin logout?</p>
-            <button id="yesBtn">Iya</button>
-            <button id="noBtn">Tidak</button>
-        </div>
-    </div>
+        </div>        -->
 
-    <!-- The Change Password Modal -->
-    <div id="changePasswordModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Change Password</h2>
-            <form action="{{ url_for('change_password') }}" method="POST">
-                <input type="password" name="current_password" placeholder="Current Password" required>
-                <input type="password" name="new_password" placeholder="New Password" required>
-                <input type="password" name="confirm_password" placeholder="Confirm New Password" required>
-                <button type="submit">Change Password</button>
-            </form>
+        <div class="fitur-title">
+          <h1>Bercak.App Fitur</h1>
         </div>
+
+        <div class="container-fitur">
+          <div class="card-fitur">
+              <a href="{{ url_for('deafEducation') }}">
+                <img src="{{ url_for('static', filename='assets/DeafEducation.svg') }}" alt="Photo 1">
+              </a>
+              <div class="card-content-fitur">
+              </div>
+          </div>
+          <div class="card-fitur">
+              <a href="{{ url_for('speechRecognition') }}">
+                <img src="{{ url_for('static', filename='assets/speech Recognition.svg') }}" alt="Photo 2">
+              </a>
+              <div class="card-content-fitur">
+              </div>
+          </div>
+          <div class="card-fitur">
+              <a href="{{ url_for('signRecognition') }}">
+                <img src="{{ url_for('static', filename='assets/Sign Recognition.svg') }}"  alt="Photo 3">
+              </a>
+              <div class="card-content-fitur">
+              </div>
+          </div>
+          <div class="card-fitur">
+              <a href="{{ url_for('quiz') }}">
+                <img src="{{ url_for('static', filename='assets/Quiz.svg') }}" alt="Photo 4">
+              </a>
+              <div class="card-content-fitur">
+              </div>
+          </div>
+      </div>
+  
+  <!-- Footer -->
+  <footer class="footer" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <hr>
+          <!-- Menu Sosial Media -->
+          <ul class="social-media">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <hr>
+          <!-- Menu Lainnya -->
+          <ul class="other-menu">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Kebijakan</a></li>
+            <li><a href="#">Tentang Kami</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <!-- Copyright -->
+      <p class="text-center">© 2024 Edukasi Website. All rights reserved.</p>
     </div>
-{% endblock %}
+  </footer>
+
   <script src="script.js"></script>
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

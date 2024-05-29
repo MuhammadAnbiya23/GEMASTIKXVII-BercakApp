@@ -1,11 +1,17 @@
 body {
   font-family: 'Raleway', sans-serif;
-  background-color: rgb(71, 71, 71);
+  background-color: #50468F;
   color: #333;
 }
 
 .navbar {
   margin-bottom: 20px;
+  background-color: #512da8;
+  color: white;
+}
+
+.navbar a,ul,li .nav-link{
+  color: white;
 }
 
 .search-container {
@@ -68,11 +74,11 @@ body {
 }
 
 .article h2, .article h3, .article h4 {
-  color: #333;
+  color: #394669;
 }
 
 .article p {
-  color: #666;
+  color: #394669;
 }
 
 .article-preview {
@@ -184,4 +190,8 @@ body {
 
 .video-controls button:hover {
   background-color: rgba(0, 0, 0, 0.8);
+}
+
+footer{
+  background-color: #100035;
 }

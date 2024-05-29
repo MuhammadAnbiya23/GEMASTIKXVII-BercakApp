@@ -9,7 +9,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark-light sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Deaf Education</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +18,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" href="{{ url_for('dashboard') }}">Home</a>
+                        <a class="nav-link active" style="color: white;" href="{{ url_for('index') }}">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
@@ -28,52 +28,33 @@
         </div>
     </nav>
 
-    <div class="container mt-5">
-        <!-- Search and Sort Menu -->
-        <div class="search-container">
-            <input type="text" id="search" placeholder="Search">
-        </div>
-        <div class="sort-menu">
-            <button class="sort-button active" data-sort="terbaru">Terbaru</button>
-            <button class="sort-button" data-sort="sehat-nutrisi">Sehat dan Nutrisi</button>
-            <button class="sort-button" data-sort="teman-tuli">Teman Tuli</button>
-            <button class="sort-button" data-sort="kesehatan-mental">Kesehatan Mental</button>
-            <button class="sort-button" data-sort="olahraga">Olahraga</button>
-            <button class="sort-button" data-sort="volunteer">Volunteer</button>
-            <button class="sort-button" data-sort="lainnya">Lainnya</button>
-        </div>
-
         <!-- Main Article -->
         <div class="container mt-5">
           <div class="row">
               <div class="col-md-8 mx-auto">
-                  <h1 class="text-center mb-4">Artikel</h1>
+                  <h1 class="text-center mb-4" style="color: white;">Artikel Tuli</h1>
                   <div class="article article-main">
-                      <h2>Apa itu Tuna Rungu?</h2>
+                      <h2>Apa itu Tuli?</h2>
                       <p class="text-muted">Tanggal: 10 Januari 2024</p>
-                      <img src="{{ url_for('static', filename='assets/hear.png') }}" alt="Gambar Artikel Utama">
-                      <p class="article-text">Istilah tunarungu berasal dari kata tuna dan rungu, dimana tuna memiliki arti kurang sedangkan rungu artinya pendengaran, Tunarungu ialah kondisi dimana seseorang mengalami kekurangan atau kehilangan Indera pendengaran sehingga tidak mampu menangkap rangsangan berupa bunyi atau rangsangan melalui pendengaran. Sehingga mengakibatkan terhambatnya kemampuan bicara dan bahasa lalu mengakibatkan seorang tunarungu akan mengalami kesulitan dan keterlambatan dalam hal-hal yang berhubungan dengan komunikasi.</p>
+                      <img src="{{ url_for('static', filename='assets/deaf.svg') }}" alt="Gambar Artikel Utama">
+                      <p class="article-text">Tuli adalah kondisi yang memengaruhi kemampuan seseorang untuk mendengar suara dengan jelas atau bahkan sama sekali tidak dapat mendengar. Penyebab tuli dapat bervariasi dan dapat terjadi pada berbagai tahap kehidupan,</p>
                       <a href="#" class="btn btn-primary read-more-btn">Baca Lebih Lanjut</a>
                       <div class="article-content">
-                          <p>Artikel ini akan menjelaskan lebih dalam tentang penyebab, jenis, dan cara penanganan tunarungu. Tunarungu dapat dibedakan menjadi dua jenis utama: tunarungu ringan dan tunarungu berat. Tunarungu ringan masih memungkinkan seseorang untuk mendengar suara dengan volume tinggi, sementara tunarungu berat hampir atau sepenuhnya tidak dapat mendengar suara apapun. Penyebab tunarungu dapat bervariasi, mulai dari faktor genetik, infeksi saat kehamilan, komplikasi saat melahirkan, hingga kerusakan akibat kebisingan yang berkepanjangan.</p>
-                          <p>Penting bagi masyarakat untuk memahami bahwa tunarungu bukanlah akhir dari segalanya. Dengan bantuan alat bantu dengar, terapi wicara, dan pendidikan inklusif, individu dengan tunarungu dapat menjalani kehidupan yang produktif dan bahagia. Dukungan dari keluarga dan lingkungan sekitar juga memainkan peran penting dalam proses adaptasi dan perkembangan individu tunarungu.</p>
+                          <p>Artikel ini akan menjelaskan lebih dalam tentang penyebab, jenis, dan cara penanganan tuli. tuli dapat dibedakan menjadi dua jenis utama: tuli ringan dan tuli berat. tuli ringan masih memungkinkan seseorang untuk mendengar suara dengan volume tinggi, sementara tuli berat hampir atau sepenuhnya tidak dapat mendengar suara apapun. Penyebab tuli dapat bervariasi, mulai dari faktor genetik, infeksi saat kehamilan, komplikasi saat melahirkan, hingga kerusakan akibat kebisingan yang berkepanjangan.</p>
+                          <p>Penting bagi masyarakat untuk memahami bahwa tuli bukanlah akhir dari segalanya. Dengan bantuan alat bantu dengar, terapi wicara, dan pendidikan inklusif, individu dengan tuli dapat menjalani kehidupan yang produktif dan bahagia. Dukungan dari keluarga dan lingkungan sekitar juga memainkan peran penting dalam proses adaptasi dan perkembangan individu tuli.</p>
                       </div>
                   </div>
               </div>
           </div>
        </div>
   
-        <!-- Article Previews -->
-        <div class="article-preview">
-            <!-- Articles will be dynamically inserted here -->
-        </div>
 
         <!-- Video Section -->
         <div class="video-section mt-5">
             <h2>Video Edukasi</h2>
             <div class="video-container">
                 <video controls class="video-player">
-                    <source src="video1.mp4" type="video/mp4">
+                    <source src="https://www.youtube.com/watch?v=Y6FsbieuQPs" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <video controls class="video-player">
@@ -132,7 +113,7 @@
 
 
     <!-- Footer -->
-    <footer class="bg-dark text-light text-center py-3 mt-5">
+    <footer class="text-light text-center py-3 mt-5">
         <p>&copy; BercakApp 2024. All rights reserved.</p>
     </footer>
 
