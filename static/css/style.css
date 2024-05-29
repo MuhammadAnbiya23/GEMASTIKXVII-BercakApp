@@ -1,10 +1,14 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: o;
 }
+
 
 h1, h2, h3{
   color: rgb(255, 255, 255);
 }
+
 a {
   font-family: "kanit", sans-serif;
 }
@@ -14,9 +18,17 @@ p {
 }
 
 body {
-  background-color: rgb(71, 71, 71);
-  list-style-type: none;
-  transition: background-color 0.3s, color 0.3s;
+  background-color: rgb(255, 255, 255);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center; /* Position the image at the top center */
+  height: 20px;
+  display: flex;
+  align-items: flex-start; /* Align content at the top */
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-image: url('../assets/wave.svg');
 }
 
 
@@ -293,8 +305,8 @@ ul {
 
 .dropdown-menu.bg-dark .dropdown-item:hover,
 .dropdown-menu.bg-dark .dropdown-item:focus {
-  background-color: #495057; /* Warna latar belakang saat hover */
   color: #ffffff; /* Warna teks putih saat hover */
+  font-weight: 400;
 }
 
 .dropdown-menu.bg-dark .dropdown-divider {
@@ -310,17 +322,6 @@ ul {
   background-color: #fff;
 }
 
-footer.footer {
-  background-color: #f8f9fa;
-  text-align: center;
-  width: 100%;
-  position: relative;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1rem 0;
-}
-
 .nav-item a {
   font-size: 1rem;
   color: #ffffff;
@@ -330,11 +331,20 @@ footer.footer {
 }
 
 .nav-item a:hover {
-  color: #386396;
+  color: white;
   transform: scale(1.1);
   text-shadow: none;
-  background-color: transparent;
+  background-color: #006eff;
+  border-radius: 20px;
   transition: ease-in-out 0.3s;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.navbar {
+  background-color: #512da8;
 }
 
 .navbar-brand {
@@ -392,12 +402,14 @@ main .content .content-description {
   width: 600px;
   transform: scale(1.1);
   transition: 3s;
+  padding-right: 10%;
 }
 
 main .content .content-description .title {
   color: rgb(203, 231, 255);
   margin-block: 1rem;
-  font-family: "Overpass", sans-serif;
+  font-family: "Amaranth", sans-serif;
+  text-shadow: #000;
   font-size: 3rem;
   transition: 3s;
 }
@@ -444,124 +456,84 @@ main .content .content-image img {
   padding-top: 10%;
 }
 
-.card-group {
+.fitur-title h1{
+  color: #000;
+  padding-top: 40px;
+}
+
+.container-fitur {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.card {
-  background-color: #323A43;
-  padding: 20px;
-  margin: 10px; 
-  flex: 1 1 calc(25% - 40px); 
-  max-width: calc(25% - 40px); 
-  box-sizing: border-box;
-  transition: transform 0.2s;
-
-}
-
-.card img {
-  width: 100px;
-  display: block;
-  margin: 10px auto;
-}
-
-.card-title {
-  color: white;
-  text-align: center;
-  font-size: 16px;
-  margin: 10px 0;
-}
-
-.card-footer {
-  text-align: center;
-  margin-top: 10px;
-}
-
-.card button {
-  display: block;
-  margin: 20px auto;
-  padding: 0.8rem 2.5rem;
-  border: 3px solid transparent;
-  border-radius: 999px;
-  font-family: 'Quicksand', sans-serif;
-  text-transform: uppercase;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #323A43;
-  cursor: pointer;
-  transition: all 0.15s ease-in;
-}
-
-.card button:hover {
-  border: 3px solid #ffffff;
-  background-color: transparent;
-  color: #ffffff;
-  transform: translateY(-6px);
-} 
-
-.card:hover {
-  transform: translateY(-8px);
-}
-
-.footer {
+  justify-content: space-between;
+  gap: 20px;
   width: 100%;
-  background-color: #d3d3d3; /* Warna abu-abu muda */
-  color: #000000; /* Warna teks hitam */
-  position: relative;
-  left: 0;
-  bottom: 0;
-  right: 0;
+  max-width: 1200px;
+  padding: 0 20px; /* Add padding to avoid cards touching the window edge */
+  box-sizing: border-box;
 }
 
-.footer .footer-content {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding: 20px 0;
-}
-
-.footer .footer-section {
+.card-fitur {
+  background-color: transparent;
+  padding-top: 40px;
+  border-radius: 8px;
+  overflow: hidden;
   flex: 1;
-  min-width: 200px;
+  max-width: calc(25% - 20px); /* Adjust for 4 cards in a row with gap */
   text-align: center;
-  padding: 10px;
+  transition: transform 0.2s;
 }
 
-.footer .footer-section p {
-  color: #000000; /* Warna teks hitam */
-  margin: 5px 0;
+.card-fitur a {
+  display: block;
+  width: 100%;
 }
 
-.footer .footer-bottom {
-  text-align: center;
-  padding: 10px 0;
-  border-top: 1px solid #000000; /* Tambahkan border atas jika diperlukan */
+.card-fitur img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.footer .footer-bottom p {
-  color: #000000; /* Warna teks hitam */
+.card-content-fitur {
+  padding: 16px;
+}
+
+.card-fitur:hover {
+  animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
+.article-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Adjust gap between elements as needed */
+}
+
+.title-image-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust gap between title and image as needed */
+}
+
+.article-title {
   margin: 0;
+}
+
+.article-img {
+  max-width: 150px; /* Adjust as needed */
+  height: auto;
 }
 
 .article img {
   max-width: 100%;
   height: auto;
-}
-
-.card-img-top {
-  width: 500px;
-  max-height: 300px;
-  object-fit: cover;
-  object-position: center;
-  margin: auto;
-}
-
-.card-titleart {
-  text-align: left;
-  color: white;
 }
 
 
@@ -612,10 +584,11 @@ main .content .content-image img {
 }
 
 footer {
-  background-color: transparent;
-  padding-top: 20px;
+  background-color: #100035;
   width: 100%;
-  box-sizing: border-box;
+  padding-top: 0;
+  left: 0;
+  position: absolute;
 }
 
 .container {
@@ -637,21 +610,19 @@ footer {
 }
 
 ul {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
 }
 
 ul li {
   margin: 5px 0;
+  list-style-type: none;
 }
 
 ul li a {
-  color: #000;
+  color: #ffffff;
   text-decoration: none;
-}
-
-ul li a:hover {
-  text-decoration: underline;
+  list-style-type: none;
 }
 
 .text-center {
@@ -663,6 +634,269 @@ hr {
   border: 0;
   border-top: 1px solid #ddd;
   margin: 10px 0;
+}
+
+/* Styling for the popup container */
+#popupContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+/* Styling for the individual popups */
+.popup {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  min-width: 300px;
+  max-width: 400px;
+  text-align: center;
+  display: none;
+  position: relative;
+  top: -50px;
+  transition: top 0.5s;
+}
+
+.popup h4 {
+  margin-top: 0;
+}
+
+.popup p {
+  margin-bottom: 0;
+}
+
+/* Artikel */
+.article-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.article-card {
+  background-color: transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 460px;
+  width: 100%;
+  margin: 0 10px;
+  transition: transform 0.3s;
+  box-shadow: #121212;
+}
+
+.article-card:hover {
+  transform: scale(1.05);
+}
+
+.article-img {
+  width: 100%;
+  height: auto;
+}
+
+.article-content {
+  color: #394669;
+  padding: 15px;
+}
+
+.article-content p,h2{
+  color: #394669;
+}
+
+.article-content h3 {
+  color: #394669;
+  margin-top: 0;
+}
+
+.read-more-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15
+}
+
+/* Modals */
+.modal-content {
+  border-radius: 8px;
+}
+
+.modal-header, .modal-footer {
+  border: none;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Colorful Mode
+.colorful-mode {
+  background-color: #ffefd5;
+}
+
+.colorful-mode .navbar {
+  background-color: #ff7f50;
+}
+
+.colorful-mode .navbar-brand img {
+  filter: invert(1);
+}
+
+.colorful-mode .nav-link {
+  color: #000 !important;
+}
+
+.colorful-mode .dropdown-menu {
+  background-color: #ff7f50;
+}
+
+.colorful-mode .dropdown-item {
+  color: #000 !important;
+}
+
+.colorful-mode .form-check-label {
+  color: #000;
+}
+
+.colorful-mode .card {
+  background-color: #fff0f5;
+}
+
+.colorful-mode .card-footer {
+  background-color: #fffaf0;
+}
+
+.colorful-mode .btn-primary {
+  background-color: #ff4500;
+}
+
+.colorful-mode .btn-primary:hover {
+  background-color: #ff6347;
+}
+
+.colorful-mode footer {
+  background-color: #ff7f50;
+  color: #000;
+} */
+
+/* Dropdown Button */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-btn img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #343a40; /* Dark background */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropdown-btn {
+  background-color: #3e8e41;
+}
+
+/* Modal container */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+  padding-top: 60px; 
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; 
+  max-width: 300px;
+  text-align: center;
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Buttons */
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+/* Flash message */
+.flash {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid;
+}
+
+.flash.success {
+  border-color: green;
+  color: green;
+}
+
+.flash.danger {
+  border-color: red;
+  color: red;
 }
 
 @media (max-width: 991.98px) {
@@ -778,373 +1012,4 @@ hr {
   .text-center {
     font-size: 14px;
   }
-}
-
-/* Styling for the popup container */
-#popupContainer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-}
-
-/* Styling for the individual popups */
-.popup {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  min-width: 300px;
-  max-width: 400px;
-  text-align: center;
-  display: none;
-  position: relative;
-  top: -50px;
-  transition: top 0.5s;
-}
-
-.popup h4 {
-  margin-top: 0;
-}
-
-.popup p {
-  margin-bottom: 0;
-}
-
-/* Artikel */
-.article-preview {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.article-card {
-  background-color: #444;
-  border-radius: 10px;
-  overflow: hidden;
-  max-width: 460px;
-  width: 100%;
-  margin: 0 10px;
-  transition: transform 0.3s;
-}
-
-.article-card:hover {
-  transform: scale(1.05);
-}
-
-.article-img {
-  width: 100%;
-  height: auto;
-}
-
-.article-content {
-  padding: 15px;
-}
-
-.article-content h3 {
-  margin-top: 0;
-}
-
-.read-more-button {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 15
-}
-/* Slide */
-.slide-in {
-  display: none;
-  position: fixed;
-  right: 0;
-  top: 0;
-  width: 300px;
-  height: 100vh;
-  background-color: white;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-  z-index: 2000;
-  padding: 20px;
-}
-
-.dropdown-menu-end {
-  right: 0;
-  left: auto;
-}
-
-.modal-body {
-  background-color: #fff;
-}
-
-footer.footer {
-  background-color: #f8f9fa;
-  text-align: center;
-  width: 100%;
-  position: relative;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1rem 0;
-}
-
-.navbar-dark .navbar-nav .nav-link {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.navbar-dark .navbar-nav .nav-link:hover {
-  color: rgba(255, 255, 255, 1);
-}
-
-.slide-in {
-  position: fixed;
-  top: 0;
-  right: -300px;
-  width: 300px;
-  height: 100%;
-  background-color: #f8f9fa;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-  transition: right 0.3s ease;
-  padding: 20px;
-  z-index: 1050;
-}
-
-.slide-in h2 {
-  margin-top: 20px;
-}
-
-.btn-close {
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-}
-
-.dark-mode .card {
-  background-color: #1e1e1e;
-  color: #ffffff;
-}
-
-.dark-mode .card-footer {
-  border-top: 1px solid #444;
-}
-
-.dark-mode .navbar-dark .navbar-nav .nav-link {
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.dark-mode .navbar-dark .navbar-nav .nav-link:hover {
-  color: rgba(255, 255, 255, 1);
-}
-
-.dark-mode .modal-content {
-  background-color: #1e1e1e;
-  color: #ffffff;
-}
-
-.dark-mode .btn-close {
-  color: #ffffff;
-}
-
-body.dark-mode {
-  background-color: #121212;
-  color: #ffffff;
-}
-
-body.dark-mode .navbar {
-  background-color: #1c1c1c;
-}
-
-body.dark-mode .article {
-  background-color: #1e1e1e;
-  color: #ffffff;
-}
-
-body.dark-mode footer {
-  background-color: #1c1c1c;
-}
-
-
-/* Modals */
-.modal-content {
-  border-radius: 8px;
-}
-
-.modal-header, .modal-footer {
-  border: none;
-}
-
-.btn-primary {
-  background-color: #007bff;
-  border: none;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3;
-}
-
-/* Colorful Mode */
-.colorful-mode {
-  background-color: #ffefd5;
-}
-
-.colorful-mode .navbar {
-  background-color: #ff7f50;
-}
-
-.colorful-mode .navbar-brand img {
-  filter: invert(1);
-}
-
-.colorful-mode .nav-link {
-  color: #000 !important;
-}
-
-.colorful-mode .dropdown-menu {
-  background-color: #ff7f50;
-}
-
-.colorful-mode .dropdown-item {
-  color: #000 !important;
-}
-
-.colorful-mode .form-check-label {
-  color: #000;
-}
-
-.colorful-mode .card {
-  background-color: #fff0f5;
-}
-
-.colorful-mode .card-footer {
-  background-color: #fffaf0;
-}
-
-.colorful-mode .btn-primary {
-  background-color: #ff4500;
-}
-
-.colorful-mode .btn-primary:hover {
-  background-color: #ff6347;
-}
-
-.colorful-mode footer {
-  background-color: #ff7f50;
-  color: #000;
-}
-
-/* Dropdown Button */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-btn {
-  background-color: #4CAF50; /* Green */
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-.dropdown-btn img {
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #343a40; /* Dark background */
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #495057;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropdown-btn {
-  background-color: #3e8e41;
-}
-
-/* Modal container */
-.modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgb(0,0,0); 
-  background-color: rgba(0,0,0,0.4); 
-  padding-top: 60px; 
-}
-
-/* Modal content */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto; 
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; 
-  max-width: 300px;
-  text-align: center;
-}
-
-/* Close button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Buttons */
-button {
-  margin: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-}
-
-/* Flash message */
-.flash {
-  padding: 10px;
-  margin: 10px;
-  border: 1px solid;
-}
-
-.flash.success {
-  border-color: green;
-  color: green;
-}
-
-.flash.danger {
-  border-color: red;
-  color: red;
 }
