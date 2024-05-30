@@ -1,7 +1,8 @@
 from flask import request, session, flash, redirect, url_for, render_template
 from app import app, db, bcrypt
 from models import DataUser
-from utils import is_valid_email, is_valid_password   
+from utils import is_valid_email, is_valid_password
+
 
 @app.route("/dashboard/")
 def dashboard():
@@ -101,9 +102,10 @@ def loginRegist():
 
             user = DataUser.query.filter_by(email=email).first()
 
-            if user : #and bcrypt.check_password_hash(user.password, password):
+            if user : # and bcrypt.check_password_hash(user.password, password):
                 session['logged_in'] = True
                 session['user_id'] = user.id
+                session['user_name'] = user.name
                 session.permanent = True
                 return redirect(url_for('dashboard'))
             else:
@@ -112,15 +114,15 @@ def loginRegist():
     
     return render_template('loginRegist.html')
 
-@app.route("/logout", methods=['POST'])
+@app.route("/logout", methods=['GET'])
 def logout():
     session.pop('logged_in', None)
     session.pop('user_id', None)
+    session.pop('user_name', None)
     flash('You have been logged out.', 'info')
     return redirect(url_for('loginRegist'))
 
 
-# Uncomment and fix if needed:
 # @app.route('/toggle-color-mode')
 # def toggle_color_mode():
 #     session['color_mode'] = 'off' if session.get('color_mode') == 'on' else 'on'
