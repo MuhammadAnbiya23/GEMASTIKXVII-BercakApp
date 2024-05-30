@@ -9,6 +9,8 @@ h1,
 h2,
 h3 {
   color: rgb(255, 255, 255);
+  font-family: poppins,sans-serif;
+  font-weight: bold;
 }
 
 a {
@@ -339,6 +341,7 @@ ul {
   cursor: pointer;
   margin-right: 20px;
   border-radius: 20px;
+  list-style-type: none;
 }
 
 .nav-item a:hover {
@@ -397,6 +400,7 @@ li .dropdown-item {
   border-radius: 50%;
 }
 
+
 main .content {
   display: flex;
   align-items: center;
@@ -419,10 +423,10 @@ main .content .content-description {
 main .content .content-description .title {
   color: rgb(203, 231, 255);
   margin-block: 1rem;
-  font-family: "Amaranth", sans-serif;
   text-shadow: #000;
   font-size: 3rem;
   transition: 3s;
+  font-family: Futura,Trebuchet MS,Arial,sans-serif; 
 }
 
 main .content .content-description p {
@@ -467,9 +471,10 @@ main .content .content-image img {
   padding-top: 10%;
 }
 
-.fitur-title h1 {
+.fitur-title h1{
   color: #000;
   padding-top: 40px;
+  text-align: center;
 }
 
 .container-fitur {
@@ -608,6 +613,8 @@ footer {
   padding-top: 0;
   left: 0;
   position: absolute;
+  text-align: center;
+  margin: auto;
 }
 
 .container {
@@ -812,14 +819,14 @@ h2 {
 } */
 
 /* Dropdown Button */
-.dropdown {
+/* .dropdown {
   position: relative;
   display: inline-block;
 }
 
-.dropdown-btn {
-  background-color: #4CAF50;
-  /* Green */
+ /* Green */
+.dropdown-btn { 
+  background-color: #4CAF50; 
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -833,11 +840,11 @@ h2 {
   vertical-align: middle;
 }
 
+  /* Dark background */
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #343a40;
-  /* Dark background */
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -856,13 +863,13 @@ h2 {
 
 .dropdown:hover .dropdown-btn {
   background-color: #3e8e41;
-}
+} */
 
 /* Modal container */
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
   left: 0;
   top: 0;
   width: 100%;
@@ -873,7 +880,7 @@ h2 {
   padding-top: 60px;
 }
 
-/* Modal content */
+/* Modal content 
 .modal-content {
   background-color: #fefefe;
   margin: 5% auto;
@@ -882,9 +889,9 @@ h2 {
   width: 80%;
   max-width: 300px;
   text-align: center;
-}
+} */
 
-/* Close button */
+/* Close button 
 .close {
   color: #aaa;
   float: right;
@@ -899,14 +906,14 @@ h2 {
   cursor: pointer;
 }
 
-/* Buttons */
+Buttons
 button {
   margin: 5px;
   padding: 10px 20px;
   font-size: 16px;
 }
 
-/* Flash message */
+Flash message
 .flash {
   padding: 10px;
   margin: 10px;
@@ -921,7 +928,7 @@ button {
 .flash.danger {
   border-color: red;
   color: red;
-}
+} */
 
 @media (max-width: 991.98px) {
   .nav-item a {
