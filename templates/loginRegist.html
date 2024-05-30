@@ -14,23 +14,23 @@
 
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form>
+            <form action="{{ url_for('loginRegist') }}" method="POST">
                 <h1>Register</h1>
                 <input name="name-registrasi" type="text" placeholder="Name" required>
                 <input name="email-registrasi" type="email" placeholder="Email" required>
                 <input name="password-registrasi" type="password" placeholder="Password" required>
                 <input name="confirm-password-registrasi" type="password" placeholder="Confirm Password" required>
                 <p id="error-message" style="color: red;"></p>
-                <button>Sign Up</button>
+                <button type="submit">Sign Up</button>
             </form>
         </div>
         <div class="form-container sign-in">
-            <form>
+            <form action="{{ url_for('loginRegist') }}" method="POST">
                 <h1>Sign In</h1>
-                <input name="email-login" type="email" placeholder="Email">
-                <input name="password-login" type="password" placeholder="Password">
+                <input name="email-login" type="email" placeholder="Email" required>
+                <input name="password-login" type="password" placeholder="Password" required>
                 <a href="#">Lupa password?</a>
-                <a href="{{ url_for('index') }}"><button>Masuk</button></a>
+                <button type="submit">Masuk</button>
             </form>
         </div>
         <div class="toggle-container">
@@ -42,7 +42,7 @@
                 </div>
                 <div class="toggle-panel toggle-right">
                     <h1>Hello, Teman!</h1>
-                    <p>Silahkan masuk atu daftarkan dengan biodata Anda untuk menggunakan semua fitur situs</p>
+                    <p>Silahkan masuk atau daftarkan dengan biodata Anda untuk menggunakan semua fitur situs</p>
                     <button class="hidden" id="register">Daftar</button>
                 </div>
             </div>
