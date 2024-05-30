@@ -1,5 +1,5 @@
 body.light-theme {
-    background-color: rgb(71, 71, 71);
+    background-color: #7E30E1;
     color: #000;
     font-family: 'Raleway', sans-serif;
 }
@@ -21,3 +21,20 @@ body.light-theme .content {
 .d-none {
     display: none !important;
 }
+
+footer {
+    background-color: #100035;
+    width: 100%;
+    padding-top: 0;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    margin: auto;
+    font-style: normal;
+  }
+
+.social-media, .other-menu {
+    list-style-type: none;
+}
+
+
