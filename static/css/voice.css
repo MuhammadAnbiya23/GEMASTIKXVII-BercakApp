@@ -4,9 +4,64 @@ body {
     color: white;
 }
 
-.navbar {
-    margin-bottom: 20px;
-}
+.nav-item a {
+    font-size: 1rem;
+    color: #ffffff;
+    cursor: pointer;
+    margin-right: 20px;
+    border-radius: 20px;
+    list-style-type: none;
+  }
+  
+  .nav-item a:hover {
+    color: white;
+    transform: scale(1.1);
+    text-shadow: none;
+    background-color: #006eff;
+    border-radius: 20px;
+    transition: ease-in-out 0.3s;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+  }
+  
+  .navbar {
+    background-color: #512da8;
+  }
+  
+  .navbar-brand {
+    padding-right: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .navbar-toggler {
+    background-color: #323A43;
+    font-weight: bold;
+  }
+  
+  .dropdown {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  
+  .dropdown-items {
+    text-align: center;
+  }
+  
+  .dropdown-item {
+    color: rgb(0, 0, 0);
+  }
+  
+  li .dropdown-item {
+    color: #000;
+  }
+  
+  .buttons {
+    margin-right: 20px;
+  }
+  
 
 #speechResult, #signTextResult {
     font-size: 1.25em;
@@ -30,11 +85,6 @@ body {
 
 .card-text {
     font-size: 1.1em;
-}
-
-.navbar {
-    margin-bottom: 20px;
-    background-color: #5A49A5;
 }
 
 #speechResult,
@@ -62,14 +112,23 @@ body {
     font-size: 1.1em;
 }
 
+.container {
+    padding-top: 5%;
+}
+
 /* Custom styles for the speech result container */
 #speechResultContainer {
     border: 1px solid #ccc;
     border-radius: 10px;
-    padding: 20px;
     background-color: #444444;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Custom styles for the recognized speech text */
@@ -80,24 +139,47 @@ body {
 }
 
 /* Button styles */
-.btn-primary {
-    background-color: #7700ff;
-    border-color: #8c00ff;
-}
 
 .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-}
-
-.btn-primary:focus {
-    box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.5);
+    scale: 2s;
 }
 
 footer {
     width: 100%;
     position: absolute;
-    left: 0;
-    bottom: 0;
     background-color: #100035;
+    text-align: center;
+    margin: auto;
 }
+
+.social-media li {
+    list-style-type: none;
+    font-style: normal;
+  }
+
+.other-menu li {
+    list-style-type: none;
+    font-style: normal;
+}
+
+.social-media li a {
+    color: rgb(122, 122, 122);
+    list-style-type: none;
+  }
+  
+  .other-menu li a {
+    color: rgb(122, 122, 122);
+    list-style-type: none;
+  }
+  
+  .social-media li a:hover {
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+    list-style-type: none;
+  }
+  
+  .other-menu li a:hover {
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+    list-style-type: none;
+  }

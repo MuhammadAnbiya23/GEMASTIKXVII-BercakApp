@@ -120,7 +120,7 @@ def logout():
     session.pop('user_id', None)
     session.pop('user_name', None)
     flash('You have been logged out.', 'info')
-    return redirect(url_for('loginRegist'))
+    return redirect(url_for('dashboard'))
 
 
 # @app.route('/toggle-color-mode')
