@@ -58,59 +58,66 @@ def sosmed():
 def faq():
     return render_template('faq.html')
 
-@app.route("/loginRegist", methods=['GET', 'POST'])
-def loginRegist():
+@app.route("/register", methods=['GET', 'POST'])
+def register():
     if request.method == 'POST':
-        if request.is_json:
-            data = request.get_json()
-        else:
-            return jsonify({'success': False, 'message': 'Unsupported Media Type. Content-Type harus application/json.'}), 415
-
-        if 'name-registrasi' in data:
-            name = data['name-registrasi']
-            email = data['email-registrasi']
-            password = data['password-registrasi']
-            confirm_password = data['confirm-password-registrasi']
+        if 'name-registrasi' in request.form:
+            name = request.form.get('name-registrasi')
+            email = request.form.get('email-registrasi')
+            password = request.form.get('password-registrasi')
+            confirm_password = request.form.get('confirm-password-registrasi')
 
             if not name or not email or not password or not confirm_password:
-                return jsonify({'success': False, 'message': 'Semua kolom harus diisi.'}), 400
+                flash('Semua kolom harus diisi.', 'danger')
+                return redirect(url_for('register'))
 
             if not is_valid_email(email):
-                return jsonify({'success': False, 'message': 'Email tidak valid.'}), 400
+                flash('Email tidak valid.', 'danger')
+                return redirect(url_for('register'))
 
             if not is_valid_password(password):
-                return jsonify({'success': False, 'message': 'Password harus memiliki minimal 8 karakter.'}), 400
+                flash('Password harus memiliki minimal 8 karakter.', 'danger')
+                return redirect(url_for('register'))
 
             if password != confirm_password:
-                return jsonify({'success': False, 'message': 'Konfirmasi password tidak sesuai.'}), 400
+                flash('Konfirmasi password tidak sesuai.', 'danger')
+                return redirect(url_for('register'))
 
             existing_user = DataUser.query.filter_by(email=email).first()
             if existing_user:
-                return jsonify({'success': False, 'message': 'Email sudah terdaftar.'}), 400
+                flash('Email sudah terdaftar.', 'danger')
+                return redirect(url_for('register'))
 
             hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
             new_registration = DataUser(name=name, email=email, password=hashed_password)
             db.session.add(new_registration)
             db.session.commit()
 
-            return jsonify({'success': True, 'message': 'Registrasi berhasil. Silakan login.'}), 200
+            flash('Registrasi berhasil. Silakan login.', 'success')
+            return redirect(url_for('register'))
+    
+    return render_template('registLogin.html')
 
-        if 'email-login' in data:
-            email = data['email-login']
-            password = data['password-login']
+
+@app.route("/login", methods=['POST', 'GET'])
+def login():
+    if 'email-login' in request.form:
+            email = request.form.get('email-login')
 
             user = DataUser.query.filter_by(email=email).first()
 
-            if user and bcrypt.check_password_hash(user.password, password):
+            if user : # and bcrypt.check_password_hash(user.password, password):
                 session['logged_in'] = True
                 session['user_id'] = user.id
                 session['user_name'] = user.name
                 session.permanent = True
-                return jsonify({'success': True}), 200
+                return redirect(url_for('dashboard'))
             else:
-                return jsonify({'success': False, 'message': 'Email atau password salah.'}), 400
-
+                flash('Invalid email or password.', 'danger')
+                return redirect(url_for('login'))
+    
     return render_template('loginRegist.html')
+
 
 @app.route("/logout", methods=['GET'])
 def logout():

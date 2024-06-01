@@ -1,4 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const registerForm = document.getElementById('register-form');
+    const errorMessage = document.getElementById('error-message');
+
+    if (registerForm) {
+        registerForm.addEventListener('submit', (e) => {
+            const password = document.querySelector('input[name="password-registrasi"]').value;
+            const confirmPassword = document.querySelector('input[name="confirm-password-registrasi"]').value;
+
+            if (password !== confirmPassword) {
+                errorMessage.textContent = 'Konfirmasi password tidak sesuai.';
+                e.preventDefault(); // Mencegah pengiriman form jika validasi gagal
+            } else {
+                errorMessage.textContent = '';
+            }
+        });
+    }
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('container');
     const registerBtn = document.getElementById('register');
     const loginBtn = document.getElementById('login');
@@ -12,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loginBtn.addEventListener('click', () => {
         container.classList.remove("active");
     });
+    
 
     registerForm.addEventListener('submit', (e) => {
         e.preventDefault();
