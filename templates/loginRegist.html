@@ -14,21 +14,26 @@
 
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form action="{{ url_for('loginRegist') }}" method="POST">
+            <form id="register-form">
                 <h1>Register</h1>
                 <input name="name-registrasi" type="text" placeholder="Name" required>
+                <p id="name-error" style="color: red;"></p>
                 <input name="email-registrasi" type="email" placeholder="Email" required>
+                <p id="email-register-error" style="color: red;"></p>
                 <input name="password-registrasi" type="password" placeholder="Password" required>
+                <p id="password-register-error" style="color: red;"></p>
                 <input name="confirm-password-registrasi" type="password" placeholder="Confirm Password" required>
-                <p id="error-message" style="color: red;"></p>
+                <p id="confirm-password-error" style="color: red;"></p>
                 <button type="submit">Sign Up</button>
             </form>
         </div>
         <div class="form-container sign-in">
-            <form action="{{ url_for('loginRegist') }}" method="POST">
+            <form id="login-form">
                 <h1>Sign In</h1>
                 <input name="email-login" type="email" placeholder="Email" required>
+                <p id="email-login-error" style="color: red;"></p>
                 <input name="password-login" type="password" placeholder="Password" required>
+                <p id="password-login-error" style="color: red;"></p>
                 <a href="#">Lupa password?</a>
                 <button type="submit">Masuk</button>
             </form>

@@ -1,4 +1,4 @@
-from flask import request, session, flash, redirect, url_for, render_template
+from flask import request, session, flash, redirect, url_for, render_template, jsonify
 from app import app, db, bcrypt
 from models import DataUser
 from utils import is_valid_email, is_valid_password
@@ -61,57 +61,55 @@ def faq():
 @app.route("/loginRegist", methods=['GET', 'POST'])
 def loginRegist():
     if request.method == 'POST':
-        if 'name-registrasi' in request.form:
-            name = request.form.get('name-registrasi')
-            email = request.form.get('email-registrasi')
-            password = request.form.get('password-registrasi')
-            confirm_password = request.form.get('confirm-password-registrasi')
+        if request.is_json:
+            data = request.get_json()
+        else:
+            return jsonify({'success': False, 'message': 'Unsupported Media Type. Content-Type harus application/json.'}), 415
+
+        if 'name-registrasi' in data:
+            name = data['name-registrasi']
+            email = data['email-registrasi']
+            password = data['password-registrasi']
+            confirm_password = data['confirm-password-registrasi']
 
             if not name or not email or not password or not confirm_password:
-                flash('Semua kolom harus diisi.', 'danger')
-                return redirect(url_for('loginRegist'))
+                return jsonify({'success': False, 'message': 'Semua kolom harus diisi.'}), 400
 
             if not is_valid_email(email):
-                flash('Email tidak valid.', 'danger')
-                return redirect(url_for('loginRegist'))
+                return jsonify({'success': False, 'message': 'Email tidak valid.'}), 400
 
             if not is_valid_password(password):
-                flash('Password harus memiliki minimal 8 karakter.', 'danger')
-                return redirect(url_for('loginRegist'))
+                return jsonify({'success': False, 'message': 'Password harus memiliki minimal 8 karakter.'}), 400
 
             if password != confirm_password:
-                flash('Konfirmasi password tidak sesuai.', 'danger')
-                return redirect(url_for('loginRegist'))
+                return jsonify({'success': False, 'message': 'Konfirmasi password tidak sesuai.'}), 400
 
             existing_user = DataUser.query.filter_by(email=email).first()
             if existing_user:
-                flash('Email sudah terdaftar.', 'danger')
-                return redirect(url_for('loginRegist'))
+                return jsonify({'success': False, 'message': 'Email sudah terdaftar.'}), 400
 
             hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
             new_registration = DataUser(name=name, email=email, password=hashed_password)
             db.session.add(new_registration)
             db.session.commit()
 
-            flash('Registrasi berhasil. Silakan login.', 'success')
-            return redirect(url_for('loginRegist'))
+            return jsonify({'success': True, 'message': 'Registrasi berhasil. Silakan login.'}), 200
 
-        if 'email-login' in request.form:
-            email = request.form.get('email-login')
-            password = request.form.get('password-login')
+        if 'email-login' in data:
+            email = data['email-login']
+            password = data['password-login']
 
             user = DataUser.query.filter_by(email=email).first()
 
-            if user : # and bcrypt.check_password_hash(user.password, password):
+            if user and bcrypt.check_password_hash(user.password, password):
                 session['logged_in'] = True
                 session['user_id'] = user.id
                 session['user_name'] = user.name
                 session.permanent = True
-                return redirect(url_for('dashboard'))
+                return jsonify({'success': True}), 200
             else:
-                flash('Invalid email or password.', 'danger')
-                return redirect(url_for('loginRegist'))
-    
+                return jsonify({'success': False, 'message': 'Email atau password salah.'}), 400
+
     return render_template('loginRegist.html')
 
 @app.route("/logout", methods=['GET'])
