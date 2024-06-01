@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/deaf.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Bebas+Neue&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <title>Deaf Education</title>
 </head>
 <body>
@@ -26,7 +38,7 @@
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
                             Lainnya
                         </a>
-                        <ul class="dropdown-menu bg-dark text-white">
+                        <ul class="dropdown-menu text-white">
                             <li><a class="dropdown-item" href="{{ url_for('sosmed') }}">Media Sosial</a></li>
                             <li><a class="dropdown-item" href="{{ url_for('resource') }}">Resource</a></li>
                             <li><hr class="dropdown-divider"></li>
@@ -64,25 +76,34 @@
     </header>
         <!-- Main Article -->
 
-        <main>
         <div class="container mt-5">
-          <div class="row">
-              <div class="col-md-8 mx-auto">
-                  <h1 class="text-center mb-4" style="color: white;">Artikel Tuli</h1>
-                  <div class="article article-main">
-                      <h2>Apa itu Tuli?</h2>
-                      <p class="text-muted">Tanggal: 10 Januari 2024</p>
-                      <img src="{{ url_for('static', filename='assets/deaf.svg') }}" alt="Gambar Artikel Utama">
-                      <p class="article-text">Tuli adalah kondisi yang memengaruhi kemampuan seseorang untuk mendengar suara dengan jelas atau bahkan sama sekali tidak dapat mendengar. Penyebab tuli dapat bervariasi dan dapat terjadi pada berbagai tahap kehidupan,</p>
-                      <a href="#" class="btn btn-primary read-more-btn">Baca Lebih Lanjut</a>
-                      <div class="article-content">
-                          <p>Artikel ini akan menjelaskan lebih dalam tentang penyebab, jenis, dan cara penanganan tuli. tuli dapat dibedakan menjadi dua jenis utama: tuli ringan dan tuli berat. tuli ringan masih memungkinkan seseorang untuk mendengar suara dengan volume tinggi, sementara tuli berat hampir atau sepenuhnya tidak dapat mendengar suara apapun. Penyebab tuli dapat bervariasi, mulai dari faktor genetik, infeksi saat kehamilan, komplikasi saat melahirkan, hingga kerusakan akibat kebisingan yang berkepanjangan.</p>
-                          <p>Penting bagi masyarakat untuk memahami bahwa tuli bukanlah akhir dari segalanya. Dengan bantuan alat bantu dengar, terapi wicara, dan pendidikan inklusif, individu dengan tuli dapat menjalani kehidupan yang produktif dan bahagia. Dukungan dari keluarga dan lingkungan sekitar juga memainkan peran penting dalam proses adaptasi dan perkembangan individu tuli.</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-       </div>
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <h1 class="text-center mb-4" style="color: white;">ARTIKEL TULI</h1>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="title-icon-container">
+                                <h2>Apa itu Tuli?</h2>
+                                <img src="{{ url_for('static', filename='assets/deaf.svg') }}" alt="Gambar Artikel Utama" class="icon-inline">
+                            </div>
+                            <p class="article-text">Tuli adalah sebuah gangguan pendengaran yang menyebabkan seseorang tidak memiliki kemampuan untuk mendengar secara menyeluruh atau sebagian. Kondisi ini tentunya dapat dipengaruhi oleh beberapa faktor, salah satunya adalah genetika.</p>
+                            <div class="article-content">
+                                <p>Menurut laman WHO, seseorang yang tidak mampu mendengar normal dengan ambang pendengaran 20 dB pada kedua telinga dikatakan mengalami gangguan pendengaran. Sedangkan orang yang tuli kebanyakan mengalami gangguan pendengaran yang lebih parah, yang berarti sangat sedikit atau tidak bisa mendengar sama sekali. Pada umumnya mereka menggunakan bahasa isyarat untuk berkomunikasi dengan orang lain.</p>
+                                <p>Tuli adalah sebuah gangguan pendengaran yang menyebabkan seseorang tidak memiliki kemampuan untuk mendengar secara menyeluruh atau sebagian. Kondisi ini tentunya dapat dipengaruhi oleh beberapa faktor, salah satunya adalah genetika. Menurut laman WHO, seseorang yang tidak mampu mendengar normal dengan ambang pendengaran 20 dB pada kedua telinga dikatakan mengalami gangguan pendengaran. Sedangkan orang yang tuli kebanyakan mengalami gangguan pendengaran yang lebih parah, yang berarti sangat sedikit atau tidak bisa mendengar sama sekali. Pada umumnya mereka menggunakan bahasa isyarat untuk berkomunikasi dengan orang lain.</p>
+                                <p>Indonesia adalah negara hukum yang menjunjung tinggi Hak Asasi Manusia (HAM) dan menjamin hak-hak seluruh warga Negara Indonesia, termasuk penyandang disabilitas. Salah satu persoalan utama adalah hak untuk mendapatkan informasi bagi penyandang disabilitas. Dalam praktiknya, penyiaran di Kota Pekanbaru yang dilakukan oleh stasiun televisi masih banyak yang tidak memperhatikan hak-hak penyandang disabilitas, terutama tuli, dalam menggunakan bahasa isyarat sebagai sarana komunikasi utama. Pasal 28 F UUD Negara Republik Indonesia Tahun 1945 menyatakan bahwa Indonesia mengakui dan melindungi setiap HAM warga negara Indonesia【Universitas-Riau, 2023】. Menteri Sosial Juliari P. Batubara memastikan jajarannya memperkuat aspek keadilan dan persamaan hak kepada penyandang disabilitas. Penyandang disabilitas berhak mendapatkan perlakuan sama dengan warga non-disabilitas dalam banyak hal, termasuk dalam mendapatkan akses informasi. Jumlah penyandang disabilitas di Indonesia mencapai 22,5 juta atau sekitar lima persen, dengan sekitar 2,5 juta orang mengalami gangguan pendengaran yang terus meningkat setiap tahunnya【Biro-Pusat-Statistik (BPS), 2020】.</p>
+                                <p>Istilah tuli berasal dari kata tuna yang berarti kurang, dan rungu yang artinya pendengaran. Tuli adalah kondisi di mana seseorang mengalami kekurangan atau kehilangan indra pendengaran sehingga tidak mampu menangkap rangsangan berupa bunyi atau rangsangan melalui pendengaran. Hal ini menyebabkan terhambatnya kemampuan bicara dan bahasa, sehingga seorang tuli akan mengalami kesulitan dan keterlambatan dalam komunikasi. Kondisi ini bisa disebabkan oleh berbagai faktor, seperti faktor genetik bawaan lahir, infeksi saluran telinga, paparan suara yang bising, cedera karena kecelakaan, dan faktor usia lanjut.</p>
+                                <p>Secara medis, ketulian berarti kekurangan atau kehilangan kemampuan mendengar yang disebabkan oleh kerusakan dan non-fungsi dari sebagian atau seluruh alat pendengaran. Tuli merupakan jenis kelainan fisik yang mengganggu sistem pendengaran, seringkali diikuti dengan tunawicara, yaitu gangguan berbicara. Kedua hal ini dapat menghambat kelancaran penyandang tuli dalam mengolah bahasa dan bicara, yang berdampak pada kegiatan belajar membaca dan menghafal. Oleh karena itu, diperlukan bimbingan khusus untuk meningkatkan kelancaran membaca dan menghafal siswa tuli【Universitas-Negeri-Malang, 2022】. Anak tuli merupakan anak dengan keterbatasan pendengaran yang kurang berfungsi dengan baik atau tidak berfungsi sama sekali. Mereka berkomunikasi dengan menggunakan kombinasi pola gerakan tertentu, ekspresi wajah, dan gerak mulut yang bisa dibaca secara visual melalui indra penglihatan【Mahendra, 2021】.</p>
+                                <p>Untuk mengatasi tantangan ini, pemerintah bekerja sama dengan relawan dan yayasan untuk memperjuangkan hak-hak tuli agar tercipta kesetaraan dan lingkungan yang nyaman. Salah satu solusi yang dilakukan adalah dengan memberikan akses belajar inklusif melalui bahasa isyarat Bisindo sebagai sarana komunikasi utama mereka. Selain itu, perkembangan teknologi digital semakin memudahkan komunikasi antara penyandang disabilitas, termasuk tuli, dengan orang yang dapat mendengar. Dengan menggunakan teknologi ini, penyandang tuli dapat lebih mudah berinteraksi dan mendapatkan informasi yang mereka butuhkan.</p>
+                            </div>
+                            <a href="#" class="btn btn-primary read-more-btn">
+                                <span class="read-more-text">Baca Lebih Lanjut</span>
+                                <img src="{{ url_for('static', filename='assets/down-arrow.png') }}" style="width: 30px;" alt="Down Arrow" class="read-more-icon">
+                              </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
     </main>
   
 
@@ -121,13 +142,36 @@
                 </div>
             </div>
         </div>
-        
-
 
     <!-- Footer -->
-    <footer class="text-light text-center py-3 mt-5">
-        <p>&copy; BercakApp 2024. All rights reserved.</p>
-    </footer>
+  <!-- Footer -->
+  <footer class="footer" id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <hr>
+          <!-- Menu Sosial Media -->
+          <ul class="social-media">
+            <li><a href="https://facebook.com">Facebook</a></li>
+            <li><a href="https://twitter.com">Twitter</a></li>
+            <li><a href="https://instagram.com">Instagram</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <hr>
+          <!-- Menu Lainnya -->
+          <ul class="other-menu">
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Kebijakan</a></li>
+            <li><a href="#">Tentang Kami</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <!-- Copyright -->
+      <p class="text-center">© 2024 Edukasi Website. All rights reserved.</p>
+    </div>
+  </footer>
 
     <!-- Bootstrap JS and custom JS -->
     <script src="{{ url_for('static', filename='js/deaf.js') }}"></script>

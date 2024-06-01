@@ -1,23 +1,26 @@
 body {
   font-family: 'Raleway', sans-serif;
-  background-color: #50468F;
+  background-image: url('../assets/stacked-peaks-haikei.svg');
+  background-size: cover;
   color: #ffffff;
 }
 
 .nav-item a {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1rem;
   color: #ffffff;
   cursor: pointer;
   margin-right: 20px;
   border-radius: 20px;
   list-style-type: none;
+  
 }
 
 .nav-item a:hover {
   color: white;
   transform: scale(1.1);
   text-shadow: none;
-  background-color: #006eff;
+  background-color: #00d18b;
   border-radius: 20px;
   transition: ease-in-out 0.3s;
   -webkit-border-radius: 20px;
@@ -28,7 +31,8 @@ body {
 }
 
 .navbar {
-  background-color: #512da8;
+  background-color: #01AC27;
+  opacity: 80%;
 }
 
 .navbar-brand {
@@ -38,7 +42,7 @@ body {
 }
 
 .navbar-toggler {
-  background-color: #323A43;
+  background-color: #fdfdfd;
   font-weight: bold;
 }
 
@@ -65,108 +69,84 @@ li .dropdown-item {
 
 .container {
   padding-top: 5%;
+
 }
 
-.container {
-  max-width: 3000px;
+h1,h2{
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  text-shadow: 2px 2px 4px #000000;
+  color: #ffffff;
+}
+
+ p {
+  font-family: "poppins",sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.title-icon-container {
   display: flex;
-  width: 100%;
+  align-items: center;
+  gap: 10px; /* Jarak antara teks dan ikon */
 }
 
-.sort-menu {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
-  background-color: #555;
-  padding: 10px;
-  border-radius: 10px;
+.title-icon-container h2 {
+  margin: 0; /* Hilangkan margin default untuk pengaturan yang lebih rapih */
 }
 
-.sort-button {
-  background-color: #eee;
-  color: #333;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+.icon-inline {
+  width: 300px; /* Atur ukuran ikon sesuai kebutuhan */
+  height: auto; /* Pertahankan rasio aspek ikon */
 }
 
-.sort-button.active, .sort-button:hover {
-  background-color: #333;
-  color: white;
-}
-
-.article {
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-  background-color: #fff;
-}
-
-.article img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-.article h2, .article h3, .article h4 {
-  color: #394669;
-}
-
-.article p {
-  color: #394669;
-}
-
-.article-preview {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.article-card {
-  background-color: #444;
-  border-radius: 10px;
-  overflow: hidden;
-  width: 300px;
-  margin: 0 10px;
-  transition: transform 0.3s;
-}
-
-.article-card:hover {
-  transform: scale(1.05);
-}
-
-.article-img {
-  width: 100%;
-  height: auto;
-}
-
+/* CSS lain seperti sebelumnya */
 .article-content {
-  padding: 15px;
+display: none;
+opacity: 0;
+max-height: 0;
+overflow: hidden;
+transition: opacity 0.5s ease, max-height 0.5s ease;
 }
 
-.article-content h3 {
-  margin-top: 0;
+.article-content.show {
+display: block;
+opacity: 1;
+max-height: 1000px; /* Set a high value to accommodate content */
 }
 
-.read-more-button {
-  display: inline-block;
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
   margin-top: 10px;
   padding: 10px 15px;
-  background-color: #007bff;
+  background-color: #00ff88;
   color: white;
-  border-radius: 5px;
+  border-radius: 30px;
   text-decoration: none;
   transition: background-color 0.3s;
+  border-color: #006b39;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
 }
 
-.read-more-button:hover {
-  background-color: #0056b3;
+.read-more-btn:hover {
+background-color: #02472a;
+border-color: #02472a;
 }
+
+.read-more-btn .read-more-icon {
+margin-left: 10px;
+transition: transform 0.3s;
+}
+
+.read-more-btn.btn-secondary .read-more-icon {
+transform: rotate(180deg);
+}
+
 
 .video-section {
   margin-top: 40px;
@@ -178,6 +158,8 @@ li .dropdown-item {
   flex-direction: column;
   gap: 20px;
   align-items: center;
+  padding-top: 40px;
+  padding-bottom: 5%;
 }
 
 .video-wrapper {
@@ -211,7 +193,43 @@ li .dropdown-item {
   color: #ffffff;
 }
 
+footer {
+  width: 100%;
+  position: absolute;
+  background-color: #004e11;
+  text-align: center;
+  margin: auto;
+  left: 0;
+}
 
-footer{
-  background-color: #100035;
+.social-media li {
+  list-style-type: none;
+  font-style: normal;
+}
+
+.other-menu li {
+  list-style-type: none;
+  font-style: normal;
+}
+
+.social-media li a {
+  color: rgb(122, 122, 122);
+  list-style-type: none;
+}
+
+.other-menu li a {
+  color: rgb(122, 122, 122);
+  list-style-type: none;
+}
+
+.social-media li a:hover {
+  color: rgb(255, 255, 255);
+  font-weight: 300;
+  list-style-type: none;
+}
+
+.other-menu li a:hover {
+  color: rgb(255, 255, 255);
+  font-weight: 300;
+  list-style-type: none;
 }

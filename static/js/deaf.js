@@ -1,164 +1,29 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const sortButtons = document.querySelectorAll('.sort-button');
-    
-    sortButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            // Remove active class from all buttons
-            sortButtons.forEach(btn => btn.classList.remove('active'));
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            // Perform sorting or filtering based on the clicked button
-            const sortType = this.dataset.sort;
-            console.log(`Sorting by: ${sortType}`);
-            // You can add your sorting/filtering logic here
-        });
+    const readMoreBtn = document.querySelector('.read-more-btn');
+    const readMoreText = document.querySelector('.read-more-text');
+    const articleContent = document.querySelector('.article-content');
+
+    readMoreBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (articleContent.classList.contains('show')) {
+            articleContent.classList.remove('show');
+            articleContent.style.display = 'none';
+            readMoreText.textContent = 'Baca Lebih Lanjut';
+            readMoreBtn.classList.remove('btn-secondary');
+            readMoreBtn.classList.add('btn-primary');
+        } else {
+            articleContent.classList.add('show');
+            articleContent.style.display = 'block';
+            readMoreText.textContent = 'Tutup';
+            readMoreBtn.classList.remove('btn-primary');
+            readMoreBtn.classList.add('btn-secondary');
+        }
+        // Move the button to the bottom of the content
+        document.querySelector('.article-main').appendChild(readMoreBtn);
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const sortButtons = document.querySelectorAll('.sort-button');
-    const searchInput = document.getElementById('search');
-    const articleContainer = document.querySelector('.article-preview');
-    
-    const articles = [
-        {
-            id: 1,
-            title: 'Judul Artikel 1',
-            description: 'Deskripsi singkat artikel 1...',
-            image: 'assets/hear.png',
-            category: 'terbaru'
-        },
-        {
-            id: 2,
-            title: 'Judul Artikel 2',
-            description: 'Deskripsi singkat artikel 2...',
-            image: 'assets/article2.jpg',
-            category: 'sehat-nutrisi'
-        },
-        // Tambahkan lebih banyak artikel di sini
-    ];
-    
-    function displayArticles(filteredArticles) {
-        articleContainer.innerHTML = '';
-        filteredArticles.forEach(article => {
-            const articleCard = document.createElement('div');
-            articleCard.className = 'article-card';
-            articleCard.innerHTML = `
-                <img src="${article.image}" alt="${article.title}" class="article-img">
-                <div class="article-content">
-                    <h3>${article.title}</h3>
-                    <p>${article.description}</p>
-                    <a href="page${article.id}.html" class="read-more-button">Selengkapnya</a>
-                </div>
-            `;
-            articleContainer.appendChild(articleCard);
-        });
-    }
 
-    function filterArticles(category) {
-        if (category === 'terbaru') {
-            displayArticles(articles);
-        } else {
-            const filteredArticles = articles.filter(article => article.category === category);
-            displayArticles(filteredArticles);
-        }
-    }
-
-    sortButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            document.querySelector('.sort-button.active').classList.remove('active');
-            button.classList.add('active');
-            filterArticles(button.dataset.sort);
-        });
-    });
-
-    searchInput.addEventListener('input', () => {
-        const searchTerm = searchInput.value.toLowerCase();
-        const filteredArticles = articles.filter(article => 
-            article.title.toLowerCase().includes(searchTerm) || 
-            article.description.toLowerCase().includes(searchTerm)
-        );
-        displayArticles(filteredArticles);
-    });
-
-    // Display all articles on initial load
-    displayArticles(articles);
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const sortButtons = document.querySelectorAll('.sort-button');
-    const searchInput = document.getElementById('search');
-    const articleContainer = document.querySelector('.article-preview');
-    const videoWrappers = document.querySelectorAll('.video-wrapper');
-
-    const articles = [
-        {
-            id: 1,
-            title: 'Judul Artikel 1',
-            description: 'Deskripsi singkat artikel 1...',
-            image: 'static/assets/artikelPict.jpg',
-            category: 'terbaru'
-        },
-        {
-            id: 2,
-            title: 'Judul Artikel 2',
-            description: 'Deskripsi singkat artikel 2...',
-            image: 'https://via.placeholder.com/300x200',
-            category: 'sehat-nutrisi'
-        },
-        {
-            id: 3,
-            title: 'Judul Artikel 3',
-            description: 'Deskripsi singkat artikel 3...',
-            image: 'https://via.placeholder.com/300x200',
-            category: 'teman-tuli'
-        },
-        // Tambahkan lebih banyak artikel di sini
-    ];
-
-    function displayArticles(filteredArticles) {
-        articleContainer.innerHTML = '';
-        filteredArticles.forEach(article => {
-            const articleCard = document.createElement('div');
-            articleCard.className = 'article-card';
-            articleCard.innerHTML = `
-                <img src="${article.image}" alt="${article.title}" class="article-img">
-                <div class="article-content">
-                    <h3>${article.title}</h3>
-                    <p>${article.description}</p>
-                    <a href="#" class="read-more-button">Selengkapnya</a>
-                </div>
-            `;
-            articleContainer.appendChild(articleCard);
-        });
-    }
-
-    function filterArticles(category) {
-        if (category === 'terbaru') {
-            displayArticles(articles);
-        } else {
-            const filteredArticles = articles.filter(article => article.category === category);
-            displayArticles(filteredArticles);
-        }
-    }
-
-    sortButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            document.querySelector('.sort-button.active').classList.remove('active');
-            button.classList.add('active');
-            filterArticles(button.dataset.sort);
-        });
-    });
-
-    searchInput.addEventListener('input', () => {
-        const searchTerm = searchInput.value.toLowerCase();
-        const filteredArticles = articles.filter(article =>
-            article.title.toLowerCase().includes(searchTerm) ||
-            article.description.toLowerCase().includes(searchTerm)
-        );
-        displayArticles(filteredArticles);
-    });
 
     // Display all articles on initial load
     displayArticles(articles);
@@ -201,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-});
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const sortButtons = document.querySelectorAll('.sort-button');

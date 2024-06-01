@@ -1,16 +1,91 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #7E30E1;
+    background-image: url('../assets/stacked-peaks-haikei-blue.svg');
+    background-size: cover;
     color: #e0e0e0;
-    font-family: 'Raleway', sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.nav-link, .nav-brand{
-    color: white ;
+.nav-item a {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    color: #ffffff;
+    cursor: pointer;
+    margin-right: 20px;
+    border-radius: 20px;
+    list-style-type: none;
+    
+  }
+  
+  .nav-item a:hover {
+    color: white;
+    transform: scale(1.1);
+    text-shadow: none;
+    background-color: #100447;
+    border-radius: 20px;
+    transition: ease-in-out 0.3s;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+  
+  }
+  
+  .navbar {
+    background-color: #001170c0;
+  }
+  
+  .navbar-brand {
+    padding-right: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .navbar-toggler {
+    background-color: #fdfdfd;
+    font-weight: bold;
+  }
+  
+  .dropdown {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  
+  .dropdown-items {
+    text-align: center;
+  }
+  
+  .dropdown-item {
+    color: rgb(0, 0, 0);
+  }
+  
+  li .dropdown-item {
+    color: #000;
+  }
+  
+  .buttons {
+    margin-right: 20px;
+  }
+
+  .sign-icon img{
+    width: 600px;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.navbar-brand{
-    color: white ;
+
+.containers {
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+    background-color: #221691;
 }
 
 .video-container {
@@ -40,7 +115,7 @@ video {
 }
 
 .card {
-    background-color: #1e1e1e;
+    background-color: #251a8b;
     color: #e0e0e0;
 }
 
@@ -63,10 +138,66 @@ video {
     font-weight: bold;
 }
 
+.list-group-item-action {
+    color: #212529;
+    background-color: #f8f9fa;
+}
+
+.list-group-item-action:hover {
+    background-color: #e9ecef;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #212529;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #e9ecef;
+}
+
 button {
     margin: 10px 0;
 }
 
+
 footer {
-    background-color: #100035;
+    width: 100%;
+    position: absolute;
+    background-color: #01004dcc;
+    text-align: center;
+    margin: auto;
+    padding: 1rem 0;
+    display: none; /* Hide footer by default */
 }
+
+.social-media li {
+    list-style-type: none;
+    font-style: normal;
+  }
+
+.other-menu li {
+    list-style-type: none;
+    font-style: normal;
+}
+
+.social-media li a {
+    color: rgb(122, 122, 122);
+    list-style-type: none;
+  }
+  
+  .other-menu li a {
+    color: rgb(122, 122, 122);
+    list-style-type: none;
+  }
+  
+  .social-media li a:hover {
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+    list-style-type: none;
+  }
+  
+  .other-menu li a:hover {
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+    list-style-type: none;
+  }

@@ -1,39 +1,147 @@
 body {
-    background-color: #121212;
+    background-image: url('../assets/stacked-peaks-haikei-pink.svg');
+    background-size: cover;
     color: #ffffff;
-    font-family: 'Raleway', sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.navbar {
-    margin-bottom: 0;
+.nav-item a {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    color: #ffffff;
+    cursor: pointer;
+    margin-right: 20px;
+    border-radius: 20px;
+    list-style-type: none;
+    
+  }
+  
+  .nav-item a:hover {
+    color: white;
+    transform: scale(1.1);
+    text-shadow: none;
+    background-color: #ff00b3;
+    border-radius: 20px;
+    transition: ease-in-out 0.3s;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+  
+  }
+  
+  .navbar {
+    background-color: #4d0040c0;
+  }
+  
+  .navbar-brand {
+    padding-right: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .navbar-toggler {
+    background-color: #fdfdfd;
+    font-weight: bold;
+  }
+  
+  .dropdown {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  
+  .dropdown-items {
+    text-align: center;
+  }
+  
+  .dropdown-item {
+    color: rgb(0, 0, 0);
+  }
+  
+  li .dropdown-item {
+    color: #000;
+  }
+  
+  .buttons {
+    margin-right: 20px;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-header {
-    background-color: #1e1e1e;
+.quiz-icon img{
+    width: 300px;
+}
+
+.container {
+    text-align: center;
+    padding-top: 10%;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    border: 1px solid #333;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.bounding-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    border: 2px solid red;
+    transform: translate(-50%, -50%);
 }
 
 .card {
     background-color: #1e1e1e;
-    color: #ffffff;
-    border: none;
-}
-
-.card-header, .card-footer {
-    background-color: #282828;
-}
-
-.progress-bar {
-    background-color: #6200ea;
-}
-
-.btn-primary {
-    background-color: #6200ea;
-    border: none;
+    color: #e0e0e0;
 }
 
 .btn-light {
-    background-color: #bb86fc;
-    border: none;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+.alert {
+    display: none;
+}
+
+#translation-result {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#quiz-command {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+button {
+    margin: 10px 0;
+}
+
+footer {
+    background-color: #100035;
+    color: white;
+    padding: 1rem 0;
+    display: none; /* Hide footer by default */
 }
 
 #game1-container, #game2-container, #reward-section {
