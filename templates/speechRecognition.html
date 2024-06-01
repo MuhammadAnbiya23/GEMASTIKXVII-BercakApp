@@ -11,7 +11,8 @@
 </head>
 <body>
     <!-- Navbar -->
-    <header>  <nav class="navbar navbar-expand-lg fixed-top" >
+    <header>  
+      <nav class="navbar navbar-expand-lg fixed-top" >
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="{{ url_for('static', filename='assets/LogoTeks.png') }}" alt="Logo" style="width: 200px;">
@@ -66,20 +67,28 @@
     </header>
 
     <!-- Main Content -->
+
     <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-6 mx-auto text-center">
-                <h2>Speech to Text Recognition</h2>
-                <div class="transkrip-icon">
-                <img src="{{ url_for('static', filename='assets/transkrip-icon.svg') }}" style="width: 300px;" alt="">
-                </div>
-                <button id="startSpeechRecognition" class="btn btn-primary mt-3"><img src="{{ url_for('static', filename='assets/voice-icon.svg') }}" alt="" srcset=""></button>
-                <div id="speechResultContainer" class="container-result mt-3">
-                    <p id="speechResult" class="speech-result">Tekan tombol untuk mulai</p>
-                </div>
-            </div>
-        </div>
-    </div>
+      <div class="row">
+          <div class="col-md-6 mx-auto text-center">
+              <h2>Speech to Text Recognition</h2>
+              <div class="d-flex justify-content-center mt-3">
+                  <button class="btn btn-primary btn-option">Transkrip</button>
+                  <button class="btn btn-secondary btn-option">Speech Recognition</button>
+              </div>
+              <div class="transkrip-icon mt-3">
+                  <img src="{{ url_for('static', filename='assets/transkrip-icon.svg') }}" alt="">
+              </div>
+              <div id="speechResultContainer" class="container-result mt-3">
+                  <p id="speechResult" class="speech-result">Tekan tombol untuk mulai</p>
+                  <button id="startSpeechRecognition" class="btn btn-primary">
+                      <img src="{{ url_for('static', filename='assets/voice-icon.svg') }}" alt="">
+                  </button>
+              </div>
+          </div>
+      </div>
+  </div>
+  
 
     <!-- How It Works Section -->
     <div class="container mt-5">

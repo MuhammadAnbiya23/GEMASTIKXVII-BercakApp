@@ -1,153 +1,171 @@
 body {
-    background-color: #512da8;
-    font-family: 'Raleway', sans-serif;
-    color: white;
+  background-image: url('../assets/stacked-peaks-haikei-orange.svg');
+  background-size: cover;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
 }
 
 .nav-item a {
-    font-size: 1rem;
-    color: #ffffff;
-    cursor: pointer;
-    margin-right: 20px;
-    border-radius: 20px;
-    list-style-type: none;
-  }
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  color: #ffffff;
+  cursor: pointer;
+  margin-right: 20px;
+  border-radius: 20px;
+  list-style-type: none;
   
-  .nav-item a:hover {
-    color: white;
-    transform: scale(1.1);
-    text-shadow: none;
-    background-color: #006eff;
-    border-radius: 20px;
-    transition: ease-in-out 0.3s;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-  }
-  
-  .navbar {
-    background-color: #512da8;
-  }
-  
-  .navbar-brand {
-    padding-right: 50px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .navbar-toggler {
-    background-color: #323A43;
-    font-weight: bold;
-  }
-  
-  .dropdown {
-    margin-right: 20px;
-    margin-left: 20px;
-  }
-  
-  .dropdown-items {
-    text-align: center;
-  }
-  
-  .dropdown-item {
-    color: rgb(0, 0, 0);
-  }
-  
-  li .dropdown-item {
-    color: #000;
-  }
-  
-  .buttons {
-    margin-right: 20px;
-  }
-  
-
-#speechResult, #signTextResult {
-    font-size: 1.25em;
-    color: #ffffff;
 }
 
-#signVisual {
-    width: 100%;
-    height: 200px;
-    background-color: #e9ecef;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    color: #ffffff;
+.nav-item a:hover {
+  color: white;
+  transform: scale(1.1);
+  text-shadow: none;
+  background-color: #d1ab00;
+  border-radius: 20px;
+  transition: ease-in-out 0.3s;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+
 }
 
-.card-title {
-    font-size: 1.5em;
+.navbar {
+  background-color: #ad4800;
 }
 
-.card-text {
-    font-size: 1.1em;
+.navbar-brand {
+  padding-right: 50px;
+  display: flex;
+  justify-content: space-between;
 }
 
-#speechResult,
-#signTextResult {
-    font-size: 1.25em;
-    color: #ffffff;
+.navbar-toggler {
+  background-color: #fdfdfd;
+  font-weight: bold;
 }
 
-#signVisual {
-    width: 100%;
-    height: 200px;
-    background-color: #e9ecef;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    color: #ffffff;
+.dropdown {
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
-.card-title {
-    font-size: 1.5em;
+.dropdown-items {
+  text-align: center;
 }
 
-.card-text {
-    font-size: 1.1em;
+.dropdown-item {
+  color: rgb(0, 0, 0);
 }
 
+li .dropdown-item {
+  color: #000;
+}
+
+.buttons {
+  margin-right: 20px;
+}
+  
+
+/* Container styles */
 .container {
-    padding-top: 5%;
+  padding-top: 5%;
 }
 
-/* Custom styles for the speech result container */
+/* Dropdown styles */
+.dropdown-toggle {
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.dropdown-menu {
+  background-color: #444444;
+  border: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+  color: #ffffff;
+  transition: background-color 0.3s;
+}
+
+.dropdown-item:hover {
+  background-color: #555555;
+}
+
+/* Speech result container styles */
 #speechResultContainer {
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #444444;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    height: 200px;
-    text-align: center;
-    display: flex;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #42200c;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 200px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  position: relative;
+  padding: 10px;
 }
 
-/* Custom styles for the recognized speech text */
+/* Speech result text styles */
 .speech-result {
-    margin: 0;
-    font-size: 1.2em;
-    color: #ffffff;
+  margin: 0;
+  font-size: 1.2em;
+  color: #ffffff;
 }
 
 /* Button styles */
-
-.btn-primary:hover {
-    scale: 2s;
+#startSpeechRecognition {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+  position: absolute;
+  bottom: -25px; /* Adjust the value based on icon height to position it correctly */
+  left: 50%;
+  transform: translateX(-50%);
 }
+
+#startSpeechRecognition img {
+  width: 70px; /* Adjust size as needed */
+  height: auto;
+}
+
+/* Button hover effect */
+#startSpeechRecognition:hover {
+  transform: translateX(-50%) scale(1.2);
+}
+
+/* Icon styles */
+.transkrip-icon img {
+  width: 200px;
+  height: auto;
+}
+
+/* Styles for buttons */
+.btn-option {
+  margin: 5px;
+  background-color: #5e3300; /* Dark orange color */
+  color: #ffffff;
+  border: none;
+  transition: background-color 0.3s;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+.btn-option:hover {
+  background-color: #ffa600;
+}
+
 
 footer {
     width: 100%;
     position: absolute;
-    background-color: #100035;
+    background-color: #311200;
     text-align: center;
     margin: auto;
 }

@@ -1,29 +1,51 @@
-function startRecognition() {
+let stream = null;
+
+function toggleRecognition() {
+    const startButton = document.getElementById('startButton');
     const cameraContainer = document.getElementById('camera-container');
+    const cardsContainer = document.getElementById('cards-container');
     const feedbackSection = document.getElementById('feedback-section');
     const quizSection = document.getElementById('quiz-section');
-    const video = document.getElementById('video');
-    const instruction = document.getElementById('instruction');
-    const feedback = document.getElementById('feedback');
+    const footer = document.querySelector('footer');
 
-    cameraContainer.style.display = 'block';
-    feedbackSection.style.display = 'none';
-    quizSection.style.display = 'none';
+    if (stream) {
+        // Stop recognition
+        cameraContainer.style.display = 'none';
+        cardsContainer.style.display = 'none';
+        feedbackSection.style.display = 'none';
+        quizSection.style.display = 'none';
+        footer.style.display = 'none';
+        startButton.textContent = 'Mulai Pengenalan';
 
-    // Request access to the camera
-    navigator.mediaDevices.getUserMedia({ video: true })
-        .then(stream => {
-            video.srcObject = stream;
-            instruction.innerText = 'Gerakan tangan Anda di dalam kotak merah untuk mulai pengenalan.';
-            feedback.style.display = 'none';
+        stream.getTracks().forEach(track => track.stop());
+        stream = null;
+    } else {
+        // Start recognition
+        cameraContainer.style.display = 'block';
+        cardsContainer.style.display = 'block';
+        footer.style.display = 'block';
+        startButton.textContent = 'Selesai';
 
-            // Placeholder for sign recognition logic
-            startSignRecognition(video);
-        })
-        .catch(error => {
-            console.error('Error accessing media devices.', error);
-            feedback.style.display = 'block';
-        });
+        // Request access to the camera
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(mediaStream => {
+                stream = mediaStream;
+                const video = document.getElementById('video');
+                video.srcObject = stream;
+                const instruction = document.getElementById('instruction');
+                instruction.innerText = 'Gerakan tangan Anda di dalam kotak merah untuk mulai pengenalan.';
+                const feedback = document.getElementById('feedback');
+                feedback.style.display = 'none';
+
+                // Placeholder for sign recognition logic
+                startSignRecognition(video);
+            })
+            .catch(error => {
+                console.error('Error accessing media devices.', error);
+                const feedback = document.getElementById('feedback');
+                feedback.style.display = 'block';
+            });
+    }
 }
 
 function startSignRecognition(video) {
