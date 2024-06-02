@@ -1,4 +1,4 @@
-from flask import request, session, flash, redirect, url_for, render_template
+from flask import request, session, flash, redirect, url_for, render_template, jsonify
 from app import app, db, bcrypt
 from models import DataUser
 from utils import is_valid_email, is_valid_password
@@ -58,9 +58,10 @@ def sosmed():
 def faq():
     return render_template('faq.html')
 
-@app.route("/loginRegist", methods=['GET', 'POST'])
-def loginRegist():
+@app.route("/login/register", methods=['GET', 'POST'])
+def login_register():
     if request.method == 'POST':
+        errors = {}
         if 'name-registrasi' in request.form:
             name = request.form.get('name-registrasi')
             email = request.form.get('email-registrasi')
@@ -68,25 +69,32 @@ def loginRegist():
             confirm_password = request.form.get('confirm-password-registrasi')
 
             if not name or not email or not password or not confirm_password:
-                flash('Semua kolom harus diisi.', 'danger')
-                return redirect(url_for('loginRegist'))
+                if not name:
+                    errors['name_error'] = 'Nama harus diisi.'
+                if not email:
+                    errors['email_register_error'] = 'Email harus diisi.'
+                if not password:
+                    errors['password_register_error'] = 'Password harus diisi.'
+                if not confirm_password:
+                    errors['confirm_password_error'] = 'Konfirmasi password harus diisi.'
+                return render_template('loginRegist.html', errors=errors)
 
             if not is_valid_email(email):
-                flash('Email tidak valid.', 'danger')
-                return redirect(url_for('loginRegist'))
+                errors['email_register_error'] = 'Email tidak valid.'
+                return render_template('loginRegist.html', errors=errors)
 
             if not is_valid_password(password):
-                flash('Password harus memiliki minimal 8 karakter.', 'danger')
-                return redirect(url_for('loginRegist'))
+                errors['password_register_error'] = 'Password harus memiliki minimal 8 karakter.'
+                return render_template('loginRegist.html', errors=errors)
 
             if password != confirm_password:
-                flash('Konfirmasi password tidak sesuai.', 'danger')
-                return redirect(url_for('loginRegist'))
+                errors['confirm_password_error'] = 'Konfirmasi password tidak sesuai.'
+                return render_template('loginRegist.html', errors=errors)
 
             existing_user = DataUser.query.filter_by(email=email).first()
             if existing_user:
-                flash('Email sudah terdaftar.', 'danger')
-                return redirect(url_for('loginRegist'))
+                errors['email_register_error'] = 'Email sudah terdaftar.'
+                return render_template('loginRegist.html', errors=errors)
 
             hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
             new_registration = DataUser(name=name, email=email, password=hashed_password)
@@ -94,15 +102,19 @@ def loginRegist():
             db.session.commit()
 
             flash('Registrasi berhasil. Silakan login.', 'success')
-            return redirect(url_for('loginRegist'))
+            return redirect(url_for('login_register'))
 
-        if 'email-login' in request.form:
+    return render_template('registLogin.html')
+
+
+@app.route("/login", methods=['POST', 'GET'])
+def login():
+    if 'email-login' in request.form:
             email = request.form.get('email-login')
             password = request.form.get('password-login')
-
             user = DataUser.query.filter_by(email=email).first()
 
-            if user : # and bcrypt.check_password_hash(user.password, password):
+            if user : #and bcrypt.check_password_hash(user.password, password):
                 session['logged_in'] = True
                 session['user_id'] = user.id
                 session['user_name'] = user.name
@@ -110,7 +122,7 @@ def loginRegist():
                 return redirect(url_for('dashboard'))
             else:
                 flash('Invalid email or password.', 'danger')
-                return redirect(url_for('loginRegist'))
+                return redirect(url_for('login'))
     
     return render_template('loginRegist.html')
 
