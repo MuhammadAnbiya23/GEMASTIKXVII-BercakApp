@@ -37,8 +37,8 @@
             </form>
         </div>
         <div class="form-container sign-in">
-            <form id="login-form" method="POST" action="{{ url_for('login') }}">
-                <h1>Masuk</h1>
+            <form action="{{ url_for('login_register') }}" method="POST">
+                <h1>Sign In</h1>
                 <input name="email-login" type="email" placeholder="Email" required>
                 <input name="password-login" type="password" placeholder="Password" required>
                 {% if errors and errors.get('login_error') %}
@@ -50,10 +50,15 @@
         </div>
         <div class="toggle-container">
             <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Selamat datang kembali!</h1>
+                    <p>Daftar atau masukkan akun Anda untuk menggunakan semua fitur situs</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
                 <div class="toggle-panel toggle-right">
                     <h1>Hello, Teman!</h1>
                     <p>Silahkan masuk atau daftarkan dengan biodata Anda untuk menggunakan semua fitur situs</p>
-                    <a href="{{ url_for('login_register') }}" class="hidden" id="register">Daftar</a>
+                    <button class="hidden" id="register">Daftar</button>
                 </div>
             </div>
         </div>
