@@ -10,16 +10,24 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form id="register-form" method="POST" action="{{ url_for('register') }}">
+            <form id="register-form" method="POST" action="{{ url_for('login_register') }}">
                 <h1>Register</h1>
                 <input name="name-registrasi" type="text" placeholder="Name" required>
-                <p id="name-error" style="color: red;"></p>
+                {% if 'name_error' in errors %}
+                    <p style="color: red;">{{ errors['name_error'] }}</p>
+                {% endif %}
                 <input name="email-registrasi" type="email" placeholder="Email" required>
-                <p id="email-register-error" style="color: red;"></p>
+                {% if 'email_register_error' in errors %}
+                    <p style="color: red;">{{ errors['email_register_error'] }}</p>
+                {% endif %}
                 <input name="password-registrasi" type="password" placeholder="Password" required>
-                <p id="password-register-error" style="color: red;"></p>
+                {% if 'password_register_error' in errors %}
+                    <p style="color: red;">{{ errors['password_register_error'] }}</p>
+                {% endif %}
                 <input name="confirm-password-registrasi" type="password" placeholder="Confirm Password" required>
-                <p id="confirm-password-error" style="color: red;"></p>
+                {% if 'confirm_password_error' in errors %}
+                    <p style="color: red;">{{ errors['confirm_password_error'] }}</p>
+                {% endif %}
                 <button type="submit">Sign Up</button>
             </form>
         </div>
