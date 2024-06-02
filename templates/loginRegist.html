@@ -14,21 +14,36 @@
 
     <div class="container" id="container">
         <div class="form-container sign-up">
-            <form action="{{ url_for('loginRegist') }}" method="POST">
+            <form action="{{ url_for('login_register') }}" method="POST">
                 <h1>Register</h1>
                 <input name="name-registrasi" type="text" placeholder="Name" required>
+                {% if errors and errors.get('name_error') %}
+                    <p style="color: red;">{{ errors.get('name_error') }}</p>
+                {% endif %}
                 <input name="email-registrasi" type="email" placeholder="Email" required>
+                {% if errors and errors.get('email_register_error') %}
+                    <p style="color: red;">{{ errors.get('email_register_error') }}</p>
+                {% endif %}
                 <input name="password-registrasi" type="password" placeholder="Password" required>
+                {% if errors and errors.get('password_register_error') %}
+                    <p style="color: red;">{{ errors.get('password_register_error') }}</p>
+                {% endif %}
                 <input name="confirm-password-registrasi" type="password" placeholder="Confirm Password" required>
+                {% if errors and errors.get('confirm_password_error') %}
+                    <p style="color: red;">{{ errors.get('confirm_password_error') }}</p>
+                {% endif %}
                 <p id="error-message" style="color: red;"></p>
                 <button type="submit">Sign Up</button>
             </form>
         </div>
         <div class="form-container sign-in">
-            <form action="{{ url_for('loginRegist') }}" method="POST">
+            <form action="{{ url_for('login_register') }}" method="POST">
                 <h1>Sign In</h1>
                 <input name="email-login" type="email" placeholder="Email" required>
                 <input name="password-login" type="password" placeholder="Password" required>
+                {% if errors and errors.get('login_error') %}
+                    <p style="color: red;">{{ errors.get('login_error') }}</p>
+                {% endif %}
                 <a href="#">Lupa password?</a>
                 <button type="submit">Masuk</button>
             </form>

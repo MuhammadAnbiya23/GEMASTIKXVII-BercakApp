@@ -1,19 +1,55 @@
 from app import db, bcrypt
 
-class DataUser(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    email = db.Column(db.String(100), nullable=False, unique=True)
-    password = db.Column(db.String(100), nullable=False)
-    
-    def __init__(self, name, email, password):
-        self.name = name
-        self.email = email
-        self.password = bcrypt.generate_password_hash(password).decode('utf-8')
+class DataUser:
+    @staticmethod
+    def create_user(name, email, password):
+        cursor = db.connection.cursor()
+        try:
+            # hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+            hashed_password = bcrypt.hashpw(password, bcrypt.gensalt()).encode('utf-8') 
+            cursor.execute("INSERT INTO data_users (name, email, password) VALUES (%s, %s, %s)", 
+                           (name, email, hashed_password))
+            db.connection.commit()
+            print(f"User {name} created successfully.")  # Debugging statement
+        except Exception as e:
+            print(f"Error: {e}")
+            db.connection.rollback()
+        finally:
+            cursor.close()
 
-    def save(self):
-        db.session.add(self)
-        db.session.commit()
+    @staticmethod
+    def get_user_by_email(email):
+        cursor = db.connection.cursor()
+        try:
+            cursor.execute("SELECT * FROM data_users WHERE email = %s", (email,))
+            user = cursor.fetchone()
+            print(f"Fetched user: {user}")  # Debugging statement
+            return user
+        except Exception as e:
+            print(f"Error: {e}")
+            return None
+        finally:
+            cursor.close()
 
-    def check_password(self, password):
-        return bcrypt.check_password_hash(self.password, password)
+    @staticmethod
+    def get_hashed_password(email):
+        cursor = db.connection.cursor()
+        try:
+            cursor.execute("SELECT password FROM data_users WHERE email = %s", (email,))
+            hashed_password = cursor.fetchone()
+            if hashed_password:
+                return hashed_password[0]
+            else:
+                return None
+        except Exception as e:
+            print(f"Error: {e}")
+            return None
+        finally:
+            cursor.close()
+
+    @staticmethod
+    def check_password(password) :
+        hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
+        return bcrypt.checkpw(password, hashed_password)
+    # def check_password(stored_password, provided_password):
+    #     return bcrypt.check_password_hash(stored_password, provided_password)
