@@ -1,16 +1,17 @@
-const container = document.getElementById('container');
-const registerBtn = document.getElementById('register');
-const loginBtn = document.getElementById('login');
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('container');
+    const registerBtn = document.getElementById('register');
+    const loginBtn = document.getElementById('login');
+    const registerForm = document.getElementById('register-form');
+    const loginForm = document.getElementById('login-form');
 
 registerBtn.addEventListener('click', () => {
     container.classList.add("active");
 });
 
-loginBtn.addEventListener('click', () => {
-    container.classList.remove("active");
-});
-
-
+    loginBtn.addEventListener('click', () => {
+        container.classList.remove("active");
+    });
     
 
     registerForm.addEventListener('submit', (e) => {
@@ -98,3 +99,4 @@ loginBtn.addEventListener('click', () => {
                 document.getElementById('password-login-error').textContent = 'Terjadi kesalahan. Silakan coba lagi.';
             });
     });
+});

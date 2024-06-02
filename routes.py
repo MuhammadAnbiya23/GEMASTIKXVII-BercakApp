@@ -1,16 +1,15 @@
-from flask import request, session, flash, redirect, url_for, render_template, jsonify
-from app import app, db, bcrypt
+from flask import request, session, flash, redirect, url_for, render_template
+from app import app, bcrypt
 from models import DataUser
 from utils import is_valid_email, is_valid_password
-
 
 @app.route("/dashboard/")
 def dashboard():
     if 'logged_in' in session:
         user_id = session.get('user_id')
-        user = DataUser.query.get(user_id)
+        user = DataUser.get_user_by_email(user_id)
         if user:
-            return render_template("index.html", name=user.name)
+            return render_template("index.html", name=user['name'])
         else:
             flash('User not found.', 'danger')
             return redirect(url_for('index'))
@@ -58,16 +57,17 @@ def sosmed():
 def faq():
     return render_template('faq.html')
 
-@app.route("/login/register", methods=['GET', 'POST'])
+@app.route("/loginRegist", methods=['GET', 'POST'])
 def login_register():
     if request.method == 'POST':
-        errors = {}
         if 'name-registrasi' in request.form:
+            # Ini adalah logika untuk registrasi
             name = request.form.get('name-registrasi')
             email = request.form.get('email-registrasi')
             password = request.form.get('password-registrasi')
             confirm_password = request.form.get('confirm-password-registrasi')
 
+            errors = {}
             if not name or not email or not password or not confirm_password:
                 if not name:
                     errors['name_error'] = 'Nama harus diisi.'
@@ -91,41 +91,36 @@ def login_register():
                 errors['confirm_password_error'] = 'Konfirmasi password tidak sesuai.'
                 return render_template('loginRegist.html', errors=errors)
 
-            existing_user = DataUser.query.filter_by(email=email).first()
+            existing_user = DataUser.get_user_by_email(email)
             if existing_user:
                 errors['email_register_error'] = 'Email sudah terdaftar.'
                 return render_template('loginRegist.html', errors=errors)
 
-            hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
-            new_registration = DataUser(name=name, email=email, password=hashed_password)
-            db.session.add(new_registration)
-            db.session.commit()
-
+            DataUser.create_user(name, email, password)
             flash('Registrasi berhasil. Silakan login.', 'success')
             return redirect(url_for('login_register'))
 
-    return render_template('registLogin.html')
-
-
-@app.route("/login", methods=['POST', 'GET'])
-def login():
-    if 'email-login' in request.form:
+        elif 'email-login' in request.form:
+            # Ini adalah logika untuk login
             email = request.form.get('email-login')
             password = request.form.get('password-login')
-            user = DataUser.query.filter_by(email=email).first()
+            user = DataUser.get_user_by_email(email)
 
-            if user : #and bcrypt.check_password_hash(user.password, password):
-                session['logged_in'] = True
-                session['user_id'] = user.id
-                session['user_name'] = user.name
-                session.permanent = True
-                return redirect(url_for('dashboard'))
+            if user:
+                # if DataUser.check_password(password):
+                    session['logged_in'] = True
+                    session['user_id'] = user['id']
+                    session['user_name'] = user['name']
+                    session.permanent = True
+                    return redirect(url_for('dashboard'))
+                # else:
+                #     errors = {'login_error': 'Invalid email or password.'}
+                #     return render_template('loginRegist.html', errors=errors)
             else:
-                flash('Invalid email or password.', 'danger')
-                return redirect(url_for('login'))
-    
-    return render_template('loginRegist.html')
+                errors = {'login_error': 'Invalid email or password.'}
+                return render_template('loginRegist.html', errors=errors)
 
+    return render_template('loginRegist.html')
 @app.route("/logout", methods=['GET'])
 def logout():
     session.pop('logged_in', None)

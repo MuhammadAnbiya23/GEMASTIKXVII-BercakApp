@@ -1,24 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/loginRegist.css') }}">
-    <title>Login</title>
+    <link rel="stylesheet" href="/Login-daftar/style/style.css">
+    <title>Login - Register</title>
 </head>
+
 <body>
+
     <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form action="{{ url_for('login_register') }}" method="POST">
+                <h1>Register</h1>
+                <input name="name-registrasi" type="text" placeholder="Name" required>
+                {% if errors and errors.get('name_error') %}
+                    <p style="color: red;">{{ errors.get('name_error') }}</p>
+                {% endif %}
+                <input name="email-registrasi" type="email" placeholder="Email" required>
+                {% if errors and errors.get('email_register_error') %}
+                    <p style="color: red;">{{ errors.get('email_register_error') }}</p>
+                {% endif %}
+                <input name="password-registrasi" type="password" placeholder="Password" required>
+                {% if errors and errors.get('password_register_error') %}
+                    <p style="color: red;">{{ errors.get('password_register_error') }}</p>
+                {% endif %}
+                <input name="confirm-password-registrasi" type="password" placeholder="Confirm Password" required>
+                {% if errors and errors.get('confirm_password_error') %}
+                    <p style="color: red;">{{ errors.get('confirm_password_error') }}</p>
+                {% endif %}
+                <p id="error-message" style="color: red;"></p>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
         <div class="form-container sign-in">
             <form id="login-form" method="POST" action="{{ url_for('login') }}">
                 <h1>Masuk</h1>
                 <input name="email-login" type="email" placeholder="Email" required>
-                {% if 'email_login_error' in errors %}
-                    <p style="color: red;">{{ errors['email_login_error'] }}</p>
-                {% endif %}
                 <input name="password-login" type="password" placeholder="Password" required>
-                {% if 'password_login_error' in errors %}
-                    <p style="color: red;">{{ errors['password_login_error'] }}</p>
+                {% if errors and errors.get('login_error') %}
+                    <p style="color: red;">{{ errors.get('login_error') }}</p>
                 {% endif %}
                 <a href="#">Lupa password?</a>
                 <button type="submit">Masuk</button>
@@ -26,21 +50,17 @@
         </div>
         <div class="toggle-container">
             <div class="toggle">
-                <div class="toggle-panel toggle-left">
-                    <h1>Selamat Datang</h1>
-                    <p>Masukkan detail pribadi Anda untuk menggunakan semua fitur situs</p>
-                    <button class="hidden" id="login">Sign In</button>
-                </div>
                 <div class="toggle-panel toggle-right">
-                    <h1>Halo, teman</h1>
-                    <p>Daftarkan dengan detail pribadi Anda untuk menggunakan semua fitur situs</p>
-                    <a href="{{ url_for('login_register') }}"><button class="hidden" id="register">Sign Up</button></a>
+                    <h1>Hello, Teman!</h1>
+                    <p>Silahkan masuk atau daftarkan dengan biodata Anda untuk menggunakan semua fitur situs</p>
+                    <a href="{{ url_for('login_register') }}" class="hidden" id="register">Daftar</a>
                 </div>
             </div>
         </div>
     </div>
 
+    <script src="/Login-daftar/Js/script.js"></script>
     <script src="{{ url_for('static', filename='js/loginRegist.js') }}"></script>
 </body>
+
 </html>
-    
