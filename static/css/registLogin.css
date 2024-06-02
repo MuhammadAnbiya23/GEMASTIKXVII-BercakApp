@@ -15,6 +15,7 @@ body {
     justify-content: center;
     flex-direction: column;
     height: 100vh;
+    overflow: hidden; /* Prevents scroll during animation */
 }
 
 .container {
@@ -26,6 +27,18 @@ body {
     width: 768px;
     max-width: 100%;
     min-height: 480px;
+    animation: fadeIn 1s ease-in-out; /* Apply the fade-in animation */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .container p {
@@ -129,7 +142,7 @@ body {
 }
 
 .social-icons {
-    margin: 20px 0; 
+    margin: 20px 0;
 }
 
 .social-icons a {
@@ -150,6 +163,7 @@ body {
     width: 50%;
     height: 100%;
     overflow: hidden;
+    transition: all 0.6s ease-in-out;
     border-radius: 150px 0 0 100px;
     z-index: 1000;
 }
@@ -207,3 +221,4 @@ body {
 .container.active .toggle-right {
     transform: translateX(200%);
 }
+
