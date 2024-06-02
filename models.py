@@ -1,19 +1,23 @@
 from app import db, bcrypt
 
-class DataUser(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    email = db.Column(db.String(100), nullable=False, unique=True)
-    password = db.Column(db.String(100), nullable=False)
-    
-    def __init__(self, name, email, password):
-        self.name = name
-        self.email = email
-        self.password = bcrypt.generate_password_hash(password).decode('utf-8')
+class DataUser:
+    @staticmethod
+    def create_user(name, email, password):
+        cursor = db.connection.cursor()
+        hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+        cursor.execute("INSERT INTO users (name, email, password) VALUES (%s, %s, %s)", 
+                       (name, email, hashed_password))
+        db.connection.commit()
+        cursor.close()
 
-    def save(self):
-        db.session.add(self)
-        db.session.commit()
+    @staticmethod
+    def get_user_by_email(email):
+        cursor = db.connection.cursor()
+        cursor.execute("SELECT * FROM users WHERE email = %s", (email,))
+        user = cursor.fetchone()
+        cursor.close()
+        return user
 
-    def check_password(self, password):
-        return bcrypt.check_password_hash(self.password, password)
+    @staticmethod
+    def check_password(stored_password, provided_password):
+        return bcrypt.check_password_hash(stored_password, provided_password)

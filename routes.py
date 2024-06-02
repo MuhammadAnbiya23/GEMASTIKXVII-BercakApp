@@ -91,38 +91,35 @@ def login_register():
                 errors['confirm_password_error'] = 'Konfirmasi password tidak sesuai.'
                 return render_template('loginRegist.html', errors=errors)
 
-            existing_user = DataUser.query.filter_by(email=email).first()
+            existing_user = DataUser.get_user_by_email(email)
             if existing_user:
                 errors['email_register_error'] = 'Email sudah terdaftar.'
                 return render_template('loginRegist.html', errors=errors)
 
-            hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
-            new_registration = DataUser(name=name, email=email, password=hashed_password)
-            db.session.add(new_registration)
-            db.session.commit()
+            DataUser.create_user(name, email, password)
 
             flash('Registrasi berhasil. Silakan login.', 'success')
             return redirect(url_for('login_register'))
 
-    return render_template('registLogin.html')
+    return render_template('loginRegist.html')
 
 
 @app.route("/login", methods=['POST', 'GET'])
 def login():
-    if 'email-login' in request.form:
-            email = request.form.get('email-login')
-            password = request.form.get('password-login')
-            user = DataUser.query.filter_by(email=email).first()
+    if request.method == 'POST':
+        email = request.form.get('email-login')
+        password = request.form.get('password-login')
+        user = DataUser.get_user_by_email(email)
 
-            if user : #and bcrypt.check_password_hash(user.password, password):
-                session['logged_in'] = True
-                session['user_id'] = user.id
-                session['user_name'] = user.name
-                session.permanent = True
-                return redirect(url_for('dashboard'))
-            else:
-                flash('Invalid email or password.', 'danger')
-                return redirect(url_for('login'))
+        if user and DataUser.check_password(user['password'], password):
+            session['logged_in'] = True
+            session['user_id'] = user['id']
+            session['user_name'] = user['name']
+            session.permanent = True
+            return redirect(url_for('dashboard'))
+        else:
+            flash('Invalid email or password.', 'danger')
+            return redirect(url_for('login'))
     
     return render_template('loginRegist.html')
 
