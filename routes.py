@@ -62,12 +62,12 @@ def login_register():
     if request.method == 'POST':
         if 'name-registrasi' in request.form:
             # Ini adalah logika untuk registrasi
-            errors = {}
             name = request.form.get('name-registrasi')
             email = request.form.get('email-registrasi')
             password = request.form.get('password-registrasi')
             confirm_password = request.form.get('confirm-password-registrasi')
 
+            errors = {}
             if not name or not email or not password or not confirm_password:
                 if not name:
                     errors['name_error'] = 'Nama harus diisi.'
@@ -97,7 +97,6 @@ def login_register():
                 return render_template('loginRegist.html', errors=errors)
 
             DataUser.create_user(name, email, password)
-
             flash('Registrasi berhasil. Silakan login.', 'success')
             return redirect(url_for('login_register'))
 
@@ -107,18 +106,21 @@ def login_register():
             password = request.form.get('password-login')
             user = DataUser.get_user_by_email(email)
 
-            if user : #and DataUser.check_password(user['password'], password):
-                session['logged_in'] = True
-                session['user_id'] = user['id']
-                session['user_name'] = user['name']
-                session.permanent = True
-                return redirect(url_for('dashboard'))
+            if user:
+                # if DataUser.check_password(password):
+                    session['logged_in'] = True
+                    session['user_id'] = user['id']
+                    session['user_name'] = user['name']
+                    session.permanent = True
+                    return redirect(url_for('dashboard'))
+                # else:
+                #     errors = {'login_error': 'Invalid email or password.'}
+                #     return render_template('loginRegist.html', errors=errors)
             else:
                 errors = {'login_error': 'Invalid email or password.'}
                 return render_template('loginRegist.html', errors=errors)
 
     return render_template('loginRegist.html')
-
 @app.route("/logout", methods=['GET'])
 def logout():
     session.pop('logged_in', None)
