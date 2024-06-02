@@ -4,19 +4,31 @@ class DataUser:
     @staticmethod
     def create_user(name, email, password):
         cursor = db.connection.cursor()
-        hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
-        cursor.execute("INSERT INTO users (name, email, password) VALUES (%s, %s, %s)", 
-                       (name, email, hashed_password))
-        db.connection.commit()
-        cursor.close()
+        try:
+            hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+            cursor.execute("INSERT INTO data_users (name, email, password) VALUES (%s, %s, %s)", 
+                           (name, email, hashed_password))
+            db.connection.commit()
+            print(f"User {name} created successfully.")  # Debugging statement
+        except Exception as e:
+            print(f"Error: {e}")
+            db.connection.rollback()
+        finally:
+            cursor.close()
 
     @staticmethod
     def get_user_by_email(email):
         cursor = db.connection.cursor()
-        cursor.execute("SELECT * FROM users WHERE email = %s", (email,))
-        user = cursor.fetchone()
-        cursor.close()
-        return user
+        try:
+            cursor.execute("SELECT * FROM data_users WHERE email = %s", (email,))
+            user = cursor.fetchone()
+            print(f"Fetched user: {user}")  # Debugging statement
+            return user
+        except Exception as e:
+            print(f"Error: {e}")
+            return None
+        finally:
+            cursor.close()
 
     @staticmethod
     def check_password(stored_password, provided_password):
