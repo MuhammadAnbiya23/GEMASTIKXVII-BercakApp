@@ -12,3 +12,11 @@ apa yang sudah bisa digunakan :
 > manajemen pengguna 
     - reset password
 > kebingunan buat github
+
+Buat Bagian Logic Login : 
+  > Handling pengecekan email sama
+  > Informatif password yang lebih variatif
+  > Password di regist sama login sekarang belum di hashing
+  > Login gagal ketika email dan password salah
+  > Login gagal ketika email salah
+  > Login gagal ketika password salah

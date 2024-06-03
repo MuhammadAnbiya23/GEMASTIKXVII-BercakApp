@@ -2,6 +2,7 @@ from flask import request, session, flash, redirect, url_for, render_template
 from app import app, bcrypt
 from models import DataUser
 from utils import is_valid_email, is_valid_password
+from werkzeug.security import generate_password_hash, check_password_hash
 
 @app.route("/dashboard/")
 def dashboard():
@@ -100,27 +101,26 @@ def login_register():
             flash('Registrasi berhasil. Silakan login.', 'success')
             return redirect(url_for('login_register'))
 
+        
         elif 'email-login' in request.form:
             # Ini adalah logika untuk login
             email = request.form.get('email-login')
             password = request.form.get('password-login')
             user = DataUser.get_user_by_email(email)
 
-            if user:
-                # if DataUser.check_password(password):
-                    session['logged_in'] = True
-                    session['user_id'] = user['id']
-                    session['user_name'] = user['name']
-                    session.permanent = True
-                    return redirect(url_for('dashboard'))
-                # else:
-                #     errors = {'login_error': 'Invalid email or password.'}
-                #     return render_template('loginRegist.html', errors=errors)
+            if user and password == user['password']: #and DataUser.check_password(user['password'], password):
+                session['logged_in'] = True
+                session['user_id'] = user['id']
+                session['user_name'] = user['name']
+                session.permanent = True
+                return redirect(url_for('dashboard'))
             else:
-                errors = {'login_error': 'Invalid email or password.'}
+                errors = {'login_error': 'Email atau password salah.'}
                 return render_template('loginRegist.html', errors=errors)
 
     return render_template('loginRegist.html')
+
+
 @app.route("/logout", methods=['GET'])
 def logout():
     session.pop('logged_in', None)

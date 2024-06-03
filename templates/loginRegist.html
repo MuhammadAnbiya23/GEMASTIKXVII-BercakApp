@@ -17,18 +17,18 @@
             <form action="{{ url_for('login_register') }}" method="POST">
                 <h1>Register</h1>
                 <input name="name-registrasi" type="text" placeholder="Name" required>
+                <input name="email-registrasi" type="email" placeholder="Email" required>
+                <input name="password-registrasi" type="password" placeholder="Password" required>
+                <input name="confirm-password-registrasi" type="password" placeholder="Confirm Password" required>
                 {% if errors and errors.get('name_error') %}
                     <p style="color: red;">{{ errors.get('name_error') }}</p>
                 {% endif %}
-                <input name="email-registrasi" type="email" placeholder="Email" required>
                 {% if errors and errors.get('email_register_error') %}
                     <p style="color: red;">{{ errors.get('email_register_error') }}</p>
                 {% endif %}
-                <input name="password-registrasi" type="password" placeholder="Password" required>
                 {% if errors and errors.get('password_register_error') %}
                     <p style="color: red;">{{ errors.get('password_register_error') }}</p>
                 {% endif %}
-                <input name="confirm-password-registrasi" type="password" placeholder="Confirm Password" required>
                 {% if errors and errors.get('confirm_password_error') %}
                     <p style="color: red;">{{ errors.get('confirm_password_error') }}</p>
                 {% endif %}

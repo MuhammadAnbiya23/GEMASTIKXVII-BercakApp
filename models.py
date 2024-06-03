@@ -1,14 +1,15 @@
 from app import db, bcrypt
+from werkzeug.security import generate_password_hash, check_password_hash
 
 class DataUser:
     @staticmethod
     def create_user(name, email, password):
         cursor = db.connection.cursor()
         try:
+            # hashed_password = bcrypt.hashpw(password, bcrypt.gensalt()).decode('utf-8') 
             # hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
-            hashed_password = bcrypt.hashpw(password, bcrypt.gensalt()).encode('utf-8') 
             cursor.execute("INSERT INTO data_users (name, email, password) VALUES (%s, %s, %s)", 
-                           (name, email, hashed_password))
+                           (name, email, password))# hashed_password))
             db.connection.commit()
             print(f"User {name} created successfully.")  # Debugging statement
         except Exception as e:
@@ -48,8 +49,9 @@ class DataUser:
             cursor.close()
 
     @staticmethod
-    def check_password(password) :
-        hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
-        return bcrypt.checkpw(password, hashed_password)
-    # def check_password(stored_password, provided_password):
-    #     return bcrypt.check_password_hash(stored_password, provided_password)
+    def check_password(stored_password, provided_password):
+        return bcrypt.check_password_hash(stored_password, provided_password)
+    # def check_password(password) :
+        # hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
+        # return bcrypt.checkpw(password, hashed_password)
+
