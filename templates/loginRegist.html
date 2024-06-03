@@ -33,7 +33,7 @@
                     <p style="color: red;">{{ errors.get('confirm_password_error') }}</p>
                 {% endif %}
                 <p id="error-message" style="color: red;"></p>
-                <button type="submit">Sign Up</button>
+                <button type="submit">Daftar</button>
             </form>
         </div>
         <div class="form-container sign-in">
@@ -53,12 +53,12 @@
                 <div class="toggle-panel toggle-left">
                     <h1>Selamat datang kembali!</h1>
                     <p>Daftar atau masukkan akun Anda untuk menggunakan semua fitur situs</p>
-                    <button class="hidden" id="login">Sign In</button>
+                    <button class="hidden" id="login">Masuk</button>
                 </div>
                 <div class="toggle-panel toggle-right">
                     <h1>Hello, Teman!</h1>
                     <p>Silahkan masuk atau daftarkan dengan biodata Anda untuk menggunakan semua fitur situs</p>
-                    <button class="hidden" id="register">Daftar</button>
+                    <a href="{{ url_for('login_register') }}"><button class="hidden" id="register">Daftar</button></a>
                 </div>
             </div>
         </div>
