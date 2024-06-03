@@ -10,9 +10,6 @@ loginBtn.addEventListener('click', () => {
     container.classList.remove("active");
 });
 
-
-    
-
     registerForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const name = document.querySelector('input[name="name-registrasi"]').value;
