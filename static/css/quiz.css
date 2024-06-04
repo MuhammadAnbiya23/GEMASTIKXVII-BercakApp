@@ -1,8 +1,37 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 body {
     background-image: url('../assets/stacked-peaks-haikei-pink.svg');
     background-size: cover;
     color: #ffffff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1{
+  font-family: "Bowlby One SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 2px 2px 4px #1f1f1fc0;
+}
+
+h2,
+h3 {
+  color: rgb(255, 255, 255);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+
+p {
+  color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 15pt;
 }
 
 .nav-item a {
@@ -72,7 +101,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+    text-align: center;
+  }
 
 .quiz-icon img{
     width: 300px;
@@ -80,7 +110,7 @@ body {
 
 .container {
     text-align: center;
-    padding-top: 10%;
+    padding-top: 5%;
 }
 
 .video-container {
@@ -143,12 +173,11 @@ footer {
   color: #fff;
   padding: 20px 0;
   text-align: center;
-  position:absolute;
-  left: 0;
+  position: relative; /* Changed to relative to allow proper positioning */
+  bottom: 0; /* Keep at the bottom */
 }
 
 .footer .container {
-  padding-top: 20%;
   max-width: 1200px;
   margin: auto;
   padding: 0 15px;
@@ -157,8 +186,8 @@ footer {
 .footer .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center align the content horizontally */
-  align-items: center; /* Center align the content vertically */
+  justify-content: center;
+  align-items: center;
 }
 
 .footer hr {
@@ -193,7 +222,7 @@ footer {
 .footer .other-menu {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center align the content vertically */
+  align-items: center;
 }
 
 .footer .social-media li a,
@@ -236,7 +265,34 @@ footer {
   }
 }
 
+@media (max-width: 768px) {
+  .footer .row {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-logo {
+      margin-bottom: 10px;
+  }
+
+  .footer .logo-container p {
+      margin-bottom: 20px;
+  }
+
+  .card {
+      width: 90%;
+  }
+
+  h1 {
+      font-size: 2em;
+  }
+
+  .btn {
+      width: 100%;
+      margin: 5px 0;
+  }
+}
 
 #game1-container, #game2-container, #reward-section {
-    display: none;
+  display: none;
 }

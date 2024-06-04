@@ -1,5 +1,4 @@
 body {
-  font-family: 'Raleway', sans-serif;
   background-image: url('../assets/stacked-peaks-haikei.svg');
   background-size: cover;
   color: #ffffff;
@@ -72,12 +71,22 @@ li .dropdown-item {
 
 }
 
-h1,h2{
-  font-family: "Lato", sans-serif;
-  font-weight: 900;
+h1{
+  font-family: "Bowlby One SC", sans-serif;
+  font-weight: 400;
   font-style: normal;
-  text-shadow: 2px 2px 4px #000000;
-  color: #ffffff;
+  text-shadow: 2px 2px 4px #1f1f1fc0;
+}
+
+h2{
+  color: rgb(0, 0, 0);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+h3 {
+  color: rgb(255, 255, 255);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
 }
 
  p {
