@@ -1,7 +1,6 @@
 body {
   background-image: url('../assets/stacked-peaks-haikei-orange.svg');
   background-size: cover;
-  font-family: Arial, Helvetica, sans-serif;
   color: white;
 }
 
@@ -15,10 +14,26 @@ body {
   list-style-type: none;
 }
 
-h2 {
-  text-shadow: 2px 2px 4px #000000;
+h1{
+  font-family: "Bowlby One SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 2px 2px 4px #1f1f1fc0;
+}
+
+h2,
+h3 {
+  color: rgb(255, 255, 255);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: 700;
+  font-weight: bold;
+}
+
+p {
+  color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 15pt;
 }
 
 .nav-item a:hover {
