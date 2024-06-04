@@ -10,7 +10,7 @@
 <body>
     <div class="container active" id="container"> <!-- Set active class initially -->
         <div class="form-container sign-up">
-            <form id="register-form" method="POST" action="{{ url_for('register') }}">
+            <form id="register-form" method="POST" action="{{ url_for('login_register') }}">
                 <h1>Daftar</h1>
                 <input name="name-registrasi" type="text" placeholder="Name" required>
                 <input name="email-registrasi" type="email" placeholder="Email" required>
@@ -19,14 +19,14 @@
                 {% if 'name_error' in errors %}
                     <p style="color: red;">{{ errors['name_error'] }}</p>
                 {% endif %}
+                {% if 'email_register_error' in errors %}
+                    <p style="color: red;">{{ errors['email_register_error'] }}</p>
+                {% endif %}
                 {% if 'password_register_error' in errors %}
                     <p style="color: red;">{{ errors['password_register_error'] }}</p>
                 {% endif %}
                 {% if 'confirm_password_error' in errors %}
                     <p style="color: red;">{{ errors['confirm_password_error'] }}</p>
-                {% endif %}
-                {% if 'email_register_error' in errors %}
-                    <p style="color: red;">{{ errors['email_register_error'] }}</p>
                 {% endif %}
                 <button type="submit">Sign Up</button>
             </form>

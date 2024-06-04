@@ -54,4 +54,18 @@ class DataUser:
     # def check_password(password) :
         # hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
         # return bcrypt.checkpw(password, hashed_password)
+        
+    @staticmethod
+    def update_password(email, new_password):
+        cursor = db.connection.cursor()
+        try:
+            hashed_password = generate_password_hash(new_password).decode('utf-8')
+            cursor.execute("UPDATE data_users SET password = %s WHERE email = %s", (hashed_password, email))
+            db.connection.commit()
+            print(f"Password for {email} updated successfully.")  # Debugging statement
+        except Exception as e:
+            print(f"Error: {e}")
+            db.connection.rollback()
+        finally:
+            cursor.close()
 
