@@ -87,6 +87,15 @@ h1,h2{
   font-size: 15pt;
 }
 
+.card-body {
+  background-color: transparent;
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+}
+
 .title-icon-container {
   display: flex;
   align-items: center;

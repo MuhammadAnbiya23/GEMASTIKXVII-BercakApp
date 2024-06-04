@@ -5,29 +5,37 @@
 }
 
 
-h1,
+h1{
+  font-family: "Bowlby One SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 2px 2px 4px #1f1f1fc0;
+
+}
 h2,
 h3 {
   color: rgb(255, 255, 255);
-  font-family: poppins,sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
-}
-
-a {
-  font-family: 'Futura Std Condensed Light'
 }
 
 p {
   color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 15pt;
 }
 
 body {
   background-color: rgb(255, 255, 255);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 400;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
   color: white;
-  background-image: url('../assets/wave.svg');
+  background-image: url('../assets/Homepage.svg');
 }
 
 
@@ -75,6 +83,8 @@ header {
   margin-right: 20px;
   border-radius: 20px;
   list-style-type: none;
+  font-family: "poppins", sans-serif;
+  font-weight: bold;
 }
 
 .nav-item a:hover {
@@ -156,15 +166,16 @@ main .content .content-description {
 main .content .content-description .title {
   color: rgb(203, 231, 255);
   margin-block: 1rem;
-  text-shadow: #000;
   font-size: 3rem;
   transition: 3s;
-  font-family: Futura,Trebuchet MS,Arial,sans-serif; 
+  font-family: "Bowlby One SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 main .content .content-description p {
-  font-family: "Raleway", sans-serif;
-  line-height: 1.7rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13pt;
 }
 
 main .content .content-description button {
@@ -199,9 +210,13 @@ main .content .content-image img {
 }
 
 .fitur-title h1{
-  color: #000;
-  padding-top: 40px;
+  text-shadow: 2px 2px 4px #000000;
+  color: aliceblue;
+  padding-top: 15%;
   text-align: center;
+  font-family: "Bowlby One SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .container-fitur {
@@ -258,59 +273,76 @@ main .content .content-image img {
   }
 }
 
-.article-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  /* Adjust gap between elements as needed */
+.artikel.title {
+  font-family: "Bowlby One SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.title-image-container {
+.title-icon-container {
   display: flex;
   align-items: center;
-  gap: 10px;
-  /* Adjust gap between title and image as needed */
+  gap: 80px; /* Jarak antara teks dan ikon */
 }
 
-.article-title {
-  margin: 0;
+.title-icon-container h2 {
+  margin-top: 200px;
 }
 
-.article-img {
-  max-width: 150px;
-  /* Adjust as needed */
-  height: auto;
+.icon-inline {
+  width: 250px; 
+  height: auto; 
 }
 
-.article img {
-  max-width: 100%;
-  height: auto;
+.article-text {
+  color: #333057;
+
 }
 
-
-.more-button {
-  display: flex;
-  padding: 0.8rem 2.5rem;
-  border: 3px solid transparent;
-  border-radius: 999px;
-  margin-block-start: 1rem;
-
-  font-family: 'Quicksand', sans-serif;
-  text-transform: uppercase;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #323A43;
-  font-style: normal;
-
-  cursor: pointer;
-  transition: all 0.15s ease-in;
-}
-
-.more-button:hover {
-  border: 3px solid #ffffff;
-  background-color: transparent;
-  color: #ffffff;
-}
+.article-content {
+  display: none;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
+  }
+  
+  .article-content.show {
+  display: block;
+  opacity: 1;
+  max-height: 1000px; 
+  }
+  
+  .read-more-btn {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #00ff88;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border-color: #006b39;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+  }
+  
+  .read-more-btn:hover {
+  background-color: #02472a;
+  border-color: #02472a;
+  }
+  
+  .read-more-btn .read-more-icon {
+  margin-left: 10px;
+  transition: transform 0.3s;
+  }
+  
+  .read-more-btn.btn-secondary .read-more-icon {
+  transform: rotate(180deg);
+  }
 
 .col-md-6 {
   flex: 1;
