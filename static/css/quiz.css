@@ -138,11 +138,104 @@ button {
 }
 
 footer {
-    background-color: #100035;
-    color: white;
-    padding: 1rem 0;
-    display: none; /* Hide footer by default */
+  width: 100%;
+  background-color: #4d0040c0;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  position:absolute;
+  left: 0;
 }
+
+.footer .container {
+  padding-top: 20%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.footer .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center align the content horizontally */
+  align-items: center; /* Center align the content vertically */
+}
+
+.footer hr {
+  border: 1px solid #777;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.footer ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer li {
+  list-style: none;
+  margin: 5px 0;
+}
+
+.footer a {
+  color: rgb(122, 122, 122);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer a:hover {
+  color: #fff;
+  font-weight: 300;
+}
+
+/* Social Media Icons */
+.footer .social-media,
+.footer .other-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align the content vertically */
+}
+
+.footer .social-media li a,
+.footer .other-menu li a {
+  display: flex;
+  align-items: center;
+}
+
+.footer .social-media li a i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* Logo */
+.footer-logo {
+  max-width: 200px;
+  margin: auto;
+  display: block;
+}
+
+/* Copyright */
+.footer .logo-container p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer .row {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-logo {
+      margin-bottom: 10px;
+  }
+
+  .footer .logo-container p {
+      margin-bottom: 20px;
+  }
+}
+
 
 #game1-container, #game2-container, #reward-section {
     display: none;

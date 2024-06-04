@@ -31,7 +31,7 @@ body {
 }
 
 .navbar {
-  background-color: #01AC27;
+  background-color: #004e11cc;
   opacity: 80%;
 }
 
@@ -81,27 +81,27 @@ h1,h2{
 }
 
  p {
-  font-family: "poppins",sans-serif;
-  font-weight: 300;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
   font-style: normal;
+  font-size: 15pt;
 }
 
 .title-icon-container {
   display: flex;
   align-items: center;
-  gap: 10px; /* Jarak antara teks dan ikon */
+  gap: 80px; /* Jarak antara teks dan ikon */
 }
 
 .title-icon-container h2 {
-  margin: 0; /* Hilangkan margin default untuk pengaturan yang lebih rapih */
+  margin-top: 200px;
 }
 
 .icon-inline {
-  width: 300px; /* Atur ukuran ikon sesuai kebutuhan */
-  height: auto; /* Pertahankan rasio aspek ikon */
+  width: 250px; 
+  height: auto; 
 }
 
-/* CSS lain seperti sebelumnya */
 .article-content {
 display: none;
 opacity: 0;
@@ -113,7 +113,7 @@ transition: opacity 0.5s ease, max-height 0.5s ease;
 .article-content.show {
 display: block;
 opacity: 1;
-max-height: 1000px; /* Set a high value to accommodate content */
+max-height: 1000px; 
 }
 
 .read-more-btn {
@@ -193,43 +193,102 @@ transform: rotate(180deg);
   color: #ffffff;
 }
 
+/* General Footer Styling */
+/* General Footer Styling */
 footer {
   width: 100%;
-  position: absolute;
-  background-color: #004e11;
+  background-color: #004e11cc;
+  color: #fff;
+  padding: 20px 0;
   text-align: center;
-  margin: auto;
+  position:absolute;
   left: 0;
 }
 
-.social-media li {
-  list-style-type: none;
-  font-style: normal;
+.footer .container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
 }
 
-.other-menu li {
-  list-style-type: none;
-  font-style: normal;
+.footer .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center align the content horizontally */
+  align-items: center; /* Center align the content vertically */
 }
 
-.social-media li a {
+.footer hr {
+  border: 1px solid #777;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.footer ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer li {
+  list-style: none;
+  margin: 5px 0;
+}
+
+.footer a {
   color: rgb(122, 122, 122);
-  list-style-type: none;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
 }
 
-.other-menu li a {
-  color: rgb(122, 122, 122);
-  list-style-type: none;
-}
-
-.social-media li a:hover {
-  color: rgb(255, 255, 255);
+.footer a:hover {
+  color: #fff;
   font-weight: 300;
-  list-style-type: none;
 }
 
-.other-menu li a:hover {
-  color: rgb(255, 255, 255);
-  font-weight: 300;
-  list-style-type: none;
+/* Social Media Icons */
+.footer .social-media,
+.footer .other-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align the content vertically */
+}
+
+.footer .social-media li a,
+.footer .other-menu li a {
+  display: flex;
+  align-items: center;
+}
+
+.footer .social-media li a i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* Logo */
+.footer-logo {
+  max-width: 200px;
+  margin: auto;
+  display: block;
+}
+
+/* Copyright */
+.footer .logo-container p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer .row {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-logo {
+      margin-bottom: 10px;
+  }
+
+  .footer .logo-container p {
+      margin-bottom: 20px;
+  }
 }
