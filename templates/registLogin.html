@@ -10,23 +10,23 @@
 <body>
     <div class="container active" id="container"> <!-- Set active class initially -->
         <div class="form-container sign-up">
-            <form id="register-form" method="POST" action="{{ url_for('login_register') }}">
+            <form id="register-form" method="POST" action="{{ url_for('register') }}">
                 <h1>Daftar</h1>
                 <input name="name-registrasi" type="text" placeholder="Name" required>
+                <input name="email-registrasi" type="email" placeholder="Email" required>
+                <input name="password-registrasi" type="password" placeholder="Password" required>
+                <input name="confirm-password-registrasi" type="password" placeholder="Confirm Password" required>
                 {% if 'name_error' in errors %}
                     <p style="color: red;">{{ errors['name_error'] }}</p>
                 {% endif %}
-                <input name="email-registrasi" type="email" placeholder="Email" required>
-                {% if 'email_register_error' in errors %}
-                    <p style="color: red;">{{ errors['email_register_error'] }}</p>
-                {% endif %}
-                <input name="password-registrasi" type="password" placeholder="Password" required>
                 {% if 'password_register_error' in errors %}
                     <p style="color: red;">{{ errors['password_register_error'] }}</p>
                 {% endif %}
-                <input name="confirm-password-registrasi" type="password" placeholder="Confirm Password" required>
                 {% if 'confirm_password_error' in errors %}
                     <p style="color: red;">{{ errors['confirm_password_error'] }}</p>
+                {% endif %}
+                {% if 'email_register_error' in errors %}
+                    <p style="color: red;">{{ errors['email_register_error'] }}</p>
                 {% endif %}
                 <button type="submit">Sign Up</button>
             </form>
