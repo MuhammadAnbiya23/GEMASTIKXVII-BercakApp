@@ -9,27 +9,60 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="bg-dark text-white">
-    <header>
-         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg  text-light sticky-top">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Resources</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="{{ url_for('index') }}">Home</a>
+    <header>  
+        <nav class="navbar navbar-expand-lg fixed-top" >
+          <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                  <img src="{{ url_for('static', filename='assets/LogoTeks.png') }}" alt="Logo" style="width: 200px;">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                   <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ url_for('index') }}">Beranda</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                    </ul>
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+                              Lainnya
+                          </a>
+                          <ul class="dropdown-menu text-white">
+                              <li><a class="dropdown-item" href="{{ url_for('sosmed') }}">Media Sosial</a></li>
+                              <li><a class="dropdown-item" href="{{ url_for('resource') }}">Resource</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" href="{{ url_for('contact') }}">Contact</a></li>
+                              <li><a class="dropdown-item" href="{{ url_for('faq') }}">FAQ</a></li>
+                          </ul>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('about') }}">Tentang kami</a>
+                      </li>
+                  </ul>
+                  <div class="d-flex justify-content-center ms-auto align-items-center">
+                    <div class="form-check form-switch me-3">
+                      <input class="form-check-input" type="checkbox" id="colorModeSwitch" onclick="handleSwitchChange()" {{ 'checked' if color_mode == 'on' else '' }}>
+                      <label class="form-check-label" for="colorModeSwitch">Colorful theme</label>
+                    </div>
+                    {% if session.get('logged_in') %}
+                      <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle ms-2" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                          {{ session['user_name'] }}
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <li><a class="dropdown-item" href="{{ url_for('dashboard') }}">Profil</a></li>
+                          <li><a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a></li>
+                        </ul>
+                      </div>
+                    {% else %}
+                      <a href="{{ url_for('login') }}" class="btn btn-light ms-2">Masuk</a>
+                    {% endif %}
                 </div>
-            </div>
+            </div>   
+          </div>
         </nav>
-    </header>
+      
+      </header>
 
     <main class="container mt-5">
         <section class="content">
@@ -74,31 +107,31 @@
     <!-- Footer -->
     <footer class="footer" id="about">
         <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <hr>
-              <!-- Menu Sosial Media -->
-              <ul class="social-media">
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
-              </ul>
+            <div class="row">
+                <div class="col-md-4 logo-container">
+                    <img src="{{ url_for('static', filename='assets/LogoTeks.png') }}" alt="Logo" class="footer-logo">
+                    <!-- Copyright -->
+                    <p class="text-center">© 2024 Edukasi Website. All rights reserved.</p>
+                </div>
+                <div class="col-md-4">
+                    <!-- Menu Sosial Media -->
+                    <ul class="social-media">
+                        <li><a href="https://facebook.com"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                        <li><a href="https://twitter.com"><i class="fab fa-twitter"></i>Twitter</a></li>
+                        <li><a href="https://instagram.com"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <!-- Menu Lainnya -->
+                    <ul class="other-menu">
+                        <li><a href="#"><i class="fa-solid fa-question"></i>FAQ</a></li>
+                        <li><a href="#"><i class="fa-regular fa-file-lines"></i>Kebijakan</a></li>
+                        <li><a href="#"><i class="fa-solid fa-people-group"></i>Tentang Kami</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="col-md-6">
-              <hr>
-              <!-- Menu Lainnya -->
-              <ul class="other-menu">
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Kebijakan</a></li>
-                <li><a href="#">Tentang Kami</a></li>
-              </ul>
-            </div>
-          </div>
-          <hr>
-          <!-- Copyright -->
-          <p class="text-center">© 2024 Edukasi Website. All rights reserved.</p>
         </div>
-      </footer>
+    </footer>
     
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
