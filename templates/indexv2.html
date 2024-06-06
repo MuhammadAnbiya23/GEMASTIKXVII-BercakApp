@@ -15,16 +15,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/stylev2.css') }}">
 
-  <title>Frontend-Gemastik17</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link
+rel="stylesheet" 
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
+integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" 
+crossorigin="anonymous" 
+referrerpolicy="no-referrer" 
+/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Bebas+Neue&family=Bowlby+One+SC&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+  <title>Bercak.App Edu</title>
 </head>
 
 <body>
 <!-- Navbar Header -->
 <header>
-  <nav class="navbar navbar-expand-lg fixed-top bg-dark" >
+  <nav class="navbar navbar-expand-lg fixed-top" >
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="{{ url_for('static', filename='assets/LogoTeks.svg') }}" alt="Logo" style="width: 200px;">
+            <img src="{{ url_for('static', filename='assets/LogoTeks.png') }}" alt="Logo" style="width: 200px;">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -32,10 +47,10 @@
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Other
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+                        Lainnya
                     </a>
-                    <ul class="dropdown-menu bg-dark text-white">
+                    <ul class="dropdown-menu text-white">
                         <li><a class="dropdown-item" href="{{ url_for('sosmed') }}">Media Sosial</a></li>
                         <li><a class="dropdown-item" href="{{ url_for('resource') }}">Resource</a></li>
                         <li><hr class="dropdown-divider"></li>
@@ -44,40 +59,42 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                  <a class="nav-link" href="{{ url_for('about') }}">Tentang kami</a>
                 </li>
             </ul>
             <div class="d-flex justify-content-center ms-auto align-items-center">
               <div class="form-check form-switch me-3">
                 <input class="form-check-input" type="checkbox" id="colorModeSwitch" onclick="handleSwitchChange()" {{ 'checked' if session.get('color_mode') == 'on' else '' }}>
-                <label class="form-check-label" for="colorModeSwitch">Colorful theme</label>
-              </div>          
-              {% if logged_in %}
-              <div class="dropdown ms-2" id="profileDropdown">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    NabielFauzan <img src="{{ url_for('static', filename='assets/profile.png') }}" style="width: 30px;" alt="">
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="#" id="profileStatsOption">Profile Statistics</a></li>
-                    <li><a class="dropdown-item" href="#">Change Password</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="{{ url_for('logout') }}">Sign out <img src="{{ url_for('static', filename='assets/logout.png') }}" alt=""></a></li>
+                <label class="form-check-label text-white" for="colorModeSwitch">Tema Colorful</label>
+              </div> 
+              {% if session.get('logged_in') %}
+                <div class="dropdown">
+                  <button class="btn btn-light dropdown-toggle ms-2" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    {{ session['user_name'] }}
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="{{ url_for('dashboard') }}">Profil</a></li>
+                    <li><a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a></li>
                   </ul>
-                </li>
-              </div>
+                </div>
               {% else %}
-              <a href="{{ url_for('loginRegist') }}" class="btn btn-light ms-2">Masuk</a>
+                <a href="{{ url_for('login') }}" class="btn btn-light ms-2">Masuk</a>
               {% endif %}
-          </div>          
-      </div>
- </nav>
+          </div>
+      </div>   
+    </div>
+  </nav>
 </header>
+
 <!-- Landing -->
 <main class="container my-4" style="padding-top: 80px;">
   <div class="content" id="beranda">
     <div class="content-description">
-      <h1 class="title">Selamat datang, User!</h1>
+      {% if session.get('logged_in') %}
+      <h1 class="title">Selamat datang, {{ session.get('user_name') }}!</h1>
+      {% else %}
+      <h1 class="title">Selamat datang, Cakap!</h1>
+      {% endif %}
       <p>
         "Bercak.App" adalah sebuah aplikasi berbasis web yang bertujuan untuk informasi dan edukasi bahasa isyarat dengan cara yang interaktif, mudah diakses, dan menyenangkan
       </p>
@@ -87,200 +104,90 @@
     </div>
   </div>  
 
-    <!-- Container -->
-    <h2 class="d-flex justify-content-center">Baca Artikel</h2>
-    <div class="article-preview d-flex justify-content-center">
-        <div class="article-card">
-            <img src="{{ url_for('static', filename='assets/hear.png') }}" alt="Article 1" class="article-img">
-            <div class="article-content">
-                <h3>Apa itu Tunarungu?</h3>
-                <p>Istilah tunarungu berasal dari kata tuna dan rungu, dimana tuna memiliki arti kurang sedangkan rungu artinya pendengaran..</p>
-                <a href="{{ url_for('deaf') }}" class="read-more-button d-flex justify-content-center text-white">Selengkapnya</a>
-            </div>
-        </div>
-    </div>
-        <div class="container">
-          <!-- Deskripsi Produk -->
-          <div class="row">
-            <div class="col-md-6">
-              <h2>BercakApp Fitur</h2>
-            </div>
-          </div>
-        </div>
-        <section>
-          <div class="card-group">
-            <div class="card mb-3">
-              <img src="{{ url_for('static', filename='assets/edukasi.svg') }}" class="card-img-top" alt="education-icon">
-              <div class="card-body">
-                <h5 class="card-title">Deaf Education</h5>
-                <p class="card-text"></p>
-                <div class="card-footer">
-                  <a href="{{ url_for('deaf') }}"><button>Mulai</button></a>
-                </div>
-              </div>
-            </div>
-            <div class="card mb-3">
-              <img src="{{ url_for('static', filename='assets/voice.png') }}" class="card-img-top" alt="education-icon">
-              <div class="card-body">
-                <h5 class="card-title">Voice Recognition</h5>
-                <p class="card-text"></p>
-                <div class="card-footer">
-                  <a href="{{ url_for('voice') }}"><button>Mulai</button></a>
-                </div>
-              </div>
-            </div>
-            <div class="card mb-3">
-              <img src="{{ url_for('static', filename='assets/sign.svg') }}" class="card-img-top" alt="sign-icon">
-              <div class="card-body">
-                <h5 class="card-title">Sign Recognition</h5>
-                <p class="card-text"></p>
-                <div class="card-footer">
-                  <a href="{{ url_for('sign') }}"><button>Mulai</button></a>
-                </div>
-              </div>
-            </div>
-            <div class="card mb-3">
-              <img src="{{ url_for('static', filename='assets/quiz.png') }}" class="card-img-top" alt="quiz-icon">
-              <div class="card-body">
-                <h5 class="card-title">Quiz</h5>
-                <p class="card-text"></p>
-                <div class="card-footer">
-                  <a href="{{ url_for('quiz') }}"><button>Mulai</button></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> 
-        <div class="container">
-          <!-- Deskripsi Produk -->
-          <div class="row">
-            <div class="col-md-6">
-              <h2></h2>
-            </div>
-          </div>
-        </div>       
-  
-        <!--first layout end-->
-        <!-- Footer -->
-        <footer class="bg-dark text-white mt-4">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-4">
-                <img src="{{ url_for('static', filename='assets/logoTeks.svg') }}" alt="Logo" class="mb-3" style="width: 150px;">
-                <h5>About Us</h5>
-                <p>"Bercak.App" is dedicated to providing a comprehensive platform for learning sign language.</p>
-              </div>
-              <div class="col-md-4">
-                <h5>Contact Us</h5>
-                <p>Email: info@bercakapp.com</p>
-                <p>Phone: +62 123 456 789</p>
-              </div>
-              <div class="col-md-4">
-                <h5>Follow Us</h5>
-                <a href="#" class="text-white me-2"><i class="fab fa-facebook"></i></a>
-                <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-              </div>
-            </div>
-          </div>
-        </footer>
-        <footer class="footer text-center py-1 bg-grey">
-          <div class="footer-content">
-            <div class="footer-section ">
-              <p>&copy; 2024 BercakApp. All rights reserved.</p>
-            </div>
-        </div>
-      </footer>      
-        
-  <div class="modal fade" id="featureModal" tabindex="-1" aria-labelledby="featureModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="featureModalLabel">Feature</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" id="featureModalContent">
-          Details about the feature.
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Go to Feature</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="loginModalLabel">Login</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form action="{{ url_for('login') }}" method="POST">
-            <div class="mb-3">
-              <label for="username" class="form-label">Username</label>
-              <input type="text" class="form-control" id="username" name="username" required>
+  <div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <h1 class="artikel-title text-center mb-4" style="color: rgb(129, 127, 255); ">ARTIKEL TULI</h1>
+            <div class="cards">
+                <div class="card-body">
+                    <div class="title-icon-container">
+                        <h2>Apa itu Tuli?</h2>
+                        <img src="{{ url_for('static', filename='assets/deaf.svg') }}" alt="Gambar Artikel Utama" class="icon-inline">
+                    </div>
+                    <p class="article-text">Tuli adalah sebuah gangguan pendengaran yang menyebabkan seseorang tidak memiliki kemampuan untuk mendengar secara menyeluruh atau sebagian. Kondisi ini tentunya dapat dipengaruhi oleh beberapa faktor, salah satunya adalah genetika.</p>
+                    <a href="{{ url_for('deafEducation') }}" class="btn btn-primary read-more-btn">
+                        <span class="read-more-text">Baca Lebih Lanjut</span>
+                      </a>
+                </div>
             </div>
-            <div class="mb-3">
-              <label for="password" class="form-label">Password</label>
-              <input type="password" class="form-control" id="password" name="password" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Login</button>
-          </form>
         </div>
-      </div>
     </div>
-  </div>
-</div>
-<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="registerModalLabel">Daftar</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form action="/register" method="POST">
-          <div class="mb-3">
-            <label for="reg-username" class="form-label">Username</label>
-            <input type="text" class="form-control" id="reg-username" name="username" required>
+
+        <div class="fitur-title" id="fitur">
+          <h1>Bercak.App Fitur</h1>
+        </div>
+
+        <div class="container-fitur">
+          <div class="card-fitur">
+              <a href="{{ url_for('deafEducation') }}">
+                <img src="{{ url_for('static', filename='assets/Deaf Education.svg') }}" alt="Photo 1">
+              </a>
+              <div class="card-content-fitur">
+              </div>
           </div>
-          <div class="mb-3">
-            <label for="reg-password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="reg-password" name="password" required>
+          <div class="card-fitur">
+              <a href="{{ url_for('signRecognition') }}">
+                <img src="{{ url_for('static', filename='assets/Sign Recognition.svg') }}"  alt="Photo 3">
+              </a>
+              <div class="card-content-fitur">
+              </div>
           </div>
-          <button type="submit" class="btn btn-primary">Daftar</button>
-        </form>
+          <div class="card-fitur">
+              <a href="{{ url_for('speechRecognition') }}">
+                <img src="{{ url_for('static', filename='assets/Speech Recognition.svg') }}" alt="Photo 2">
+              </a>
+              <div class="card-content-fitur">
+              </div>
+          </div>
+          <div class="card-fitur">
+              <a href="{{ url_for('quiz') }}">
+                <img src="{{ url_for('static', filename='assets/Sign Quiz.svg') }}" alt="Photo 4">
+              </a>
+              <div class="card-content-fitur">
+              </div>
+          </div>
       </div>
+  
+ <!-- Footer -->
+  <footer class="footer" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 logo-container">
+                <img src="{{ url_for('static', filename='assets/LogoTeks.png') }}" alt="Logo" class="footer-logo">
+                <!-- Copyright -->
+                <p class="text-center">© 2024 Edukasi Website. All rights reserved.</p>
+            </div>
+            <div class="col-md-4">
+                <!-- Menu Sosial Media -->
+                <ul class="social-media">
+                    <li><a href="https://facebook.com"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="https://twitter.com"><i class="fab fa-twitter"></i>Twitter</a></li>
+                    <li><a href="https://instagram.com"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <!-- Menu Lainnya -->
+                <ul class="other-menu">
+                    <li><a href="#"><i class="fa-solid fa-question"></i>FAQ</a></li>
+                    <li><a href="#"><i class="fa-regular fa-file-lines"></i>Kebijakan</a></li>
+                    <li><a href="#"><i class="fa-solid fa-people-group"></i>Tentang Kami</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-<!-- Pop Up Modal for Profile Statistics -->
-<div class="modal fade" id="profileStatsModal" tabindex="-1" aria-labelledby="profileStatsModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="profileStatsModalLabel">Profile Statistics</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <h5>Informasi Pengguna</h5>
-        <p>Best Score: <span id="bestScore"></span></p>
-        <p>Win Streak: <span id="winStreak"></span></p>
-        <p>Total Quizzes: <span id="quizCount"></span></p>
-        <p>Achievements: <span id="achievements"></span></p>
-        <h5>Bercakap Since</h5>
-        <p>Total Days: <span id="totalDays"></span></p>
-        <p>Screen Time: <span id="screenTime"></span></p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+</footer>
+
   <script src="script.js"></script>
   <script src="{{ url_for('static', filename='js/scriptv2.js') }}"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
