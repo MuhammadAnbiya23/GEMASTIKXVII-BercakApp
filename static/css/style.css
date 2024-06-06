@@ -38,7 +38,6 @@ body {
   background-image: url('../assets/Homepage.svg');
 }
 
-
 header {
   background-color: rgb(24, 24, 24);
   position: fixed;
@@ -46,6 +45,11 @@ header {
   top: 0;
   z-index: 1000;
 }
+
+.navbar {
+  background-color: #260583;
+}
+
 
 .navbar-brand {
   padding-right: 50px;
@@ -79,17 +83,16 @@ header {
 }
 
 .dropdown .dropdown-menu {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #260583;
 }
 
 .dropdown .dropdown-menu .dropdown-item {
-  color: #000;
+  color: #ffffff;
 }
 
 .dropdown .dropdown-menu .dropdown-item:hover,
 .dropdown .dropdown-menu .dropdown-item:focus {
-  color: #000;
+  color: #ffffff;
   font-weight: 400;
 }
 
