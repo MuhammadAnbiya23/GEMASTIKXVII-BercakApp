@@ -47,10 +47,6 @@ header {
   z-index: 1000;
 }
 
-.navbar {
-  background-color: #4016a1de;
-}
-
 .navbar-brand {
   padding-right: 50px;
   display: flex;

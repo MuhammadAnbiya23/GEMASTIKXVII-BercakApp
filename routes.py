@@ -17,10 +17,25 @@ def dashboard():
     else:
         flash('You are not logged in.', 'danger')
         return redirect(url_for('index'))
+    
+#Switch button color
+@app.route('/toggle-color-mode')
+def toggle_color_mode():
+    mode = request.args.get('mode')
+    if mode == 'on':
+        session['color_mode'] = 'on'
+        return redirect(url_for('indexv2'))
+    else:
+        session['color_mode'] = 'off'
+        return redirect(url_for('index'))
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/indexv2')
+def indexv2():
+    return render_template('indexv2.html')
 
 @app.route('/deafEducation')
 def deafEducation():

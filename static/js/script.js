@@ -508,3 +508,12 @@ registerBtn.addEventListener('click', () => {
 loginBtn.addEventListener('click', () => {
     containers.classList.remove("active");
 });
+
+function handleSwitchChange() {
+  var switchElement = document.getElementById('colorModeSwitch');
+  if (switchElement.checked) {
+      window.location.href = '/toggle-color-mode?mode=on';
+  } else {
+      window.location.href = '/toggle-color-mode?mode=off';
+  }
+}
