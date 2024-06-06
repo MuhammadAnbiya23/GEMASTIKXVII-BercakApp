@@ -200,5 +200,61 @@ footer {
     }
   }
   
-
-
+ body {
+            background-color: #343a40;
+            color: white;
+        }
+        .content {
+            padding-top: 100px;
+        }
+        .resources-title {
+            color: #9fc8ff;
+            text-align: center;
+        }
+        .resources h2 {
+            color: #000000; /* Warna hitam */
+        }
+        .resources ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+        .resources ul li {
+            margin-bottom: 10px;
+        }
+        .resources ul li a {
+            color: #0dcaf0;
+            text-decoration: none;
+        }
+        .resources ul li a:hover {
+            text-decoration: underline;
+        }
+        .navbar .nav-link {
+            color: white;
+        }
+        .footer {
+            background-color: #212529;
+            padding: 20px 0;
+        }
+        .footer-logo {
+            width: 150px;
+            display: block;
+            margin: 0 auto;
+        }
+        .social-media, .other-menu {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        .social-media li, .other-menu li {
+            margin-bottom: 10px;
+        }
+        .social-media li a, .other-menu li a {
+            color: white;
+            text-decoration: none;
+        }
+        .social-media li a:hover, .other-menu li a:hover {
+            text-decoration: underline;
+        }
+        .social-media i, .other-menu i {
+            margin-right: 5px;
+        }

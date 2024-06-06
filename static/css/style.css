@@ -47,23 +47,23 @@ header {
   z-index: 1000;
 }
 
-.dropdown-menu.bg-dark {
-  background-color: #ffffff;
+.dropdown-menu {
+  background-color: #4016a1de;
   /* Warna latar belakang dropdown */
 }
 
-.dropdown-menu.bg-dark .dropdown-item {
+.dropdown-menu .dropdown-item {
   color: #ffffff;
   /* Warna teks putih */
 }
 
-.dropdown-menu.bg-dark .dropdown-item:hover,
-.dropdown-menu.bg-dark .dropdown-item:focus {
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
   color: #ffffff;
   font-weight: 400;
 }
 
-.dropdown-menu.bg-dark .dropdown-divider {
+.dropdown-menu .dropdown-divider {
   border-color: #6c757d;
 }
 
