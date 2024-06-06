@@ -1,40 +1,204 @@
-body.light-theme {
-    background-color: #7E30E1;
-    color: #000;
+body {
+    margin: 0;
     font-family: 'Raleway', sans-serif;
+    background-color: aliceblue;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-image: url('../assets/stacked-waves-about.svg');
 }
 
-body.light-theme .navbar, body.light-theme footer {
-    background-color: #ffffff;
-    color: #000;
-}
+h1{
+    font-family: "Bowlby One SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-shadow: 2px 2px 4px #353535c0;
+    color: #9fc8ff;
+  }
+  
+  h2,
+  h3 {
+    color: rgb(30, 44, 92);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+  }
+  
+  p {
+    color: rgb(34, 34, 34);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 10pt;
+  }   
 
-body.light-theme .navbar .nav-link, body.light-theme footer {
+.nav-item a {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    color: #ffffff;
+    cursor: pointer;
+    margin-right: 20px;
+    border-radius: 20px;
+    list-style-type: none;
+    
+  }
+  
+  .nav-item a:hover {
+    color: white;
+    transform: scale(1.1);
+    text-shadow: none;
+    background-color: #001aff;
+    border-radius: 20px;
+    transition: ease-in-out 0.3s;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+  
+  }
+  
+  .navbar {
+    background-color: #2d31ffcc;
+    opacity: 80%;
+  }
+  
+  .navbar-brand {
+    padding-right: 50px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .navbar-toggler {
+    background-color: #fdfdfd;
+    font-weight: bold;
+  }
+  
+  .dropdown {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+  
+  .dropdown-items {
+    text-align: center;
+  }
+  
+  .dropdown-item {
+    color: rgb(0, 0, 0);
+  }
+  
+  li .dropdown-item {
     color: #000;
-}
-
-body.light-theme .content {
-    background-color: #ffffff;
-    color: #000;
-}
+  }
+  
+  .buttons {
+    margin-right: 20px;
+  }
+  
+  .container {
+    padding-top: 5%;
+  
+  }
 
 .d-none {
     display: none !important;
 }
 
 footer {
-    background-color: #100035;
     width: 100%;
-    padding-top: 0;
-    left: 0;
-    position: absolute;
+    background-color: #000281cc;
+    color: #fff;
+    padding: 20px 0;
     text-align: center;
-    margin: auto;
-    font-style: normal;
+    position:absolute;
+    left: 0;
   }
-
-.social-media, .other-menu {
-    list-style-type: none;
-}
+  
+  .footer .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px;
+  }
+  
+  .footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center align the content horizontally */
+    align-items: center; /* Center align the content vertically */
+  }
+  
+  .footer hr {
+    border: 1px solid #777;
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  .footer ul {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .footer li {
+    list-style: none;
+    margin: 5px 0;
+  }
+  
+  .footer a {
+    color: rgb(122, 122, 122);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .footer a:hover {
+    color: #fff;
+    font-weight: 300;
+  }
+  
+  /* Social Media Icons */
+  .footer .social-media,
+  .footer .other-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align the content vertically */
+  }
+  
+  .footer .social-media li a,
+  .footer .other-menu li a {
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer .social-media li a i {
+    margin-right: 8px;
+    font-size: 18px;
+  }
+  
+  /* Logo */
+  .footer-logo {
+    max-width: 200px;
+    margin: auto;
+    display: block;
+  }
+  
+  /* Copyright */
+  .footer .logo-container p {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer .row {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .footer-logo {
+        margin-bottom: 10px;
+    }
+  
+    .footer .logo-container p {
+        margin-bottom: 20px;
+    }
+  }
+  
 
 

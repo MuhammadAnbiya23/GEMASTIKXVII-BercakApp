@@ -113,6 +113,24 @@ p {
     align-items: center;
 }
 
+.list-group-item {
+  cursor: pointer;
+  color: #212529;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.list-group-item:hover {
+  background-color: #e9ecef;
+}
+
+#gesture-image {
+  max-width: 100%;
+  height: auto;
+}
+
 
 .containers {
     text-align: center;
@@ -120,11 +138,10 @@ p {
 
 .container {
     text-align: center;
-    background-color: #221691;
 }
 
 .video-container {
-    position: relative;
+    position: relative; 
     width: 100%;
     max-width: 600px;
     margin: auto;

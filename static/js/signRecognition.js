@@ -11,7 +11,7 @@ function toggleRecognition() {
     if (stream) {
         // Stop recognition
         cameraContainer.style.display = 'none';
-        cardsContainer.style.display = 'none';
+        cardsContainer.classList.add('d-none');
         feedbackSection.style.display = 'none';
         quizSection.style.display = 'none';
         footer.style.display = 'none';
@@ -22,7 +22,7 @@ function toggleRecognition() {
     } else {
         // Start recognition
         cameraContainer.style.display = 'block';
-        cardsContainer.style.display = 'block';
+        cardsContainer.classList.remove('d-none');
         footer.style.display = 'block';
         startButton.textContent = 'Selesai';
 
@@ -47,6 +47,7 @@ function toggleRecognition() {
             });
     }
 }
+
 
 function startSignRecognition(video) {
     // Simulate recognition with setTimeout
@@ -93,3 +94,52 @@ function submitAnswer(isCorrect) {
         displayCommand();
     }, 2000);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const alphabetList = document.getElementById('alphabet-list');
+    const gestureImage = document.getElementById('gesture-image');
+
+    alphabetList.addEventListener('click', function(event) {
+        if(event.target && event.target.nodeName == 'LI') {
+            const letter = event.target.getAttribute('data-letter');
+            // Ubah URL gambar sesuai dengan abjad yang diklik
+            gestureImage.src = `{{ url_for('static', filename='assets/gestures/${letter}.png') }}`;
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const startButton = document.getElementById('startButton');
+    const alphabetList = document.getElementById('alphabet-list');
+    const gestureContainer = document.getElementById('gesture-container');
+
+    // Sembunyikan kontainer gesture saat memulai
+    gestureContainer.style.display = 'none';
+
+    // Tambahkan event listener pada tombol mulai
+    startButton.addEventListener('click', function() {
+        // Tampilkan kontainer abjad
+        alphabetList.style.display = 'block';
+
+        // Sembunyikan tombol mulai
+        startButton.style.display = 'none';
+    });
+
+    // Tambahkan event listener untuk klik pada abjad
+    alphabetList.addEventListener('click', function(event) {
+        if(event.target && event.target.nodeName == 'LI') {
+            const letter = event.target.getAttribute('data-letter');
+            const gestureImage = document.getElementById('gesture-image');
+            
+            // Ubah URL gambar sesuai dengan abjad yang diklik
+            gestureImage.src = `{{ url_for('static', filename='assets/gestures/${letter}.png') }}`;
+            
+            // Tampilkan kontainer gesture
+            gestureContainer.style.display = 'block';
+        }
+    });
+});
+
+
+
+

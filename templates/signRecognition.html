@@ -104,25 +104,20 @@ referrerpolicy="no-referrer"
     </div>
 
     <!-- Cards Container -->
-    <div class="container my-5" id="cards-container" style="display: none;">
+    <div class="container my-5 d-none" id="cards-container">
         <div class="row">
             <div class="col-md-6">
                 <div class="card text-white mb-3">
                     <div class="card-header">Kamus Bisindo</div>
                     <div class="card-body">
                         <h5 class="card-title">Abjad</h5>
-                        <!-- Kategori Menu -->
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Pilih Kategori
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <a class="dropdown-item" href="#">Pilih Abjad</a>
-                                <a class="dropdown-item" href="#">Kategori 2</a>
-                                <a class="dropdown-item" href="#">Kategori 3</a>
-                                <a class="dropdown-item" href="#">Kategori 4</a>
-                            </div>
-                        </div>
+                        <!-- Daftar Abjad -->
+                        <ul id="alphabet-list" class="list-group">
+                            <li class="list-group-item" data-letter="A">A</li>
+                            <li class="list-group-item" data-letter="B">B</li>
+                            <li class="list-group-item" data-letter="C">C</li>
+                            <!-- Tambahkan abjad lainnya -->
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -130,12 +125,13 @@ referrerpolicy="no-referrer"
                 <div class="card text-white mb-3">
                     <div class="card-header">Contoh Gesture</div>
                     <div class="card-body">
-                        <img src="" alt="" srcset="">
+                        <img id="gesture-image" src="" alt="Gesture" class="img-fluid">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 
     <!-- Feedback Section -->
     <div class="container my-5" id="feedback-section" style="display: none;">
