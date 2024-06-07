@@ -1,3 +1,8 @@
+function menuToggle() {
+    const toggleMenu = document.querySelector(".menu");
+    toggleMenu.classList.toggle("active");
+  }
+
 document.addEventListener('DOMContentLoaded', function () {
     const readMoreBtn = document.querySelector('.read-more-btn');
     const readMoreText = document.querySelector('.read-more-text');

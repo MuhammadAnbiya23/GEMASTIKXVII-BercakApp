@@ -66,6 +66,96 @@ li .dropdown-item {
   margin-right: 20px;
 }
 
+.action {
+  position: relative;
+}
+
+.action .profile {
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+.action .profile i {
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.action .menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: #fff;
+  width: 200px;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: none;
+  transition: 0.5s;
+}
+
+.action .menu.active {
+  display: block;
+}
+
+.action .menu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+
+.action .menu h3 {
+  text-align: center;
+  font-size: 18px;
+  padding: 10px 0;
+  font-weight: 500;
+  color: #555;
+}
+
+.action .menu h3 span {
+  font-size: 14px;
+  color: #cecece;
+  font-weight: 300;
+}
+
+.action .menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.action .menu ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.action .menu ul li i {
+  margin-right: 10px;
+  color: #555;
+}
+
+.action .menu ul li a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.action .menu ul li:hover a {
+  color: #ff5d94;
+}
+
+.action .menu ul li:hover i {
+  color: #ff5d94;
+}
+
 .container {
   padding-top: 5%;
 

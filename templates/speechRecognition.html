@@ -67,15 +67,25 @@ referrerpolicy="no-referrer"
                     <label class="form-check-label" for="colorModeSwitch">Colorful theme</label>
                   </div>
                   {% if session.get('logged_in') %}
-                    <div class="dropdown">
-                      <button class="btn btn-light dropdown-toggle ms-2" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                        {{ session['user_name'] }}
-                      </button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item" href="{{ url_for('dashboard') }}">Profil</a></li>
-                        <li><a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a></li>
-                      </ul>
+                  <div class="action">
+                    <div class="profile" onclick="menuToggle();">
+                        <i class="fas fa-user-circle"></i>
                     </div>
+                    <div class="menu">
+                        <h3>{{ session['user_name'] }}<br /><span>bergabung sejak {{ session['user_join_date'] }}</span></h3>
+                        <ul>
+                            <li>
+                                <i class="fas fa-user"></i><a href="#">My profile</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-cog"></i><a href="#">Lupa password</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-sign-out-alt"></i><a href="{{ url_for('logout') }}">Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                   {% else %}
                     <a href="{{ url_for('login') }}" class="btn btn-light ms-2">Masuk</a>
                   {% endif %}
@@ -161,9 +171,9 @@ referrerpolicy="no-referrer"
             <div class="col-md-4">
                 <!-- Menu Lainnya -->
                 <ul class="other-menu">
-                    <li><a href="#"><i class="fa-solid fa-question"></i>FAQ</a></li>
+                    <li><a href="{{ url_for('faq') }}"><i class="fa-solid fa-question"></i>FAQ</a></li>
                     <li><a href="#"><i class="fa-regular fa-file-lines"></i>Kebijakan</a></li>
-                    <li><a href="#"><i class="fa-solid fa-people-group"></i>Tentang Kami</a></li>
+                    <li><a href="{{ url_for('about') }}"><i class="fa-solid fa-people-group"></i>Tentang Kami</a></li>
                 </ul>
             </div>
         </div>
