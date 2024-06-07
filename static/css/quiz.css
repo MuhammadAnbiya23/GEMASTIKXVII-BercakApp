@@ -1,8 +1,37 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 body {
     background-image: url('../assets/stacked-peaks-haikei-pink.svg');
     background-size: cover;
     color: #ffffff;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1{
+  font-family: "Bowlby One SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 2px 2px 4px #1f1f1fc0;
+}
+
+h2,
+h3 {
+  color: rgb(255, 255, 255);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+
+p {
+  color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 15pt;
 }
 
 .nav-item a {
@@ -66,13 +95,105 @@ body {
     margin-right: 20px;
   }
 
+  .action {
+    position: relative;
+  }
+  
+  .action .profile {
+    cursor: pointer;
+    font-size: 24px;
+    margin-left: 20px;
+  }
+  
+  .action .profile i {
+    font-size: 30px;
+    color: #ffffff;
+  }
+  
+  .action .menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #fff;
+    width: 200px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: none;
+    transition: 0.5s;
+  }
+  
+  .action .menu.active {
+    display: block;
+  }
+  
+  .action .menu::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    transform: rotate(45deg);
+  }
+  
+  .action .menu h3 {
+    text-align: center;
+    font-size: 18px;
+    padding: 10px 0;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .action .menu h3 span {
+    font-size: 14px;
+    color: #cecece;
+    font-weight: 300;
+  }
+  
+  .action .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .action .menu ul li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .action .menu ul li i {
+    margin-right: 10px;
+    color: #555;
+  }
+  
+  .action .menu ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: 0.5s;
+  }
+  
+  .action .menu ul li:hover a {
+    color: #ff5d94;
+  }
+  
+  .action .menu ul li:hover i {
+    color: #ff5d94;
+  }
+  
+
   main {
     flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+    text-align: center;
+  }
 
 .quiz-icon img{
     width: 300px;
@@ -80,7 +201,7 @@ body {
 
 .container {
     text-align: center;
-    padding-top: 10%;
+    padding-top: 5%;
 }
 
 .video-container {
@@ -134,7 +255,21 @@ video {
 }
 
 button {
-    margin: 10px 0;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #0056b3;
+}
+
+.custom-image-size {
+  width: 100px;
 }
 
 footer {
@@ -143,12 +278,11 @@ footer {
   color: #fff;
   padding: 20px 0;
   text-align: center;
-  position:absolute;
-  left: 0;
+  position: relative; /* Changed to relative to allow proper positioning */
+  bottom: 0; /* Keep at the bottom */
 }
 
 .footer .container {
-  padding-top: 20%;
   max-width: 1200px;
   margin: auto;
   padding: 0 15px;
@@ -157,8 +291,8 @@ footer {
 .footer .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center align the content horizontally */
-  align-items: center; /* Center align the content vertically */
+  justify-content: center;
+  align-items: center;
 }
 
 .footer hr {
@@ -193,7 +327,7 @@ footer {
 .footer .other-menu {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center align the content vertically */
+  align-items: center;
 }
 
 .footer .social-media li a,
@@ -236,7 +370,47 @@ footer {
   }
 }
 
+@media (max-width: 768px) {
+  .footer .row {
+      flex-direction: column;
+      align-items: center;
+  }
 
-#game1-container, #game2-container, #reward-section {
-    display: none;
+  .footer-logo {
+      margin-bottom: 10px;
+  }
+
+  .footer .logo-container p {
+      margin-bottom: 20px;
+  }
+
+  .card {
+      width: 90%;
+  }
+
+  h1 {
+      font-size: 2em;
+  }
+
+  .btn {
+      width: 100%;
+      margin: 5px 0;
+  }
+}
+
+#reward-section {
+  display: none;
+}
+#game1-container, #game2-container {
+  display: none;
+}
+.timer-bar {
+  width: 100%;
+  height: 20px;
+  background-color: grey;
+}
+.timer-fill {
+  height: 100%;
+  background-color: green;
+  width: 100%;
 }
