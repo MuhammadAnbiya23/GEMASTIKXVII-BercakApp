@@ -42,9 +42,10 @@ referrerpolicy="no-referrer"
                             </a>
                             <ul class="dropdown-menu text-white">
                                 <li><a class="dropdown-item" href="{{ url_for('sosmed') }}">Media Sosial</a></li>
+                                <li><hr class="dropdown-divider"></li>
                                 <li><a class="dropdown-item" href="{{ url_for('resource') }}">Resource</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="{{ url_for('contact') }}">Contact</a></li>
+                               
                                 <li><a class="dropdown-item" href="{{ url_for('faq') }}">FAQ</a></li>
                             </ul>
                         </li>
@@ -80,7 +81,7 @@ referrerpolicy="no-referrer"
     <div class="containers">
         <h1>Pengenalan Kosa Isyarat</h1>
         <p>Scan dan Terjemahkan Gerakan Kosa Isyarat Anda</p>
-        <div class="sign-icon"><img src="{{ url_for('static', filename='assets/sign-icon.svg') }}" alt="" srcset=""></div>
+        <div class="sign-icon"><img src="{{ url_for('static', filename='assets/Iconsign.svg') }}" alt="" srcset=""></div>
         <button id="startButton" class="btn btn-light btn-lg" onclick="toggleRecognition()">Mulai Pengenalan</button>
     </div>
 

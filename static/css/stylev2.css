@@ -35,7 +35,7 @@ body {
   background-repeat: no-repeat;
   background-position: top center;
   color: white;
-  background-image: url('../assets/Homepage.svg');
+  background-image: url('../assets/Homepagev2.svg');
 }
 
 
@@ -47,23 +47,23 @@ header {
   z-index: 1000;
 }
 
-.dropdown-menu.bg-dark {
-  background-color: #ffffff;
+.dropdown-menu {
+  background-color: #232323;
   /* Warna latar belakang dropdown */
 }
 
-.dropdown-menu.bg-dark .dropdown-item {
+.dropdown-menu .dropdown-item {
   color: #ffffff;
   /* Warna teks putih */
 }
 
-.dropdown-menu.bg-dark .dropdown-item:hover,
-.dropdown-menu.bg-dark .dropdown-item:focus {
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
   color: #ffffff;
   font-weight: 400;
 }
 
-.dropdown-menu.bg-dark .dropdown-divider {
+.dropdown-menu .dropdown-divider {
   border-color: #6c757d;
 }
 
@@ -91,7 +91,7 @@ header {
   color: white;
   transform: scale(1.1);
   text-shadow: none;
-  background-color: #006eff;
+  background-color: #7E7E7E;
   border-radius: 20px;
   transition: ease-in-out 0.3s;
   -webkit-border-radius: 20px;
@@ -101,7 +101,7 @@ header {
 }
 
 .navbar {
-  background-color: #323A43;
+  background-color: #232323;
 }
 
 .navbar-brand {
@@ -111,7 +111,7 @@ header {
 }
 
 .navbar-toggler {
-  background-color: #323A43;
+  background-color: #232323;
   font-weight: bold;
 }
 
@@ -164,7 +164,7 @@ main .content .content-description {
 }
 
 main .content .content-description .title {
-  color: rgb(203, 231, 255);
+  color: linear-gradient(to right, #7E7E7E, #696969, #545454);
   margin-block: 1rem;
   font-size: 3rem;
   transition: 3s;
@@ -211,7 +211,7 @@ main .content .content-image img {
 
 .fitur-title h1{
   text-shadow: 2px 2px 4px #000000;
-  color: aliceblue;
+  color: #ffffff;
   padding-top: 15%;
   text-align: center;
   font-family: "Bowlby One SC", sans-serif;
@@ -295,7 +295,7 @@ main .content .content-image img {
 }
 
 .article-text {
-  color: #333057;
+  color: #4b4b4b;
 
 }
 

@@ -51,11 +51,11 @@ referrerpolicy="no-referrer"
                         Lainnya
                     </a>
                     <ul class="dropdown-menu text-white">
-                        <li><a class="dropdown-item" href="{{ url_for('sosmed') }}">Media Sosial</a></li>
-                        <li><a class="dropdown-item" href="{{ url_for('resource') }}">Resource</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('sosmedv2') }}">Media Sosial</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="{{ url_for('contact') }}">Contact</a></li>
-                        <li><a class="dropdown-item" href="{{ url_for('faq') }}">FAQ</a></li>
+                        <li><a class="dropdown-item" href="{{ url_for('resourcev2') }}">Resource</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{{ url_for('faqv2') }}">FAQ</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -100,7 +100,7 @@ referrerpolicy="no-referrer"
       </p>
     </div>
     <div class="content-image">
-      <img src="{{ url_for('static', filename='assets/signpict.png') }}" alt="BercakApp">
+      <img src="{{ url_for('static', filename='assets/Icon1.png') }}" alt="BercakApp">
     </div>
   </div>  
 
@@ -108,15 +108,15 @@ referrerpolicy="no-referrer"
   <div class="container mt-5">
     <div class="row">
         <div class="col-md-8 mx-auto">
-            <h1 class="artikel-title text-center mb-4" style="color: rgb(129, 127, 255); ">ARTIKEL TULI</h1>
+            <h1 class="artikel-title text-center mb-4" style="color: #232323; ">ARTIKEL TULI</h1>
             <div class="cards">
                 <div class="card-body">
                     <div class="title-icon-container">
-                        <h2>Apa itu Tuli?</h2>
-                        <img src="{{ url_for('static', filename='assets/deaf.svg') }}" alt="Gambar Artikel Utama" class="icon-inline">
+                        <h2 style="color: #232323">Apa itu Tuli?</h2>
+                        <img src="{{ url_for('static', filename='assets/Icon2.png') }}" alt="Gambar Artikel Utama" class="icon-inline">
                     </div>
                     <p class="article-text">Tuli adalah sebuah gangguan pendengaran yang menyebabkan seseorang tidak memiliki kemampuan untuk mendengar secara menyeluruh atau sebagian. Kondisi ini tentunya dapat dipengaruhi oleh beberapa faktor, salah satunya adalah genetika.</p>
-                    <a href="{{ url_for('deafEducation') }}" class="btn btn-primary read-more-btn">
+                    <a href="{{ url_for('deafEducation') }}" class="btn btn-primary bg-dark read-more-btn">
                         <span class="read-more-text">Baca Lebih Lanjut</span>
                       </a>
                 </div>
@@ -130,29 +130,29 @@ referrerpolicy="no-referrer"
 
         <div class="container-fitur">
           <div class="card-fitur">
-              <a href="{{ url_for('deafEducation') }}">
-                <img src="{{ url_for('static', filename='assets/Deaf Education.svg') }}" alt="Photo 1">
+              <a href="{{ url_for('deafEduv2') }}">
+                <img src="{{ url_for('static', filename='assets/Deafed2.svg') }}" alt="Photo 1">
               </a>
               <div class="card-content-fitur">
               </div>
           </div>
           <div class="card-fitur">
-              <a href="{{ url_for('signRecognition') }}">
-                <img src="{{ url_for('static', filename='assets/Sign Recognition.svg') }}"  alt="Photo 3">
+              <a href="{{ url_for('signRv2') }}">
+                <img src="{{ url_for('static', filename='assets/SignR2.svg') }}"  alt="Photo 3">
               </a>
               <div class="card-content-fitur">
               </div>
           </div>
           <div class="card-fitur">
-              <a href="{{ url_for('speechRecognition') }}">
-                <img src="{{ url_for('static', filename='assets/Speech Recognition.svg') }}" alt="Photo 2">
+              <a href="{{ url_for('speechRv2') }}">
+                <img src="{{ url_for('static', filename='assets/SpeechR2.svg') }}" alt="Photo 2">
               </a>
               <div class="card-content-fitur">
               </div>
           </div>
           <div class="card-fitur">
-              <a href="{{ url_for('quiz') }}">
-                <img src="{{ url_for('static', filename='assets/Sign Quiz.svg') }}" alt="Photo 4">
+              <a href="{{ url_for('quizv2') }}">
+                <img src="{{ url_for('static', filename='assets/BisindoQuiz2.svg') }}" alt="Photo 4">
               </a>
               <div class="card-content-fitur">
               </div>
