@@ -4,8 +4,7 @@
   padding: o;
 }
 
-
-h1{
+h1 {
   font-family: "Bowlby One SC", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -48,6 +47,7 @@ header {
 
 .navbar {
   background-color: #260583;
+  scroll-behavior: smooth;
 }
 
 
@@ -262,7 +262,7 @@ main .content .content-image img {
   transition: 3s;
 }
 
-.fitur-title h1{
+.fitur-title h1 {
   text-shadow: 2px 2px 4px #000000;
   color: aliceblue;
   padding-top: 15%;
@@ -314,6 +314,7 @@ main .content .content-image img {
   animation: bounce 0.5s;
 }
 
+
 @keyframes bounce {
 
   0%,
@@ -335,7 +336,8 @@ main .content .content-image img {
 .title-icon-container {
   display: flex;
   align-items: center;
-  gap: 80px; /* Jarak antara teks dan ikon */
+  gap: 80px;
+  /* Jarak antara teks dan ikon */
 }
 
 .title-icon-container h2 {
@@ -343,8 +345,8 @@ main .content .content-image img {
 }
 
 .icon-inline {
-  width: 250px; 
-  height: auto; 
+  width: 250px;
+  height: auto;
 }
 
 .article-text {
@@ -358,44 +360,44 @@ main .content .content-image img {
   max-height: 0;
   overflow: hidden;
   transition: opacity 0.5s ease, max-height 0.5s ease;
-  }
-  
-  .article-content.show {
+}
+
+.article-content.show {
   display: block;
   opacity: 1;
-  max-height: 1000px; 
-  }
-  
-  .read-more-text {
-    display: inline-flex;
-    align-items: center;
-    margin-top: 10px;
-    padding: 10px 15px;
-    background-color: #1100ff;
-    color: white;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-    border-color: #006b39;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
-  }
-  
-  .read-more-btn:hover {
+  max-height: 1000px;
+}
+
+.read-more-text {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #1100ff;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  border-color: #006b39;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
+
+.read-more-btn:hover {
   background-color: #02472a;
   border-color: #02472a;
-  }
-  
-  .read-more-btn .read-more-icon {
+}
+
+.read-more-btn .read-more-icon {
   margin-left: 10px;
   transition: transform 0.3s;
-  }
-  
-  .read-more-btn.btn-secondary .read-more-icon {
+}
+
+.read-more-btn.btn-secondary .read-more-icon {
   transform: rotate(180deg);
-  }
+}
 
 .col-md-6 {
   flex: 1;
@@ -570,8 +572,8 @@ h2 {
 }
 
 
-.dropdown-btn { 
-  background-color: #4CAF50; 
+.dropdown-btn {
+  background-color: #4CAF50;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -585,7 +587,7 @@ h2 {
   vertical-align: middle;
 }
 
-  /* Dark background */
+/* Dark background */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -608,13 +610,15 @@ h2 {
 
 .dropdown:hover .dropdown-btn {
   background-color: #3e8e41;
-} */
+}
+
+*/
 
 /* Modal container */
 .modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1; 
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
@@ -631,8 +635,8 @@ footer {
   color: #fff;
   padding: 10px;
   text-align: center;
-  position:absolute;
-  left: 0;  
+  position: absolute;
+  left: 0;
   height: auto;
 }
 
@@ -645,8 +649,10 @@ footer {
 .footer .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center align the content horizontally */
-  align-items: center; /* Center align the content vertically */
+  justify-content: center;
+  /* Center align the content horizontally */
+  align-items: center;
+  /* Center align the content vertically */
 }
 
 .footer hr {
@@ -681,7 +687,8 @@ footer {
 .footer .other-menu {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center align the content vertically */
+  align-items: center;
+  /* Center align the content vertically */
 }
 
 .footer .social-media li a,
@@ -711,16 +718,16 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
   .footer .row {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .footer-logo {
-      margin-bottom: 10px;
+    margin-bottom: 10px;
   }
 
   .footer .logo-container p {
-      margin-bottom: 20px;
+    margin-bottom: 20px;
   }
 }
 

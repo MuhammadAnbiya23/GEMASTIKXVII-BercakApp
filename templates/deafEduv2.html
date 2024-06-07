@@ -43,7 +43,7 @@ referrerpolicy="no-referrer"
                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('indexv2') }}">Beranda</a>
-                      </li>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
                             Lainnya
@@ -61,10 +61,6 @@ referrerpolicy="no-referrer"
                     </li>
                 </ul>
                 <div class="d-flex justify-content-center ms-auto align-items-center">
-                  <div class="form-check form-switch me-3">
-                    <input class="form-check-input" type="checkbox" id="colorModeSwitch" onclick="handleSwitchChange()" {{ 'checked' if color_mode == 'on' else '' }}>
-                    <label class="form-check-label" for="colorModeSwitch">Colorful theme</label>
-                  </div>
                   {% if session.get('logged_in') %}
                     <div class="dropdown">
                       <button class="btn btn-light dropdown-toggle ms-2" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
@@ -104,7 +100,7 @@ referrerpolicy="no-referrer"
                             </div>
                             <a href="#" class="btn btn-primary read-more-btn">
                                 <span class="read-more-text">Baca Lebih Lanjut</span>
-                                <img src="{{ url_for('static', filename='assets/down-arrow.png') }}" style="width: 30px;" alt="Down Arrow" class="read-more-icon">
+                                <img src="{{ url_for('static', filename='assets/arrow2.svg') }}" style="width: 30px;" alt="Down Arrow" class="read-more-icon">
                               </a>
                         </div>
                     </div>
