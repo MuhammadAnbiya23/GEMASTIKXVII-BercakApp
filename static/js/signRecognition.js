@@ -1,3 +1,8 @@
+function menuToggle() {
+    const toggleMenu = document.querySelector(".menu");
+    toggleMenu.classList.toggle("active");
+  }
+
 let stream = null;
 
 function toggleRecognition() {
