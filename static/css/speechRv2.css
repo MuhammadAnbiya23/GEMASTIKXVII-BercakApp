@@ -95,7 +95,7 @@ body {
   /* Dropdown styles */
   .dropdown-toggle {
     cursor: pointer;
-    color: #ffffff;
+    color: #6c757d;
   }
   
   .dropdown-menu {
@@ -110,7 +110,7 @@ body {
   }
   
   .dropdown-item:hover {
-    background-color: #ffffff;
+    background-color: #6c757d;
   }
   
   /* Speech result container styles */
