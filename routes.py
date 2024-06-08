@@ -109,8 +109,12 @@ def login():
         email = request.form.get('email-login')
         password = request.form.get('password-login')
         user = DataUser.get_user_by_email(email)
+        print(user)
+        print(password)
+        print(bcrypt.generate_password_hash(password).decode('utf-8'))
+        print(user['password'])
 
-        if user : # and password == user['password']: #and DataUser.check_password(user['password'], password):
+        if user and DataUser.check_password(user['password'], password):
             session['logged_in'] = True
             session['user_id'] = user['id']
             session['user_name'] = user['name']
