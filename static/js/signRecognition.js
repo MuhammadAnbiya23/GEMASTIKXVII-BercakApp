@@ -16,7 +16,7 @@ function toggleRecognition() {
     if (stream) {
         // Stop recognition
         cameraContainer.style.display = 'none';
-        cardsContainer.classList.add('d-none');
+        cardsContainer.classList.add('d-none');1
         feedbackSection.style.display = 'none';
         quizSection.style.display = 'none';
         footer.style.display = 'none';
@@ -26,7 +26,7 @@ function toggleRecognition() {
         stream = null;
     } else {
         // Start recognition
-        cameraContainer.style.display = 'block';
+        cameraContainer.style.display = 'block';``
         cardsContainer.classList.remove('d-none');
         footer.style.display = 'block';
         startButton.textContent = 'Selesai';
@@ -140,6 +140,37 @@ document.getElementById('abjad-button').addEventListener('click', function() {
         img.className = 'd-block w-100';
         img.src = src;
         img.alt = `Gesture ${index + 1}`;
+        div.appendChild(img);
+        carouselInner.appendChild(div);
+    });
+
+    document.getElementById('cards-container').classList.remove('d-none');
+});
+
+document.getElementById('angka-button').addEventListener('click', function() {
+    const carouselInner = document.getElementById('carousel-images');
+    carouselInner.innerHTML = '';
+
+    const images = [
+        '/static/assets/bisindo-1.jpg',
+        '/static/assets/bisindo-2.jpg',
+        '/static/assets/bisindo-3.jpg',
+        '/static/assets/bisindo-4.jpg',
+        '/static/assets/bisindo-5.jpg',
+        '/static/assets/bisindo-6.jpg',
+        '/static/assets/bisindo-7.jpg',
+        '/static/assets/bisindo-8.jpg',
+        '/static/assets/bisindo-9.jpg',
+        '/static/assets/bisindo-10.jpg',
+    ];
+    
+    images.forEach((src, index) => {
+        const div = document.createElement('div');
+        div.className = 'carousel-item' + (index === 0 ? ' active' : '');
+        const img = document.createElement('img');
+        img.className = 'd-block w-100';
+        img.src = src;
+        img.alt = `Gesture ${index}`;
         div.appendChild(img);
         carouselInner.appendChild(div);
     });

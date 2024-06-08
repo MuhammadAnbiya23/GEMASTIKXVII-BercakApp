@@ -4,6 +4,31 @@ body {
   color: #ffffff;
 }
 
+h1{
+  font-family: "Bowlby One SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 2px 2px 4px #1f1f1fc0;
+}
+
+h2{
+  color: rgb(43, 43, 43);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+h3 {
+  color: rgb(255, 255, 255);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+
+ p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 15pt;
+}
+
 .nav-item a {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1rem;
@@ -156,34 +181,30 @@ li .dropdown-item {
   color: #ff5d94;
 }
 
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .container {
   padding-top: 5%;
-
-}
-
-h1{
-  font-family: "Bowlby One SC", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  text-shadow: 2px 2px 4px #1f1f1fc0;
-}
-
-h2{
-  color: rgb(255, 255, 255);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bold;
-}
-h3 {
-  color: rgb(255, 255, 255);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bold;
-}
-
- p {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 15pt;
 }
 
 .card-body {
@@ -385,18 +406,204 @@ footer {
   font-size: 14px;
 }
 
-/* Responsive Design */
+/* General styles remain the same */
+
+/* Media query for devices with max-width 768px */
 @media (max-width: 768px) {
-  .footer .row {
-      flex-direction: column;
-      align-items: center;
+  .navbar-brand {
+    padding-right: 0;
+    display: flex;
+    justify-content: flex-start;
+    width: auto;
   }
 
-  .footer-logo {
-      margin-bottom: 10px;
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 
-  .footer .logo-container p {
-      margin-bottom: 20px;
+  .nav-item {
+    margin: 5px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-item a {
+    display: block;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
+  }
+
+  .dropdown-menu {
+    text-align: center;
+    width: 100%;
+  }
+
+  .action {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile {
+    margin-left: 0;
+  }
+
+  .menu {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
   }
 }
+
+/* Media query for devices with max-width 576px */
+@media (max-width: 576px) {
+  .navbar-brand img {
+    width: 150px; /* Adjust logo size for small screens */
+  }
+
+  .navbar-toggler {
+    padding: 0.25rem 0.75rem;
+  }
+
+  .buttons {
+    margin-right: 0;
+  }
+
+  .action .menu {
+    width: 150px;
+  }
+
+  .form-check-label {
+    font-size: 0.9rem;
+  }
+
+  .form-check-input {
+    width: 1.25em;
+    height: 1.25em;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-top: 10%;
+  }
+
+  .col-md-8 {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .title-icon-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .title-icon-container h2 {
+    margin-top: 0;
+  }
+
+  .icon-inline {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .article-text {
+    font-size: 1rem;
+  }
+
+  .article-content.show p{
+    font-size: 1rem;
+  }
+
+
+
+  .read-more-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .video-container {
+    padding-top: 20px;
+    padding-bottom: 10%;
+  }
+
+  .video-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .video-player {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .video-details {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .video-details h3 {
+    font-size: 1.2em;
+  }
+
+  .video-details p {
+    font-size: 0.9em;
+  }
+}
+
+/* Media query for devices with max-width 576px */
+@media (max-width: 576px) {
+  .container {
+    padding-top: 15%;
+  }
+
+  .title-icon-container {
+    gap: 10px;
+  }
+
+  .icon-inline {
+    width: 100%;
+    max-width: 150px;
+  }
+
+  .article-text {
+    font-size: 0.9rem;
+  }
+
+  .article-content.show p{
+    font-size: 0.9rem;
+  }
+
+  .read-more-btn {
+    padding: 8px 12px;
+  }
+
+  .video-container {
+    padding-top: 10px;
+    padding-bottom: 15%;
+  }
+
+  .video-player {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .video-details h3 {
+    font-size: 1em;
+  }
+
+  .video-details p {
+    font-size: 0.8em;
+  }
+}
+
+
