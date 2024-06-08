@@ -17,6 +17,14 @@ referrerpolicy="no-referrer"
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Acme&family=Concert+One&family=Lilita+One&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Acme&family=Lilita+One&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Bebas+Neue&family=Bowlby+One+SC&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <title>Sign Recognition</title>
 </head>
@@ -91,20 +99,30 @@ referrerpolicy="no-referrer"
         <button id="startButton" class="btn btn-light btn-lg" onclick="toggleRecognition()">Mulai Pengenalan</button>
     </div>
 
-    <!-- Camera Container -->
+    <!-- Camera and Cards Container -->
     <div class="container my-5" id="camera-container" style="display: none;">
-        <div class="card text-white">
-            <div class="card-header">
-                <h3>Scan Gerakan Anda</h3>
-            </div>
-            <div class="card-body">
-                <div class="video-container">
-                    <video id="video" width="100%" height="auto" autoplay></video>
-                    <div class="bounding-box"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card text-white">
+                    <div class="card-header">
+                        <h3>Scan Gerakan Anda</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="video-container">
+                            <video id="video" width="100%" height="auto" autoplay></video>
+                            <div class="bounding-box"></div>
+                        </div>
+                        <div id="instruction" class="mt-3">Tunggu sebentar...</div>
+                    </div>
                 </div>
+                <div id="feedback" class="alert alert-danger mt-3" style="display: none;">
+                    Terjadi kendala, silakan coba lagi.
+                </div>
+            </div>
+            <div class="col-md-6">
                 <div class="container my-5 d-none" id="cards-container">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="card text-white mb-3">
                                 <div class="card-header">Kamus Bisindo</div>
                                 <div class="card-body">
@@ -113,7 +131,7 @@ referrerpolicy="no-referrer"
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="card text-white mb-3">
                                 <div class="card-header">Contoh Gesture</div>
                                 <div class="card-body">
@@ -135,44 +153,40 @@ referrerpolicy="no-referrer"
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <div id="instruction" class="mt-3">Tunggu sebentar...</div>
+        <!-- Translation Result Card -->
+        <div class="container my-5" id="feedback-section" style="display: none;">
+            <div class="card text-white">
+                <div class="card-header">
+                    <h3>Hasil Terjemahan</h3>
+                </div>
+                <div class="card-body">
+                    <p id="translation-result"></p>
+                    <button class="btn btn-primary" onclick="startRecognition()">Scan Ulang</button>
+                </div>
             </div>
         </div>
-        <div id="feedback" class="alert alert-danger mt-3" style="display: none;">
-            Terjadi kendala, silakan coba lagi.
-        </div>
-    </div>
-
-    <!-- Feedback Section -->
-    <div class="container my-5" id="feedback-section" style="display: none;">
-        <div class="card text-white">
-            <div class="card-header">
-                <h3>Hasil Terjemahan</h3>
-            </div>
-            <div class="card-body">
-                <p id="translation-result"></p>
-                <button class="btn btn-primary" onclick="startRecognition()">Scan Ulang</button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Quiz Section -->
-    <div class="container my-5" id="quiz-section" style="display: none;">
-        <div class="card bg-dark text-white">
-            <div class="card-header">
-                <h3>Kuis Bahasa Isyarat</h3>
-            </div>
-            <div class="card-body">
-                <div id="quiz-instruction" class="mb-3">Peragakan isyarat berikut:</div>
-                <div id="quiz-command" class="display-4 mb-3">A</div>
-                <button class="btn btn-success" onclick="submitAnswer(true)">Benar</button>
-                <button class="btn btn-danger" onclick="submitAnswer(false)">Salah</button>
-                <div id="quiz-feedback" class="mt-3" style="display: none;">Hasil Jawaban</div>
+        
+        <!-- Quiz Section -->
+        <div class="container my-5" id="quiz-section" style="display: none;">
+            <div class="card bg-dark text-white">
+                <div class="card-header">
+                    <h3>Kuis Bahasa Isyarat</h3>
+                </div>
+                <div class="card-body">
+                    <div id="quiz-instruction" class="mb-3">Peragakan isyarat berikut:</div>
+                    <div id="quiz-command" class="display-4 mb-3">A</div>
+                    <button class="btn btn-success" onclick="submitAnswer(true)">Benar</button>
+                    <button class="btn btn-danger" onclick="submitAnswer(false)">Salah</button>
+                    <div id="quiz-feedback" class="mt-3" style="display: none;">Hasil Jawaban</div>
+                </div>
             </div>
         </div>
-    </div>
 </main>
+
+
     
         <!-- Footer -->
         <footer class="footer" id="about">
