@@ -50,7 +50,6 @@ header {
   scroll-behavior: smooth;
 }
 
-
 .navbar-brand {
   padding-right: 50px;
   display: flex;
@@ -80,6 +79,10 @@ header {
   background-color: #006eff;
   border-radius: 20px;
   transition: ease-in-out 0.3s;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
 }
 
 .dropdown .dropdown-menu {
@@ -143,7 +146,7 @@ header {
   right: 15px;
   width: 20px;
   height: 20px;
-  background: #fff;
+  background: #260583;
   transform: rotate(45deg);
 }
 
@@ -187,14 +190,12 @@ header {
 }
 
 .action .menu ul li:hover a {
-  color: #ff5d94;
+  color: #006eff;
 }
 
 .action .menu ul li:hover i {
-  color: #ff5d94;
+  color: #006eff;
 }
-
-
 
 
 main .content {
@@ -217,7 +218,7 @@ main .content .content-description {
 }
 
 main .content .content-description .title {
-  color: rgb(203, 231, 255);
+  color: linear-gradient(to right, #7E7E7E, #696969, #545454);
   margin-block: 1rem;
   font-size: 3rem;
   transition: 3s;
@@ -256,10 +257,11 @@ main .content .content-image {
 }
 
 main .content .content-image img {
-  width: 300px;
+  width: 400px;
   min-width: 250px;
   margin: auto;
   transition: 3s;
+  padding-bottom: 80px;
 }
 
 .fitur-title h1 {
@@ -270,6 +272,7 @@ main .content .content-image img {
   font-family: "Bowlby One SC", sans-serif;
   font-weight: 400;
   font-style: normal;
+  padding-bottom: 100px;
 }
 
 .container-fitur {
@@ -281,6 +284,7 @@ main .content .content-image img {
   padding: 0 20px;
   /* Add padding to avoid cards touching the window edge */
   box-sizing: border-box;
+  padding-bottom: 140px;
 }
 
 .card-fitur {
@@ -314,7 +318,6 @@ main .content .content-image img {
   animation: bounce 0.5s;
 }
 
-
 @keyframes bounce {
 
   0%,
@@ -331,6 +334,7 @@ main .content .content-image img {
   font-family: "Bowlby One SC", sans-serif;
   font-weight: 400;
   font-style: normal;
+  text-shadow: transparent;
 }
 
 .title-icon-container {
@@ -345,7 +349,7 @@ main .content .content-image img {
 }
 
 .icon-inline {
-  width: 250px;
+  width: 400px;
   height: auto;
 }
 
@@ -373,7 +377,7 @@ main .content .content-image img {
   align-items: center;
   margin-top: 10px;
   padding: 10px 15px;
-  background-color: #1100ff;
+  background-color: #260583;
   color: white;
   border-radius: 30px;
   text-decoration: none;
@@ -429,7 +433,7 @@ ul li a {
 
 hr {
   border: 0;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #ffffff;
   margin: 10px 0;
 }
 
@@ -730,10 +734,6 @@ footer {
     margin-bottom: 20px;
   }
 }
-
-
-
-
 
 @media (max-width: 991.98px) {
   .nav-item a {

@@ -92,8 +92,23 @@ header {
     -o-border-radius: 20px;
   }
   
+
+  .dropdown .dropdown-menu {
+    background-color: #260583;
+  }
+  
+  .dropdown .dropdown-menu .dropdown-item {
+    color: #ffffff;
+  }
+  
+  .dropdown .dropdown-menu .dropdown-item:hover,
+  .dropdown .dropdown-menu .dropdown-item:focus {
+    color: #ffffff;
+    font-weight: 400;
+  }
+
   .navbar {
-    background-color: #6c2dffde;
+    background-color: #260583;
   }
   
   .navbar-brand {
@@ -107,6 +122,16 @@ header {
     font-weight: bold;
   }
   
+  .ab-item {
+    background-color: #0063e4;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    width: 80%;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
   .dropdown {
     margin-right: 20px;
     margin-left: 20px;
@@ -292,7 +317,7 @@ header {
 
 footer {
     width: 100%;
-    background-color: #15088d;
+    background-color: #4016a1;
     color: #fff;
     padding: 10px;
     text-align: center;

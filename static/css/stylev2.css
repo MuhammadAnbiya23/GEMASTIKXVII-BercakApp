@@ -5,7 +5,7 @@
 }
 
 
-h1{
+h1 {
   font-family: "Bowlby One SC", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -38,7 +38,6 @@ body {
   background-image: url('../assets/Homepagev2.svg');
 }
 
-
 header {
   background-color: rgb(24, 24, 24);
   position: fixed;
@@ -70,6 +69,101 @@ header {
 .dropdown-menu-end {
   right: 0;
   left: auto;
+}
+
+
+.form-check-label {
+  color: #ffffff;
+}
+
+.action {
+  position: relative;
+}
+
+.action .profile {
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+.action .profile i {
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.action .menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: #232323;
+  width: 200px;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: none;
+  transition: 0.5s;
+}
+
+.action .menu.active {
+  display: block;
+}
+
+.action .menu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+
+.action .menu h3 {
+  text-align: center;
+  font-size: 18px;
+  padding: 10px 0;
+  font-weight: 500;
+  color: #555;
+}
+
+.action .menu h3 span {
+  font-size: 14px;
+  color: #cecece;
+  font-weight: 300;
+}
+
+.action .menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.action .menu ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.action .menu ul li i {
+  margin-right: 10px;
+  color: #555;
+}
+
+.action .menu ul li a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.action .menu ul li:hover a {
+  color: #6c757d;
+}
+
+.action .menu ul li:hover i {
+  color: #6c757d;
 }
 
 .modal-body {
@@ -203,13 +297,14 @@ main .content .content-image {
 }
 
 main .content .content-image img {
-  width: 300px;
+  width: 400px;
   min-width: 250px;
   margin: auto;
   transition: 3s;
+  padding-bottom: 80px;
 }
 
-.fitur-title h1{
+.fitur-title h1 {
   text-shadow: 2px 2px 4px #000000;
   color: #ffffff;
   padding-top: 15%;
@@ -217,6 +312,7 @@ main .content .content-image img {
   font-family: "Bowlby One SC", sans-serif;
   font-weight: 400;
   font-style: normal;
+  padding-bottom: 100px;
 }
 
 .container-fitur {
@@ -228,6 +324,7 @@ main .content .content-image img {
   padding: 0 20px;
   /* Add padding to avoid cards touching the window edge */
   box-sizing: border-box;
+  padding-bottom: 140px;
 }
 
 .card-fitur {
@@ -282,7 +379,8 @@ main .content .content-image img {
 .title-icon-container {
   display: flex;
   align-items: center;
-  gap: 80px; /* Jarak antara teks dan ikon */
+  gap: 80px;
+  /* Jarak antara teks dan ikon */
 }
 
 .title-icon-container h2 {
@@ -290,8 +388,8 @@ main .content .content-image img {
 }
 
 .icon-inline {
-  width: 250px; 
-  height: auto; 
+  width: 400px;
+  height: auto;
 }
 
 .article-text {
@@ -305,44 +403,44 @@ main .content .content-image img {
   max-height: 0;
   overflow: hidden;
   transition: opacity 0.5s ease, max-height 0.5s ease;
-  }
-  
-  .article-content.show {
+}
+
+.article-content.show {
   display: block;
   opacity: 1;
-  max-height: 1000px; 
-  }
-  
-  .read-more-btn {
-    display: inline-flex;
-    align-items: center;
-    margin-top: 10px;
-    padding: 10px 15px;
-    background-color: #00ff88;
-    color: white;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: background-color 0.3s;
-    border-color: #006b39;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
-  }
-  
-  .read-more-btn:hover {
+  max-height: 1000px;
+}
+
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #00ff88;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  border-color: #006b39;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
+
+.read-more-btn:hover {
   background-color: #02472a;
   border-color: #02472a;
-  }
-  
-  .read-more-btn .read-more-icon {
+}
+
+.read-more-btn .read-more-icon {
   margin-left: 10px;
   transition: transform 0.3s;
-  }
-  
-  .read-more-btn.btn-secondary .read-more-icon {
+}
+
+.read-more-btn.btn-secondary .read-more-icon {
   transform: rotate(180deg);
-  }
+}
 
 .col-md-6 {
   flex: 1;
@@ -482,8 +580,9 @@ h2 {
 .btn-primary:hover {
   background-color: #0056b3;
 }
-.dropdown-btn { 
-  background-color: #4CAF50; 
+
+.dropdown-btn {
+  background-color: #4CAF50;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -497,7 +596,7 @@ h2 {
   vertical-align: middle;
 }
 
-  /* Dark background */
+/* Dark background */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -520,13 +619,15 @@ h2 {
 
 .dropdown:hover .dropdown-btn {
   background-color: #3e8e41;
-} */
+}
+
+*/
 
 /* Modal container */
 .modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1; 
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
@@ -543,8 +644,8 @@ footer {
   color: #fff;
   padding: 10px;
   text-align: center;
-  position:absolute;
-  left: 0;  
+  position: absolute;
+  left: 0;
   height: auto;
 }
 
@@ -557,8 +658,10 @@ footer {
 .footer .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center align the content horizontally */
-  align-items: center; /* Center align the content vertically */
+  justify-content: center;
+  /* Center align the content horizontally */
+  align-items: center;
+  /* Center align the content vertically */
 }
 
 .footer hr {
@@ -593,7 +696,8 @@ footer {
 .footer .other-menu {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center align the content vertically */
+  align-items: center;
+  /* Center align the content vertically */
 }
 
 .footer .social-media li a,
@@ -623,16 +727,16 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
   .footer .row {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .footer-logo {
-      margin-bottom: 10px;
+    margin-bottom: 10px;
   }
 
   .footer .logo-container p {
-      margin-bottom: 20px;
+    margin-bottom: 20px;
   }
 }
 
