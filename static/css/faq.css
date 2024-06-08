@@ -12,7 +12,7 @@ h1{
     font-family: "Bowlby One SC", sans-serif;
     font-weight: 400;
     font-style: normal;
-    text-shadow: 2px 2px 4px #ffffffc0;
+    text-shadow: 2px 2px 4px #353535c0;
     color: #9fc8ff;
   }
   
@@ -46,7 +46,7 @@ h1{
     color: white;
     transform: scale(1.1);
     text-shadow: none;
-    background-color: #001aff;
+    background-color: #006eff;
     border-radius: 20px;
     transition: ease-in-out 0.3s;
     -webkit-border-radius: 20px;
@@ -57,7 +57,7 @@ h1{
   }
   
   .navbar {
-    background-color: #2d31ffcc;
+    background-color: #260583;
     opacity: 80%;
   }
   
@@ -71,6 +71,21 @@ h1{
     background-color: #fdfdfd;
     font-weight: bold;
   }
+
+  
+.dropdown .dropdown-menu {
+  background-color: #260583;
+}
+
+.dropdown .dropdown-menu .dropdown-item {
+  color: #ffffff;
+}
+
+.dropdown .dropdown-menu .dropdown-item:hover,
+.dropdown .dropdown-menu .dropdown-item:focus {
+  color: #ffffff;
+  font-weight: 400;
+}
   
   .dropdown {
     margin-right: 20px;
@@ -102,15 +117,16 @@ h1{
     padding: 2rem 0;
 }
 
+/* 
 .faq-content {
     padding: 2rem;
     border: 1px solid #333;
     border-radius: 8px;
-    background-color: #1e1e1e;
-}
+    background-color: #006eff;
+} */
 
 h1 {
-    color: #ffffff;
+    color: #9fc8ff;
     margin-bottom: 2rem;
 }
 
@@ -135,6 +151,14 @@ h1 {
     max-width: 500px;
     text-align: left;
     transition: transform 0.3s, box-shadow 0.3s;
+}
+
+aside .content-image img {
+  width: 400px;
+  min-width: 250px;
+  margin: auto;
+  transition: 3s;
+  padding-left: 80px;
 }
 
 .faq-item:hover {
@@ -163,7 +187,7 @@ h1 {
 
 footer {
     width: 100%;
-    background-color: #000281cc;
+    background-color: #4016a1;
     color: #fff;
     padding: 20px 0;
     text-align: center;

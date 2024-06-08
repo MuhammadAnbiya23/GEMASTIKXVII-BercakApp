@@ -46,15 +46,19 @@ referrerpolicy="no-referrer"
         </button>
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#fitur" onclick="smoothScrollTo('#fitur')">Fitur</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
                         Lainnya
                     </a>
                     <ul class="dropdown-menu text-white">
                         <li><a class="dropdown-item" href="{{ url_for('sosmed') }}">Media Sosial</a></li>
+                        <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="{{ url_for('resource') }}">Resource</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="{{ url_for('contact') }}">Contact</a></li>
                         <li><a class="dropdown-item" href="{{ url_for('faq') }}">FAQ</a></li>
                     </ul>
                 </li>
@@ -64,9 +68,9 @@ referrerpolicy="no-referrer"
             </ul>
             <div class="d-flex justify-content-center ms-auto align-items-center">
               <div class="form-check form-switch me-3">
-                <input class="form-check-input" type="checkbox" id="colorModeSwitch" onclick="handleSwitchChange()" {{ 'checked' if color_mode == 'on' else '' }}>
-                <label class="form-check-label" for="colorModeSwitch">Colorful theme</label>
-              </div>
+                <input class="form-check-input" type="checkbox" id="colorModeSwitch" onclick="handleSwitchChange()" {{ 'checked' if session.get('color_mode') == 'on' else '' }}>
+                <label class="form-check-label text-white" for="colorModeSwitch">Tema Colorful</label>
+              </div> 
               {% if session.get('logged_in') %}
               
               <div class="action">
@@ -120,7 +124,7 @@ referrerpolicy="no-referrer"
   <div class="container mt-5">
     <div class="row">
         <div class="col-md-8 mx-auto">
-            <h1 class="artikel-title text-center mb-4" style="color: rgb(129, 127, 255);">ARTIKEL TULI</h1>
+            <h1 class="artikel-title text-center mb-4" style="color: #333057;">ARTIKEL TULI</h1>
             <div class="cards">
                 <div class="card-body">
                     <div class="title-icon-container">
@@ -128,7 +132,7 @@ referrerpolicy="no-referrer"
                         <img src="{{ url_for('static', filename='assets/deaf.svg') }}" alt="Gambar Artikel Utama" class="icon-inline">
                     </div>
                     <p class="article-text">Tuli adalah sebuah gangguan pendengaran yang menyebabkan seseorang tidak memiliki kemampuan untuk mendengar secara menyeluruh atau sebagian. Kondisi ini tentunya dapat dipengaruhi oleh beberapa faktor, salah satunya adalah genetika.</p>
-                    <a href="{{ url_for('deafEducation') }}" class="btn btn-primary read-more-btn">
+                    <a href="{{ url_for('deafEducation') }}" class="btn read-more-btn">
                         <span class="read-more-text">Baca Lebih Lanjut</span>
                     </a>
                 </div>

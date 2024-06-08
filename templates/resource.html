@@ -7,8 +7,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/resource.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Bebas+Neue&family=Bowlby+One+SC&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 </head>
-<body class="bg-dark text-white">
+<body class="text-white">
     <header>  
         <nav class="navbar navbar-expand-lg fixed-top" >
           <div class="container-fluid">
@@ -29,9 +33,10 @@
                           </a>
                           <ul class="dropdown-menu text-white">
                               <li><a class="dropdown-item" href="{{ url_for('sosmed') }}">Media Sosial</a></li>
+                              <li><hr class="dropdown-divider"></li>
                               <li><a class="dropdown-item" href="{{ url_for('resource') }}">Resource</a></li>
                               <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="{{ url_for('contact') }}">Contact</a></li>
+                          
                               <li><a class="dropdown-item" href="{{ url_for('faq') }}">FAQ</a></li>
                           </ul>
                       </li>
@@ -40,10 +45,6 @@
                       </li>
                   </ul>
                   <div class="d-flex justify-content-center ms-auto align-items-center">
-                    <div class="form-check form-switch me-3">
-                      <input class="form-check-input" type="checkbox" id="colorModeSwitch" onclick="handleSwitchChange()" {{ 'checked' if color_mode == 'on' else '' }}>
-                      <label class="form-check-label" for="colorModeSwitch">Colorful theme</label>
-                    </div>
                     {% if session.get('logged_in') %}
                       <div class="dropdown">
                         <button class="btn btn-light dropdown-toggle ms-2" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
@@ -64,42 +65,102 @@
       
       </header>
 
-    <main class="container mt-5">
-        <section class="content">
+      <main class="container">
+        <section class="content row">
             <h1>Resources</h1>
-            <button id="theme-toggle-btn" class="btn btn-secondary mb-3">Toggle Theme</button>
-            <div class="thanks mb-4">
-                <h2>Special Thanks</h2>
-                <p>We would like to extend our gratitude to all the creators whose resources have been invaluable for this project.</p>
+            <div class="col-md-6">
+                <div class="res-item resources mb-4">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="path/to/image.jpg" alt="Resource Image" class="img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                            <h2>Nama</h2>
+                            <ul>
+                                <li><a href="link" target="_blank">nama</a></li>
+                                <li><a href="link" target="_blank">nama</a></li>
+                                <li><a href="link" target="_blank">nama</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="res-item resources mb-4">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="path/to/image.jpg" alt="Resource Image" class="img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                            <h2>Nama</h2>
+                            <p>Deskripsi</p>
+                            <ul>
+                                <li>Call Nomor</li>
+                                <li>Text Nomor</li>
+                                <li><a href="link" target="_blank">Chat</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="res-item resources mb-4">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="path/to/image.jpg" alt="Resource Image" class="img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                            <h2>Nama</h2>
+                            <ul>
+                                <li>Call 211</li>
+                                <li><a href="link" target="_blank">nama</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="resources toggle-section mb-4" id="therapist-section">
-                <h2><i class="fa fa-user-md"></i> Therapist and source</h2>
-                <ul>
-                    <li><a href="https://www.psychologytoday.com" target="_blank">Psychology Today</a></li>
-                    <li><a href="https://www.inclusivetherapists.com" target="_blank">Inclusive Therapists</a></li>
-                    <li><a href="URL" target="_blank">nama</a></li>
-                    <li><a href="URL" target="_blank">nama</a></li>
-                    <li><a href="URL" target="_blank">nama</a></li>
-                </ul>
-                <button class="btn btn-info toggle-btn" data-section="therapist-section">Toggle Therapist Section</button>
-            </div>
-            <div class="resources toggle-section mb-4" id="support-groups-section">
-                <h2><i class="fa fa-hands-helping"></i> Support Groups</h2>
-                <ul>
-                    <li><a href="URL" target="_blank">nama</a></li>
-                    <li><a href="URL" target="_blank">nama</a></li>
-                    <li><a href="URL" target="_blank">nama</a></li>
-                </ul>
-                <button class="btn btn-info toggle-btn" data-section="support-groups-section">Toggle Support Groups Section</button>
-            </div>
-            <div class="resources toggle-section mb-4" id="crisis-resources-section">
-                <h2><i class="fa fa-phone"></i> Crisis Resources</h2>
-                <ul>
-                    <li>Call nomor (nama)</li>
-                    <li>Text nomor (nama)</li>
-                    <li><a href="URL Chat" target="_blank">Chat nomor</a></li>
-                </ul>
-                <button class="btn btn-info toggle-btn" data-section="crisis-resources-section">Hubungi darurat</button>
+            <div class="col-md-6">
+                <div class="res-item resources mb-4">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="path/to/image.jpg" alt="Resource Image" class="img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                            <h2>nama</h2>
+                            <ul>
+                                <li><a href="-" target="_blank">Flink</a></li>
+                                <li><a href="-" target="_blank">link</a></li>
+                                <li><a href="-" target="_blank">link</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="res-item resources mb-4">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="path/to/image.jpg" alt="Resource Image" class="img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                            <h2>Nama</h2>
+                            <p>Deskripsi</p>
+                            <ul>
+                                <li>Call Nomor</li>
+                                <li>Text Nomor</li>
+                                <li><a href="link" target="_blank">Chat</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="res-item resources mb-4">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="path/to/image.jpg" alt="Resource Image" class="img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                            <h2>Nama</h2>
+                            <p>Deskripsi</p>
+                            <ul>
+                                <li>no</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
