@@ -69,23 +69,43 @@ document.addEventListener("DOMContentLoaded", function () {
         startGame2Timer();
     }
 
-    startGame1Button.addEventListener("click", startGame1);
-    startGame2Button.addEventListener("click", startGame2);
-
-    function startGame1() {
-        game1Container.style.display = "block";
-        game2Container.style.display = "none";
-        rewardSection.style.display = "none";
-        // Implementasi Game 1
+    document.getElementById("startGame1").addEventListener("click", function(event) {
+        event.preventDefault();
+        showPopup();
+    });
+    
+    function showPopup() {
+        document.getElementById("popup-overlay").style.display = "flex";
     }
-
+    
+    function closePopup() {
+        document.getElementById("popup-overlay").style.display = "none";
+    }
+    
+    document.getElementById("popup-overlay").addEventListener("click", function(event) {
+        if (event.target === document.getElementById("popup-overlay")) {
+            closePopup();
+        }
+    });
+    
+    document.getElementById("startGame2").addEventListener("click", function(event) {
+        event.preventDefault();
+        startGame2();
+    });
+    
+    function startGame1() {
+        document.getElementById("game1-container").style.display = "block";
+        document.getElementById("game2-container").style.display = "none";
+        document.getElementById("reward-section").style.display = "none";
+    }
+    
     function startGame2() {
-        game2Container.style.display = "block";
-        game1Container.style.display = "none";
-        rewardSection.style.display = "none";
+        document.getElementById("game2-container").style.display = "block";
+        document.getElementById("game1-container").style.display = "none";
+        document.getElementById("reward-section").style.display = "none";
         resetGame2();
     }
-
+    
     function startGame2Timer() {
         clearInterval(game2Interval);
         game2Interval = setInterval(function () {
@@ -99,6 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }, 100);
     }
+    
 
     function displayReward() {
         game1Container.style.display = "none";
