@@ -2,7 +2,8 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
-  background-image: url('../assets/stacked-waves-about.svg');
+  background-image: url('../assets/stacked-peaks-haikei-blue.svg');
+  background-size: cover;
   font-family: Arial, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
   font-family: 'Raleway', sans-serif;

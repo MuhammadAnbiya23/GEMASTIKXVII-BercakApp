@@ -32,16 +32,16 @@
                               Lainnya
                           </a>
                           <ul class="dropdown-menu text-white">
-                              <li><a class="dropdown-item" href="{{ url_for('sosmed') }}">Media Sosial</a></li>
+                              <li><a class="dropdown-item" href="{{ url_for('sosmedv2') }}">Media Sosial</a></li>
                               <li><hr class="dropdown-divider"></li>
-                              <li><a class="dropdown-item" href="{{ url_for('resource') }}">Resource</a></li>
+                              <li><a class="dropdown-item" href="{{ url_for('resourcev2') }}">Resource</a></li>
                               <li><hr class="dropdown-divider"></li>
                               
-                              <li><a class="dropdown-item" href="{{ url_for('faq') }}">FAQ</a></li>
+                              <li><a class="dropdown-item" href="{{ url_for('faqv2') }}">FAQ</a></li>
                           </ul>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('about') }}">Tentang kami</a>
+                        <a class="nav-link" href="{{ url_for('aboutv2') }}">Tentang kami</a>
                       </li>
                   </ul>
                   <div class="d-flex justify-content-center ms-auto align-items-center">
@@ -67,86 +67,103 @@
 
       <main class="container">
         <section class="content row">
-            <div class="col-12">
-                <h1 class="resources-title">Resources</h1>
+            <h1>Resources</h1>
+            <div class="col-md-6">
+                <div class="res-item resources mb-4">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="{{ url_for('static', filename='assets/freepik.png') }}" alt="Resource Image" class="img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                            <h2>freepik</h2>
+                            <ul>
+                                <li><a href="link" target="_blank">nama</a></li>
+                                <li><a href="link" target="_blank">nama</a></li>
+                                <li><a href="link" target="_blank">nama</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="res-item resources mb-4">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="{{ url_for('static', filename='assets/flaticon.png') }}" alt="Resource Image" class="img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                            <h2>Flaticon</h2>
+                            <ul>
+                                <li><a href="link" target="_blank">nama</a></li>
+                                <li><a href="link" target="_blank">nama</a></li>
+                                <li><a href="link" target="_blank">nama</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="res-item resources mb-4">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="{{ url_for('static', filename='assets/image') }}" alt="Resource Image" class="img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                            <h2>Nama</h2>
+                            <ul>
+                                <li><a href="link" target="_blank">nama</a></li>
+                                <li><a href="link" target="_blank">nama</a></li>
+                                <li><a href="link" target="_blank">nama</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-6">
-                <div class="resources mb-4">
-                    <h2>Nama</h2>
-                    <ul>
-                        <li><a href="link" target="_blank">nama</a></li>
-                        <li><a href="link" target="_blank">nama</a></li>
-                        <li><a href="link" target="_blank">nama</a></li>
-                        <li><a href="link" target="_blank">nama</a></li>
-                        <li><a href="link" target="_blank">nama</a></li>
-                    </ul>
+                <div class="res-item resources mb-4">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="{{ url_for('static', filename='assets/bootstrap.png') }}" alt="Resource Image" class="img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                            <h2>Bootstrap 5</h2>
+                            <ul>
+                                <li><a href="link" target="_blank">nama</a></li>
+                                <li><a href="link" target="_blank">nama</a></li>
+                                <li><a href="link" target="_blank">nama</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="resources mb-4">
-                    <h2>Nama</h2>
-                    <p>Deskripsi</p>
-                    <ul>
-                        <li>Call Nomor</li>
-                        <li>Text Nomor</li>
-                        <li><a href="link" target="_blank">Chat</a></li>
-                    </ul>
+                <div class="res-item resources mb-4">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="{{ url_for('static', filename='assets/fontaw.png') }}" alt="Resource Image" class="img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                            <h2>Fontawesome</h2>
+                            <ul>
+                                <li><a href="link" target="_blank">nama</a></li>
+                                <li><a href="link" target="_blank">nama</a></li>
+                                <li><a href="link" target="_blank">nama</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="resources mb-4">
-                    <h2>Nama</h2>
-                    <ul>
-                        <li>Call 211</li>
-                        <li><a href="link" target="_blank">nama</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="resources mb-4">
-                    <h2>nama</h2>
-                    <ul>
-                        <li><a href="-" target="_blank">Flink</a></li>
-                        <li><a href="-" target="_blank">link</a></li>
-                        <li><a href="-" target="_blank">link</a></li>
-                    </ul>
-                </div>
-                <div class="resources mb-4">
-                    <h2>nama</h2>
-                    <p>Deskripsi</p>
-                    <ul>
-                        <li>no</li>
-                        <li>Text no</li>
-                    </ul>
+                <div class="res-item resources mb-4">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="{{ url_for('static', filename='assets/image') }}" alt="Resource Image" class="img-fluid">
+                        </div>
+                        <div class="col-md-8">
+                                <li><a href="link" target="_blank">nama</a></li>
+                                <li><a href="link" target="_blank">nama</a></li>
+                                <li><a href="link" target="_blank">nama</a></li>
+                                <li>no</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 logo-container">
-                    <img src="{{ url_for('static', filename='assets/LogoTeks.png') }}" alt="Logo" class="footer-logo">
-                    <!-- Copyright -->
-                    <p class="text-center">© 2024 Edukasi Website. All rights reserved.</p>
-                </div>
-                <div class="col-md-4">
-                    <!-- Menu Sosial Media -->
-                    <ul class="social-media">
-                        <li><a href="https://facebook.com"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-                        <li><a href="https://twitter.com"><i class="fab fa-twitter"></i>Twitter</a></li>
-                        <li><a href="https://instagram.com"><i class="fab fa-instagram"></i> Instagram</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <!-- Menu Lainnya -->
-                    <ul class="other-menu">
-                        <li><a href="#"><i class="fa-solid fa-question"></i>FAQ</a></li>
-                        <li><a href="#"><i class="fa-regular fa-file-lines"></i>Kebijakan</a></li>
-                        <li><a href="#"><i class="fa-solid fa-people-group"></i>Tentang Kami</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
     
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

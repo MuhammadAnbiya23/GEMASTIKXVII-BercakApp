@@ -2,7 +2,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
-  background-image: url('../assets/stacked-waves-about.svg');
+  background-image: url('../assets/Bgflat.svg');
   font-family: Arial, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
   font-family: 'Raleway', sans-serif;
@@ -53,7 +53,7 @@ p {
 
 .res-item {
   font-family: Bolby;
-  background-color: #0063e4;
+  background-color: #4aaeffb6;
   border: 1px solid #444;
   border-radius: 10px;
   padding: 1.5rem;
