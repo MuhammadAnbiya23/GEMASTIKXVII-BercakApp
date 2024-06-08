@@ -41,9 +41,9 @@ referrerpolicy="no-referrer"
                         </a>
                         <ul class="dropdown-menu text-white">
                             <li><a class="dropdown-item" href="{{ url_for('sosmed') }}">Media Sosial</a></li>
+                            <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="{{ url_for('resource') }}">Resource</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="{{ url_for('contact') }}">Contact</a></li>
                             <li><a class="dropdown-item" href="{{ url_for('faq') }}">FAQ</a></li>
                         </ul>
                     </li>
@@ -52,10 +52,6 @@ referrerpolicy="no-referrer"
                     </li>
                 </ul>
                 <div class="d-flex justify-content-center ms-auto align-items-center">
-                  <div class="form-check form-switch me-3">
-                    <input class="form-check-input" type="checkbox" id="colorModeSwitch" onclick="handleSwitchChange()" {{ 'checked' if color_mode == 'on' else '' }}>
-                    <label class="form-check-label" for="colorModeSwitch">Colorful theme</label>
-                  </div>
                   {% if session.get('logged_in') %}
                     <div class="dropdown">
                       <button class="btn btn-light dropdown-toggle ms-2" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
@@ -77,9 +73,9 @@ referrerpolicy="no-referrer"
 
     <main class="container">
         <section class="app-description text-center mb-5 fade-in">
-            <h1 class="mb-4">BercakApp</h1>
+            <h1 class="mb-4">Tentang Kami</h1>
             <div class="bercakap">
-                <div class="content">
+                <div class="ab-item content">
                     <p>"Bercak.App" adalah sebuah aplikasi berbasis web inovatif yang memanfaatkan teknologi computer vision dan machine learning untuk memfasilitasi pembelajaran kosa isyarat secara interaktif, menyenangkan yang untuk mudah diakses. Dengan fitur sign recognition, "Bercak.App" mampu mengenali dan memproses kosa isyarat dasar BISINDO secara real-time, memberikan umpan balik instan, dan membantu pengguna belajar serta berlatih kosa isyarat dengan lebih efektif. Teknologi ini tidak hanya meningkatkan akurasi dan kecepatan dalam pembelajaran, tetapi juga menghadirkan pengalaman belajar yang lebih imersif dan adaptif, membuat "Bercak.App" menjadi alat revolusioner dalam mendukung komunikasi inklusif bagi komunitas tunarungu.</p>
                 </div>
                 <div class="image">
