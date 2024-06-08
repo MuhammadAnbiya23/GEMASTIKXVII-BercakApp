@@ -8,7 +8,7 @@ class DataUser:
         try:
             # hashed_password = bcrypt.hashpw(password, bcrypt.gensalt()).decode('utf-8') 
             # hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
-            cursor.execute("INSERT INTO data_users (name, email, password) VALUES (%s, %s, %s)", 
+            cursor.execute("INSERT INTO data_user (name, email, password) VALUES (%s, %s, %s)", 
                            (name, email, password))# hashed_password))
             db.connection.commit()
             print(f"User {name} created successfully.")  # Debugging statement
@@ -22,7 +22,7 @@ class DataUser:
     def get_user_by_email(email):
         cursor = db.connection.cursor()
         try:
-            cursor.execute("SELECT * FROM data_users WHERE email = %s", (email,))
+            cursor.execute("SELECT * FROM data_user WHERE email = %s", (email,))
             user = cursor.fetchone()
             print(f"Fetched user: {user}")  # Debugging statement
             return user
@@ -36,7 +36,7 @@ class DataUser:
     def get_hashed_password(email):
         cursor = db.connection.cursor()
         try:
-            cursor.execute("SELECT password FROM data_users WHERE email = %s", (email,))
+            cursor.execute("SELECT password FROM data_user WHERE email = %s", (email,))
             hashed_password = cursor.fetchone()
             if hashed_password:
                 return hashed_password[0]

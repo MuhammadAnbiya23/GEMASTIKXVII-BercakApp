@@ -1,3 +1,8 @@
+function menuToggle() {
+  const toggleMenu = document.querySelector(".menu");
+  toggleMenu.classList.toggle("active");
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('JavaScript is working!');
 });
@@ -9,7 +14,6 @@ window.onscroll = () => {
         let top = window.scrollY;
         let offset = sec.offsetTop - 150;
         let height = sec.offsetHeight;
-
         if (top >= offset && top < offset +
              height){
                 sec.classList.add('show-animate');

@@ -58,15 +58,25 @@ referrerpolicy="no-referrer"
                         <label class="form-check-label" for="colorModeSwitch">Colorful theme</label>
                       </div>
                       {% if session.get('logged_in') %}
-                        <div class="dropdown">
-                          <button class="btn btn-light dropdown-toggle ms-2" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ session['user_name'] }}
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="{{ url_for('dashboard') }}">Profil</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a></li>
-                          </ul>
+                      <div class="action">
+                        <div class="profile" onclick="menuToggle();">
+                            <i class="fas fa-user-circle"></i>
                         </div>
+                        <div class="menu">
+                            <h3>{{ session['user_name'] }}<br /><span>bergabung sejak {{ session['user_join_date'] }}</span></h3>
+                            <ul>
+                                <li>
+                                    <i class="fas fa-user"></i><a href="#">My profile</a>
+                                </li>
+                                <li>
+                                    <i class="fas fa-cog"></i><a href="#">Lupa password</a>
+                                </li>
+                                <li>
+                                    <i class="fas fa-sign-out-alt"></i><a href="{{ url_for('logout') }}">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                       {% else %}
                         <a href="{{ url_for('login') }}" class="btn btn-light ms-2">Masuk</a>
                       {% endif %}   
@@ -95,6 +105,40 @@ referrerpolicy="no-referrer"
                     <video id="video" width="100%" height="auto" autoplay></video>
                     <div class="bounding-box"></div>
                 </div>
+                <div class="container my-5 d-none" id="cards-container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card text-white mb-3">
+                                <div class="card-header">Kamus Bisindo</div>
+                                <div class="card-body">
+                                    <button class="category-button"><h5 class="card-title" id="abjad-button">Abjad</h5></button>
+                                    <button class="category-button"><h5 class="card-title" id="angka-button">Angka</h5></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card text-white mb-3">
+                                <div class="card-header">Contoh Gesture</div>
+                                <div class="card-body">
+                                    <div id="gesture-carousel" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-inner" id="carousel-images">
+                                            <!-- Carousel items will be injected here -->
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#gesture-carousel" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#gesture-carousel" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div id="instruction" class="mt-3">Tunggu sebentar...</div>
             </div>
         </div>
@@ -102,36 +146,6 @@ referrerpolicy="no-referrer"
             Terjadi kendala, silakan coba lagi.
         </div>
     </div>
-
-    <!-- Cards Container -->
-    <div class="container my-5 d-none" id="cards-container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card text-white mb-3">
-                    <div class="card-header">Kamus Bisindo</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Abjad</h5>
-                        <!-- Daftar Abjad -->
-                        <ul id="alphabet-list" class="list-group">
-                            <li class="list-group-item" data-letter="A">A</li>
-                            <li class="list-group-item" data-letter="B">B</li>
-                            <li class="list-group-item" data-letter="C">C</li>
-                            <!-- Tambahkan abjad lainnya -->
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card text-white mb-3">
-                    <div class="card-header">Contoh Gesture</div>
-                    <div class="card-body">
-                        <img id="gesture-image" src="" alt="Gesture" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <!-- Feedback Section -->
     <div class="container my-5" id="feedback-section" style="display: none;">
