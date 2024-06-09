@@ -76,6 +76,10 @@ p {
   font-weight: 400;
 }
 
+.dropdown .dropdown-menu .dropdown-divider {
+  border-color: #6c757d;
+}
+
 .navbar {
   background-color: #260583;
   opacity: 80%;

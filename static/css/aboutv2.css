@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Raleway', sans-serif;
-  background-color: aliceblue;
+  background-color: #fff;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -18,7 +18,7 @@ h1{
 
 h2,
 h3 {
-  color: rgb(30, 44, 92);
+  color:  rgb(255, 255, 255);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
 }
@@ -193,7 +193,7 @@ opacity: 1;
 
 .app-description h2 {
   font-size: 36px;
-  color: #19254d;
+  color: #fff;
 }
 
 .quote p{
@@ -201,7 +201,7 @@ opacity: 1;
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin-top: 20px;
   font-size: 24pt;
-  color: aliceblue;
+  color: #fff;
 }
 
 .container-profile {
