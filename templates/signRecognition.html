@@ -17,6 +17,14 @@ referrerpolicy="no-referrer"
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Acme&family=Concert+One&family=Lilita+One&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Acme&family=Lilita+One&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Bebas+Neue&family=Bowlby+One+SC&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <title>Sign Recognition</title>
 </head>
@@ -55,15 +63,25 @@ referrerpolicy="no-referrer"
                     </ul>
                     <div class="d-flex justify-content-center ms-auto align-items-center">
                       {% if session.get('logged_in') %}
-                        <div class="dropdown">
-                          <button class="btn btn-light dropdown-toggle ms-2" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{ session['user_name'] }}
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <li><a class="dropdown-item" href="{{ url_for('dashboard') }}">Profil</a></li>
-                            <li><a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a></li>
-                          </ul>
+                      <div class="action">
+                        <div class="profile" onclick="menuToggle();">
+                            <i class="fas fa-user-circle"></i>
                         </div>
+                        <div class="menu">
+                            <h3>{{ session['user_name'] }}<br /><span>bergabung sejak {{ session['user_join_date'] }}</span></h3>
+                            <ul>
+                                <li>
+                                    <i class="fas fa-user"></i><a href="#">My profile</a>
+                                </li>
+                                <li>
+                                    <i class="fas fa-cog"></i><a href="#">Lupa password</a>
+                                </li>
+                                <li>
+                                    <i class="fas fa-sign-out-alt"></i><a href="{{ url_for('logout') }}">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                       {% else %}
                         <a href="{{ url_for('login') }}" class="btn btn-light ms-2">Masuk</a>
                       {% endif %}   
@@ -81,113 +99,122 @@ referrerpolicy="no-referrer"
         <button id="startButton" class="btn btn-light btn-lg" onclick="toggleRecognition()">Mulai Pengenalan</button>
     </div>
 
-    <!-- Camera Container -->
+    <!-- Camera and Cards Container -->
     <div class="container my-5" id="camera-container" style="display: none;">
-        <div class="card text-white">
-            <div class="card-header">
-                <h3>Scan Gerakan Anda</h3>
-            </div>
-            <div class="card-body">
-                <div class="video-container">
-                    <video id="video" width="100%" height="auto" autoplay></video>
-                    <div class="bounding-box"></div>
-                </div>
-                <div id="instruction" class="mt-3">Tunggu sebentar...</div>
-            </div>
-        </div>
-        <div id="feedback" class="alert alert-danger mt-3" style="display: none;">
-            Terjadi kendala, silakan coba lagi.
-        </div>
-    </div>
-
-    <!-- Cards Container -->
-    <div class="container my-5 d-none" id="cards-container">
         <div class="row">
             <div class="col-md-6">
-                <div class="card text-white mb-3">
-                    <div class="card-header">Kamus Bisindo</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Abjad</h5>
-                        <!-- Daftar Abjad -->
-                        <ul id="alphabet-list" class="list-group">
-                            <li class="list-group-item" data-letter="A">A</li>
-                            <li class="list-group-item" data-letter="B">B</li>
-                            <li class="list-group-item" data-letter="C">C</li>
-                            <!-- Tambahkan abjad lainnya -->
-                        </ul>
+                <div class="card text-white">
+                    <div class="card-header">
+                        <h3>Scan Gerakan Anda</h3>
                     </div>
+                    <div class="card-body">
+                        <div class="video-container">
+                            <video id="video" width="100%" height="auto" autoplay></video>
+                            <div class="bounding-box"></div>
+                        </div>
+                        <div id="instruction" class="mt-3">Tunggu sebentar...</div>
+                    </div>
+                </div>
+                <div id="feedback" class="alert alert-danger mt-3" style="display: none;">
+                    Terjadi kendala, silakan coba lagi.
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card text-white mb-3">
-                    <div class="card-header">Contoh Gesture</div>
-                    <div class="card-body">
-                        <img id="gesture-image" src="" alt="Gesture" class="img-fluid">
+                <div class="container my-5 d-none" id="cards-container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card text-white mb-3">
+                                <div class="card-header">Kamus Bisindo</div>
+                                <div class="card-body">
+                                    <button class="category-button"><h5 class="card-title" id="abjad-button">Abjad</h5></button>
+                                    <button class="category-button"><h5 class="card-title" id="angka-button">Angka</h5></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="card text-white mb-3">
+                                <div class="card-header">Contoh Gesture</div>
+                                <div class="card-body">
+                                    <div id="gesture-carousel" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-inner" id="carousel-images">
+                                            <!-- Carousel items will be injected here -->
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#gesture-carousel" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#gesture-carousel" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-
-    <!-- Feedback Section -->
-    <div class="container my-5" id="feedback-section" style="display: none;">
-        <div class="card text-white">
-            <div class="card-header">
-                <h3>Hasil Terjemahan</h3>
-            </div>
-            <div class="card-body">
-                <p id="translation-result"></p>
-                <button class="btn btn-primary" onclick="startRecognition()">Scan Ulang</button>
+        <!-- Translation Result Card -->
+        <div class="container my-5" id="feedback-section" style="display: none;">
+            <div class="card text-white">
+                <div class="card-header">
+                    <h3>Hasil Terjemahan</h3>
+                </div>
+                <div class="card-body">
+                    <p id="translation-result"></p>
+                    <button class="btn btn-primary" onclick="startRecognition()">Scan Ulang</button>
+                </div>
             </div>
         </div>
-    </div>
-    
-    <!-- Quiz Section -->
-    <div class="container my-5" id="quiz-section" style="display: none;">
-        <div class="card bg-dark text-white">
-            <div class="card-header">
-                <h3>Kuis Bahasa Isyarat</h3>
-            </div>
-            <div class="card-body">
-                <div id="quiz-instruction" class="mb-3">Peragakan isyarat berikut:</div>
-                <div id="quiz-command" class="display-4 mb-3">A</div>
-                <button class="btn btn-success" onclick="submitAnswer(true)">Benar</button>
-                <button class="btn btn-danger" onclick="submitAnswer(false)">Salah</button>
-                <div id="quiz-feedback" class="mt-3" style="display: none;">Hasil Jawaban</div>
+        
+        <!-- Quiz Section -->
+        <div class="container my-5" id="quiz-section" style="display: none;">
+            <div class="card bg-dark text-white">
+                <div class="card-header">
+                    <h3>Kuis Bahasa Isyarat</h3>
+                </div>
+                <div class="card-body">
+                    <div id="quiz-instruction" class="mb-3">Peragakan isyarat berikut:</div>
+                    <div id="quiz-command" class="display-4 mb-3">A</div>
+                    <button class="btn btn-success" onclick="submitAnswer(true)">Benar</button>
+                    <button class="btn btn-danger" onclick="submitAnswer(false)">Salah</button>
+                    <div id="quiz-feedback" class="mt-3" style="display: none;">Hasil Jawaban</div>
+                </div>
             </div>
         </div>
-    </div>
 </main>
+
+
     
-        <!-- Footer -->
-        <footer class="footer" id="about">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 logo-container">
-                        <img src="{{ url_for('static', filename='assets/LogoTeks.png') }}" alt="Logo" class="footer-logo">
-                        <!-- Copyright -->
-                        <p class="text-center">© 2024 Edukasi Website. All rights reserved.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <!-- Menu Sosial Media -->
-                        <ul class="social-media">
-                            <li><a href="https://facebook.com"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-                            <li><a href="https://twitter.com"><i class="fab fa-twitter"></i>Twitter</a></li>
-                            <li><a href="https://instagram.com"><i class="fab fa-instagram"></i> Instagram</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <!-- Menu Lainnya -->
-                        <ul class="other-menu">
-                            <li><a href="#"><i class="fa-solid fa-question"></i>FAQ</a></li>
-                            <li><a href="#"><i class="fa-regular fa-file-lines"></i>Kebijakan</a></li>
-                            <li><a href="#"><i class="fa-solid fa-people-group"></i>Tentang Kami</a></li>
-                        </ul>
-                    </div>
-                </div>
+<footer class="footer" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 logo-container">
+                <img src="{{ url_for('static', filename='assets/LogoTeks.png') }}" alt="Logo" class="footer-logo">
+                <!-- Copyright -->
+                <p class="text-center">© 2024 Edukasi Website. All rights reserved.</p>
             </div>
-        </footer>
+            <div class="col-md-4">
+                <!-- Menu Sosial Media -->
+                <ul class="social-media">
+                    <li><a href="https://youtube.com"><i class="fab fa-youtube"></i> Youtube</a></li>
+                    <li><a href="https://linkedin.com"><i class="fab fa-linkedin"></i>Linkelin</a></li>
+                    <li><a href="https://instagram.com"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <!-- Menu Lainnya -->
+                <ul class="other-menu">
+                    <li><a href="#"><i class="fa-solid fa-question"></i>FAQ</a></li>
+                    <li><a href="#"><i class="fa-regular fa-file-lines"></i>Kebijakan</a></li>
+                    <li><a href="#"><i class="fa-solid fa-people-group"></i>Tentang Kami</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer> 
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

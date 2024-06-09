@@ -5,7 +5,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
-    background-image: url('../assets/stacked-waves-about.svg');
+    background-image: url('../assets/Bgflat.svg');
 }
 
 h1{
@@ -30,6 +30,10 @@ h1{
     font-style: normal;
     font-size: 10pt;
   }   
+
+.image-icon {
+  width: 80px;
+}
 
 .nav-item a {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -72,7 +76,21 @@ h1{
     font-weight: bold;
   }
 
-  
+  .faq-item {
+    position: relative;
+}
+
+.faq-icon {
+    width: 50px;
+    height: 50px;
+}
+
+.faq-header {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
 .dropdown .dropdown-menu {
   background-color: #260583;
 }

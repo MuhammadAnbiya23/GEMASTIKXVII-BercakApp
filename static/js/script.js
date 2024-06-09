@@ -10,20 +10,19 @@ document.addEventListener('DOMContentLoaded', function () {
 let description = document.querySelectorAll(content - description);
 
 window.onscroll = () => {
-  description.forEach(sec => {
-    let top = window.scrollY;
-    let offset = sec.offsetTop - 150;
-    let height = sec.offsetHeight;
-
-    if (top >= offset && top < offset +
-      height) {
-      sec.classList.add('show-animate');
-    }
-
-    else {
-      sec.classList.remove('show-animate');
-    }
-  });
+    description.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 150;
+        let height = sec.offsetHeight;
+        if (top >= offset && top < offset +
+             height){
+                sec.classList.add('show-animate');
+             }
+        
+        else {
+            sec.classList.remove('show-animate');
+        }
+    });
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {

@@ -5,7 +5,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top center;
-    background-image: url('../assets/stacked-waves-about.svg');
+    background-image: url('../assets/Bgflat.svg');
 }
 
 h1{
@@ -24,11 +24,11 @@ h1{
   }
   
   p {
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 500;
-    font-style: normal;
-    font-size: 10pt;
+    font-style: italic;
+    font-size: 10pt; 
   }     
 
 header {
@@ -39,23 +39,23 @@ header {
     z-index: 1000;
   }
   
-  .dropdown-menu.bg-dark {
+  .dropdown-menu {
     background-color: #343a40;
     /* Warna latar belakang dropdown */
   }
   
-  .dropdown-menu.bg-dark .dropdown-item {
+  .dropdown-menu .dropdown-item {
     color: #ffffff;
     /* Warna teks putih */
   }
   
-  .dropdown-menu.bg-dark .dropdown-item:hover,
-  .dropdown-menu.bg-dark .dropdown-item:focus {
+  .dropdown-menu .dropdown-item:hover,
+  .dropdown-menu .dropdown-item:focus {
     color: #ffffff;
     font-weight: 400;
   }
   
-  .dropdown-menu.bg-dark .dropdown-divider {
+  .dropdown-menu .dropdown-divider {
     border-color: #6c757d;
   }
   

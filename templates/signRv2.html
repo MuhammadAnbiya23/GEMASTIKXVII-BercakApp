@@ -41,16 +41,16 @@ referrerpolicy="no-referrer"
                                 Lainnya
                             </a>
                             <ul class="dropdown-menu text-white">
-                                <li><a class="dropdown-item" href="{{ url_for('sosmed') }}">Media Sosial</a></li>
+                                <li><a class="dropdown-item" href="{{ url_for('sosmedv2') }}">Media Sosial</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="{{ url_for('resource') }}">Resource</a></li>
+                                <li><a class="dropdown-item" href="{{ url_for('resourcev2') }}">Resource</a></li>
                                 <li><hr class="dropdown-divider"></li>
                         
-                                <li><a class="dropdown-item" href="{{ url_for('faq') }}">FAQ</a></li>
+                                <li><a class="dropdown-item" href="{{ url_for('faqv2') }}">FAQ</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="{{ url_for('about') }}">Tentang kami</a>
+                          <a class="nav-link" href="{{ url_for('aboutv2') }}">Tentang kami</a>
                         </li>
                     </ul>
                     <div class="d-flex justify-content-center ms-auto align-items-center">
@@ -159,36 +159,33 @@ referrerpolicy="no-referrer"
         </div>
     </div>
 </main>
-    
-        <!-- Footer -->
-        <footer class="footer" id="about">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 logo-container">
-                        <img src="{{ url_for('static', filename='assets/LogoTeks.png') }}" alt="Logo" class="footer-logo">
-                        <!-- Copyright -->
-                        <p class="text-center">© 2024 Edukasi Website. All rights reserved.</p>
-                    </div>
-                    <div class="col-md-4">
-                        <!-- Menu Sosial Media -->
-                        <ul class="social-media">
-                            <li><a href="https://facebook.com"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-                            <li><a href="https://twitter.com"><i class="fab fa-twitter"></i>Twitter</a></li>
-                            <li><a href="https://instagram.com"><i class="fab fa-instagram"></i> Instagram</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4">
-                        <!-- Menu Lainnya -->
-                        <ul class="other-menu">
-                            <li><a href="#"><i class="fa-solid fa-question"></i>FAQ</a></li>
-                            <li><a href="#"><i class="fa-regular fa-file-lines"></i>Kebijakan</a></li>
-                            <li><a href="#"><i class="fa-solid fa-people-group"></i>Tentang Kami</a></li>
-                        </ul>
-                    </div>
-                </div>
+<footer class="footer" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 logo-container">
+                <img src="{{ url_for('static', filename='assets/LogoTeks.png') }}" alt="Logo" class="footer-logo">
+                <!-- Copyright -->
+                <p class="text-center">© 2024 Edukasi Website. All rights reserved.</p>
             </div>
-        </footer>
-
+            <div class="col-md-4">
+                <!-- Menu Sosial Media -->
+                <ul class="social-media">
+                    <li><a href="https://youtube.com"><i class="fab fa-youtube"></i> Youtube</a></li>
+                    <li><a href="https://linkedin.com"><i class="fab fa-linkedin"></i>Linkelin</a></li>
+                    <li><a href="https://instagram.com"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <!-- Menu Lainnya -->
+                <ul class="other-menu">
+                    <li><a href="#"><i class="fa-solid fa-question"></i>FAQ</a></li>
+                    <li><a href="#"><i class="fa-regular fa-file-lines"></i>Kebijakan</a></li>
+                    <li><a href="#"><i class="fa-solid fa-people-group"></i>Tentang Kami</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer> 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>

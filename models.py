@@ -6,6 +6,10 @@ class DataUser:
     def create_user(name, email, password):
         cursor = db.connection.cursor()
         try:
+            # hashed_password = bcrypt.hashpw(password, bcrypt.gensalt()).decode('utf-8') 
+            hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+            cursor.execute("INSERT INTO data_user (name, email, password) VALUES (%s, %s, %s)", 
+                           (name, email,hashed_password))
             hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
             cursor.execute("INSERT INTO data_users (name, email, password) VALUES (%s, %s, %s)", 
                            (name, email, hashed_password))
@@ -14,8 +18,8 @@ class DataUser:
         except Exception as e:
             print(f"Error: {e}")
             db.connection.rollback()
-        finally:
-            cursor.close()
+        # finally:
+        #     cursor.close()
 
     @staticmethod
     def get_user_by_email(email):
@@ -28,8 +32,8 @@ class DataUser:
         except Exception as e:
             print(f"Error: {e}")
             return None
-        finally:
-            cursor.close()
+        # finally:
+        #     cursor.close()
 
     @staticmethod
     def get_hashed_password(email):
@@ -44,8 +48,8 @@ class DataUser:
         except Exception as e:
             print(f"Error: {e}")
             return None
-        finally:
-            cursor.close()
+        # finally:
+            # cursor.close()
 
     @staticmethod
     def check_password(stored_password, provided_password):

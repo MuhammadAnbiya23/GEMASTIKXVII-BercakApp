@@ -54,15 +54,25 @@
                   </ul>
                   <div class="d-flex justify-content-center ms-auto align-items-center">
                     {% if session.get('logged_in') %}
-                      <div class="dropdown">
-                        <button class="btn btn-light dropdown-toggle ms-2" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                          {{ session['user_name'] }}
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <li><a class="dropdown-item" href="{{ url_for('dashboard') }}">Profil</a></li>
-                          <li><a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a></li>
-                        </ul>
-                      </div>
+                    <div class="action">
+                        <div class="profile" onclick="menuToggle();">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="menu">
+                            <h3>{{ session['user_name'] }}<br /><span>bergabung sejak {{ session['user_join_date'] }}</span></h3>
+                            <ul>
+                                <li>
+                                    <i class="fas fa-user"></i><a href="#">My profile</a>
+                                </li>
+                                <li>
+                                    <i class="fas fa-cog"></i><a href="#">Lupa password</a>
+                                </li>
+                                <li>
+                                    <i class="fas fa-sign-out-alt"></i><a href="{{ url_for('logout') }}">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     {% else %}
                       <a href="{{ url_for('login') }}" class="btn btn-light ms-2">Masuk</a>
                     {% endif %}
@@ -76,18 +86,6 @@
         <h1 class="mb-4">Ikuti kami di Social Media</h1>
         <p class="lead mb-5">Tetap terhubung dengan kami di media sosial! Ikuti kami untuk mendapatkan informasi terkini</p>
         <div class="row justify-content-center">
-            <div class="col-6 col-md-2 mb-4">
-                <a href="https://facebook.com" target="_blank" class="social-link">
-                    <i class="fab fa-facebook-f social-icon"></i>
-                    <p>Facebook</p>
-                </a>
-            </div>
-            <div class="col-6 col-md-2 mb-4">
-                <a href="https://twitter.com" target="_blank" class="social-link">
-                    <i class="fab fa-twitter social-icon"></i>
-                    <p>Twitter</p>
-                </a>
-            </div>
             <div class="col-6 col-md-2 mb-4">
                 <a href="https://instagram.com" target="_blank" class="social-link">
                     <i class="fab fa-instagram social-icon"></i>
@@ -109,7 +107,6 @@
         </div>
     </div>
     
-
     <footer class="footer" id="about">
         <div class="container">
             <div class="row">
@@ -121,8 +118,8 @@
                 <div class="col-md-4">
                     <!-- Menu Sosial Media -->
                     <ul class="social-media">
-                        <li><a href="https://facebook.com"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-                        <li><a href="https://twitter.com"><i class="fab fa-twitter"></i>Twitter</a></li>
+                        <li><a href="https://youtube.com"><i class="fab fa-youtube"></i> Youtube</a></li>
+                        <li><a href="https://linkedin.com"><i class="fab fa-linkedin"></i>Linkelin</a></li>
                         <li><a href="https://instagram.com"><i class="fab fa-instagram"></i> Instagram</a></li>
                     </ul>
                 </div>

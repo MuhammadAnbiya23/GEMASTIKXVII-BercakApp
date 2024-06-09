@@ -1,3 +1,8 @@
+function menuToggle() {
+    const toggleMenu = document.querySelector(".menu");
+    toggleMenu.classList.toggle("active");
+  }
+
 document.addEventListener("DOMContentLoaded", function() {
     const startSpeechRecognitionButton = document.getElementById("startSpeechRecognition");
     const speechResult = document.getElementById("speechResult");
