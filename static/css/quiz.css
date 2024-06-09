@@ -308,7 +308,7 @@ button {
   margin: 10px;
   border: none;
   border-radius: 5px;
-  background-color: #007bff;
+  background-color: #cc00ff;
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -319,8 +319,10 @@ button:hover {
 }
 
 .custom-image-size {
-  width: 100px;
+  width: 300px; /* Atur lebar gambar sesuai kebutuhan Anda */
+  height: auto; /* Mempertahankan rasio aspek gambar */
 }
+
 
 
 footer {

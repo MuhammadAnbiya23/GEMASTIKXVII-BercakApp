@@ -2,127 +2,75 @@ function menuToggle() {
     const toggleMenu = document.querySelector(".menu");
     toggleMenu.classList.toggle("active");
   }
-
-document.addEventListener("DOMContentLoaded", function() {
+  
+  document.addEventListener("DOMContentLoaded", function() {
     const startSpeechRecognitionButton = document.getElementById("startSpeechRecognition");
+    const speechRecognitionButton = document.getElementById("speechRecognitionButton");
     const speechResult = document.getElementById("speechResult");
     const signVisual = document.getElementById("signVisual");
-
+  
     const startSignRecognitionButton = document.getElementById("startSignRecognition");
-    const signVideo = document.getElementById("signVideo");
     const signTextResult = document.getElementById("signTextResult");
-
-    // Initialize speech recognition
+  
+    // Inisialisasi pengenalan suara
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const recognition = new SpeechRecognition();
-
+  
+    recognition.lang = 'id-ID'; // Atur bahasa
+    recognition.continuous = true; // Aktifkan pengakuan kontinu
+    recognition.interimResults = true; // Aktifkan hasil interim
+  
     recognition.onstart = function() {
-        speechResult.textContent = "Listening...";
+      speechResult.textContent = "Mendengarkan...";
     };
-
+  
     recognition.onspeechend = function() {
-        recognition.stop();
+      recognition.stop();
     };
-
+  
     recognition.onresult = function(event) {
-        const transcript = event.results[0][0].transcript;
-        speechResult.textContent = `You said: ${transcript}`;
-        // Placeholder for converting speech to sign language
-        signVisual.textContent = "🔤"; // Replace with actual sign language translation
+      let interim_transcript = '';
+      let final_transcript = '';
+  
+      for (let i = 0; i < event.results.length; ++i) {
+        if (event.results[i].isFinal) {
+          final_transcript += event.results[i][0].transcript;
+        } else {
+          interim_transcript += event.results[i][0].transcript;
+        }
+      }
+  
+      speechResult.innerHTML = `Anda mengatakan: ${final_transcript || interim_transcript}`;
+      signVisual.textContent = "🔤"; // Ganti dengan terjemahan bahasa isyarat yang sebenarnya
     };
-
+  
     startSpeechRecognitionButton.addEventListener("click", function() {
-        recognition.start();
+      recognition.start();
     });
-
-    // Initialize video for sign language recognition
-    if (navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({ video: true })
-            .then(function(stream) {
-                signVideo.srcObject = stream;
-            })
-            .catch(function(error) {
-                console.log("Something went wrong with accessing the camera.");
-            });
-    }
-
+  
+    // Tampilkan modal untuk fitur Pengenalan Suara
+    speechRecognitionButton.addEventListener("click", function() {
+      const modal = document.getElementById("developmentModal");
+      const closeButton = document.querySelector(".close-button");
+      
+      modal.style.display = "block";
+      
+      closeButton.addEventListener("click", function() {
+        modal.style.display = "none";
+      });
+  
+      window.addEventListener("click", function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+    });
+  
+    // Hapus kode akses kamera
+  
     startSignRecognitionButton.addEventListener("click", function() {
-        // Placeholder for sign language recognition logic
-        signTextResult.textContent = "Sign language to text recognition started...";
+      // Placeholder untuk logika pengenalan bahasa isyarat
+      signTextResult.textContent = "Pengenalan bahasa isyarat ke teks dimulai...";
     });
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    const startSpeechRecognitionButton = document.getElementById("startSpeechRecognition");
-    const speechResult = document.getElementById("speechResult");
-    const signVisual = document.getElementById("signVisual");
-
-    const startSignRecognitionButton = document.getElementById("startSignRecognition");
-    const signVideo = document.getElementById("signVideo");
-    const signTextResult = document.getElementById("signTextResult");
-
-    // Initialize speech recognition
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    const recognition = new SpeechRecognition();
-
-    recognition.onstart = function() {
-        speechResult.textContent = "Listening...";
-    };
-
-    recognition.onspeechend = function() {
-        recognition.stop();
-    };
-
-    recognition.onresult = function(event) {
-        const transcript = event.results[0][0].transcript;
-        speechResult.textContent = `You said: ${transcript}`;
-        // Placeholder for converting speech to sign language
-        signVisual.textContent = "🔤"; // Replace with actual sign language translation
-    };
-
-    startSpeechRecognitionButton.addEventListener("click", function() {
-        recognition.start();
-    });
-
-    // Initialize video for sign language recognition
-    if (navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({ video: true })
-            .then(function(stream) {
-                signVideo.srcObject = stream;
-            })
-            .catch(function(error) {
-                console.log("Something went wrong with accessing the camera.");
-            });
-    }
-
-    startSignRecognitionButton.addEventListener("click", function() {
-        // Placeholder for sign language recognition logic
-        signTextResult.textContent = "Sign language to text recognition started...";
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-    const startSpeechRecognitionButton = document.getElementById("startSpeechRecognition");
-    const speechResult = document.getElementById("speechResult");
-
-    // Initialize speech recognition
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    const recognition = new SpeechRecognition();
-
-    recognition.onstart = function() {
-        speechResult.textContent = "Listening...";
-    };
-
-    recognition.onspeechend = function() {
-        recognition.stop();
-    };
-
-    recognition.onresult = function(event) {
-        const transcript = event.results[0][0].transcript;
-        speechResult.textContent = `You said: ${transcript}`;
-    };
-
-    startSpeechRecognitionButton.addEventListener("click", function() {
-        recognition.start();
-    });
-});
+  });
+  

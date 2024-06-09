@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const game2Feedback = document.getElementById("game2-feedback");
     const game2RewardPoints = document.getElementById("game2-reward-points");
     const game2Timer = document.getElementById("game2-timer");
+    const correctSound = document.getElementById("correct-sound");
+    const wrongSound = document.getElementById("wrong-sound");
     let game2Interval;
     let game2TimeLeft = 100;
     let game2Points = 0;
@@ -16,21 +18,39 @@ document.addEventListener("DOMContentLoaded", function () {
     const game2Questions = [
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/halo.svg",
-            options: ["Selamat tinggal", "Halo"],
-            correctAnswer: "Halo"
+            image: "/static/assets/selamat-pagi.jpg",
+            options: ["Selamat pagi", "Selamat sore"],
+            correctAnswer: "Selamat pagi"
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/terimakasih.jpg",
-            options: ["Terima kasih", "Sama-sama"],
-            correctAnswer: "Terima kasih"
+            image: "/static/assets/siapa.jpg",
+            options: ["Dimana", "Siapa"],
+            correctAnswer: "Siapa"
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/maaf.jpg",
-            options: ["Maaf", "Samaa-sama"],
-            correctAnswer: "Maaf"
+            image: "/static/assets/bagaimana.jpg",
+            options: ["Bagaimana", "Kenapa"],
+            correctAnswer: "Bagaimana"
+        },
+        {
+            title: "Apa arti gambar kosa isyarat ini?",
+            image: "/static/assets/selamat-malam.jpg",
+            options: ["Selamat malam", "Selamat sore"],
+            correctAnswer: "Selamat malam"
+        },
+        {
+            title: "Apa arti gambar kosa isyarat ini?",
+            image: "/static/assets/saya.jpg",
+            options: ["Saya", "Kami"],
+            correctAnswer: "Saya"
+        },
+        {
+            title: "Apa arti gambar kosa isyarat ini?",
+            image: "/static/assets/dia.jpg",
+            options: ["Dia", "Mereka"],
+            correctAnswer: "Dia"
         }
     ];
 
@@ -48,7 +68,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (selectedOption === question.correctAnswer) {
             game2Points++;
             game2Feedback.innerText = "Benar!";
-            if (game2Points % 5 === 0) {
+            correctSound.play();
+            if (game2Points % 6 === 0) {
                 displayReward();
             } else {
                 loadGame2Question();
@@ -56,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         } else {
             game2Feedback.innerText = "Salah! Permainan berakhir.";
+            wrongSound.play();
             clearInterval(game2Interval);
             setTimeout(resetGame2, 2000); // Reset game after 2 seconds
         }
@@ -65,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function resetGame2() {
         game2Points = 0;
         game2TimeLeft = 100;
+        game2RewardPoints.innerText = `Poin: ${game2Points}`;
         loadGame2Question();
         startGame2Timer();
     }
@@ -115,11 +138,11 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 clearInterval(game2Interval);
                 game2Feedback.innerText = "Waktu habis!";
+                wrongSound.play();
                 setTimeout(resetGame2, 2000); // Reset game after 2 seconds
             }
         }, 100);
     }
-    
 
     function displayReward() {
         game1Container.style.display = "none";
@@ -141,11 +164,10 @@ document.addEventListener("DOMContentLoaded", function () {
     //         });
     //     }
     // }
-
     // startCamera();
 });
 
 function menuToggle() {
     const toggleMenu = document.querySelector(".menu");
     toggleMenu.classList.toggle("active");
-  }
+}
