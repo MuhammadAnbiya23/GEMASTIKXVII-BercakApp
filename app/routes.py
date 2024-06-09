@@ -2,6 +2,8 @@ from flask import request, session, flash, redirect, url_for, render_template
 from app import app, db, bcrypt
 from models import DataUser
 from utils import is_valid_email, is_valid_password
+# from yolov5.yolov5.detect import run_yolov5_detection
+
 
 @app.route("/dashboard/")
 def dashboard():
