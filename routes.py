@@ -169,7 +169,7 @@ def login():
         password = request.form.get('password-login')
         user = DataUser.get_user_by_email(email)
 
-        if user : # and password == user['password']: #and DataUser.check_password(user['password'], password):
+        if user and DataUser.check_password(user['password'], password):
             session['logged_in'] = True
             session['user_id'] = user['id']
             session['user_name'] = user['name']

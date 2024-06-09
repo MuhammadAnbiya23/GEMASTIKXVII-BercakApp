@@ -6,12 +6,11 @@ class DataUser:
     def create_user(name, email, password):
         cursor = db.connection.cursor()
         try:
-            # hashed_password = bcrypt.hashpw(password, bcrypt.gensalt()).decode('utf-8') 
-            # hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
-            cursor.execute("INSERT INTO data_user (name, email, password) VALUES (%s, %s, %s)", 
-                           (name, email, password))# hashed_password))
+            hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+            cursor.execute("INSERT INTO data_users (name, email, password) VALUES (%s, %s, %s)", 
+                           (name, email, hashed_password))
             db.connection.commit()
-            print(f"User {name} created successfully.")  # Debugging statement
+            print(f"User {name} created successfully.")
         except Exception as e:
             print(f"Error: {e}")
             db.connection.rollback()
@@ -24,7 +23,7 @@ class DataUser:
         try:
             cursor.execute("SELECT * FROM data_user WHERE email = %s", (email,))
             user = cursor.fetchone()
-            print(f"Fetched user: {user}")  # Debugging statement
+            print(f"Fetched user: {user}")  
             return user
         except Exception as e:
             print(f"Error: {e}")
@@ -51,7 +50,5 @@ class DataUser:
     @staticmethod
     def check_password(stored_password, provided_password):
         return bcrypt.check_password_hash(stored_password, provided_password)
-    # def check_password(password) :
-        # hashed_password = bcrypt.hashpw(password, bcrypt.gensalt())
-        # return bcrypt.checkpw(password, hashed_password)
+
 
