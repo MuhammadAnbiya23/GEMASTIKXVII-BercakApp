@@ -95,18 +95,18 @@ referrerpolicy="no-referrer"
 
     <!-- Main Content -->
 
-    <div class="container mt-5">
+    <div class="container mt-5 fade-in">
         <div class="row">
-          <div class="col-md-6 mx-auto text-center">
+          <div class="col-md-6 mx-auto text-center fade-in">
             <h1>Speech to Text Recognition</h1>
-            <div class="d-flex justify-content-center mt-3">
+            <div class="d-flex justify-content-center mt-3 fade-in">
               <button class="btn btn-primary btn-option">Transkrip</button>
               <button id="speechRecognitionButton" class="btn btn-secondary btn-option">Speech Recognition</button>
             </div>
-            <div class="transkrip-icon mt-3">
+            <div class="transkrip-icon mt-3 fade-in">
               <img src="{{ url_for('static', filename='assets/transkrip-icon.svg') }}" alt="">
             </div>
-            <div id="speechResultContainer" class="container-result mt-3">
+            <div id="speechResultContainer" class="container-result mt-3 fade-in">
               <p id="speechResult" class="speech-result">Tekan tombol untuk mulai</p>
               <button id="startSpeechRecognition" class="btn btn-primary">
                 <img src="{{ url_for('static', filename='assets/voice-icon.svg') }}" alt="">
