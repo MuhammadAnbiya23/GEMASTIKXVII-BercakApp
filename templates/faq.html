@@ -11,6 +11,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Bebas+Neue&family=Bowlby+One+SC&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Acme&family=Concert+One&family=Lilita+One&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Acme&family=Lilita+One&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body class="text-white">
     <header>  
@@ -36,7 +44,7 @@
                               <li><hr class="dropdown-divider"></li>
                               <li><a class="dropdown-item" href="{{ url_for('resource') }}">Resource</a></li>
                               <li><hr class="dropdown-divider"></li>
-                             
+                            
                               <li><a class="dropdown-item" href="{{ url_for('faq') }}">FAQ</a></li>
                           </ul>
                       </li>
@@ -46,15 +54,25 @@
                   </ul>
                   <div class="d-flex justify-content-center ms-auto align-items-center">
                     {% if session.get('logged_in') %}
-                      <div class="dropdown">
-                        <button class="btn btn-light dropdown-toggle ms-2" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                          {{ session['user_name'] }}
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <li><a class="dropdown-item" href="{{ url_for('dashboard') }}">Profil</a></li>
-                          <li><a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a></li>
-                        </ul>
-                      </div>
+                    <div class="action">
+                        <div class="profile" onclick="menuToggle();">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="menu">
+                            <h3>{{ session['user_name'] }}<br /><span>bergabung sejak {{ session['user_join_date'] }}</span></h3>
+                            <ul>
+                                <li>
+                                    <i class="fas fa-user"></i><a href="#">My profile</a>
+                                </li>
+                                <li>
+                                    <i class="fas fa-cog"></i><a href="#">Lupa password</a>
+                                </li>
+                                <li>
+                                    <i class="fas fa-sign-out-alt"></i><a href="{{ url_for('logout') }}">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     {% else %}
                       <a href="{{ url_for('login') }}" class="btn btn-light ms-2">Masuk</a>
                     {% endif %}

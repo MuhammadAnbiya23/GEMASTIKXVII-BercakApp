@@ -19,14 +19,14 @@ h1{
   h2,
   h3 {
     color: rgb(159, 182, 255);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
+    font-family: "Lilita One", sans-serif;
+    font-style: normal;
   }
   
   p {
     color: rgb(255, 255, 255);
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 500;
+    font-family: "Concert One", sans-serif;
+    font-weight: 400;
     font-style: normal;
     font-size: 10pt;
   }   
@@ -35,45 +35,191 @@ h1{
   width: 80px;
 }
 
+header {
+  background-color: rgb(24, 24, 24);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.dropdown-menu {
+  background-color: #260583;
+  /* Warna latar belakang dropdown */
+}
+
+.dropdown-menu .dropdown-item {
+  color: #ffffff;
+  /* Warna teks putih */
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.dropdown-menu .dropdown-divider {
+  border-color: #6c757d;
+}
+
+.dropdown-menu-end {
+  right: 0;
+  left: auto;
+}
+
+.modal-body {
+  background-color: #fff;
+}
+
 .nav-item a {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1rem;
-    color: #ffffff;
+  font-size: 1rem;
+  color: #ffffff;
+  cursor: pointer;
+  margin-right: 20px;
+  border-radius: 20px;
+  list-style-type: none;
+  font-family: "poppins", sans-serif;
+  font-weight: bold;
+}
+
+.nav-item a:hover {
+  color: white;
+  transform: scale(1.1);
+  text-shadow: none;
+  background-color: #006eff;
+  border-radius: 20px;
+  transition: ease-in-out 0.3s;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.navbar {
+  background-color: #260583;
+}
+
+.navbar-brand {
+  padding-right: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-toggler {
+  background-color: #323A43;
+  font-weight: bold;
+}
+
+.dropdown {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.dropdown-items {
+  text-align: center;
+}
+
+.dropdown-item {
+  color: rgb(0, 0, 0);
+}
+
+li .dropdown-item {
+  color: #000;
+}
+
+.buttons {
+  margin-right: 20px;
+}
+
+  .action {
+    position: relative;
+  }
+  
+  .action .profile {
     cursor: pointer;
-    margin-right: 20px;
-    border-radius: 20px;
-    list-style-type: none;
-    
+    font-size: 24px;
+    margin-left: 20px;
   }
   
-  .nav-item a:hover {
-    color: white;
-    transform: scale(1.1);
-    text-shadow: none;
-    background-color: #006eff;
-    border-radius: 20px;
-    transition: ease-in-out 0.3s;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-  
+  .action .profile i {
+    font-size: 30px;
+    color: #ffffff;
   }
   
-  .navbar {
-    background-color: #260583;
-    opacity: 80%;
+  .action .menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #fff;
+    width: 200px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: none;
+    transition: 0.5s;
   }
   
-  .navbar-brand {
-    padding-right: 50px;
+  .action .menu.active {
+    display: block;
+  }
+  
+  .action .menu::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    transform: rotate(45deg);
+  }
+  
+  .action .menu h3 {
+    text-align: center;
+    font-size: 18px;
+    padding: 10px 0;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .action .menu h3 span {
+    font-size: 14px;
+    color: #cecece;
+    font-weight: 300;
+  }
+  
+  .action .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .action .menu ul li {
+    padding: 10px 0;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
   }
   
-  .navbar-toggler {
-    background-color: #fdfdfd;
-    font-weight: bold;
+  .action .menu ul li i {
+    margin-right: 10px;
+    color: #555;
+  }
+  
+  .action .menu ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: 0.5s;
+  }
+  
+  .action .menu ul li:hover a {
+    color: #ff5d94;
+  }
+  
+  .action .menu ul li:hover i {
+    color: #ff5d94;
   }
 
   .faq-item {

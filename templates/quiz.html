@@ -91,9 +91,13 @@ referrerpolicy="no-referrer"
         </nav>
     </header>
 
+    <audio id="correct-sound" src="{{ url_for('static', filename='assets/correct-sound.mp3') }}"></audio>
+    <audio id="wrong-sound" src="{{ url_for('static', filename='assets/wrong-sound.mp3') }}"></audio>
+
+
     <!-- Main Content -->
     <main>
-        <div class="container">
+        <div class="container fade-in">
             <h1>Quiz Bahasa Isyarat</h1>
             <p>Belajar dan Uji Kemampuan Bahasa Isyarat Anda</p>
             <div class="quiz-icon"><img src="{{ url_for('static', filename='assets/quiz-icon.svg') }}" alt="" srcset=""></div>
@@ -102,7 +106,7 @@ referrerpolicy="no-referrer"
         </div>
 
         <!-- Game 1 Container -->
-        <div class="container my-5" id="game1-container">
+        <div class="container my-5 fade-in" id="game1-container">
             <div class="card">
                 <div class="card-header">
                     <h3>Story Telling</h3>

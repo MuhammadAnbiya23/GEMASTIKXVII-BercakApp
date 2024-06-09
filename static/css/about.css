@@ -19,19 +19,20 @@ h1{
   h2,
   h3 {
     color: rgb(30, 44, 92);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
+    font-family: "Concert One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
   
   p {
     color: rgb(255, 255, 255);
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: 500;
-    font-style: italic;
+    font-family: "Concert One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     font-size: 10pt; 
   }     
 
-header {
+  header {
     background-color: rgb(24, 24, 24);
     position: fixed;
     width: 100%;
@@ -40,7 +41,7 @@ header {
   }
   
   .dropdown-menu {
-    background-color: #343a40;
+    background-color: #260583;
     /* Warna latar belakang dropdown */
   }
   
@@ -92,21 +93,6 @@ header {
     -o-border-radius: 20px;
   }
   
-
-  .dropdown .dropdown-menu {
-    background-color: #260583;
-  }
-  
-  .dropdown .dropdown-menu .dropdown-item {
-    color: #ffffff;
-  }
-  
-  .dropdown .dropdown-menu .dropdown-item:hover,
-  .dropdown .dropdown-menu .dropdown-item:focus {
-    color: #ffffff;
-    font-weight: 400;
-  }
-
   .navbar {
     background-color: #260583;
   }
@@ -122,16 +108,6 @@ header {
     font-weight: bold;
   }
   
-  .ab-item {
-    background-color: #0063e4;
-    border: 1px solid #444;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-    width: 80%;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
   .dropdown {
     margin-right: 20px;
     margin-left: 20px;
@@ -152,6 +128,96 @@ header {
   .buttons {
     margin-right: 20px;
   }
+  
+    .action {
+      position: relative;
+    }
+    
+    .action .profile {
+      cursor: pointer;
+      font-size: 24px;
+      margin-left: 20px;
+    }
+    
+    .action .profile i {
+      font-size: 30px;
+      color: #ffffff;
+    }
+    
+    .action .menu {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background: #fff;
+      width: 200px;
+      border-radius: 15px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+      display: none;
+      transition: 0.5s;
+    }
+    
+    .action .menu.active {
+      display: block;
+    }
+    
+    .action .menu::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      right: 15px;
+      width: 20px;
+      height: 20px;
+      background: #fff;
+      transform: rotate(45deg);
+    }
+    
+    .action .menu h3 {
+      text-align: center;
+      font-size: 18px;
+      padding: 10px 0;
+      font-weight: 500;
+      color: #555;
+    }
+    
+    .action .menu h3 span {
+      font-size: 14px;
+      color: #cecece;
+      font-weight: 300;
+    }
+    
+    .action .menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .action .menu ul li {
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .action .menu ul li i {
+      margin-right: 10px;
+      color: #555;
+    }
+    
+    .action .menu ul li a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 500;
+      transition: 0.5s;
+    }
+    
+    .action .menu ul li:hover a {
+      color: #ff5d94;
+    }
+    
+    .action .menu ul li:hover i {
+      color: #ff5d94;
+    }
 
 .container {
     padding-top: 10%;
