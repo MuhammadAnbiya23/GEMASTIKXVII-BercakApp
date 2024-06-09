@@ -2,7 +2,6 @@ from flask import request, session, flash, redirect, url_for, render_template
 from app import app, db, bcrypt
 from models import DataUser
 from utils import is_valid_email, is_valid_password
-from werkzeug.security import generate_password_hash, check_password_hash
 
 @app.route("/dashboard/")
 def dashboard():
@@ -17,10 +16,24 @@ def dashboard():
     else:
         flash('You are not logged in.', 'danger')
         return redirect(url_for('index'))
+    
+@app.route('/toggle-color-mode')
+def toggle_color_mode():
+    mode = request.args.get('mode')
+    if mode == 'on':
+        session['color_mode'] = 'on'
+        return redirect(url_for('indexv2'))
+    else:
+        session['color_mode'] = 'off'
+        return redirect(url_for('index'))
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/indexv2')
+def indexv2():
+    return render_template('indexv2.html')
 
 @app.route('/deafEducation')
 def deafEducation():
@@ -38,10 +51,6 @@ def signRecognition():
 def speechRecognition():
     return render_template('speechRecognition.html')
 
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
-
 @app.route('/resource')
 def resource():
     return render_template('resource.html')
@@ -58,11 +67,44 @@ def sosmed():
 def faq():
     return render_template('faq.html')
 
+
+@app.route('/deafEduv2')
+def deafEduv2():
+    return render_template('deafEduv2.html')
+
+@app.route('/quizv2')
+def quizv2():
+    return render_template('quizv2.html')
+
+@app.route('/signRv2')
+def signRv2():
+    return render_template('signRv2.html')
+
+@app.route('/speechRv2', methods=['GET'])
+def speechRv2():
+    return render_template('speechRv2.html')
+
+@app.route('/resourcev2')
+def resourcev2():
+    return render_template('resourcev2.html')
+
+@app.route('/aboutv2')
+def aboutv2():
+    return render_template('aboutv2.html')
+
+@app.route('/sosmedv2')
+def sosmedv2():
+    return render_template('sosmedv2.html')
+
+@app.route('/faqv2')
+def faqv2():
+    return render_template('faqv2.html')
+
+
 @app.route("/login/register", methods=['GET', 'POST'])
 def login_register():
     if request.method == 'POST':
         if 'name-registrasi' in request.form:
-            # Ini adalah logika untuk registrasi
             name = request.form.get('name-registrasi')
             email = request.form.get('email-registrasi')
             password = request.form.get('password-registrasi')
@@ -109,8 +151,12 @@ def login():
         email = request.form.get('email-login')
         password = request.form.get('password-login')
         user = DataUser.get_user_by_email(email)
+        print(user)
+        print(password)
+        print(bcrypt.generate_password_hash(password).decode('utf-8'))
+        print(user['password'])
 
-        if user : # and password == user['password']: #and DataUser.check_password(user['password'], password):
+        if user and DataUser.check_password(user['password'], password):
             session['logged_in'] = True
             session['user_id'] = user['id']
             session['user_name'] = user['name']
@@ -122,53 +168,6 @@ def login():
 
     return render_template('loginRegist.html')
 
-@app.route('/simple-reset-password', methods=['GET', 'POST'])
-def simple_reset_password():
-    if request.method == 'POST':
-        email = request.form['email']
-        old_password = request.form['old_password']
-        new_password = request.form['new_password']
-        confirm_password = request.form['confirm_password']
-        
-        user = DataUser.get_user_by_email(email)
-        
-        if not user:
-            flash('Email tidak ditemukan.', 'danger')
-            return render_template('resetPassword.html')
-        
-        if not check_password_hash(user['password'], old_password):
-            flash('Password lama salah.', 'danger')
-            return render_template('resetPassword.html')
-
-        if new_password != confirm_password:
-            flash('Password baru dan konfirmasi password tidak cocok.', 'danger')
-            return render_template('resetPassword.html')
-        
-        hashed_password = generate_password_hash(new_password)
-        DataUser.update_password(email, hashed_password)
-        
-        flash('Password Anda telah diubah.', 'success')
-        return redirect(url_for('login'))
-    
-    return render_template('resetPassword.html')
-
-@app.route('/forgot-password', methods=['GET', 'POST'])
-def forgot_password():
-    if request.method == 'POST':
-        email = request.form['email']
-        user = DataUser.get_user_by_email(email)
-        
-        if user:
-            # Kode untuk mengirim email dengan tautan reset password
-            flash('Email dengan tautan reset password telah dikirim.', 'info')
-            return redirect(url_for('login'))
-        else:
-            flash('Email tidak ditemukan.', 'danger')
-    
-    return render_template('forgotPassword.html')
-
-
-
 @app.route("/logout", methods=['GET'])
 def logout():
     session.pop('logged_in', None)
@@ -177,9 +176,4 @@ def logout():
     flash('You have been logged out.', 'info')
     return redirect(url_for('dashboard'))
 
-
-# @app.route('/toggle-color-mode')
-# def toggle_color_mode():
-#     session['color_mode'] = 'off' if session.get('color_mode') == 'on' else 'on'
-#     return redirect(url_for('index'))
 

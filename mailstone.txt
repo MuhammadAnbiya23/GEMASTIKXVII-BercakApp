@@ -17,8 +17,6 @@ Buat Bagian Logic Login :
   > Handling registrasi email tidak keluar
   > Informatif password yang lebih variatif
   > Password di regist sama login sekarang belum di hashing
-  > Login gagal ketika email dan password salah tidak keluar
-  > Login gagal ketika email salah tidak keluar
-  > Login gagal ketika password salah tidak keluar
-
-  > reset password menggunakan email tidak berhasil
+  > Login gagal ketika email dan password salah
+  > Login gagal ketika email salah
+  > Login gagal ketika password salah
