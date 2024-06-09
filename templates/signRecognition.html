@@ -92,23 +92,23 @@ referrerpolicy="no-referrer"
         
 </header>
 <main>
-    <div class="containers">
+    <div class="containers fade-in">
         <h1>Pengenalan Kosa Isyarat</h1>
         <p>Scan dan Terjemahkan Gerakan Kosa Isyarat Anda</p>
-        <div class="sign-icon"><img src="{{ url_for('static', filename='assets/Iconsign.svg') }}" alt="" srcset=""></div>
+        <div class="sign-icon fade-in"><img src="{{ url_for('static', filename='assets/Iconsign.svg') }}" alt="" srcset=""></div>
         <button id="startButton" class="btn btn-light btn-lg" onclick="toggleRecognition()">Mulai Pengenalan</button>
     </div>
 
     <!-- Camera and Cards Container -->
-    <div class="container my-5" id="camera-container" style="display: none;">
+    <div class="container my-5 fade-in-on-scroll" id="camera-container" style="display: none;">
         <div class="row">
-            <div class="col-md-6">
-                <div class="card text-white">
-                    <div class="card-header">
+            <div class="col-md-6 fade-in-on-scroll">
+                <div class="card text-white fade-in-on-scroll">
+                    <div class="card-header fade-in-on-scroll">
                         <h3>Scan Gerakan Anda</h3>
                     </div>
-                    <div class="card-body">
-                        <div class="video-container">
+                    <div class="card-body fade-in-on-scroll">
+                        <div class="video-container fade-in-on-scroll">
                             <video id="video" width="100%" height="auto" autoplay></video>
                             <div class="bounding-box"></div>
                         </div>

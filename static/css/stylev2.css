@@ -2,8 +2,18 @@
   box-sizing: border-box;
   margin: 0;
   padding: o;
-}
-
+  }
+  
+  body {
+    background-color: rgb(255, 255, 255);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    color: white;
+    background-image: url('../assets/Homepage2.svg');
+  }
 
 h1 {
   font-family: "Bowlby One SC", sans-serif;
@@ -15,28 +25,18 @@ h1 {
 h2,
 h3 {
   color: rgb(255, 255, 255);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: bold;
+  font-family: "Lilita One", sans-serif;
+  font-style: normal;
 }
 
 p {
   color: rgb(255, 255, 255);
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 500;
+  font-family: "Concert One", sans-serif;
+  font-weight: 400;
   font-style: normal;
   font-size: 15pt;
 }
 
-body {
-  background-color: rgb(255, 255, 255);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: 400;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  color: white;
-  background-image: url('../assets/Homepage2.svg');
-}
 
 header {
   background-color: rgb(24, 24, 24);
@@ -46,31 +46,59 @@ header {
   z-index: 1000;
 }
 
-.dropdown-menu {
+.navbar {
   background-color: #232323;
-  /* Warna latar belakang dropdown */
 }
 
-.dropdown-menu .dropdown-item {
+.navbar-brand {
+  padding-right: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-toggler {
+  background-color: #323A43;
+  font-weight: bold;
+}
+
+.nav-item a {
+  font-size: 1rem;
   color: #ffffff;
-  /* Warna teks putih */
+  cursor: pointer;
+  margin-right: 20px;
+  border-radius: 20px;
+  list-style-type: none;
+  font-family: "poppins", sans-serif;
+  font-weight: bold;
 }
 
-.dropdown-menu .dropdown-item:hover,
-.dropdown-menu .dropdown-item:focus {
-  color: #ffffff;
-  font-weight: 400;
+.nav-item a:hover {
+  color: white;
+  transform: scale(1.1);
+  text-shadow: none;
+  background-color: #414141;
+  border-radius: 20px;
+  transition: ease-in-out 0.3s;
 }
 
-.dropdown-menu .dropdown-divider {
+.dropdown .dropdown-menu {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.dropdown .dropdown-menu .dropdown-item {
+  color: #000;
+font-weight: 400;
+}
+
+.dropdown .dropdown-menu .dropdown-item:hover,
+.dropdown .dropdown-menu .dropdown-item:focus {
+  color: #000;
+}
+
+.dropdown .dropdown-menu .dropdown-divider {
   border-color: #6c757d;
 }
-
-.dropdown-menu-end {
-  right: 0;
-  left: auto;
-}
-
 
 .form-check-label {
   color: #ffffff;
@@ -95,7 +123,7 @@ header {
   position: absolute;
   top: 60px;
   right: 0;
-  background: #232323;
+  background: #fff;
   width: 200px;
   border-radius: 15px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
@@ -159,77 +187,12 @@ header {
 }
 
 .action .menu ul li:hover a {
-  color: #6c757d;
+  color: #ff5d94;
 }
 
 .action .menu ul li:hover i {
-  color: #6c757d;
+  color: #ff5d94;
 }
-
-.modal-body {
-  background-color: #fff;
-}
-
-.nav-item a {
-  font-size: 1rem;
-  color: #ffffff;
-  cursor: pointer;
-  margin-right: 20px;
-  border-radius: 20px;
-  list-style-type: none;
-  font-family: "poppins", sans-serif;
-  font-weight: bold;
-}
-
-.nav-item a:hover {
-  color: white;
-  transform: scale(1.1);
-  text-shadow: none;
-  background-color: #7E7E7E;
-  border-radius: 20px;
-  transition: ease-in-out 0.3s;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-}
-
-.navbar {
-  background-color: #232323;
-}
-
-.navbar-brand {
-  padding-right: 50px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.navbar-toggler {
-  background-color: #232323;
-  font-weight: bold;
-}
-
-.dropdown {
-  margin-right: 20px;
-  margin-left: 20px;
-}
-
-.dropdown-items {
-  text-align: center;
-}
-
-.dropdown-item {
-  color: rgb(0, 0, 0);
-}
-
-li .dropdown-item {
-  color: #000;
-}
-
-.buttons {
-  margin-right: 20px;
-}
-
 
 .profile-picture {
   width: 40px;
@@ -265,11 +228,6 @@ main .content .content-description .title {
   font-family: "Bowlby One SC", sans-serif;
   font-weight: 400;
   font-style: normal;
-}
-
-main .content .content-description p {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 13pt;
 }
 
 main .content .content-description button {
