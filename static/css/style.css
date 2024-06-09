@@ -83,18 +83,18 @@ header {
 }
 
 .dropdown .dropdown-menu {
-  background-color: #ffffff;
+  background-color: #4016a1de;
   color: #000000;
 }
 
 .dropdown .dropdown-menu .dropdown-item {
-  color: #000;
+  color: #fff;
 font-weight: 400;
 }
 
 .dropdown .dropdown-menu .dropdown-item:hover,
 .dropdown .dropdown-menu .dropdown-item:focus {
-  color: #000;
+  color: #fff;
 }
 
 .dropdown .dropdown-menu .dropdown-divider {
@@ -188,15 +188,12 @@ font-weight: 400;
 }
 
 .action .menu ul li:hover a {
-  color: #ff5d94;
+  color: #4016a1de;
 }
 
 .action .menu ul li:hover i {
-  color: #ff5d94;
+  color: #4016a1de;
 }
-
-
-
 
 main .content {
   display: flex;
@@ -366,17 +363,18 @@ main .content .content-image img {
   max-height: 1000px; 
   }
   
+
   .read-more-text {
     display: inline-flex;
     align-items: center;
     margin-top: 10px;
     padding: 10px 15px;
-    background-color: #1100ff;
+    background-color: #4016a1de;
     color: white;
     border-radius: 30px;
     text-decoration: none;
     transition: background-color 0.3s;
-    border-color: #006b39;
+    border-color: #301177de;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     -ms-border-radius: 30px;
@@ -384,8 +382,8 @@ main .content .content-image img {
   }
   
   .read-more-btn:hover {
-  background-color: #02472a;
-  border-color: #02472a;
+  background-color: #006eff;
+  border-color: #006eff;
   }
   
   .read-more-btn .read-more-icon {
@@ -572,7 +570,6 @@ h2 {
 .read-more-text {
   font-size: 16px;
 }
-
 
 .dropdown-btn { 
   background-color: #4CAF50; 

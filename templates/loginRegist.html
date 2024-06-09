@@ -13,10 +13,10 @@
             <form id="login-form" method="POST" action="{{ url_for('login') }}">
                 <h1>Masuk</h1>
                 <input name="email-login" type="email" placeholder="Email" required>
+                <input name="password-login" type="password" placeholder="Password" required>
                 {% if 'email_login_error' in errors %}
                     <p style="color: red;">{{ errors['email_login_error'] }}</p>
                 {% endif %}
-                <input name="password-login" type="password" placeholder="Password" required>
                 {% if 'password_login_error' in errors %}
                     <p style="color: red;">{{ errors['password_login_error'] }}</p>
                 {% endif %}
