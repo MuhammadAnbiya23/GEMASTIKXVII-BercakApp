@@ -93,6 +93,10 @@ header {
   -o-border-radius: 20px;
 }
 
+.dropdown .dropdown-menu .dropdown-divider {
+  border-color: #6c757d;
+}
+
 .navbar {
   background-color: #260583;
 }
