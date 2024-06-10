@@ -42,7 +42,7 @@ header {
 }
 
 .dropdown-menu {
-  background-color: #260583;
+  background-color: #4016a1de;
   /* Warna latar belakang dropdown */
 }
 
@@ -95,7 +95,7 @@ header {
 }
 
 .navbar {
-  background-color: #260583;
+  background-color: #4016a1de;
 }
 
 .navbar-brand {
@@ -213,11 +213,11 @@ li .dropdown-item {
   }
   
   .action .menu ul li:hover a {
-    color: #ff5d94;
+    color: #4016a1de;
   }
   
   .action .menu ul li:hover i {
-    color: #ff5d94;
+    color: #4016a1de;
   }
   
 

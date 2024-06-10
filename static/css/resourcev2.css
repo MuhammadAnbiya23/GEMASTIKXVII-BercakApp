@@ -62,23 +62,30 @@ p {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.dropdown .dropdown-menu {
+
+.dropdown-menu {
   background-color: #232323;
+  /* Warna latar belakang dropdown */
 }
 
-.dropdown .dropdown-menu .dropdown-item {
+.dropdown-menu .dropdown-item {
   color: #ffffff;
+  /* Warna teks putih */
 }
 
-.dropdown .dropdown-menu .dropdown-item:hover,
-.dropdown .dropdown-menu .dropdown-item:focus {
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
   color: #ffffff;
   font-weight: 400;
 }
 
-
 .dropdown-menu .dropdown-divider {
   border-color: #6c757d;
+}
+
+.dropdown-menu-end {
+  right: 0;
+  left: auto;
 }
 
 .navbar {

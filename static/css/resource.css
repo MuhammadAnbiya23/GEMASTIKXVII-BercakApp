@@ -7,6 +7,10 @@ body {
   font-style: normal;
   transition: background-color 0.3s ease, color 0.3s ease;
   font-family: 'Raleway', sans-serif;
+  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+  -moz-transition: background-color 0.3s ease, color 0.3s ease;
+  -ms-transition: background-color 0.3s ease, color 0.3s ease;
+  -o-transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1 {
@@ -41,7 +45,7 @@ header {
 }
 
 .dropdown-menu {
-  background-color: #260583;
+  background-color: #4016a1de;
   /* Warna latar belakang dropdown */
 }
 
@@ -98,7 +102,7 @@ header {
 }
 
 .navbar {
-  background-color: #260583;
+  background-color: #4016a1de;
 }
 
 .navbar-brand {
@@ -216,11 +220,11 @@ li .dropdown-item {
   }
   
   .action .menu ul li:hover a {
-    color: #ff5d94;
+    color: #4016a1de;
   }
   
   .action .menu ul li:hover i {
-    color: #ff5d94;
+    color: #4016a1de;
   }
 
 .buttons {

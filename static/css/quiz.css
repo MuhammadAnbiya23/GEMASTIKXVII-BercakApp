@@ -79,6 +79,32 @@ p {
   margin-left: 20px;
 }
 
+  
+.dropdown-menu {
+  background-color: #4d0040c0;
+  /* Warna latar belakang dropdown */
+}
+
+.dropdown-menu .dropdown-item {
+  color: #ffffff;
+  /* Warna teks putih */
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.dropdown-menu .dropdown-divider {
+  border-color: #6c757d;
+}
+
+.dropdown-menu-end {
+  right: 0;
+  left: auto;
+}
+
 .dropdown-items {
   text-align: center;
 }

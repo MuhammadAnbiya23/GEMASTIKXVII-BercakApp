@@ -92,19 +92,32 @@ width: 80px;
   position: relative;
 }
 
-.dropdown .dropdown-menu {
-background-color: #232323;
+
+.dropdown-menu {
+  background-color: #232323;
+  /* Warna latar belakang dropdown */
 }
 
-.dropdown .dropdown-menu .dropdown-item {
-color: #ffffff;
+.dropdown-menu .dropdown-item {
+  color: #ffffff;
+  /* Warna teks putih */
 }
 
-.dropdown .dropdown-menu .dropdown-item:hover,
-.dropdown .dropdown-menu .dropdown-item:focus {
-color: #ffffff;
-font-weight: 400;
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  color: #ffffff;
+  font-weight: 400;
 }
+
+.dropdown-menu .dropdown-divider {
+  border-color: #6c757d;
+}
+
+.dropdown-menu-end {
+  right: 0;
+  left: auto;
+}
+
 
 .dropdown {
   margin-right: 20px;
