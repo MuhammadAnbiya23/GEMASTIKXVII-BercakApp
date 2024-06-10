@@ -2,6 +2,8 @@ body {
   background-image: url('../assets/stacked-peaks-haikei-orange.svg');
   background-size: cover;
   color: white;
+  font-family: "Lilita One", sans-serif;
+  font-style: normal;
 }
 
 .nav-item a {
