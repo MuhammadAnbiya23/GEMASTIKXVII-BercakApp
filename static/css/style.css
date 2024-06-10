@@ -57,14 +57,28 @@ header {
   /* Warna teks putih */
 }
 
-.dropdown-menu .dropdown-item:hover,
-.dropdown-menu .dropdown-item:focus {
-  color: #ffffff;
-  font-weight: 400;
+.nav-item a:hover {
+  color: white;
+  transform: scale(1.1);
+  text-shadow: none;
+  background-color: #006eff;
+  border-radius: 20px;
+  transition: ease-in-out 0.3s;
 }
 
-.dropdown-menu .dropdown-divider {
-  border-color: #6c757d;
+.dropdown .dropdown-menu {
+  background-color: #4016a1de;
+  color: #000000;
+}
+
+.dropdown .dropdown-menu .dropdown-item {
+  color: #fff;
+font-weight: 400;
+}
+
+.dropdown .dropdown-menu .dropdown-item:hover,
+.dropdown .dropdown-menu .dropdown-item:focus {
+  color: #fff;
 }
 
 .dropdown-menu-end {
@@ -160,11 +174,11 @@ header {
 }
 
 .action .menu ul li:hover a {
-  color: #006eff;
+  color: #4016a1de;
 }
 
 .action .menu ul li:hover i {
-  color: #006eff;
+  color: #4016a1de;
 }
 
 .modal-body {
@@ -409,32 +423,33 @@ main .content .content-image img {
 .article-content.show {
   display: block;
   opacity: 1;
-  max-height: 1000px;
-}
+  max-height: 1000px; 
+  }
+  
 
-.read-more-btn {
-  display: inline-flex;
-  align-items: center;
-  margin-top: 10px;
-  padding: 10px 15px;
-  background-color: #4016a1de;
-  color: white;
-  border-radius: 30px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-  border-color: #321180de;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -ms-border-radius: 30px;
-  -o-border-radius: 30px;
-}
-
-.read-more-btn:hover {
+  .read-more-text {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #4016a1de;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    border-color: #301177de;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+  }
+  
+  .read-more-btn:hover {
   background-color: #006eff;
   border-color: #006eff;
-}
-
-.read-more-btn .read-more-icon {
+  }
+  
+  .read-more-btn .read-more-icon {
   margin-left: 10px;
   transition: transform 0.3s;
 }
