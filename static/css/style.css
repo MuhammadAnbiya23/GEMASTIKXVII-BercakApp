@@ -261,7 +261,7 @@ main .content .content-image {
 }
 
 main .content .content-image img {
-  width: 400px;
+  width: 300px;
   min-width: 250px;
   margin: auto;
   transition: 3s;
@@ -348,7 +348,7 @@ main .content .content-image img {
 }
 
 .icon-inline {
-  width: 500px; 
+  width: 300px; 
   height: auto; 
 }
 
