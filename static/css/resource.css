@@ -112,7 +112,7 @@ header {
 }
 
 .navbar-toggler {
-  background-color: #323A43;
+  background-color: #fdfdfd;
   font-weight: bold;
 }
 
@@ -233,7 +233,7 @@ li .dropdown-item {
   
   .res-item {
     font-family: Bolby;
-    background-color: #4aaeffb6;
+    background-color: #00000037;
     border: 1px solid #444;
     border-radius: 10px;
     padding: 1.5rem;

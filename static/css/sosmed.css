@@ -42,7 +42,7 @@ header {
 }
 
 .dropdown-menu {
-  background-color: #4016a1de;
+  background-color: #260583;
   /* Warna latar belakang dropdown */
 }
 
@@ -225,6 +225,7 @@ li .dropdown-item {
   padding-top: 5%;
 }
 
+
 .social-link {
     text-decoration: none;
     color: #ffffff;
@@ -242,10 +243,7 @@ li .dropdown-item {
 
 .social-icon {
   font-size: 3rem;
-  /* Sesuaikan ukuran font sesuai keinginan */
-  margin-bottom: 10px;
-  border-radius: 50%;
-  border: 2px solid rgb(61, 61, 61);
+  /*Sesuaikanukuranfontsesuaikeinginan*/margin-bottom: 10px;
   padding: 20px;
   transition: border-color 0.3s ease;
 }

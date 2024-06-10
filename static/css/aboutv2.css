@@ -118,12 +118,12 @@ header {
 }
 
 .navbar-toggler {
-  background-color: #323A43;
+  background-color: #fff;
   font-weight: bold;
 }
 
 .ab-item {
-  background-color: #00000035;
+  background-color: #00000037;
   border: 1px solid #444;
   border-radius: 8px;
   padding: 1.5rem;
@@ -275,30 +275,33 @@ object-fit: cover;
 .card .content .name {
 font-size: 20px;
 font-weight: 500;
+font-family: "Lilita One", sans-serif;
 }
 
 .card .content .job {
 font-size: 20px;
-color: #3700ff;
+color: #3f4549;
+font-family: "Lilita One", sans-serif;
 }
 
 .card .content .media-icons {
+font-family: "Lilita One", sans-serif;
 margin-top: 10px;
 display: flex;
 }
 
 .media-icons a {
-text-align: center;
-line-height: 33px;
-height: 35px;
-width: 35px;
-margin: 0 4px;
-font-size: 14px;
-color: #FFF;
-border-radius: 50%;
-border: 2px solid transparent;
-background: #6a67ff;
-transition: all 0.3s ease;
+  text-align: center;
+  line-height: 33px;
+  height: 35px;
+  width: 35px;
+  margin: 0 4px;
+  font-size: 14px;
+  color: #FFF;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: #3f4549;
+  transition: all 0.3s ease;
 }
 
 .media-icons a:hover {

@@ -94,28 +94,27 @@ referrerpolicy="no-referrer"
     </header>
 
     <!-- Main Content -->
-
     <div class="container mt-5 fade-in">
-        <div class="row">
-          <div class="col-md-6 mx-auto text-center fade-in">
-            <h1>Speech to Text Recognition</h1>
-            <div class="d-flex justify-content-center mt-3 fade-in">
-              <button class="btn btn-primary btn-option">Transkrip</button>
-              <button id="speechRecognitionButton" class="btn btn-secondary btn-option">Speech Recognition</button>
-            </div>
-            <div class="transkrip-icon mt-3 fade-in">
-              <img src="{{ url_for('static', filename='assets/transkrip-icon.svg') }}" alt="">
-            </div>
-            <div id="speechResultContainer" class="container-result mt-3 fade-in">
-              <p id="speechResult" class="speech-result">Tekan tombol untuk mulai</p>
-              <button id="startSpeechRecognition" class="btn btn-primary">
-                <img src="{{ url_for('static', filename='assets/Icon.svg') }}" alt="">
-              </button>
-            </div>
+      <div class="row">
+        <div class="col-md-6 mx-auto text-center fade-in">
+          <h1>Speech to Text Recognition</h1>
+          <div class="d-flex justify-content-center mt-3 fade-in">
+            <button class="btn btn-primary btn-option">Transkrip</button>
+            <button id="speechRecognitionButton" class="btn btn-secondary btn-option">Speech Recognition</button>
+          </div>
+          <div class="transkrip-icon mt-3 fade-in">
+            <img src="{{ url_for('static', filename='assets/Iconsp2.svg') }}" alt="">
+          </div>
+          <div id="speechResultContainer" class="container-result mt-3 fade-in">
+            <p id="speechResult" class="speech-result">Tekan tombol untuk mulai</p>
+            <button id="startSpeechRecognition" class="btn btn-primary">
+              <img src="{{ url_for('static', filename='assets/Mic2.svg') }}" alt="">
+            </button>
           </div>
         </div>
       </div>
-      
+    </div>
+    
       <!-- Modal -->
       <div id="developmentModal" class="modal">
         <div class="modal-content">
