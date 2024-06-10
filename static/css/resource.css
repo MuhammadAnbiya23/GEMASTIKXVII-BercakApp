@@ -3,7 +3,8 @@ body {
   background-repeat: no-repeat;
   background-position: top center;
   background-image: url('../assets/Bgflat.svg');
-  font-family: Arial, sans-serif;
+  font-family: "Lilita One", sans-serif;
+  font-style: normal;
   transition: background-color 0.3s ease, color 0.3s ease;
   font-family: 'Raleway', sans-serif;
 }

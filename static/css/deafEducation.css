@@ -2,6 +2,8 @@ body {
   background-image: url('../assets/stacked-peaks-haikei.svg');
   background-size: cover;
   color: #ffffff;
+  font-family: "Lilita One", sans-serif;
+  font-style: normal;
 }
 
 h1{

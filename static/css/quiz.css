@@ -9,7 +9,8 @@ body {
     background-image: url('../assets/stacked-peaks-haikei-pink.svg');
     background-size: cover;
     color: #ffffff;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Lilita One", sans-serif;
+    font-style: normal;
 }
 
 h1{
@@ -215,6 +216,11 @@ main {
   text-align: center;
 }
 
+.card {
+  width: 90%;
+  margin: auto;
+}
+
 .quiz-icon img {
   width: 300px;
 }
@@ -261,7 +267,8 @@ main {
 
 .container {
   text-align: center;
-  padding-top: 5%;
+  padding-top: 10%;
+  padding-bottom: 3%;
 }
 
 .video-container {
@@ -341,7 +348,7 @@ button:hover {
 }
 
 .custom-image-size {
-  width: 300px; /* Atur lebar gambar sesuai kebutuhan Anda */
+  width: 200px; /* Atur lebar gambar sesuai kebutuhan Anda */
   height: auto; /* Mempertahankan rasio aspek gambar */
 }
 
@@ -431,6 +438,10 @@ footer {
 
 /* Responsive styles for all dimensions */
 @media (max-width: 1200px) {
+  .popup-content {
+    max-width: 500px;
+  }
+
   .quiz-icon img {
       width: 250px;
   }
@@ -467,6 +478,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .popup-content {
+    max-width: 400px;
+  }
+
   .quiz-icon img {
       width: 150px;
   }
@@ -489,6 +504,10 @@ footer {
 }
 
 @media (max-width: 576px) {
+  .popup-content {
+    max-width: 300px;
+  }
+
   .quiz-icon img {
       width: 100px;
   }
@@ -521,6 +540,10 @@ footer {
 
 /* Responsive styles for mobile */
 @media (max-width: 768px) {
+  .popup-content {
+    max-width: 300px;
+  }
+
   .navbar-brand img {
       width: 150px; /* Adjust logo size for smaller screens */
   }
@@ -558,6 +581,10 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .popup-content {
+    max-width: 300px;
+  }
+
   .footer .row {
       flex-direction: column;
       align-items: center;

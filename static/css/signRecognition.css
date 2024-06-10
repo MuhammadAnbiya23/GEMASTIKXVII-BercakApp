@@ -2,7 +2,8 @@ body {
     background-image: url('../assets/stacked-peaks-haikei-blue.svg');
     background-size: cover;
     color: #e0e0e0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Lilita One", sans-serif;
+    font-style: normal;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -294,6 +295,8 @@ video {
 }
 
 .btn-light {
+    font-family: "Lilita One", sans-serif;
+    font-style: normal;
     background-color: #f8f9fa;
     color: #212529;
 }
