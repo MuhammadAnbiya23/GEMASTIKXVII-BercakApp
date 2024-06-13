@@ -798,6 +798,225 @@ footer {
   }
 }
 
+@media (max-width: 1200px) {
+  .card-fitur {
+    min-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .container-fitur {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    gap: 10px;
+  }
+
+  .card-fitur {
+    flex: 0 1 calc(50% - 10px);
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  .card-fitur a {
+    display: block;
+    width: 100%;
+    text-align: center; /* Tambahkan ini untuk memusatkan konten dalam anchor */
+  }
+
+  .card-fitur img {
+    width: 100%;
+    max-width: 70px; /* Batasi lebar gambar */
+    height: auto;
+    margin: 0 auto; /* Tambahkan ini untuk memusatkan gambar */
+  }
+
+  .title-icon-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .main .content-description {
+    padding-right: 0;
+  }
+
+  .container-fitur {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    gap: 10px;
+  }
+
+  .card-fitur {
+    flex: 0 1 calc(50% - 10px);
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  .card-fitur a {
+    display: block;
+    width: 100%;
+    text-align: center; /* Tambahkan ini untuk memusatkan konten dalam anchor */
+  }
+
+  .card-fitur img {
+    width: 100%;
+    max-width: 70px; /* Batasi lebar gambar */
+    height: auto;
+    margin: 0 auto; /* Tambahkan ini untuk memusatkan gambar */
+  }
+
+  .fitur-title h1 {
+    padding-top: 20%;
+    font-size: 2rem;
+  }
+  
+  .main .content .content-description .title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 392px) {
+  body {
+    font-size: 14px; /* Kurangi ukuran font untuk layar kecil */
+    color: white;
+    background-image: url('../assets/bg-mobile-colorfull.svg');
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+
+  main .content {
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 5%;
+  }
+
+  main .content .content-description {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  main .content .content-description .title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  main .content .content-description p {
+    font-size: 12pt;
+  }
+
+  main .content .content-description button {
+    width: 100%;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  main .content .content-image {
+    justify-content: center;
+    width: 40%;
+    margin-top: 20px;
+  }
+
+  main .content .content-image img {
+    width: 40%;
+    max-width: 250px;
+  }
+
+  .fitur-title h1 {
+    padding-top: 10%;
+    font-size: 1.5rem;
+  }
+
+  .container-fitur {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    gap: 10px;
+  }
+
+  .card-fitur {
+    flex: 0 1 calc(50% - 10px);
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  .card-fitur a {
+    display: block;
+    width: 100%;
+    text-align: center; /* Tambahkan ini untuk memusatkan konten dalam anchor */
+  }
+
+  .card-fitur img {
+    width: 100%;
+    max-width: 150px; /* Batasi lebar gambar */
+    height: auto;
+    margin: 0 auto; /* Tambahkan ini untuk memusatkan gambar */
+  }
+
+  .title-icon-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .title-icon-container h2 {
+    margin-top: 0;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .article-text {
+    font-size: 12pt;
+  }
+
+  .read-more-text {
+    font-size: 14px;
+  }
+
+  .read-more-btn {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .dropdown-btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .dropdown-content {
+    min-width: 100%;
+    font-size: 14px;
+  }
+
+  .popup {
+    width: 90%;
+    max-width: 90%;
+  }
+
+  .article-preview {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .article-card {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .article-content {
+    padding: 10px;
+  }
+}
+
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .footer .row {
