@@ -105,32 +105,32 @@ document.getElementById('abjad-button').addEventListener('click', function() {
     carouselInner.innerHTML = '';
 
     const images = [
-        '/static/assets/bisindo-A.jpg',
-        '/static/assets/bisindo-B.jpg',
-        '/static/assets/bisindo-C.jpg',
-        '/static/assets/bisindo-D.jpg',
-        '/static/assets/bisindo-E.jpg',
-        '/static/assets/bisindo-F.jpg',
-        '/static/assets/bisindo-G.jpg',
-        '/static/assets/bisindo-H.jpg',
-        '/static/assets/bisindo-I.jpg',
-        '/static/assets/bisindo-J.jpg',
-        '/static/assets/bisindo-K.jpg',
-        '/static/assets/bisindo-L.jpg',
-        '/static/assets/bisindo-M.jpg',
-        '/static/assets/bisindo-N.jpg',
-        '/static/assets/bisindo-O.jpg',
-        '/static/assets/bisindo-P.jpg',
-        '/static/assets/bisindo-Q.jpg',
-        '/static/assets/bisindo-R.jpg',
-        '/static/assets/bisindo-S.jpg',
-        '/static/assets/bisindo-T.jpg',
-        '/static/assets/bisindo-U.jpg',
-        '/static/assets/bisindo-V.jpg',
-        '/static/assets/bisindo-W.jpg',
-        '/static/assets/bisindo-X.jpg',
-        '/static/assets/bisindo-Y.jpg',
-        '/static/assets/bisindo-Z.jpg',
+        '/static/assets/bisindo-A.png',
+        '/static/assets/bisindo-B.png',
+        '/static/assets/bisindo-C.png',
+        '/static/assets/bisindo-D.png',
+        '/static/assets/bisindo-E.png',
+        '/static/assets/bisindo-F.png',
+        '/static/assets/bisindo-G.png',
+        '/static/assets/bisindo-H.png',
+        '/static/assets/bisindo-I.png',
+        '/static/assets/bisindo-J.png',
+        '/static/assets/bisindo-K.png',
+        '/static/assets/bisindo-L.png',
+        '/static/assets/bisindo-M.png',
+        '/static/assets/bisindo-N.png',
+        '/static/assets/bisindo-O.png',
+        '/static/assets/bisindo-P.png',
+        '/static/assets/bisindo-Q.png',
+        '/static/assets/bisindo-R.png',
+        '/static/assets/bisindo-S.png',
+        '/static/assets/bisindo-T.png',
+        '/static/assets/bisindo-U.png',
+        '/static/assets/bisindo-V.png',
+        '/static/assets/bisindo-W.png',
+        '/static/assets/bisindo-X.png',
+        '/static/assets/bisindo-Y.png',
+        '/static/assets/bisindo-Z.png',
     ];
     
     images.forEach((src, index) => {
@@ -152,16 +152,17 @@ document.getElementById('angka-button').addEventListener('click', function() {
     carouselInner.innerHTML = '';
 
     const images = [
-        '/static/assets/bisindo-1.jpg',
-        '/static/assets/bisindo-2.jpg',
-        '/static/assets/bisindo-3.jpg',
-        '/static/assets/bisindo-4.jpg',
-        '/static/assets/bisindo-5.jpg',
-        '/static/assets/bisindo-6.jpg',
-        '/static/assets/bisindo-7.jpg',
-        '/static/assets/bisindo-8.jpg',
-        '/static/assets/bisindo-9.jpg',
-        '/static/assets/bisindo-10.jpg',
+        '/static/assets/bisindo-0.png',
+        '/static/assets/bisindo-1.png',
+        '/static/assets/bisindo-2.png',
+        '/static/assets/bisindo-3.png',
+        '/static/assets/bisindo-4.png',
+        '/static/assets/bisindo-5.png',
+        '/static/assets/bisindo-6.png',
+        '/static/assets/bisindo-7.png',
+        '/static/assets/bisindo-8.png',
+        '/static/assets/bisindo-9.png',
+        '/static/assets/bisindo-10.png',
     ];
     
     images.forEach((src, index) => {
@@ -177,6 +178,50 @@ document.getElementById('angka-button').addEventListener('click', function() {
 
     document.getElementById('cards-container').classList.remove('d-none');
 });
+
+document.getElementById('sapaan-button').addEventListener('click', function() {
+    const carouselInner = document.getElementById('carousel-images');
+    carouselInner.innerHTML = '';
+
+    const videos = [
+        '/static/assets/bisindo-halo.mp4',
+        '/static/assets/bisindo-kabar.mp4',
+        '/static/assets/bisindo-nama.mp4',
+        '/static/assets/bisindo-saya.mp4',
+        '/static/assets/bisindo-dia.mp4',
+        '/static/assets/bisindo-pagi.mp4',
+        '/static/assets/bisindo-siang.mp4',
+        '/static/assets/bisindo-sore.mp4',
+        '/static/assets/bisindo-malam.mp4',
+        '/static/assets/bisindo-ketemu.mp4',
+        '/static/assets/bisindo-10.mp4',
+    ];
+    
+    videos.forEach((src, index) => {
+        const div = document.createElement('div');
+        div.className = 'carousel-item' + (index === 0 ? ' active' : '');
+        
+        const video = document.createElement('video');
+        video.className = 'd-block w-100';
+        video.src = src;
+        video.alt = `Gesture ${index}`;
+        video.controls = true;
+        video.autoplay = true;
+        video.muted = true;
+
+                // Add an event listener to move to the next carousel item when the video ends
+        video.addEventListener('ended', function() {
+            const nextButton = document.querySelector('#carouselExampleIndicators .carousel-control-next');
+            nextButton.click();
+        });
+        
+        div.appendChild(video);
+        carouselInner.appendChild(div);
+    });
+
+    document.getElementById('cards-container').classList.remove('d-none');
+});
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const faders = document.querySelectorAll('.fade-in');
