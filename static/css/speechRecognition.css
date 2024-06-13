@@ -23,7 +23,7 @@ h1{
   text-shadow: 2px 2px 4px #1f1f1fc0;
 }
 
-h2,
+h2
 h3,
 h5 {
   color: rgb(255, 255, 255);
@@ -290,7 +290,7 @@ li .dropdown-item {
   background-color: #42200c;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-  height: 200px;
+  height: 250px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -304,7 +304,7 @@ li .dropdown-item {
 /* Speech result text styles */
 .speech-result {
   margin: 0;
-  font-size: 1.2em;
+  font-size: 2em;
   color: #ffffff;
 }
 
@@ -341,7 +341,7 @@ li .dropdown-item {
 .btn-option {
   margin: 5px;
   background-color: #5e3300; /* Dark orange color */
-  color: #ffffff;
+  color: #fff;
   border: none;
   transition: background-color 0.3s;
   font-family: "Concert One", sans-serif;
@@ -355,6 +355,9 @@ li .dropdown-item {
   background-color: #ffbf49;
 }
 
+.card-text {
+  color: #000;
+}
 
 footer {
   width: 100%;
@@ -396,13 +399,13 @@ footer {
 }
 
 .footer a {
-  color: rgb(122, 122, 122);
+  color: #fff;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
 
 .footer a:hover {
-  color: #fff;
+  color: rgb(122, 122, 122);
   font-weight: 300;
 }
 

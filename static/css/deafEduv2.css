@@ -2,6 +2,7 @@ body {
   background-image: url('../assets/Bg2.svg');
   background-size: cover;
   color: #ffffff;
+  font-family: "Lilita One", sans-serif;
 }
 
 h1{
@@ -391,13 +392,13 @@ footer {
 }
 
 .footer a {
-  color: rgb(122, 122, 122);
+  color: #fff;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
 
 .footer a:hover {
-  color: #fff;
+  color: rgb(122, 122, 122);
   font-weight: 300;
 }
 

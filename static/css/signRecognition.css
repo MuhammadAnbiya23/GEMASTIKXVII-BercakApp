@@ -1,5 +1,6 @@
 body {
     background-image: url('../assets/stacked-peaks-haikei-blue.svg');
+    
     background-size: cover;
     color: #e0e0e0;
     font-family: "Lilita One", sans-serif;
@@ -24,6 +25,7 @@ h1{
   font-weight: 400;
   font-style: normal;
   text-shadow: 2px 2px 4px #1f1f1fc0;
+  color : aliceblue
 }
 
 h2,

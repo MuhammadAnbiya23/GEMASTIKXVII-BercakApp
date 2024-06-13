@@ -482,8 +482,6 @@ footer {
 }
 
 /* Responsive CSS */
-
-
 @media (max-width: 768px) {
   .navbar-brand {
     padding-right: 0;
