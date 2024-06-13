@@ -26,15 +26,6 @@ referrerpolicy="no-referrer"
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Bebas+Neue&family=Bowlby+One+SC&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Acme&family=Concert+One&family=Lilita+One&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Acme&family=Lilita+One&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-
     <title>Latihan Quiz</title>
 </head>
 <body>
@@ -100,9 +91,13 @@ referrerpolicy="no-referrer"
         </nav>
     </header>
 
+    <audio id="correct-sound" src="{{ url_for('static', filename='assets/correct-sound.mp3') }}"></audio>
+    <audio id="wrong-sound" src="{{ url_for('static', filename='assets/wrong-sound.mp3') }}"></audio>
+
+
     <!-- Main Content -->
     <main>
-        <div class="container">
+        <div class="container fade-in">
             <h1>Quiz Bahasa Isyarat</h1>
             <p>Belajar dan Uji Kemampuan Bahasa Isyarat Anda</p>
             <div class="quiz-icon"><img src="{{ url_for('static', filename='assets/Iconquiz2.svg') }}" alt="" srcset=""></div>
@@ -111,7 +106,7 @@ referrerpolicy="no-referrer"
         </div>
 
         <!-- Game 1 Container -->
-        <div class="container my-5" id="game1-container">
+        <div class="container my-5 fade-in" id="game1-container">
             <div class="card">
                 <div class="card-header">
                     <h3>Story Telling</h3>

@@ -77,6 +77,28 @@ h3 {
   margin-left: 20px;
 }
 
+
+.dropdown-menu {
+  background-color: #004e11cc;
+  /* Warna latar belakang dropdown */
+}
+
+.dropdown-menu .dropdown-item {
+  color: #ffffff;
+  /* Warna teks putih */
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.dropdown-menu .dropdown-divider {
+  border-color: #6c757d;
+}
+
+
 .dropdown-items {
   text-align: center;
 }
@@ -176,11 +198,11 @@ li .dropdown-item {
 }
 
 .action .menu ul li:hover a {
-  color: #ff5d94;
+  color: #004e11cc;
 }
 
 .action .menu ul li:hover i {
-  color: #ff5d94;
+  color: #004e11cc;
 }
 
 .fade-in-on-scroll {
@@ -366,13 +388,13 @@ footer {
 }
 
 .footer a {
-  color: rgb(122, 122, 122);
+  color: #fff;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
 
 .footer a:hover {
-  color: #fff;
+  color: rgb(122, 122, 122);
   font-weight: 300;
 }
 

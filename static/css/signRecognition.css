@@ -1,5 +1,6 @@
 body {
     background-image: url('../assets/stacked-peaks-haikei-blue.svg');
+    
     background-size: cover;
     color: #e0e0e0;
     font-family: "Lilita One", sans-serif;
@@ -24,6 +25,7 @@ h1{
   font-weight: 400;
   font-style: normal;
   text-shadow: 2px 2px 4px #1f1f1fc0;
+  color : aliceblue
 }
 
 h2,
@@ -79,7 +81,7 @@ p {
   }
   
   .navbar-toggler {
-    background-color: #4e2fff;
+    background-color: #fdfdfd;
     font-weight: bold;
   }
   
@@ -87,6 +89,33 @@ p {
     margin-right: 20px;
     margin-left: 20px;
   }
+
+  
+
+.dropdown-menu {
+  background-color: #001170c0;
+  /* Warna latar belakang dropdown */
+}
+
+.dropdown-menu .dropdown-item {
+  color: #ffffff;
+  /* Warna teks putih */
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.dropdown-menu .dropdown-divider {
+  border-color: #6c757d;
+}
+
+.dropdown-menu-end {
+  right: 0;
+  left: auto;
+}
   
   .dropdown-items {
     text-align: center;
@@ -321,14 +350,6 @@ video {
 }
 
 .list-group-item-action:hover {
-    background-color: #e9ecef;
-}
-
-.dropdown-menu .dropdown-item {
-    color: #212529;
-}
-
-.dropdown-menu .dropdown-item:hover {
     background-color: #e9ecef;
 }
 

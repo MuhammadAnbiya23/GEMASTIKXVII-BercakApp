@@ -4,10 +4,20 @@
   padding: o;
   font-family: "Lilita One", sans-serif;
   font-style: normal;
-}
+  }
+  
+  body {
+    background-color: rgb(255, 255, 255);
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    color: white;
+    background-image: url('../assets/Homepage.svg');
+  }
 
-
-h1 {
+h1{
   color: aliceblue;
   font-family: "Bowlby One SC", sans-serif;
   font-weight: 400;
@@ -17,28 +27,17 @@ h1 {
 
 h2,
 h3 {
-    color: rgb(255, 255, 255);
-    font-family: "Lilita One", sans-serif;
-    font-style: normal;
+  color: rgb(255, 255, 255);
+  font-family: "Lilita One", sans-serif;
+  font-style: normal;
 }
 
 p {
-    color: rgb(255, 255, 255);
-    font-family: "Concert One", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 15pt;
-}
-
-body {
-  background-color: rgb(255, 255, 255);
-  font-family: "Lilita One", sans-serif;
+  color: rgb(255, 255, 255);
+  font-family: "Concert One", sans-serif;
+  font-weight: 400;
   font-style: normal;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
-  color: white;
-  background-image: url('../assets/Homepage.svg');
+  font-size: 15pt;
 }
 
 header {
@@ -49,14 +48,30 @@ header {
   z-index: 1000;
 }
 
-.dropdown .dropdown-menu {
+.navbar {
   background-color: #4016a1de;
-  /* Warna latar belakang dropdown */
 }
 
-.dropdown-menu .dropdown-item {
+.navbar-brand {
+  padding-right: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-toggler {
+  background-color: #fdfdfd;
+  font-weight: bold;
+}
+
+.nav-item a {
+  font-size: 1rem;
   color: #ffffff;
-  /* Warna teks putih */
+  cursor: pointer;
+  margin-right: 20px;
+  border-radius: 20px;
+  list-style-type: none;
+  font-family: "poppins", sans-serif;
+  font-weight: bold;
 }
 
 .nav-item a:hover {
@@ -83,11 +98,9 @@ font-weight: 400;
   color: #fff;
 }
 
-.dropdown-menu-end {
-  right: 0;
-  left: auto;
+.dropdown .dropdown-menu .dropdown-divider {
+  border-color: #6c757d;
 }
-
 
 .form-check-label {
   color: #ffffff;
@@ -183,71 +196,6 @@ font-weight: 400;
   color: #4016a1de;
 }
 
-.modal-body {
-  background-color: #fff;
-}
-
-.nav-item a {
-  font-size: 1rem;
-  color: #ffffff;
-  cursor: pointer;
-  margin-right: 20px;
-  border-radius: 20px;
-  list-style-type: none;
-  font-family: "poppins", sans-serif;
-  font-weight: bold;
-}
-
-.nav-item a:hover {
-  color: white;
-  transform: scale(1.1);
-  text-shadow: none;
-  background-color: #006eff;
-  border-radius: 20px;
-  transition: ease-in-out 0.3s;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-}
-
-.navbar {
-  background-color: #4016a1de;
-}
-
-.navbar-brand {
-  padding-right: 50px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.navbar-toggler {
-  background-color: #323A43;
-  font-weight: bold;
-}
-
-.dropdown {
-  margin-right: 20px;
-  margin-left: 20px;
-}
-
-.dropdown-items {
-  text-align: center;
-}
-
-.dropdown-item {
-  color: rgb(0, 0, 0);
-}
-
-li .dropdown-item {
-  color: #000;
-}
-
-.buttons {
-  margin-right: 20px;
-}
-
-
 .profile-picture {
   width: 40px;
   height: 40px;
@@ -285,7 +233,6 @@ main .content .content-description .title {
 }
 
 main .content .content-description p {
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 13pt;
 }
 
@@ -314,14 +261,13 @@ main .content .content-image {
 }
 
 main .content .content-image img {
-  width: 400px;
+  width: 300px;
   min-width: 250px;
   margin: auto;
   transition: 3s;
-  padding-bottom: 80px;
 }
 
-.fitur-title h1 {
+.fitur-title h1{
   text-shadow: 2px 2px 4px #000000;
   color: aliceblue;
   padding-top: 15%;
@@ -329,7 +275,6 @@ main .content .content-image img {
   font-family: "Bowlby One SC", sans-serif;
   font-weight: 400;
   font-style: normal;
-  padding-bottom: 100px;
 }
 
 .container-fitur {
@@ -341,7 +286,6 @@ main .content .content-image img {
   padding: 0 20px;
   /* Add padding to avoid cards touching the window edge */
   box-sizing: border-box;
-  padding-bottom: 140px;
 }
 
 .card-fitur {
@@ -396,8 +340,7 @@ main .content .content-image img {
 .title-icon-container {
   display: flex;
   align-items: center;
-  gap: 80px;
-  /* Jarak antara teks dan ikon */
+  gap: 80px; /* Jarak antara teks dan ikon */
 }
 
 .title-icon-container h2 {
@@ -405,8 +348,8 @@ main .content .content-image img {
 }
 
 .icon-inline {
-  width: 400px;
-  height: auto;
+  width: 300px; 
+  height: auto; 
 }
 
 .article-text {
@@ -420,15 +363,14 @@ main .content .content-image img {
   max-height: 0;
   overflow: hidden;
   transition: opacity 0.5s ease, max-height 0.5s ease;
-}
-
-.article-content.show {
+  }
+  
+  .article-content.show {
   display: block;
   opacity: 1;
   max-height: 1000px; 
   }
   
-
   .read-more-text {
     display: inline-flex;
     align-items: center;
@@ -439,7 +381,7 @@ main .content .content-image img {
     border-radius: 30px;
     text-decoration: none;
     transition: background-color 0.3s;
-    border-color: #301177de;
+    border-color: #2f1174de;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     -ms-border-radius: 30px;
@@ -454,11 +396,11 @@ main .content .content-image img {
   .read-more-btn .read-more-icon {
   margin-left: 10px;
   transition: transform 0.3s;
-}
-
-.read-more-btn.btn-secondary .read-more-icon {
+  }
+  
+  .read-more-btn.btn-secondary .read-more-icon {
   transform: rotate(180deg);
-}
+  }
 
 .col-md-6 {
   flex: 1;
@@ -569,38 +511,76 @@ h2 {
   color: #394669;
 }
 
+.article-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.article-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 460px;
+  width: 100%;
+  margin: 0 10px;
+  transition: transform 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.article-card:hover {
+  transform: scale(1.05);
+}
+
+.article-img {
+  width: 100%;
+  height: auto;
+}
+
+.article-content {
+  color: #394669;
+  padding: 15px;
+}
+
+.article-content p,
+h2 {
+  color: #394669;
+}
+
 .article-content h3 {
   color: #394669;
   margin-top: 0;
 }
 
-.read-more-button {
+.read-more-btn {
   display: inline-block;
   margin-top: 10px;
-  padding: 10px 15
-}
-
-/* Modals */
-.modal-content {
-  border-radius: 8px;
-}
-
-.modal-header,
-.modal-footer {
+  padding: 10px 15px;
+  background-color: transparent;
+  color: white;
   border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+  -webkit-transition: background-color 0.3s, transform 0.3s;
+  -moz-transition: background-color 0.3s, transform 0.3s;
+  -ms-transition: background-color 0.3s, transform 0.3s;
+  -o-transition: background-color 0.3s, transform 0.3s;
 }
 
-.btn-primary {
-  background-color: #007bff;
-  border: none;
+.read-more-btn:hover {
+  background-color: transparent;
+  transform: scale(1.05);
 }
 
-.btn-primary:hover {
-  background-color: #0056b3;
+.read-more-text {
+  font-size: 16px;
 }
 
-.dropdown-btn {
-  background-color: #4016a1de;
+
+.dropdown-btn { 
+  background-color: #260583; 
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -614,11 +594,11 @@ h2 {
   vertical-align: middle;
 }
 
-/* Dark background */
+  /* Dark background */
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #4016a1de;
+  background-color: #343a40;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -636,16 +616,14 @@ h2 {
 }
 
 .dropdown:hover .dropdown-btn {
-  background-color: #006eff;
-}
-
-*/
+  background-color: #3e0bc8;
+} */
 
 /* Modal container */
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
   left: 0;
   top: 0;
   width: 100%;
@@ -662,8 +640,8 @@ footer {
   color: #fff;
   padding: 10px;
   text-align: center;
-  position: absolute;
-  left: 0;
+  position:absolute;
+  left: 0;  
   height: auto;
 }
 
@@ -676,10 +654,8 @@ footer {
 .footer .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  /* Center align the content horizontally */
-  align-items: center;
-  /* Center align the content vertically */
+  justify-content: center; /* Center align the content horizontally */
+  align-items: center; /* Center align the content vertically */
 }
 
 .footer hr {
@@ -699,13 +675,13 @@ footer {
 }
 
 .footer a {
-  color: rgb(122, 122, 122);
+  color: #fff;
   text-decoration: none;
   transition: color 0.3s ease-in-out;
 }
 
 .footer a:hover {
-  color: #fff;
+  color: rgb(122, 122, 122);
   font-weight: 300;
 }
 
@@ -714,8 +690,7 @@ footer {
 .footer .other-menu {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  /* Center align the content vertically */
+  align-items: center; /* Center align the content vertically */
 }
 
 .footer .social-media li a,
@@ -742,136 +717,99 @@ footer {
   font-size: 14px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
-  .footer .row {
+  .navbar-brand {
+    padding-right: 0;
+    display: flex;
+    justify-content: flex-start;
+    width: auto;
+  }
+
+  .navbar-nav {
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
-  .footer-logo {
-    margin-bottom: 10px;
+  .nav-item {
+    margin: 5px 0;
+    width: 100%;
+    text-align: center;
   }
 
-  .footer .logo-container p {
-    margin-bottom: 20px;
+  .nav-item a {
+    display: block;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
+  }
+
+  .dropdown-menu {
+    text-align: center;
+    width: 100%;
+  }
+
+  .action {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile {
+    margin-left: 0;
+  }
+
+  .menu {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
   }
 }
 
-@media (max-width: 991.98px) {
-  .nav-item a {
-    margin-right: 0;
-    display: block;
-    text-align: center;
-    margin-bottom: 10px;
+/* Media query for devices with max-width 576px */
+@media (max-width: 576px) {
+  .navbar-brand img {
+    width: 150px; /* Adjust logo size for small screens */
+  }
+
+  .navbar-toggler {
+    padding: 0.25rem 0.75rem;
   }
 
   .buttons {
-    text-align: center;
-    margin-top: 10px;
+    margin-right: 0;
   }
 
-  .dropdown {
-    margin: 10px 0;
-    text-align: center;
-  }
-}
-
-@media (max-width: 390px) {
-  main .content {
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-    width: 100%;
+  .action .menu {
+    width: 150px;
   }
 
-  main .content .content-description {
-    width: 100%;
-    transform: scale(1);
-    text-align: center;
-    padding: 0 10px;
-  }
-
-  main .content .content-description .title {
-    font-size: 2rem;
-  }
-
-  main .content .content-description p {
-    line-height: 1.5rem;
-  }
-
-  main .content .content-description button {
-    padding: 0.6rem 2rem;
+  .form-check-label {
     font-size: 0.9rem;
   }
 
-  main .content .content-image img {
-    width: 100%;
-    min-width: initial;
-    padding: 0.6rem;
+  .form-check-input {
+    width: 1.25em;
+    height: 1.25em;
   }
 }
 
-/* Responsive styles */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .card-group {
-    flex-direction: column;
-    align-items: center;
+  .footer .row {
+      flex-direction: column;
+      align-items: center;
   }
 
-  .card {
-    width: 80%;
-    /* Adjust to control the width of cards on smaller screens */
-    max-width: 50px;
-    /* Prevent cards from being too wide */
-    margin: 20px 0;
-  }
-}
-
-@media (max-width: 576px) {
-  .card {
-    width: 100%;
-    margin: 10px 0;
+  .footer-logo {
+      margin-bottom: 10px;
   }
 
-  .card img {
-    width: 100px;
-    /* Adjust image size for smaller screens */
-  }
-
-  .card-title {
-    font-size: 24px;
-  }
-
-  .card button {
-    padding: 0.6rem 2rem;
-    font-size: 0.9rem;
-  }
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .col-md-6 {
-    width: 100%;
-    margin: 10px 0;
-  }
-
-  .text-center {
-    margin: 20px 0;
-  }
-}
-
-@media (max-width: 576px) {
-  .col-md-6 ul {
-    text-align: center;
-  }
-
-  .text-center {
-    font-size: 14px;
+  .footer .logo-container p {
+      margin-bottom: 20px;
   }
 }

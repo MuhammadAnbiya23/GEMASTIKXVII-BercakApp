@@ -33,6 +33,49 @@ p {
   font-size: 10pt;
 }
 
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation 1s ease-in forwards; /* durasi animasi 1 detik */
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0; /* Mulai dari keadaan tidak terlihat */
+  }
+  to {
+    opacity: 1; /* Berakhir dengan keadaan terlihat sepenuhnya */
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation 1s ease-in forwards; /* durasi animasi 1 detik */
+}
+
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
 header {
   background-color: rgb(24, 24, 24);
   position: fixed;
@@ -95,7 +138,7 @@ header {
 }
 
 .navbar {
-  background-color: #260583;
+  background-color: #4016a1de;
 }
 
 .navbar-brand {
@@ -105,7 +148,7 @@ header {
 }
 
 .navbar-toggler {
-  background-color: #323A43;
+  background-color: #fff;
   font-weight: bold;
 }
 
@@ -213,13 +256,12 @@ li .dropdown-item {
   }
   
   .action .menu ul li:hover a {
-    color: #ff5d94;
+    color: #4016a1de;
   }
   
   .action .menu ul li:hover i {
-    color: #ff5d94;
+    color: #4016a1de;
   }
-  
 
 .container {
   padding-top: 5%;
@@ -228,31 +270,28 @@ li .dropdown-item {
 .social-link {
     text-decoration: none;
     color: #ffffff;
-    transition: transform 0.3s ease, color 0.3s ease;
-    -webkit-transition: transform 0.3s ease, color 0.3s ease;
-    -moz-transition: transform 0.3s ease, color 0.3s ease;
-    -ms-transition: transform 0.3s ease, color 0.3s ease;
-    -o-transition: transform 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    padding-bottom: 40px; /* Menambah padding di bagian bawah untuk memberikan ruang bagi ikon */
+    transition: transform 0.3s ease;
 }
 
 .social-link:hover {
-    transform: scale(1.1);
-    color: #000000;
+    transform: translateY(-5px); /* Menggeser ikon ke atas saat dihover */
+    color: #4016a1;
 }
 
 .social-icon {
-  font-size: 3rem;
-  /* Sesuaikan ukuran font sesuai keinginan */
-  margin-bottom: 10px;
-  border-radius: 50%;
-  border: 2px solid rgb(61, 61, 61);
-  padding: 20px;
-  transition: border-color 0.3s ease;
+    font-size: 6rem;
+    margin-bottom: 10px;
+    padding: 20px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
 .social-link:hover .social-icon {
     border-color: #000000;
+    transform: scale(1.1); /* Memperbesar ikon saat dihover */
 }
+
 
 footer {
   width: 100%;
@@ -340,32 +379,202 @@ footer {
   font-size: 14px;
 }
 
-/* Responsive Design */
+/* Responsive CSS */
+/* Media query for devices with max-width 768px */
 @media (max-width: 768px) {
+  .navbar-brand {
+    padding-right: 0;
+    display: flex;
+    justify-content: flex-start;
+    width: auto;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-item {
+    margin: 5px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-item a {
+    display: block;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
+  }
+
+  .dropdown-menu {
+    text-align: center;
+    width: 100%;
+  }
+
+  .action {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile {
+    margin-left: 0;
+  }
+
+  .menu {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+  }
+
+  .social-icon {
+    font-size: 5.5rem;
+    margin-bottom: 5px;
+    padding: 10px;
+  }
+
+  .social-link p {
+    font-size: 0.8rem;
+  }
+
+  .footer {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+  }
+
   .footer .row {
     flex-direction: column;
     align-items: center;
   }
 
-  .footer-logo {
-    margin-bottom: 10px;
+  .footer .social-media,
+  .footer .other-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .footer .logo-container p {
-    margin-bottom: 20px;
+  .footer .social-media li,
+  .footer .other-menu li {
+    margin: 5px 0;
   }
 }
 
+/* Media query for devices with max-width 576px */
+@media (max-width: 576px) {
+  .navbar-brand img {
+    width: 150px; /* Adjust logo size for small screens */
+  }
 
+  .navbar-toggler {
+    padding: 0.25rem 0.75rem;
+  }
 
-/* Responsiveness */
-@media (max-width: 767.98px) {
+  .buttons {
+    margin-right: 0;
+  }
+
+  .action .menu {
+    width: 150px;
+  }
+
+  .form-check-label {
+    font-size: 0.9rem;
+  }
+
+  .form-check-input {
+    width: 1.25em;
+    height: 1.25em;
+  }
+
   .social-icon {
-    width: 80px;
-    height: 80px;
+    font-size: 5rem;
+  }
+
+  .footer {
+    text-align: center;
+  }
+
+  .footer .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer .social-media,
+  .footer .other-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer .social-media li,
+  .footer .other-menu li {
+    margin: 5px 0;
+  }
+}
+
+/* Media query for devices with max-width 400px */
+@media (max-width: 400px) {
+  .navbar-brand img {
+    width: 120px;
+  }
+
+  .navbar-toggler {
+    padding: 0.25rem 0.75rem;
+  }
+
+  .buttons {
+    margin-right: 0;
+  }
+
+  .action .menu {
+    width: 120px;
+  }
+
+  .form-check-label {
+    font-size: 0.8rem;
+  }
+
+  .form-check-input {
+    width: 1em;
+    height: 1em;
+  }
+
+  .social-icon {
+    font-size: 4.5rem;
   }
 
   .social-link p {
-    font-size: 0.9rem;
+    font-size: 0.6rem;
+  }
+
+  .footer {
+    text-align: center;
+  }
+
+  .footer .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer .social-media,
+  .footer .other-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer .social-media li,
+  .footer .other-menu li {
+    margin: 5px 0;
   }
 }
