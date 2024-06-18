@@ -1,6 +1,5 @@
 body {
     background-image: url('../assets/stacked-peaks-haikei-blue.svg');
-    
     background-size: cover;
     color: #e0e0e0;
     font-family: "Lilita One", sans-serif;
@@ -53,7 +52,6 @@ p {
     margin-right: 20px;
     border-radius: 20px;
     list-style-type: none;
-    
   }
   
   .nav-item a:hover {

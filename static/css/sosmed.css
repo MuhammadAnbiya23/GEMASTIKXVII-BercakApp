@@ -27,7 +27,7 @@ h3 {
 
 p {
   color: #ffffff;
-  font-family: "Concert One", sans-serif;
+  font-family: "Lilita One", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 10pt;
@@ -277,7 +277,7 @@ li .dropdown-item {
 
 .social-link:hover {
     transform: translateY(-5px); /* Menggeser ikon ke atas saat dihover */
-    color: #4016a1;
+    color: #9fc8ff;
 }
 
 .social-icon {
