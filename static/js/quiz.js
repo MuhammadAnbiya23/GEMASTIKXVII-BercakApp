@@ -81,6 +81,12 @@ document.addEventListener("DOMContentLoaded", function () {
             clearInterval(game2Interval);
             setTimeout(resetGame2, 2000); // Reset game after 2 seconds
         }
+            // Check if all questions have been answered
+    if (game2Points === game2Questions.length) {
+        clearInterval(game2Interval); // Stop the timer
+        game2Feedback.innerText = "Permainan selesai!";
+        setTimeout(displayReward, 2000); // Display reward section after 2 seconds
+    }
         game2RewardPoints.innerText = `Poin: ${game2Points}`;
     };
 
@@ -196,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-  document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const scrollElements = document.querySelectorAll('.fade-in-on-scroll');
 
     const elementInView = (el, dividend = 1) => {
@@ -229,3 +235,17 @@ document.addEventListener('DOMContentLoaded', function() {
         handleScrollAnimation();
     });
 });
+
+document.getElementById('startGame1').addEventListener('click', function () {
+    closePopup(); // Close the popup before showing game1-container
+    document.getElementById('game1-container').style.display = 'block';
+});
+
+document.getElementById('startGame2').addEventListener('click', function () {
+    closePopup(); // Close the popup before showing game2-container
+    document.getElementById('game2-container').style.display = 'block';
+});
+
+function closePopup() {
+    document.getElementById('popup-overlay').style.display = 'none';
+}

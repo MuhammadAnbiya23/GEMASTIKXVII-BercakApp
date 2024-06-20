@@ -45,7 +45,8 @@ font-size: 15pt;
 }
 
 .nav-item a {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "poppins", sans-serif;
+  font-weight: bold;
   font-size: 1rem;
   color: #ffffff;
   cursor: pointer;
@@ -84,14 +85,18 @@ font-size: 15pt;
 }
 
 
+.dropdown .dropdown-menu {
+  background-color: #232323;
+  color: #000000;
+}
+
 .dropdown-menu {
   background-color: #232323;
   /* Warna latar belakang dropdown */
-  color: #fff;
 }
 
 .dropdown-menu .dropdown-item {
-  color: #fff;
+  color: #ffffff;
   /* Warna teks putih */
 }
 
@@ -108,11 +113,6 @@ font-size: 15pt;
 .dropdown-menu-end {
   right: 0;
   left: auto;
-}
-
-.dropdown {
-  margin-right: 20px;
-  margin-left: 20px;
 }
 
 .dropdown-items {
@@ -437,7 +437,7 @@ margin: 5px 0;
 }
 
 .footer a {
-color: rgb(122, 122, 122);
+color: rgb(138, 138, 138);
 text-decoration: none;
 transition: color 0.3s ease-in-out;
 }

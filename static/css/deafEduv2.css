@@ -30,34 +30,16 @@ h3 {
   font-size: 15pt;
 }
 
-.nav-item a {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 1rem;
-  color: #ffffff;
-  cursor: pointer;
-  margin-right: 20px;
-  border-radius: 20px;
-  list-style-type: none;
-  
-}
-
-.nav-item a:hover {
-  color: white;
-  transform: scale(1.1);
-  text-shadow: none;
-  background-color: #6c757d;
-  border-radius: 20px;
-  transition: ease-in-out 0.3s;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-
+header {
+  background-color: rgb(24, 24, 24);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar {
   background-color: #232323;
-  opacity: 80%;
 }
 
 .navbar-brand {
@@ -67,15 +49,34 @@ h3 {
 }
 
 .navbar-toggler {
-  background-color: #ffff;
+  background-color: #fdfdfd;
   font-weight: bold;
 }
 
-.dropdown {
+.nav-item a {
+  font-size: 1rem;
+  color: #ffffff;
+  cursor: pointer;
   margin-right: 20px;
-  margin-left: 20px;
+  border-radius: 20px;
+  list-style-type: none;
+  font-family: "poppins", sans-serif;
+  font-weight: bold;
 }
 
+.nav-item a:hover {
+  color: white;
+  transform: scale(1.1);
+  text-shadow: none;
+  background-color: #6c757d;
+  border-radius: 20px;
+  transition: ease-in-out 0.3s;
+}
+
+.dropdown .dropdown-menu {
+  background-color: #232323;
+  color: #000000;
+}
 
 .dropdown-menu {
   background-color: #232323;
@@ -101,7 +102,6 @@ h3 {
   right: 0;
   left: auto;
 }
-
 
 .dropdown-items {
   text-align: center;
@@ -163,6 +163,8 @@ li .dropdown-item {
 }
 
 .action .menu h3 {
+  font-family: "Lilita One", sans-serif;
+  font-style: normal;
   text-align: center;
   font-size: 18px;
   padding: 10px 0;

@@ -43,6 +43,52 @@ header {
   z-index: 1000;
 }
 
+.nav-item a {
+  font-family: "poppins", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #ffffff;
+  cursor: pointer;
+  margin-right: 20px;
+  border-radius: 20px;
+  list-style-type: none;
+}
+
+.nav-item a:hover {
+  color: white;
+  transform: scale(1.1);
+  text-shadow: none;
+  background-color: #6c757d;
+  border-radius: 20px;
+  transition: ease-in-out 0.3s;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+
+}
+
+.navbar {
+  background-color: #232323;
+}
+
+.navbar-brand {
+  padding-right: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-toggler {
+  background-color: #fdfdfd;
+  font-weight: bold;
+}
+
+
+.dropdown .dropdown-menu {
+  background-color: #232323;
+  color: #000000;
+}
+
 .dropdown-menu {
   background-color: #232323;
   /* Warna latar belakang dropdown */
@@ -68,58 +114,6 @@ header {
   left: auto;
 }
 
-.modal-body {
-  background-color: #fff;
-}
-
-.nav-item a {
-  font-size: 1rem;
-  color: #ffffff;
-  cursor: pointer;
-  margin-right: 20px;
-  border-radius: 20px;
-  list-style-type: none;
-  font-family: "poppins", sans-serif;
-  font-weight: bold;
-}
-
-.nav-item a:hover {
-  color: white;
-  transform: scale(1.1);
-  text-shadow: none;
-  background-color: #7E7E7E;
-  border-radius: 20px;
-  transition: ease-in-out 0.3s;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
-}
-
-.dropdown .dropdown-menu .dropdown-divider {
-  border-color: #6c757d;
-}
-
-.navbar {
-  background-color: #232323;
-}
-
-.navbar-brand {
-  padding-right: 50px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.navbar-toggler {
-  background-color: #fdfdfd;
-  font-weight: bold;
-}
-
-.dropdown {
-  margin-right: 20px;
-  margin-left: 20px;
-}
-
 .dropdown-items {
   text-align: center;
 }
@@ -130,6 +124,104 @@ header {
 
 li .dropdown-item {
   color: #000;
+}
+
+.buttons {
+  margin-right: 20px;
+}
+
+.action {
+  position: relative;
+}
+
+.action .profile {
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+.action .profile i {
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.action .menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: #fff;
+  width: 200px;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: none;
+  transition: 0.5s;
+}
+
+.action .menu.active {
+  display: block;
+}
+
+.action .menu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+
+.action .menu h3 {
+  font-family: "Lilita One", sans-serif;
+  font-style: normal;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px 0;
+  font-weight: 500;
+  color: #555;
+}
+
+.action .menu h3 span {
+  font-family: "Lilita One", sans-serif;
+  font-style: normal;
+  font-size: 14px;
+  color: #cecece;
+  font-weight: 300;
+}
+
+.action .menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.action .menu ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.action .menu ul li i {
+  margin-right: 10px;
+  color: #555;
+}
+
+.action .menu ul li a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.action .menu ul li:hover a {
+  color: #232323;
+}
+
+.action .menu ul li:hover i {
+  color: #232323;
 }
 
 
