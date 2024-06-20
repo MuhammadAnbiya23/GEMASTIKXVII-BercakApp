@@ -3,27 +3,67 @@ function menuToggle() {
   toggleMenu.classList.toggle("active");
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  console.log('JavaScript is working!');
+document.addEventListener('DOMContentLoaded', function() {
+  const faders = document.querySelectorAll('.fade-in');
+
+  const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+  };
+
+  const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+          if (!entry.isIntersecting) {
+              return;
+          } else {
+              entry.target.classList.add('show');
+              appearOnScroll.unobserve(entry.target);
+          }
+      });
+  }, appearOptions);
+
+  faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+  });
 });
 
-let description = document.querySelectorAll(content - description);
+document.addEventListener('DOMContentLoaded', function() {
+  const scrollElements = document.querySelectorAll('.fade-in-on-scroll');
 
-window.onscroll = () => {
-    description.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        if (top >= offset && top < offset +
-             height){
-                sec.classList.add('show-animate');
-             }
-        
-        else {
-            sec.classList.remove('show-animate');
-        }
-    });
-}
+  const elementInView = (el, dividend = 1) => {
+      const elementTop = el.getBoundingClientRect().top;
+
+      return (
+          elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+      );
+  };
+
+  const displayScrollElement = (element) => {
+      element.classList.add('visible');
+  };
+
+  const hideScrollElement = (element) => {
+      element.classList.remove('visible');
+  };
+
+  const handleScrollAnimation = () => {
+      scrollElements.forEach((el) => {
+          if (elementInView(el, 1.25)) {
+              displayScrollElement(el);
+          } else {
+              hideScrollElement(el);
+          }
+      });
+  };
+
+  window.addEventListener('scroll', () => {
+      handleScrollAnimation();
+  });
+
+  // Trigger initial check
+  handleScrollAnimation();
+});
+
 
 document.addEventListener('DOMContentLoaded', (event) => {
   const switchElement = document.getElementById('colorModeSwitch');
@@ -517,12 +557,36 @@ function handleSwitchChange() {
   }
 }
 
-function smoothScrollTo(target) {
-  const targetSection = document.querySelector(target);
-  if (targetSection) {
-      window.scrollTo({
-          top: targetSection.offsetTop,
-          behavior: 'smooth'
-      });
-  }
-}
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollElements = document.querySelectorAll('.fade-in-on-scroll');
+
+    const elementInView = (el, dividend = 1) => {
+        const elementTop = el.getBoundingClientRect().top;
+
+        return (
+            elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+        );
+    };
+
+    const displayScrollElement = (element) => {
+        element.classList.add('visible');
+    };
+
+    const hideScrollElement = (element) => {
+        element.classList.remove('visible');
+    };
+
+    const handleScrollAnimation = () => {
+        scrollElements.forEach((el) => {
+            if (elementInView(el, 1.25)) {
+                displayScrollElement(el);
+            } else {
+                hideScrollElement(el);
+            }
+        });
+    };
+
+    window.addEventListener('scroll', () => {
+        handleScrollAnimation();
+    });
+});

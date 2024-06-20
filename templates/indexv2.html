@@ -78,9 +78,12 @@ referrerpolicy="no-referrer"
                 </li>
             </ul>
             <div class="d-flex justify-content-center ms-auto align-items-center">
-              <div class="form-check form-switch me-3">
-                <input class="form-check-input" type="checkbox" id="colorModeSwitch" onclick="handleSwitchChange()" {{ 'checked' if session.get('color_mode') == 'on' else '' }}>
-                <label class="form-check-label text-white" for="colorModeSwitch">Tema Colorful</label>
+              <div class="d-flex justify-content-center ms-auto align-items-center">
+                <div class="form-check form-switch me-3">
+                  <input class="form-check-input" type="checkbox" id="colorModeSwitch" onclick="handleSwitchChange()" {{ 'checked' if session.get('color_mode') == 'on' else '' }}>
+                  <label class="form-check-label text-white" for="colorModeSwitch">
+                      <i class="fas fa-palette"></i>
+                  </label>
               </div> 
               {% if session.get('logged_in') %}
               <div class="action">
@@ -113,7 +116,7 @@ referrerpolicy="no-referrer"
 
 <!-- Landing -->
 <main class="container my-4" style="padding-top: 80px;">
-  <div class="content" id="beranda">
+  <div class="content fade-in" id="beranda">
     <div class="content-description">
       {% if session.get('logged_in') %}
       <h1 class="title">Selamat datang, {{ session.get('user_name') }}!</h1>
@@ -130,7 +133,7 @@ referrerpolicy="no-referrer"
   </div>  
 
 
-  <div class="container mt-5">
+  <main class="container mt-5 fade-in-on-scroll">
     <div class="row">
         <div class="col-md-8 mx-auto">
             <h1 class="artikel-title text-center mb-4" style="color: #232323; ">ARTIKEL TULI</h1>
@@ -149,33 +152,33 @@ referrerpolicy="no-referrer"
         </div>
     </div>
 
-        <div class="fitur-title" id="fitur">
+        <div class="fitur-title fade-in-on-scroll" id="fitur">
           <h1>Bercak.App Fitur</h1>
         </div>
 
-        <div class="container-fitur">
-          <div class="card-fitur">
+        <div class="container-fitur fade-in-on-scroll">
+          <div class="card-fitur fade-in-on-scroll">
               <a href="{{ url_for('deafEduv2') }}">
                 <img src="{{ url_for('static', filename='assets/Deafed2.svg') }}" alt="Photo 1">
               </a>
               <div class="card-content-fitur">
               </div>
           </div>
-          <div class="card-fitur">
+          <div class="card-fitur fade-in-on-scroll">
               <a href="{{ url_for('signRv2') }}">
                 <img src="{{ url_for('static', filename='assets/SignR2.svg') }}"  alt="Photo 3">
               </a>
               <div class="card-content-fitur">
               </div>
           </div>
-          <div class="card-fitur">
+          <div class="card-fitur fade-in-on-scroll">
               <a href="{{ url_for('speechRv2') }}">
                 <img src="{{ url_for('static', filename='assets/SpeechR2.svg') }}" alt="Photo 2">
               </a>
               <div class="card-content-fitur">
               </div>
           </div>
-          <div class="card-fitur">
+          <div class="card-fitur fade-in-on-scroll">
               <a href="{{ url_for('quizv2') }}">
                 <img src="{{ url_for('static', filename='assets/BisindoQuiz2.svg') }}" alt="Photo 4">
               </a>
@@ -183,6 +186,7 @@ referrerpolicy="no-referrer"
               </div>
           </div>
       </div>
+    </main>
 
       <footer class="footer" id="about">
         <div class="container">

@@ -37,7 +37,8 @@ p {
 
 /* General styles for navbar and its items */
 .nav-item a {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "poppins", sans-serif;
+  font-weight: bold;
   font-size: 1rem;
   color: #ffffff;
   cursor: pointer;

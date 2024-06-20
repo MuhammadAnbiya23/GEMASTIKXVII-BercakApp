@@ -29,55 +29,67 @@ referrerpolicy="no-referrer"
 </head>
 <body class="m">
 <!-- Navbar Header -->
-    <header>  
-      <nav class="navbar navbar-expand-lg fixed-top" >
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="{{ url_for('static', filename='assets/LogoTeks.png') }}" alt="Logo" style="width: 200px;">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('indexv2') }}">Beranda</a>
-                      </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
-                            Lainnya
-                        </a>
-                        <ul class="dropdown-menu text-white">
-                            <li><a class="dropdown-item" href="{{ url_for('sosmedv2') }}">Media Sosial</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="{{ url_for('resourcev2') }}">Resource</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="{{ url_for('faqv2') }}">FAQ</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{{ url_for('aboutv2') }}">Tentang kami</a>
-                    </li>
-                </ul>
-                <div class="d-flex justify-content-center ms-auto align-items-center">
-                  {% if session.get('logged_in') %}
-                    <div class="dropdown">
-                      <button class="btn btn-light dropdown-toggle ms-2" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                        {{ session['user_name'] }}
-                      </button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item" href="{{ url_for('dashboard') }}">Profil</a></li>
-                        <li><a class="dropdown-item" href="{{ url_for('logout') }}">Logout</a></li>
-                      </ul>
-                    </div>
-                  {% else %}
-                    <a href="{{ url_for('login') }}" class="btn btn-light ms-2">Masuk</a>
-                  {% endif %}
-              </div>
-          </div>   
-        </div>
-      </nav>
-  </header>
+<header>  
+  <nav class="navbar navbar-expand-lg fixed-top" >
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="{{ url_for('static', filename='assets/LogoTeks.png') }}" alt="Logo" style="width: 200px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('indexv2') }}">Beranda</a>
+                  </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+                        Lainnya
+                    </a>
+                    <ul class="dropdown-menu text-white">
+                        <li><a class="dropdown-item" href="{{ url_for('sosmedv2') }}">Media Sosial</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{{ url_for('resourcev2') }}">Resource</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        
+                        <li><a class="dropdown-item" href="{{ url_for('faqv2') }}">FAQ</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('aboutv2') }}">Tentang kami</a>
+                </li>
+            </ul>
+            <div class="d-flex justify-content-center ms-auto align-items-center">
+              {% if session.get('logged_in') %}
+              <div class="action">
+                <div class="profile" onclick="menuToggle();">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="menu">
+                    <h3>{{ session['user_name'] }}<br /><span>bergabung sejak {{ session['user_join_date'] }}</span></h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-user"></i><a href="#">My profile</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-cog"></i><a href="#">Lupa password</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-sign-out-alt"></i><a href="{{ url_for('logout') }}">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+              {% else %}
+                <a href="{{ url_for('login') }}" class="btn btn-light ms-2">Masuk</a>
+              {% endif %}
+          </div>
+      </div>   
+    </div>
+  </nav>
+
+</header>
 
     <main class="container">
         <section class="app-description text-center mb-5 fade-in">
@@ -98,63 +110,60 @@ referrerpolicy="no-referrer"
         </section>
 
         <section class="team text-center fade-in">
-            <h1 class="mb-4">Meet The Team</h1>
-            <div class="container-profile">
-                <div class="main-card">
-                  <div class="cards">
-                    <div class="card">
-                     <div class="content">
-                       <div class="img">
-                        <img src="{{ url_for('static', filename='assets/Rendi.jpg') }}" alt="">
-                       </div>
-                       <div class="details">
-                         <div class="name">Rendi Ruswandi</div>
-                         <div class="job">Frontend Developer & Secretary</div>
-                       </div>
-                       <div class="media-icons">
-                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                         <a href="#"><i class="fab fa-twitter"></i></a>
-                         <a href="#"><i class="fab fa-instagram"></i></a>
-                         <a href="#"><i class="fab fa-youtube"></i></a>
-                       </div>
+          <h1 class="mb-4">Meet The Team</h1>
+          <div class="container-profile">
+              <div class="main-card">
+                <div class="cards">
+                  <div class="card">
+                   <div class="content">
+                     <div class="img">
+                      <img src="{{ url_for('static', filename='assets/Rendi.avif') }}" alt="">
                      </div>
-                    </div>
-                    <div class="card">
-                     <div class="content">
-                       <div class="img">
-                        <img src="{{ url_for('static', filename='assets/Anbiya.jpg') }}" alt="">
-                       </div>
-                       <div class="details">
-                         <div class="name">Muhammad Anbiya</div>
-                         <div class="job">Backend Developer & Machine Learning Engineer</div>
-                       </div>
-                       <div class="media-icons">
-                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                         <a href="#"><i class="fab fa-twitter"></i></a>
-                         <a href="#"><i class="fab fa-instagram"></i></a>
-                         <a href="#"><i class="fab fa-youtube"></i></a>
-                       </div>
+                     <div class="details">
+                       <div class="name">Rendi Ruswandi</div>
+                       <div class="job">Frontend Developer & Secretary</div>
                      </div>
-                    </div>
-                    <div class="card">
-                     <div class="content">
-                       <div class="img">
-                        <img src="{{ url_for('static', filename='assets/Nabiel.jpg') }}" alt="">
-                       </div>
-                       <div class="details">
-                         <div class="name">Nabiel Fauzan</div>
-                         <div class="job">UI/UX Design & System Analist</div>
-                       </div>
-                       <div class="media-icons">
-                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                         <a href="#"><i class="fab fa-twitter"></i></a>
-                         <a href="#"><i class="fab fa-instagram"></i></a>
-                         <a href="#"><i class="fab fa-youtube"></i></a>
-                       </div>
+                     <div class="media-icons">
+                       <a href="#"><i class="fab fa-linkedin"></i></a>
+                       <a href="https://www.instagram.com/rendi_sr16?igsh=MXQyOXhmOHl3OXljNQ=="><i class="fab fa-instagram"></i></a>
+                       <a href="mailto:rendiforbetter10@gmail.com"><i class="fab fa-google"></i></a>
                      </div>
-                    </div>
+                   </div>
                   </div>
-        </section>
+                  <div class="card">
+                   <div class="content">
+                     <div class="img">
+                      <img src="{{ url_for('static', filename='assets/Anbiya.jpg') }}" alt="">
+                     </div>
+                     <div class="details">
+                       <div class="name">Muhammad Anbiya</div>
+                       <div class="job">Backend Developer & Machine Learning Engineer</div>
+                     </div>
+                     <div class="media-icons">
+                       <a href="https://www.linkedin.com/in/muhammad-anbiya-fatah-114772245/"><i class="fab fa-linkedin"></i></a>
+                       <a href="https://www.instagram.com/anbiyafth_?igsh=MmN1bHpwcWh3YWdz"><i class="fab fa-instagram"></i></a>
+                       <a href="mailto:anbiya17agustus@gmail.com"><i class="fab fa-google"></i></a>
+                     </div>
+                   </div>
+                  </div>
+                  <div class="card">
+                   <div class="content">
+                     <div class="img">
+                      <img src="{{ url_for('static', filename='assets/Nabiel.jpg') }}" alt="">
+                     </div>
+                     <div class="details">
+                       <div class="name">Nabiel Fauzan</div>
+                       <div class="job">UI/UX Design & System Analist</div>
+                     </div>
+                     <div class="media-icons">
+                       <a href="https://www.linkedin.com/in/nabiel-fauzan-ibrahim-1885ba2b8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
+                       <a href="https://www.instagram.com/nabilfauzannn?igsh=MXZ5bWwwcHJ5bHJiZQ=="><i class="fab fa-instagram"></i></a>
+                       <a href="mailto:nabielfauzan4@gmail.com"><i class="fab fa-google"></i></a>
+                     </div>
+                   </div>
+                  </div>
+                </div>
+      </section>
     </main>
 
     <footer class="footer" id="about">
@@ -169,7 +178,7 @@ referrerpolicy="no-referrer"
                   <!-- Menu Sosial Media -->
                   <ul class="social-media">
                       <li><a href="https://youtube.com"><i class="fab fa-youtube"></i> Youtube</a></li>
-                      <li><a href="https://linkedin.com"><i class="fab fa-linkedin"></i>Linkelin</a></li>
+                      <li><a href="https://linkedin.com"><i class="fab fa-linkedin"></i>LinkedIn</a></li>
                       <li><a href="https://instagram.com"><i class="fab fa-instagram"></i> Instagram</a></li>
                   </ul>
               </div>
