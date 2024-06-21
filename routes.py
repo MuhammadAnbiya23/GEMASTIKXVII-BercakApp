@@ -1,7 +1,7 @@
 from flask import request, session, flash, redirect, url_for, render_template
 from app import app,db, bcrypt
-from models import DataUser
-from utils import is_valid_email, is_valid_password
+from models_flask import DataUser
+from utils_flask import is_valid_email, is_valid_password
 
 @app.route("/dashboard/")
 def dashboard():
@@ -151,10 +151,6 @@ def login():
         email = request.form.get('email-login')
         password = request.form.get('password-login')
         user = DataUser.get_user_by_email(email)
-        print(user)
-        print(password)
-        print(bcrypt.generate_password_hash(password).decode('utf-8'))
-        print(user['password'])
 
         if user and DataUser.check_password(user['password'], password):
             session['logged_in'] = True
