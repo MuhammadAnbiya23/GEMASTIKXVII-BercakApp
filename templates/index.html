@@ -136,9 +136,9 @@ referrerpolicy="no-referrer"
   <div class="row fade-in-on-scroll">
     <div class="col-md-8 mx-auto fade-in-on-scroll">
         <h1 class="artikel-title text-center mb-4 fade-in-on-scroll" style="color: #333057;">ARTIKEL TULI</h1>
-        <div class="cards fade-in-on-scroll">
+        <div class="cards">
             <div class="card-body">
-                <div class="title-icon-container">
+                <div class="title-icon-container fade-in-on-scroll">
                     <h2>Apa itu Tuli?</h2>
                     <img src="{{ url_for('static', filename='assets/deaf.svg') }}" alt="Gambar Artikel Utama" class="icon-inline">
                 </div>
@@ -207,11 +207,9 @@ referrerpolicy="no-referrer"
                 <div class="col-md-4">
                     <!-- Menu Lainnya -->
                     <ul class="other-menu">
-                        <li><a href="#"><i class="fa-solid fa-question"></i>FAQ</a></li>
-                        <li><a href="#"><i class="fa-regular fa-file-lines"></i>Kebijakan</a></li>
-                        <li><a href="#"><i class="fa-solid fa-people-group"></i>Tentang Kami</a></li>
-                    </ul>
-                </div>
+                      <li><a href="{{ url_for('faq') }}"><i class="fa-solid fa-question"></i>FAQ</a></li>
+                      <li><a href="{{ url_for('sosmed') }}"><i class="fa-regular fa-file-lines"></i>Sosial media</a></li>
+                      <li><a href="{{ url_for('about') }}"><i class="fa-solid fa-people-group"></i>Tentang Kami</a></li>
             </div>
         </div>
     </footer> 

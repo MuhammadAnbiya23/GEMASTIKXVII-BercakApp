@@ -221,3 +221,88 @@ body {
 .container.active .toggle-right {
     transform: translateX(200%);
 }
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .container {
+        width: 80%;
+        min-height: 400px;
+    }
+
+    .container p {
+        font-size: 13px;
+    }
+
+    .container button {
+        font-size: 11px;
+        padding: 8px 40px;
+    }
+
+    .container input {
+        font-size: 12px;
+    }
+
+    .toggle-panel {
+        padding: 0 20px;
+    }
+
+    .toggle {
+        background: linear-gradient(to right, #6c7ae0, #512da8);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        min-height: 360px;
+    }
+
+    .container p {
+        font-size: 12px;
+    }
+
+    .container button {
+        font-size: 10px;
+        padding: 6px 35px;
+    }
+
+    .container input {
+        font-size: 11px;
+    }
+
+    .toggle-panel {
+        padding: 0 15px;
+    }
+
+    .toggle {
+        background: linear-gradient(to right, #7d8feb, #512da8);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        min-height: 320px;
+    }
+
+    .container p {
+        font-size: 11px;
+    }
+
+    .container button {
+        font-size: 9px;
+        padding: 5px 30px;
+    }
+
+    .container input {
+        font-size: 10px;
+    }
+
+    .toggle-panel {
+        padding: 0 10px;
+    }
+
+    .toggle {
+        background: linear-gradient(to right, #8fa2f7, #512da8);
+    }
+}

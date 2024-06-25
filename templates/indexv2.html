@@ -157,28 +157,28 @@ referrerpolicy="no-referrer"
         </div>
 
         <div class="container-fitur fade-in-on-scroll">
-          <div class="card-fitur fade-in-on-scroll">
+          <div class="card-fitur">
               <a href="{{ url_for('deafEduv2') }}">
                 <img src="{{ url_for('static', filename='assets/Deafed2.svg') }}" alt="Photo 1">
               </a>
               <div class="card-content-fitur">
               </div>
           </div>
-          <div class="card-fitur fade-in-on-scroll">
+          <div class="card-fitur">
               <a href="{{ url_for('signRv2') }}">
                 <img src="{{ url_for('static', filename='assets/SignR2.svg') }}"  alt="Photo 3">
               </a>
               <div class="card-content-fitur">
               </div>
           </div>
-          <div class="card-fitur fade-in-on-scroll">
+          <div class="card-fitur ">
               <a href="{{ url_for('speechRv2') }}">
                 <img src="{{ url_for('static', filename='assets/SpeechR2.svg') }}" alt="Photo 2">
               </a>
               <div class="card-content-fitur">
               </div>
           </div>
-          <div class="card-fitur fade-in-on-scroll">
+          <div class="card-fitur">
               <a href="{{ url_for('quizv2') }}">
                 <img src="{{ url_for('static', filename='assets/BisindoQuiz2.svg') }}" alt="Photo 4">
               </a>
@@ -207,9 +207,9 @@ referrerpolicy="no-referrer"
                 <div class="col-md-4">
                     <!-- Menu Lainnya -->
                     <ul class="other-menu">
-                        <li><a href="#"><i class="fa-solid fa-question"></i>FAQ</a></li>
-                        <li><a href="#"><i class="fa-regular fa-file-lines"></i>Kebijakan</a></li>
-                        <li><a href="#"><i class="fa-solid fa-people-group"></i>Tentang Kami</a></li>
+                      <li><a href="{{ url_for('faqv2') }}"><i class="fa-solid fa-question"></i>FAQ</a></li>
+                      <li><a href="{{ url_for('sosmedv2') }}"><i class="fa-regular fa-file-lines"></i>Media Sosial</a></li>
+                      <li><a href="{{ url_for('aboutv2') }}"><i class="fa-solid fa-people-group"></i>Tentang Kami</a></li>
                     </ul>
                 </div>
             </div>

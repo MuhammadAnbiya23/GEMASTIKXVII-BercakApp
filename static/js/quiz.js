@@ -51,7 +51,49 @@ document.addEventListener("DOMContentLoaded", function () {
             image: "/static/assets/dia.jpg",
             options: ["Dia", "Mereka"],
             correctAnswer: "Dia"
-        }
+        },
+        {
+            title: "Apa arti gambar kosa isyarat ini?",
+            image: "/static/assets/bisindo-B.jpg",
+            options: ["B", "E"],
+            correctAnswer: "B"
+        },
+        {
+            title: "Apa arti gambar kosa isyarat ini?",
+            image: "/static/assets/bisindo-E.jpg",
+            options: ["E", "A"],
+            correctAnswer: "E"
+        },
+        {
+            title: "Apa arti gambar kosa isyarat ini?",
+            image: "/static/assets/bisindo-R.jpg",
+            options: ["Q", "R"],
+            correctAnswer: "R"
+        },
+        {
+            title: "Apa arti gambar kosa isyarat ini?",
+            image: "/static/assets/bisindo-C.jpg",
+            options: ["O", "C"],
+            correctAnswer: "C"
+        },
+        {
+            title: "Apa arti gambar kosa isyarat ini?",
+            image: "/static/assets/bisindo-A.jpg",
+            options: ["V", "A"],
+            correctAnswer: "A"
+        },
+        {
+            title: "Apa arti gambar kosa isyarat ini?",
+            image: "/static/assets/bisindo-K.jpg",
+            options: ["Y", "K"],
+            correctAnswer: "K"
+        },
+        {
+            title: "Apa arti gambar kosa isyarat ini?",
+            image: "/static/assets/bisindo-P.jpg",
+            options: ["P", "D"],
+            correctAnswer: "P"
+        },
     ];
 
     function loadGame2Question() {
@@ -69,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
             game2Points++;
             game2Feedback.innerText = "Benar!";
             correctSound.play();
-            if (game2Points % 6 === 0) {
+            if (game2Points % 13 === 0) {
                 displayReward();
             } else {
                 loadGame2Question();
@@ -160,17 +202,18 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Reward AR filter kamera Anda telah diklaim!");
     };
 
-    // Access user's camera
-    // function startCamera() {
-    //     const video = document.getElementById("video");
-    //     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    //         navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) {
-    //             video.srcObject = stream;
-    //             video.play();
-    //         });
-    //     }
-    // }
-    // startCamera();
+            const video = document.getElementById('video');
+
+        // Request access to the user's camera
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                // Set the video source to the camera stream
+                video.srcObject = stream;
+            })
+            .catch(error => {
+                console.error('Error accessing the camera:', error);
+            });
+
 });
 
 function menuToggle() {
@@ -249,3 +292,14 @@ document.getElementById('startGame2').addEventListener('click', function () {
 function closePopup() {
     document.getElementById('popup-overlay').style.display = 'none';
 }
+
+document.getElementById('downloadBtn').addEventListener('click', function() {
+    html2canvas(document.querySelector('#reward-section')).then(canvas => {
+      // Membuat elemen link untuk unduhan
+      let link = document.createElement('a');
+      link.download = 'sertifikat.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    });
+  });
+  
