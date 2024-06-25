@@ -32,7 +32,8 @@ h3 {
 }
 
 .nav-item a {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "poppins", sans-serif;
+  font-weight: bold;
   font-size: 1rem;
   color: #ffffff;
   cursor: pointer;
@@ -57,7 +58,7 @@ h3 {
 }
 
 .navbar {
-  background-color: #004e11cc;
+  background-color: #004e11;
   opacity: 80%;
 }
 
@@ -91,7 +92,7 @@ h3 {
 .dropdown-menu .dropdown-item:hover,
 .dropdown-menu .dropdown-item:focus {
   color: #ffffff;
-  font-weight: 400;
+  font-weight: bold;
 }
 
 .dropdown-menu .dropdown-divider {
