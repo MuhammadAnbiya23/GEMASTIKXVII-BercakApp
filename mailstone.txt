@@ -1,0 +1,85 @@
+apa yang sudah bisa digunakan : 
+> sudah connect ke databse sqlite by name dari frontend
+> fitur autentikasi dan otorasi
+    - registrasi (dengan hash)
+    - login 
+    - logout
+  #tolong tes logic untuk autentikasi nya
+  #kebingungan pada database sqlite
+  #bagaimana nanti skema CRUD saat hosting, apakah perlu membuat dashboard admin?
+  #yang uniq nya di email,jadi primary_key nya apakah email?
+  #bagaimana pendapat soal ERD?
+> manajemen pengguna 
+    - reset password
+> kebingunan buat github
+
+Buat Bagian Logic Login : 
+  > Handling pengecekan email sama
+  > Informatif password yang lebih variatif
+  > Password di regist sama login sekarang belum di hashing
+  > Login gagal ketika email dan password salah
+  > Login gagal ketika email salah
+  > Login gagal ketika password salah
+
+
+Fitur-Fitur Utama
+Autentikasi dan Otorisasi:
+
+Registrasi Pengguna: Memungkinkan pengguna untuk membuat akun baru.
+Login: Memungkinkan pengguna yang terdaftar untuk masuk ke sistem.
+Logout: Menghapus sesi pengguna yang sedang aktif.
+Manajemen Token: Menghasilkan dan memvalidasi token JWT untuk otorisasi akses.
+
+Manajemen Pengguna:
+
+Profil Pengguna: Melihat dan mengedit profil pengguna.
+Pengaturan Akun: Mengubah pengaturan akun seperti email, password, dll.
+Reset Password: Memungkinkan pengguna untuk mengatur ulang password jika lupa.
+CRUD (Create, Read, Update, Delete) Operasi:
+
+Create: Menambahkan data baru ke database.
+Read: Mengambil data dari database, termasuk pencarian dan filter.
+Update: Memperbarui data yang sudah ada di database.
+Delete: Menghapus data dari database.
+Manajemen Konten:
+
+Posting Artikel/Blog: Menambahkan, mengedit, dan menghapus artikel atau postingan blog.
+Komentar: Menambahkan dan mengelola komentar pada artikel atau postingan blog.
+Kategori/Tag: Mengelola kategori atau tag untuk pengorganisasian konten.
+Pemberitahuan dan Notifikasi:
+
+Email Notifikasi: Mengirim email notifikasi untuk berbagai kejadian, seperti verifikasi email, reset password, dll.
+Push Notifikasi: Mengirim notifikasi push ke perangkat pengguna.
+Integrasi Pihak Ketiga:
+
+API Pihak Ketiga: Menghubungkan dan menggunakan layanan pihak ketiga seperti pembayaran, media sosial, dll.
+OAuth: Mendukung login melalui layanan pihak ketiga seperti Google, Facebook, dll.
+Keamanan:
+
+Penggunaan HTTPS: Mengamankan komunikasi antara klien dan server.
+Proteksi Terhadap Serangan: Mengimplementasikan proteksi terhadap serangan seperti SQL Injection, Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF), dll.
+Rate Limiting: Membatasi jumlah permintaan untuk mencegah penyalahgunaan.
+Logika Umum
+Validasi Input:
+
+Memastikan data yang diterima dari pengguna valid sebelum diproses atau disimpan dalam database.
+Hashing Password:
+
+Menggunakan hashing untuk menyimpan password dengan aman dalam database.
+Manajemen Sesi:
+
+Mengelola sesi pengguna, baik menggunakan token JWT atau mekanisme lainnya.
+Error Handling:
+
+Menangani error dengan memberikan pesan error yang jelas dan status kode HTTP yang sesuai.
+Logging:
+
+Merekam aktivitas dan error untuk pemantauan dan debugging.
+Pagination:
+
+Mengimplementasikan pagination untuk data yang besar agar tidak membebani server dan klien.
+Caching:
+
+Menggunakan caching untuk meningkatkan performa dengan menyimpan hasil dari operasi yang sering dilakukan.
+
+

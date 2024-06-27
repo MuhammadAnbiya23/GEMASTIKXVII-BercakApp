@@ -1,0 +1,703 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+    background-image: url('../assets/stacked-peaks-haikei-pink.svg');
+    background-size: cover;
+    color: #ffffff;
+    font-family: "Lilita One", sans-serif;
+    font-style: normal;
+}
+
+h1{
+  font-family: "Bowlby One SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 2px 2px 4px #1f1f1fc0;
+}
+
+h2,
+h3 {
+  color: rgb(255, 255, 255);
+  font-family: "Lilita One", sans-serif;
+  font-style: normal;
+}
+
+p {
+  color: rgb(255, 255, 255);
+  font-family: "Concert One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15pt;
+}
+
+/* General styles for navbar and its items */
+.nav-item a { 
+  font-family: "poppins", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #ffffff;
+  cursor: pointer;
+  margin-right: 20px;
+  border-radius: 20px;
+  list-style-type: none;
+}
+
+.nav-item a:hover {
+  color: white;
+  transform: scale(1.1);
+  text-shadow: none;
+  background-color: #ff00b3;
+  border-radius: 20px;
+  transition: ease-in-out 0.3s;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.navbar {
+  background-color: #4d0040c0;
+}
+
+.navbar-brand {
+  padding-right: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-toggler {
+  background-color: #fdfdfd;
+  font-weight: bold;
+}
+
+.dropdown {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+  
+.dropdown-menu {
+  background-color: #4d0040c0;
+  /* Warna latar belakang dropdown */
+}
+
+.dropdown-menu .dropdown-item {
+  color: #ffffff;
+  /* Warna teks putih */
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.dropdown-menu .dropdown-divider {
+  border-color: #6c757d;
+}
+
+.dropdown-menu-end {
+  right: 0;
+  left: auto;
+}
+
+.dropdown-items {
+  text-align: center;
+}
+
+.dropdown-item {
+  color: rgb(0, 0, 0);
+}
+
+li .dropdown-item {
+  color: #000;
+}
+
+.buttons {
+  margin-right: 20px;
+}
+
+.action {
+  position: relative;
+}
+
+.action .profile {
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+.action .profile i {
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.action .menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: #fff;
+  width: 200px;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: none;
+  transition: 0.5s;
+}
+
+.action .menu.active {
+  display: block;
+}
+
+.action .menu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+
+.action .menu h3 {
+  text-align: center;
+  font-size: 18px;
+  padding: 10px 0;
+  font-weight: 500;
+  color: #555;
+}
+
+.action .menu h3 span {
+  font-size: 14px;
+  color: #cecece;
+  font-weight: 300;
+}
+
+.action .menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.action .menu ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.action .menu ul li i {
+  margin-right: 10px;
+  color: #555;
+}
+
+.action .menu ul li a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.action .menu ul li:hover a {
+  color: #ff5d94;
+}
+
+.action .menu ul li:hover i {
+  color: #ff5d94;
+}
+
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card {
+  width: 90%;
+  margin: auto;
+}
+
+.quiz-icon img {
+  width: 300px;
+}
+
+.popup-content h3{
+  color: #000;
+}
+
+.popup-content p{
+  color: #000;
+}
+
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  max-width: 500px;
+  margin: auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.container {
+  text-align: center;
+  padding-top: 10%;
+  padding-bottom: 3%;
+}
+
+.container-quiz {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 1200px;
+}
+
+.bounding-box {
+  background-image: url('../assets/AR.svg');
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border: 2px solid red;
+  transform: translate(-50%, -50%);
+}
+
+.card-header {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-header img {
+  width: 100px;
+}
+
+.card {
+  background-color: #3d013a96;
+  color: #e0e0e0;
+}
+
+.btn-light {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.alert {
+  display: none;
+}
+
+#translation-result {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#quiz-command {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #cc00ff;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.custom-image-size {
+  width: 200px; /* Atur lebar gambar sesuai kebutuhan Anda */
+  height: auto; /* Mempertahankan rasio aspek gambar */
+}
+
+#ar-sticker {
+  max-width: 100%; /* Maksimum lebar sesuai dengan parent container */
+  max-height: 100%; /* Maksimum tinggi sesuai dengan parent container */
+  position: absolute;
+  top: 133%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+footer {
+  width: 100%;
+  background-color: #4d0040c0;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  position: relative; /* Changed to relative to allow proper positioning */
+  bottom: 0; /* Keep at the bottom */
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.footer .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer hr {
+  border: 1px solid #777;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.footer ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer li {
+  list-style: none;
+  margin: 5px 0;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer a:hover {
+  color: rgb(122, 122, 122);
+  font-weight: 300;
+}
+
+/* Social Media Icons */
+.footer .social-media,
+.footer .other-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer .social-media li a,
+.footer .other-menu li a {
+  display: flex;
+  align-items: center;
+}
+
+.footer .social-media li a i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* Logo */
+.footer-logo {
+  max-width: 200px;
+  margin: auto;
+  display: block;
+}
+
+/* Copyright */
+.footer .logo-container p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+@media (max-width: 1400px) {
+  .container-quiz {
+    max-width: 1000px;
+  }
+}
+
+/* Responsive styles for all dimensions */
+@media (max-width: 1200px) {
+
+  .container-quiz {
+    max-width: 800px;
+  }
+  
+  .popup-content {
+    max-width: 500px;
+  }
+
+  .quiz-icon img {
+      width: 250px;
+  }
+
+  .card-header img {
+      width: 80px;
+  }
+
+  #translation-result {
+      font-size: 1.3rem;
+  }
+
+  #quiz-command {
+      font-size: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .container-quiz {
+    max-width: 700px;
+  }
+
+  .quiz-icon img {
+      width: 200px;
+  }
+
+  .card-header img {
+      width: 60px;
+  }
+
+  #translation-result {
+      font-size: 1.1rem;
+  }
+
+  #quiz-command {
+      font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-quiz {
+    max-width: 600px;
+  }
+
+  .popup-content {
+    max-width: 400px;
+  }
+
+  .quiz-icon img {
+      width: 150px;
+  }
+
+  .card-header img {
+      width: 50px;
+  }
+
+  #translation-result {
+      font-size: 1rem;
+  }
+
+  #quiz-command {
+      font-size: 1.5rem;
+  }
+
+  .card {
+      margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+    #ar-sticker {
+        width: 100%;
+    }
+
+  .popup-content {
+    max-width: 300px;
+  }
+
+  .quiz-icon img {
+      width: 100px;
+  }
+
+  .card-header img {
+      width: 40px;
+  }
+
+  #translation-result {
+      font-size: 0.9rem;
+  }
+
+  #quiz-command {
+      font-size: 1.2rem;
+  }
+
+  .container {
+      padding-top: 10%;
+  }
+
+  .card-body {
+      padding: 15px;
+  }
+
+  button {
+      padding: 8px 16px;
+      font-size: 14px;
+  }
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+  .popup-content {
+    max-width: 300px;
+  }
+
+  .navbar-brand img {
+      width: 150px; /* Adjust logo size for smaller screens */
+  }
+
+  .nav-item a {
+      font-size: 0.9rem; /* Slightly smaller font size */
+      margin-right: 10px; /* Reduce margin between items */
+  }
+
+  .dropdown {
+      margin: 0 10px; /* Reduce margins */
+  }
+
+  .buttons {
+      margin-right: 10px; /* Reduce margin */
+  }
+
+  .action .profile i {
+      font-size: 25px; /* Adjust profile icon size */
+  }
+
+  .navbar-collapse {
+      text-align: center; /* Center align the collapse content */
+  }
+
+  .navbar-nav {
+      flex-direction: column; /* Stack nav items vertically */
+  }
+
+  .action .menu {
+      width: 100%; /* Full width for dropdown menu */
+      top: 50px; /* Adjust position */
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .popup-content {
+    max-width: 300px;
+  }
+
+  .footer .row {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-logo {
+      margin-bottom: 10px;
+  }
+
+  .footer .logo-container p {
+      margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer .row {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-logo {
+      margin-bottom: 10px;
+  }
+
+  .footer .logo-container p {
+      margin-bottom: 20px;
+  }
+
+  .card {
+      width: 90%;
+  }
+
+  h1 {
+      font-size: 2em;
+  }
+
+  .btn {
+      width: 100%;
+      margin: 5px 0;
+  }
+}
+
+
+
+#reward-section {
+  display: none;
+}
+#game1-container, #game2-container {
+  display: none;
+}
+.timer-bar {
+  width: 100%;
+  height: 20px;
+  background-color: grey;
+}
+.timer-fill {
+  height: 100%;
+  background-color: green;
+  width: 100%;
+}

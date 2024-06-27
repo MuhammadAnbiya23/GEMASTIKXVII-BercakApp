@@ -1,0 +1,602 @@
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-image: url('../assets/Bgflat.svg');
+  font-family: "Lilita One", sans-serif;
+  font-style: normal;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+  -moz-transition: background-color 0.3s ease, color 0.3s ease;
+  -ms-transition: background-color 0.3s ease, color 0.3s ease;
+  -o-transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1 {
+  font-family: "Bowlby One SC", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 2px 2px 4px #353535c0;
+  color: #9fc8ff;
+}
+
+h2,
+h3 {
+  color: rgb(30, 44, 92);
+  font-family: "Lilita One", sans-serif;
+  font-style: normal;
+}
+
+p {
+  color: #ffffff;
+  font-family: "Concert One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 10pt;
+}
+
+header {
+  background-color: rgb(24, 24, 24);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.dropdown-menu {
+  background-color: #4016a1de;
+  /* Warna latar belakang dropdown */
+}
+
+.dropdown-menu .dropdown-item {
+  color: #ffffff;
+  /* Warna teks putih */
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.dropdown-menu .dropdown-divider {
+  border-color: #6c757d;
+}
+
+.dropdown-menu-end {
+  right: 0;
+  left: auto;
+}
+
+.modal-body {
+  background-color: #fff;
+}
+
+.nav-item a {
+  font-size: 1rem;
+  color: #ffffff;
+  cursor: pointer;
+  margin-right: 20px;
+  border-radius: 20px;
+  list-style-type: none;
+  font-family: "poppins", sans-serif;
+  font-weight: bold;
+}
+
+.nav-item a:hover {
+  color: white;
+  transform: scale(1.1);
+  text-shadow: none;
+  background-color: #006eff;
+  border-radius: 20px;
+  transition: ease-in-out 0.3s;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.dropdown .dropdown-menu .dropdown-divider {
+  border-color: #6c757d;
+}
+
+.navbar {
+  background-color: #4016a1de;
+}
+
+.navbar-brand {
+  padding-right: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-toggler {
+  background-color: #fdfdfd;
+  font-weight: bold;
+}
+
+.dropdown {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.dropdown-items {
+  text-align: center;
+}
+
+.dropdown-item {
+  color: rgb(0, 0, 0);
+}
+
+li .dropdown-item {
+  color: #000;
+}
+
+.buttons {
+  margin-right: 20px;
+}
+
+  .action {
+    position: relative;
+  }
+  
+  .action .profile {
+    cursor: pointer;
+    font-size: 24px;
+    margin-left: 20px;
+  }
+  
+  .action .profile i {
+    font-size: 30px;
+    color: #ffffff;
+  }
+  
+  .action .menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #fff;
+    width: 200px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: none;
+    transition: 0.5s;
+  }
+  
+  .action .menu.active {
+    display: block;
+  }
+  
+  .action .menu::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    transform: rotate(45deg);
+  }
+  
+  .action .menu h3 {
+    text-align: center;
+    font-size: 18px;
+    padding: 10px 0;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .action .menu h3 span {
+    font-size: 14px;
+    color: #cecece;
+    font-weight: 300;
+  }
+  
+  .action .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .action .menu ul li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .action .menu ul li i {
+    margin-right: 10px;
+    color: #555;
+  }
+  
+  .action .menu ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: 0.5s;
+  }
+  
+  .action .menu ul li:hover a {
+    color: #4016a1de;
+  }
+  
+  .action .menu ul li:hover i {
+    color: #4016a1de;
+  }
+
+.buttons {
+  margin-right: 20px;
+  }
+  
+  .res-item {
+    font-family: Bolby;
+    background-color: #00000037;
+    border: 1px solid #444;
+    border-radius: 60px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    width: auto;
+    height: auto;
+    transition: transform 0.3s, box-shadow 0.3s;
+    -webkit-border-radius: 60px;
+    -moz-border-radius: 60px;
+    -ms-border-radius: 60px;
+    -o-border-radius: 60px;
+}
+  
+  .container {
+  padding-top: 5%;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.resources-content {
+  padding-top: 100px;
+}
+
+.resources-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.resources-list-item {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.resources-list-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.resources-list-item p {
+  font-size: 0.9rem;
+}
+
+.navbar-brand img {
+  max-width: 150px;
+}
+
+.footer {
+  background-color: #4016a1;
+  color: #fff;
+  padding: 30px 0;
+}
+
+.social-media,
+.other-menu {
+  margin-top: 20px;
+}
+
+.social-media li,
+.other-menu li {
+  margin-bottom: 15px;
+}
+
+.social-media li a,
+.other-menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer-logo {
+  max-width: 150px;
+}
+
+
+.footer {
+  width: 100%;
+  background-color: #4016a1;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  position: absolute;
+  left: 0;
+}
+
+.footer .container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.footer .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* Center align the content horizontally */
+  align-items: center;
+  /* Center align the content vertically */
+}
+
+.footer hr {
+  border: 1px solid #777;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.footer ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer li {
+  list-style: none;
+  margin: 5px 0;
+}
+
+.footer a {
+  color: #4016a1;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer a:hover {
+  color: #fff;
+  font-weight: 300;
+}
+
+/* Social Media Icons */
+.footer .social-media,
+.footer .other-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Center align the content vertically */
+}
+
+.footer .social-media li a,
+.footer .other-menu li a {
+  display: flex;
+  align-items: center;
+}
+
+.footer .social-media li a i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+/* Logo */
+.footer-logo {
+  max-width: 200px;
+  margin: auto;
+  display: block;
+}
+
+/* Copyright */
+.footer .logo-container p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.content {
+  padding-top: 100px;
+}
+
+.resources-title {
+  color: #9fc8ff;
+  text-shadow: 2px 2px 4px #353535c0;
+  text-align: center;
+  font-family: "Bowlby One SC", sans-serif;
+
+  font-weight: 400;
+  font-style: normal;
+}
+
+.resources h2 {
+  color: #ffff;
+  /* Warna hitam */
+}
+
+.resources ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.resources ul li {
+  margin-bottom: 10px;
+}
+
+.resources ul li a {
+  color: #0dcaf0;
+  text-decoration: none;
+}
+
+.resources ul li a:hover {
+  text-decoration: underline;
+}
+
+.navbar .nav-link {
+  color: white;
+}
+
+footer {
+  background-color: #4016a1;
+  padding: 20px 0;
+}
+
+.footer-logo {
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+}
+
+.social-media,
+.other-menu {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.social-media li,
+.other-menu li {
+  margin-bottom: 10px;
+}
+
+.social-media li a,
+.other-menu li a {
+  color: white;
+  text-decoration: none;
+}
+
+.social-media li a:hover,
+.other-menu li a:hover {
+  text-decoration: underline;
+}
+
+.social-media i,
+.other-menu i {
+  margin-right: 5px;
+}
+
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation 1s ease-in forwards; /* durasi animasi 1 detik */
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0; /* Mulai dari keadaan tidak terlihat */
+  }
+  to {
+    opacity: 1; /* Berakhir dengan keadaan terlihat sepenuhnya */
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation 1s ease-in forwards; /* durasi animasi 1 detik */
+}
+
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar-brand {
+    padding-right: 0;
+    display: flex;
+    justify-content: flex-start;
+    width: auto;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-item {
+    margin: 5px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-item a {
+    display: block;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .navbar-toggler {
+    margin-left: auto;
+  }
+
+  .dropdown-menu {
+    text-align: center;
+    width: 100%;
+  }
+
+  .action {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile {
+    margin-left: 0;
+  }
+
+  .menu {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+  }
+}
+
+/* Additional Responsive Styling for Small Devices */
+@media (max-width: 576px) {
+  .navbar-brand img {
+    width: 150px; /* Adjust logo size for small screens */
+  }
+
+  .navbar-toggler {
+    padding: 0.25rem 0.75rem;
+  }
+
+  .buttons {
+    margin-right: 0;
+  }
+
+  .action .menu {
+    width: 150px;
+  }
+
+  .form-check-label {
+    font-size: 0.9rem;
+  }
+
+  .form-check-input {
+    width: 1.25em;
+    height: 1.25em;
+  }
+}

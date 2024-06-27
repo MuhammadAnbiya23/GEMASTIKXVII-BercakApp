@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/registLogin.css') }}">
+    <title>Register</title>
+</head>
+<body>
+    <div class="container active" id="container"> <!-- Set active class initially -->
+        <div class="form-container sign-up">
+            <form id="register-form" method="POST" action="{{ url_for('login_register') }}">
+                <h1>Daftar</h1>
+                <input name="name-registrasi" type="text" placeholder="Name" required>
+                <input name="email-registrasi" type="email" placeholder="Email" required>
+                <input name="password-registrasi" type="password" placeholder="Password" required>
+                <input name="confirm-password-registrasi" type="password" placeholder="Confirm Password" required>
+                {% if 'name_error' in errors %}
+                    <p style="color: red;">{{ errors['name_error'] }}</p>
+                {% endif %}
+                {% if 'email_register_error' in errors %}
+                    <p style="color: red;">{{ errors['email_register_error'] }}</p>
+                {% endif %}
+                {% if 'password_register_error' in errors %}
+                    <p style="color: red;">{{ errors['password_register_error'] }}</p>
+                {% endif %}
+                {% if 'confirm_password_error' in errors %}
+                    <p style="color: red;">{{ errors['confirm_password_error'] }}</p>
+                {% endif %}
+                <button type="submit">Daftar</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Selamat Datang</h1>
+                    <p>Masukkan detail pribadi Anda untuk menggunakan semua fitur situs</p>
+                    <a href="{{ url_for('login') }}"><button class="hidden" id="login">Masuk</button></a>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Halo, teman</h1>
+                    <p>Daftarkan dengan detail pribadi Anda untuk menggunakan semua fitur situs</p>
+                    <button class="hidden" id="register">Daftar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/loginRegist.js') }}"></script>
+</body>
+</html>
