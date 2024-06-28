@@ -61,30 +61,6 @@ referrerpolicy="no-referrer"
                             <a class="nav-link" href="{{ url_for('about') }}">Tentang kami</a>
                         </li>
                     </ul>
-                    <div class="d-flex justify-content-center ms-auto align-items-center">
-                        {% if session.get('logged_in') %}
-                        <div class="action">
-                            <div class="profile" onclick="menuToggle();">
-                                <i class="fas fa-user-circle"></i>
-                            </div>
-                            <div class="menu">
-                                <h3>{{ session['user_name'] }}<br /><span>bergabung sejak {{ session['user_join_date'] }}</span></h3>
-                                <ul>
-                                    <li>
-                                        <i class="fas fa-user"></i><a href="#">My profile</a>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-cog"></i><a href="#">Lupa password</a>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-sign-out-alt"></i><a href="{{ url_for('logout') }}">Logout</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        {% else %}
-                        <a href="{{ url_for('login') }}" class="btn btn-light ms-2">Masuk</a>
-                        {% endif %}
                     </div>
                 </div>   
             </div>

@@ -18,81 +18,117 @@ document.addEventListener("DOMContentLoaded", function () {
     const game2Questions = [
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/selamat-pagi.jpg",
-            options: ["Selamat pagi", "Selamat sore"],
+            image: "/static/assets/halo.png",
+            options: ["Halo", "Selamat tinggal"],
+            correctAnswer: "Halo"
+        },
+        {
+            title: "Apa arti gambar kosa isyarat ini?",
+            image: "/static/assets/selamat-pagi.png",
+            options: ["Selamat pagi", "Selamat siang"],
             correctAnswer: "Selamat pagi"
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/siapa.jpg",
-            options: ["Dimana", "Siapa"],
-            correctAnswer: "Siapa"
+            image: "/static/assets/apa-kabar.png",
+            options: ["apa kabar", "bagaimana"],
+            correctAnswer: "apa kabar"
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/bagaimana.jpg",
-            options: ["Bagaimana", "Kenapa"],
-            correctAnswer: "Bagaimana"
+            image: "/static/assets/saya.png",
+            options: ["saya", "kami"],
+            correctAnswer: "saya"
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/selamat-malam.jpg",
-            options: ["Selamat malam", "Selamat sore"],
-            correctAnswer: "Selamat malam"
+            image: "/static/assets/dia.png",
+            options: ["dia", "mereka"],
+            correctAnswer: "dia"
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/saya.jpg",
-            options: ["Saya", "Kami"],
-            correctAnswer: "Saya"
+            image: "/static/assets/nama.png",
+            options: ["sini", "nama"],
+            correctAnswer: "nama"
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/dia.jpg",
-            options: ["Dia", "Mereka"],
-            correctAnswer: "Dia"
+            image: "/static/assets/selamat-siang.png",
+            options: ["selamat malam", "selamat siang"],
+            correctAnswer: "selamat siang"
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/bisindo-B.jpg",
-            options: ["B", "E"],
-            correctAnswer: "B"
+            image: "/static/assets/terimakasih.png",
+            options: ["maaf", "terimakasih"],
+            correctAnswer: "terimakasih"
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/bisindo-E.jpg",
-            options: ["E", "A"],
-            correctAnswer: "E"
+            image: "/static/assets/sama-sama.png",
+            options: ["sama-sama", "sampai jumpa"],
+            correctAnswer: "sama-sama"
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/bisindo-R.jpg",
-            options: ["Q", "R"],
-            correctAnswer: "R"
-        },
-        {
-            title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/bisindo-C.jpg",
-            options: ["O", "C"],
+            image: "/static/assets/bisindo-cq.png",
+            options: ["O", "C", "D", "Q"],
             correctAnswer: "C"
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/bisindo-A.jpg",
-            options: ["V", "A"],
+            image: "/static/assets/bisindo-aq.png",
+            options: ["V", "A", "N", "L"],
             correctAnswer: "A"
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/bisindo-K.jpg",
-            options: ["Y", "K"],
+            image: "/static/assets/bisindo-kq.png",
+            options: ["Y", "K", "A", "X"],
             correctAnswer: "K"
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/bisindo-P.jpg",
-            options: ["P", "D"],
+            image: "/static/assets/bisindo-eq.png",
+            options: ["P", "D", "E", "W"],
+            correctAnswer: "E"
+        },
+        {
+            title: "Apa arti gambar kosa isyarat ini?",
+            image: "/static/assets/bisindo-pq.png",
+            options: ["P", "D", "F", "R"],
             correctAnswer: "P"
+        },
+        {
+            title: "Apa arti gambar kosa isyarat ini?",
+            image: "/static/assets/bisindo-2.png",
+            options: ["8", "2", "1", "3"],
+            correctAnswer: "2"
+        },
+        {
+            title: "Apa arti gambar kosa isyarat ini?",
+            image: "/static/assets/bisindo-0.png",
+            options: ["3", "8", "0", "4"],
+            correctAnswer: "0"
+        },
+        {
+            title: "Apa arti gambar kosa isyarat ini?",
+            image: "/static/assets/bisindo-5.png",
+            options: ["2", "3", "4", "5"],
+            correctAnswer: "5"
+        },
+        {
+            title: "Apa arti gambar kosa isyarat ini?",
+            image: "/static/assets/bisindo-7.png",
+            options: ["8", "4", "2", "1"],
+            correctAnswer: "7"
+        },
+        {
+            title: "Apa arti gambar kosa isyarat ini?",
+            image: "/static/assets/bisindo-1.png",
+            options: ["1", "0", "5", "3"],
+            correctAnswer: "1"
         },
     ];
 
@@ -111,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
             game2Points++;
             game2Feedback.innerText = "Benar!";
             correctSound.play();
-            if (game2Points % 13 === 0) {
+            if (game2Points % 19 === 0) {
                 displayReward();
             } else {
                 loadGame2Question();

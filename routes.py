@@ -88,5 +88,3 @@ def sosmedv2():
 @app.route('/faqv2')
 def faqv2():
     return render_template('faqv2.html')
-
-
