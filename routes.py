@@ -1,8 +1,7 @@
-from flask import request, session, redirect, url_for, render_template, Response
+from flask import request, session, flash, redirect, url_for, render_template, Response
 from app import app
-from utils import is_valid_email, is_valid_password,gen, VideoCamera
+from utils import gen, VideoCamera
 
-    
 @app.route('/toggle-color-mode')
 def toggle_color_mode():
     mode = request.args.get('mode')
@@ -31,6 +30,7 @@ def quiz():
 
 @app.route('/signRecognition')
 def signRecognition():
+    
     return render_template('signRecognition.html')
 
 @app.route('/video_feed')
@@ -56,6 +56,7 @@ def sosmed():
 @app.route('/faq')
 def faq():
     return render_template('faq.html')
+
 
 @app.route('/deafEduv2')
 def deafEduv2():

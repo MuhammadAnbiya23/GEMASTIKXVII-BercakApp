@@ -1,9 +1,5 @@
-from PIL import Image
-import numpy as np
 import cv2
 import re
-from io import BytesIO
-import base64
 from inference_sdk import InferenceHTTPClient
 
 def is_valid_email(email):
@@ -35,13 +31,10 @@ class VideoCamera:
         
         image_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)                
         results = CLIENT.infer(image_rgb, model_id="sign-language-detection-yolov8/1")
-
+        
         if len(results['predictions']) > 0:
             print(results['predictions'][0]['class'])
         
-
-        ret, jpeg = cv2.imencode('.jpg', image)
-        return jpeg.tobytes()
 
 def gen(camera):
     while True:
