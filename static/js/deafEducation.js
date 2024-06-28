@@ -204,17 +204,20 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    const readMoreBtn = document.querySelector('.read-more-btn');
-    const articleContent = document.querySelector('.article-content');
+    const readMoreBtns = document.querySelectorAll('.read-more-btn');
 
-    readMoreBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-        if (articleContent.style.display === 'none' || articleContent.style.display === '') {
-            articleContent.style.display = 'block';
-            readMoreBtn.textContent = 'Baca Lebih Sedikit';
-        } else {
-            articleContent.style.display = 'none';
-            readMoreBtn.textContent = 'Baca Lebih Lanjut';
-        }
+    readMoreBtns.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetContent = document.querySelector('.' + btn.getAttribute('data-target'));
+            if (targetContent.style.display === 'none' || targetContent.style.display === '') {
+                targetContent.style.display = 'block';
+                btn.querySelector('.read-more-text').textContent = 'Baca Lebih Sedikit';
+            } else {
+                targetContent.style.display = 'none';
+                btn.querySelector('.read-more-text').textContent = 'Baca Lebih Lanjut';
+            }
+        });
     });
 });
+
