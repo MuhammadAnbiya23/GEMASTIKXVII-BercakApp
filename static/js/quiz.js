@@ -72,61 +72,61 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/bisindo-C.jpg",
+            image: "/static/assets/bisindo-cq.png",
             options: ["O", "C", "D", "Q"],
             correctAnswer: "C"
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/bisindo-A.jpg",
+            image: "/static/assets/bisindo-aq.png",
             options: ["V", "A", "N", "L"],
             correctAnswer: "A"
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/bisindo-K.jpg",
+            image: "/static/assets/bisindo-kq.png",
             options: ["Y", "K", "A", "X"],
             correctAnswer: "K"
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/bisindo-E.jpg",
+            image: "/static/assets/bisindo-eq.png",
             options: ["P", "D", "E", "W"],
             correctAnswer: "E"
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/bisindo-P.jpg",
+            image: "/static/assets/bisindo-pq.png",
             options: ["P", "D", "F", "R"],
             correctAnswer: "P"
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/bisindo-2.jpg",
+            image: "/static/assets/bisindo-2.png",
             options: ["8", "2", "1", "3"],
             correctAnswer: "2"
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/bisindo-0.jpg",
+            image: "/static/assets/bisindo-0.png",
             options: ["3", "8", "0", "4"],
             correctAnswer: "0"
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/bisindo-5.jpg",
+            image: "/static/assets/bisindo-5.png",
             options: ["2", "3", "4", "5"],
-            correctAnswer: "P"
+            correctAnswer: "5"
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/bisindo-7.jpg",
+            image: "/static/assets/bisindo-7.png",
             options: ["8", "4", "2", "1"],
             correctAnswer: "7"
         },
         {
             title: "Apa arti gambar kosa isyarat ini?",
-            image: "/static/assets/bisindo-1.jpg",
+            image: "/static/assets/bisindo-1.png",
             options: ["1", "0", "5", "3"],
             correctAnswer: "1"
         },
