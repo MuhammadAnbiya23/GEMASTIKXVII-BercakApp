@@ -2,7 +2,8 @@ from flask import Flask, session, flash, redirect, url_for, render_template
 from flask_restful import Api
 from flask_mysqldb import MySQL
 from flask_bcrypt import Bcrypt
-import os
+# from utils_flask import capture_image
+
 
 app = Flask(__name__)
 api = Api(app)
@@ -19,9 +20,8 @@ app.config["SECRET_KEY"] = 'RahasiaKabupatenSukabumi'
 app.config['ENV'] = 'development'
 app.config['DEBUG'] = True
 
-db.init_app(app)
-
 from routes import *
 
-if __name__ == "__main__":
-    app.run(debug=True)
+if __name__== "__main__":
+   # capture_image()
+   app.run(debug=True)

@@ -1,7 +1,8 @@
-from flask import request, session, flash, redirect, url_for, render_template
+from flask import request, session, flash, redirect, url_for, render_template, Response
 from app import app,db, bcrypt
 from models_flask import DataUser
-from utils_flask import is_valid_email, is_valid_password
+from utils_flask import is_valid_email, is_valid_password,gen, VideoCamera
+
 
 @app.route("/dashboard/")
 def dashboard():
@@ -46,6 +47,10 @@ def quiz():
 @app.route('/signRecognition')
 def signRecognition():
     return render_template('signRecognition.html')
+
+@app.route('/video_feed')
+def video_feed():
+    return Response(gen(VideoCamera()), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 @app.route('/speechRecognition', methods=['GET'])
 def speechRecognition():
