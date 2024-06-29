@@ -85,14 +85,11 @@ referrerpolicy="no-referrer"
                     </div>
                     <div class="card-body fade-in-on-scroll">
                         <div class="video-container fade-in-on-scroll">
-                            <video id="video" width="100%" height="auto" autoplay></video>
+                            <img id="bg" src="{{ url_for('video_feed') }}">
                             <div class="bounding-box"></div>
                         </div>
                         <div id="instruction" class="mt-3">Tunggu sebentar...</div>
                     </div>
-                </div>
-                <div id="feedback" class="alert alert-danger mt-3" style="display: none;">
-                    Terjadi kendala, silakan coba lagi.
                 </div>
             </div>
             <div class="col-md-6">
