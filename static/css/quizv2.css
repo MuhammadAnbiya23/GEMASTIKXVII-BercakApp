@@ -371,7 +371,7 @@ button:hover {
 }
 
 .custom-image-size {
-  width: 200px; /* Atur lebar gambar sesuai kebutuhan Anda */
+  width: 300px; /* Atur lebar gambar sesuai kebutuhan Anda */
   height: auto; /* Mempertahankan rasio aspek gambar */
 }
 

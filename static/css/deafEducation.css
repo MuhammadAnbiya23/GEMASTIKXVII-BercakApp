@@ -206,27 +206,6 @@ li .dropdown-item {
   color: #004e11cc;
 }
 
-.fade-in-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in-on-scroll.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 .container {
   padding-top: 5%;
@@ -235,39 +214,37 @@ li .dropdown-item {
 .card-body {
   background-color: transparent;
   border-radius: 40px;
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
-  -ms-border-radius: 40px;
-  -o-border-radius: 40px;
 }
 
 .title-icon-container {
   display: flex;
   align-items: center;
-  gap: 80px; /* Jarak antara teks dan ikon */
+  gap: 20px; /* Jarak antara teks dan ikon */
 }
 
 .title-icon-container h2 {
-  margin-top: 200px;
+  margin: 0;
 }
 
 .icon-inline {
-  width: 250px; 
-  height: auto; 
+  border-radius: 10px;
+  width: 300px; 
+  height: auto;
+  margin-top: 0;
 }
 
 .article-content {
-display: none;
-opacity: 0;
-max-height: 0;
-overflow: hidden;
-transition: opacity 0.5s ease, max-height 0.5s ease;
+  display: none;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.5s ease;
 }
 
 .article-content.show {
-display: block;
-opacity: 1;
-max-height: 1000px; 
+  display: block;
+  opacity: 1;
+  max-height: 1000px; 
 }
 
 .read-more-btn {
@@ -281,24 +258,20 @@ max-height: 1000px;
   text-decoration: none;
   transition: background-color 0.3s;
   border-color: #006b39;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -ms-border-radius: 30px;
-  -o-border-radius: 30px;
 }
 
 .read-more-btn:hover {
-background-color: #02472a;
-border-color: #02472a;
+  background-color: #02472a;
+  border-color: #02472a;
 }
 
 .read-more-btn .read-more-icon {
-margin-left: 10px;
-transition: transform 0.3s;
+  margin-left: 10px;
+  transition: transform 0.3s;
 }
 
 .read-more-btn.btn-secondary .read-more-icon {
-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 
